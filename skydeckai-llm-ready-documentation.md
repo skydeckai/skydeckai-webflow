@@ -1834,10 +1834,7 @@ description: A business and legal use case using Strategy Consultant
 ---
 
 # Creating a Privacy Policy
-
-{% hint style="info" %}
 **Professional Services:** there are many complex issues that require the expertise of domain specialists or other professionals such as lawyers. Instead of waiting for access to these experts you can get a head start by using SkyDeck.ai GenStudio tools to write an initial draft or proposal that looks like a finished product. Shared with professionals, this can serve as a starting point for discussion, saving time and money. Or kept to yourself, this can serve as a way for you to be highly prepared before you engage with an expert.
-{% endhint %}
 
 ## Strategy Consultant: Creating Legal Notices
 
@@ -2737,12 +2734,7 @@ To create a snapshot, choose a conversation that you want to share from the left
 
 
 A popup will appear. Choose the **Share publicly** tab and then click **Create new snapshot**. You have to options: **Share anonymously** or **Share with your name**. Choose the former if you do not want to include your name in the snapshot, and choose the latter if you are willing to share it.
-
-
-
-{% hint style="info" %}
 Once created, the snapshot will not include changes from the conversation, such as message addition or deletion.
-{% endhint %}
 
 A unique URL is generated for each snapshot so that you can give it to anyone to allow access to the conversation snapshot. The URL generation process employs cryptographic hashing techniques to ensure the uniqueness and integrity of each link.
 
@@ -2755,12 +2747,7 @@ If you choose **Share anonymously**, the participants' names of the conversation
 
 
 If you choose **Share with your name**, the participants' names will appear.
-
-
-
-{% hint style="info" %}
 If you wish to anonymize the participants later, you have to create another snapshot. You can [disable](public-snapshots.md#disable-a-snapshot) or [delete](public-snapshots.md#delete-a-snapshot) the current one later.
-{% endhint %}
 
 ### Continue from a Snapshot
 
@@ -2842,22 +2829,13 @@ To add collaborators to any existing conversation, select the conversation from 
 
 
 A popup will appear with the default tab of **Invite to collaborate**. Toggle the **Collaboration** slider and then click the blue **Copy link** button.
-
-{% hint style="info" %}
 Should you wish to discontinue collaboration at any point, simply switch the slider to the off position. Please note that this will invalidate the current link, and it will be different if you generate a new one.
-{% endhint %}
 
 
 
 With this link, you can invite any colleagues with ease. There is no need to add each collaborator's email address manually.
-
-{% hint style="info" %}
 All invitees must have an account registered in the same SkyDeck.AI workspace as the conversation owner. This protects organizational assets and confidential information that may be contained within the GenStudio Workspace conversation.
-{% endhint %}
-
-{% hint style="info" %}
 You can further enhance collaboration by synchronizing Slack channels with your GenStudio conversations. To learn more, please visit [Slack Synchronization](slack-synchronization.md) and [Slack Integration](../integrations/slack-integration.md).
-{% endhint %}
 
 ### Collaborator View
 
@@ -2902,10 +2880,7 @@ Scraping content from websites to include in your prompts is a very helpful feat
 # Slack Synchronization
 
 By integrating with Slack, you can send your GenStudio conversations to a Slack channel and vice versa. This allows your team to collaborate seamlessly.
-
-{% hint style="info" %}
 This page will discuss about how you can synchronize between Slack and GenStudio. To learn more about how to set up Slack, please visit [Slack Integration](../integrations/slack-integration.md).
-{% endhint %}
 
 ### Sending GenStudio conversations messages to Slack
 
@@ -3240,10 +3215,7 @@ Teach Me Anything has a wide scope, so there’s no end to what kinds of lessons
 # How to Use
 
 Teach Me Anything offers 8 different categories to help you create a personalized learning experience. Here's an overview of each field, along with some example selections you might consider:
-
-{% hint style="info" %}
 These examples are not exhaustive, you can enter anything that you think is appropriate, and the AI will adjust.
-{% endhint %}
 
 * **Lesson** – the specific subject or topic you want to learn about.
   * The History of Renaissance Art
@@ -3279,10 +3251,7 @@ These examples are not exhaustive, you can enter anything that you think is appr
   * Practical (step-by-step, actionable insights)
 * **Using Emojis** – Incorporating emojis to add an expressive or illustrative element to the content.
   * True or False
-
-{% hint style="info" %}
 You don't have to fill out every category, but make sure to remove the default text if you don't want it to impact the results of your lesson.
-{% endhint %}
 
 
 
@@ -3403,12 +3372,7 @@ description: Follow along with a step-by-step demonstration of Image Generator
 # Example – Winter Wonderland
 
 In this example, we are being as specific as possible to create an artistic image:
-
-
-
-{% hint style="info" %}
 The image link will expire in 1 hour. Save the picture before it expires if you would like to use it or review it later.
-{% endhint %}
 
 Image Generator created the following image:
 
@@ -3433,10 +3397,7 @@ To get started with Image Generator, you need to provide a description of the im
 * **Scenery** – Specify different types of scenery like sunset, beach, mountain, etc.
 * **Moods** – Specify different moods like happy, sad, angry, etc.
 * **Realism** – Specify the degree of accuracy or abstractness like photorealistic, cartoonish, impressionist, etc.
-
-{% hint style="info" %}
 You can only generate one image per request based on the provided description.
-{% endhint %}
 
 Remember, the more specific your description, the more accurate the generated image will be. For example, instead of just saying "cat", you might say "a large orange cat sitting on a blue sofa". This will give the model a more specific image to generate.
 
@@ -3557,12 +3518,9 @@ For example, you could input`/implement task=TaskDescription`. Please replace `T
 #### Example
 
 Let's say you want to implement a program that calculates the sum of all elements in a list.
-
-{% code overflow="wrap" %}
 ||CODE_BLOCK||
 /implement task=Create a Python function that calculates the sum of all elements in a list. The function should take a list of integers as input and return an integer as output.
 ||CODE_BLOCK||
-{% endcode %}
 
 ### /modify
 
@@ -3571,8 +3529,6 @@ The `/modify` command is used when you want changes or adjustments made to an ex
 #### Example
 
 For example, imagine you have a Python function that calculates the area of a rectangle, and you want to modify it to calculate the area of a circle instead.
-
-{% code overflow="wrap" %}
 ||CODE_BLOCK||
 /modify code=
 def rectangle_area(length, width):
@@ -3581,7 +3537,6 @@ def rectangle_area(length, width):
 modifications=
 Change the function to calculate the area of a circle instead, using the formula `pi * radius^2`. The function should take a single argument for the radius.
 ||CODE_BLOCK||
-{% endcode %}
 
 ### /test
 
@@ -3590,8 +3545,6 @@ The `/test` command is used when you want me to create test cases for a given pr
 #### Example
 
 Let's say you have a Python function that calculates the factorial of a number and you want to create test cases for it
-
-{% code overflow="wrap" %}
 ||CODE_BLOCK||
 /test code=
 def factorial(n):
@@ -3603,7 +3556,6 @@ def factorial(n):
 description=
 This function calculates the factorial of a given number. The factorial of a number n is the product of all positive integers less than or equal to n.
 ||CODE_BLOCK||
-{% endcode %}
 
 
 ==> genstudio-workspace/tools/pair-programmer/example-python-script-assistance.md <==
@@ -3735,18 +3687,12 @@ This documentation outlines the JSON structures supported by SkyDeck AI for two 
 #### LLM Tools
 
 LLM (Large Language Model) Tools are designed to facilitate user interaction with LLM models by sending user input to predefined prompts.
-
-{% content-ref url="json-format-for-llm-tools.md" %}
 [json-format-for-llm-tools.md](json-format-for-llm-tools.md)
-{% endcontent-ref %}
 
 #### Smart Tools
 
 Smart Tools extend the capabilities of LLM Tools by incorporating Python code execution for data extraction and processing. The integration of Python enables users to perform complex calculations, data transformations, and other advanced operations beyond the scope of standard LLM Tools functionality.
-
-{% content-ref url="json-format-for-smart-tools.md" %}
 [json-format-for-smart-tools.md](json-format-for-smart-tools.md)
-{% endcontent-ref %}
 
 
 ==> developers/develop-your-own-tools/example-text-based-ui-generator.md <==
@@ -3972,10 +3918,7 @@ def execute(variables):
     result = api_chain.run(question)
     return result
 ||CODE_BLOCK||
-
-{% hint style="info" %}
 Note that Langchain is now integrated with Rememberizer. See [https://python.langchain.com/docs/integrations/retrievers/rememberizer/](https://python.langchain.com/docs/integrations/retrievers/rememberizer/)
-{% endhint %}
 
 #### weather\_reporter.json <a href="#bgnhw14oi99h" id="bgnhw14oi99h"></a>
 
