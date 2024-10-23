@@ -1,6 +1,6 @@
 # SkyDeck.ai LLM Ready Documentation
 
-Generated at: 2024-10-17 23:42:15 PDT.
+*Generated at 2024-10-23 03:26:49 PDT. Available as raw content at [skydeckai-llm-ready-documentation.md](https://raw.githubusercontent.com/skydeckai/skydeckai-webflow/refs/heads/main/skydeckai-llm-ready-documentation.md).*
 
 This document provides a comprehensive, consolidated reference of SkyDeck.ai's documentation, optimized for large language model (LLM) consumption. It combines various documentation sources into a single, easily accessible format, facilitating efficient information retrieval and processing by AI systems.
 
@@ -57,21 +57,25 @@ This document provides a comprehensive, consolidated reference of SkyDeck.ai's d
       * [Add New Group](control-center/setup-guide/organize-teams/add-new-group.md)
       * [Remove Groups](control-center/setup-guide/organize-teams/remove-groups.md)
     * [Curate Tools](control-center/setup-guide/curate-tools/README.md)
-      * [The Six AI Tools](control-center/setup-guide/curate-tools/the-six-ai-tools.md)
+      * [System Tools](control-center/setup-guide/curate-tools/system-tools.md)
       * [Assign Tags](control-center/setup-guide/curate-tools/assign-tags.md)
     * [Manage Members](control-center/setup-guide/manage-members/README.md)
       * [Add Members](control-center/setup-guide/manage-members/add-members.md)
       * [Import File](control-center/setup-guide/manage-members/import-file.md)
       * [Invite Members](control-center/setup-guide/manage-members/invite-members.md)
-      * [Assign Tags to Members](control-center/setup-guide/manage-members/assign-tags-to-members.md)
+      * [Edit Members](control-center/setup-guide/manage-members/edit-members.md)
 * [Integrations](integrations/README.md)
-  * [OpenAI Integration](control-center/integrations/openai-integration.md)
-  * [Database Integration](integrations/openai-integration-1.md)
-  * [HuggingFace Integration](integrations/adding-huggingface-credentials.md)
-  * [Together AI Integration](integrations/openai-integration-2.md)
-  * [Perplexity Integration](integrations/perplexity-integration.md)
-  * [Rememberizer Integration](integrations/rememberizer-integration.md)
-  * [Slack Integration](integrations/slack-integration.md)
+  * [LLMs and Databases](integrations/llms-and-databases/README.md)
+    * [Anthropic Integration](integrations/llms-and-databases/anthropic-integration.md)
+    * [Database Integration](integrations/llms-and-databases/openai-integration-1.md)
+    * [HuggingFace Integration](integrations/llms-and-databases/adding-huggingface-credentials.md)
+    * [OpenAI Integration](integrations/llms-and-databases/openai-integration.md)
+    * [Perplexity Integration](integrations/llms-and-databases/perplexity-integration.md)
+    * [Together AI Integration](integrations/llms-and-databases/openai-integration-2.md)
+    * [Vertex AI Integration](integrations/llms-and-databases/vertex-ai-integration.md)
+  * [App Integrations](integrations/app-integrations/README.md)
+    * [Rememberizer Integration](integrations/app-integrations/rememberizer-integration.md)
+    * [Slack Integration](integrations/app-integrations/slack-integration.md)
 * [Notices](notices/README.md)
   * [Terms of Use](notices/terms-of-use.md)
   * [Privacy Policy](notices/privacy-policy.md)
@@ -105,7 +109,7 @@ This document provides a comprehensive, consolidated reference of SkyDeck.ai's d
   * [Bug Bounty Program](security/bug-bounty-program.md)
 * [AI Documentations](ai-documentations/README.md)
   * [LLM Evaluation Report](ai-documentations/llm-evaluation-report.md)
-  * [SkyDeck.ai LLM Ready Documentation](ai-documentations/skydeckai_llm_ready_documentation.md)
+  * [SkyDeck.ai LLM Ready Documentation](ai-documentations/skydeckai-llm-ready-documentation.md)
 
 
 ==> README.md <==
@@ -1439,83 +1443,50 @@ coverY: 0
 © 2023 SkyDeck AI Inc.
 
 
-==> integrations/rememberizer-integration.md <==
-# Rememberizer Integration
-
-### Introduction
-
-GenStudio offers two types of Rememberizer integrations: one for individual members and another for an entire workspace through the Control Center. This guide provides a comprehensive overview of both integration processes, enhancing search and memory capabilities across your workspace.
+==> integrations/README.md <==
+# Integrations
 
 
 
-### Steps to Authorize Rememberizer in GenStudio (Individual Members)
+==> integrations/llms-and-databases/openai-integration.md <==
+---
+description: OpenAI (ChatGPT) integration with the SkyDeck AI Platform
+---
 
-#### Step 1: Connect to Rememberizer
+# OpenAI Integration
 
-1. Go to the Rememberizer authorization page by clicking "Add account" to go to the Rememberizer authorization page.
-2. Review the permissions that GenStudio will access, such as Mementos and Memory.
+## **OpenAI Integration with the SkyDeck AI Platform**
 
+\
+ChatGPT is an AI-powered chatbot developed by OpenAI. It is based on the GPT-4 language model and can generate human-like text, translate languages, and write different kinds of creative content. ChatGPT is a powerful tool for a variety of applications. OpenAI is a non-profit research company that develops and deploys AI in a safe and responsible way. Integrating with SkyDeck AI will give you access to all current models of ChatGPT.
 
+### **Generating an OpenAPI API Key**
 
-#### Step 2: Configure Mementos
+\
+To use the OpenAI API, you need to generate an API key by following these 3 simple steps:
 
-1. Select the "Change" option next to Memento.
-2. Choose or create a new memento from the available list.
-3. Confirm your selection.
+1. Create a free account on the OpenAI website by signing up here: [https://beta.openai.com/signup. ↗](https://beta.openai.com/signup) You can use your Google or Microsoft account to sign up, or create an account using an email/password combination.
+2. Once you've signed up, visit your OpenAI key page here: [https://beta.openai.com/account/api-keys, ↗](https://beta.openai.com/account/api-keys) or click the menu item "View API keys."
+3. Click the "Create new secret key" button to generate a new API key. This key gives you access to both GPT-4 and ChatGPT models, so you don't need separate API keys.
 
+All done! Once you have your API key, you can use ChatGPT's LLM in the SkyDeck AI Platform.
 
+### **Adding the API Key to the SkyDeck AI Control Center**
 
+API Keys are added to the Control Center Integrations Screen
 
+1. Login to or Create a SkyDeck AI Admin account here: [https://admin.skydeck.ai/](https://admin.skydeck.ai/)
+2. Once you are signed in, visit the your integrations page here [https://admin.skydeck.ai/integrations/ ↗](https://admin.skydeck.ai/integrations/)’, or click on the “Integrations” in the menu
+3. Click on “+Add Integrations” button and enter your API Key as instructed.
 
-#### Step 3: Set Memory Preferences
+That’s it! You can now use the powerful SkyDeck AI tools and directly access the GPT-4 and ChatGPT models.
 
-1. Click on "Change" next to Memory.
-2. Select your preferred memory settings (e.g., Read All/Write Own).
-3. Confirm the settings
+NOTE: You will be charged based on your monthly usage of the ChatGPT API. The cost structure is based on the number of tokens used, with 750 words (approximately 1000 tokens) being the minimum chargeable unit. The cost per 1000 tokens varies depending on the model used, with the current ChatGPT default model being GPT-3.5 Turbo. As of July 2023 you can start experimenting with $5 in free credit that can be used during your first 3 months. ChatGPT pricing for general use is very low, but if you plan to use the service regularly, you must add your credit card information and are advised to set up a usage limit on the OpenAI website.
 
-
-
-#### Step 4: Authorize
-
-1. Once you've configured your settings, click "Authorize" to complete the connection.
-
-
-
-### Steps to Authorize Rememberizer in Control Center (Workspace-Wide)
-
-#### Step 1: Access Integrations
-
-1. Navigate to the **Integrations** section.
-2. Click on the **Apps** tab.
-3. Locate "Rememberizer" and click **Add**.
+OpenAPI ChatGPT Pricing [https://openai.com/pricing ↗](https://openai.com/pricing)
 
 
-
-#### Step 2: Follow Authorization Steps
-
-* The authorization process will follow the same steps as for individual members.
-* Once authorized, Rememberizer will be available for the entire workspace.
-
-### Rememberizer Integration Usage
-
-Once authorized, SkyDeck will:
-
-* Automatically call the Rememberizer API. For more details, please visit the [Rememberizer API Documentation](https://docs.rememberizer.ai/developer/api-documentations).
-* Use the response to enhance interactions with the language model (e.g., GPT 4o).
-
-#### Contextual LLM Integration
-
-* The retrieved information is used to improve responses. For example, asking "What is my account?" will provide personalized details using Rememberizer's context.
-
-
-
-### Conclusion
-
-By following this guide, you can effectively integrate and utilize Rememberizer within GenStudio, leveraging advanced search capabilities and personalized memory sharing to enhance your application experience.
-
-
-
-==> integrations/openai-integration-2.md <==
+==> integrations/llms-and-databases/openai-integration-2.md <==
 ---
 description: Together AI integration with the SkyDeck AI Platform
 ---
@@ -1548,12 +1519,12 @@ That’s it! You can now use the powerful SkyDeck AI tools and directly access t
 NOTE: You will be charged based on your monthly usage of the Together AI API. The cost structure is based on the number of tokens used. For more details on their pricing policy, visit [https://api.together.xyz/playground](https://api.together.xyz/playground).
 
 
-==> integrations/README.md <==
-# Integrations
+==> integrations/llms-and-databases/README.md <==
+# LLMs and Databases
 
 
 
-==> integrations/adding-huggingface-credentials.md <==
+==> integrations/llms-and-databases/adding-huggingface-credentials.md <==
 ---
 description: Using SkyDeck.ai as the front end for your HuggingFace models.
 ---
@@ -1562,7 +1533,7 @@ description: Using SkyDeck.ai as the front end for your HuggingFace models.
 
 After deploying your inference endpoint on HuggingFace, you should see the following user interface:
 
-
+<figure><img src="../../.gitbook/assets/Screenshot 2023-09-25 at 10.08.46.png" alt=""><figcaption></figcaption></figure>
 
 On this page, you will need the following information:
 
@@ -1585,11 +1556,11 @@ After collecting this information, format it into JSON as shown in the example b
 
 Next, paste this into the Credential field of your integration.
 
-
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Once the credential is successfully validated, you should see your HuggingFace model listed in GenStudio's model list:
 
-
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Scaling HuggingFace Endpoints to Zero
 
@@ -1601,12 +1572,12 @@ However, this does introduce a cold start period when traffic resumes, and there
 
 At the moment, we only support endpoints for models with a `text-generation` tag that are deployed as `text-generation-inference` containers. We are working to expand our list of supported models.
 
+<figure><img src="../../.gitbook/assets/image (48).png" alt=""><figcaption><p>LLaMA 2 is a model with Text Generation tag</p></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/image (49).png" alt=""><figcaption><p>Make sure you select Text Generation Inference as the container type during deployment</p></figcaption></figure>
 
 
-
-
-
-==> integrations/openai-integration-1.md <==
+==> integrations/llms-and-databases/openai-integration-1.md <==
 ---
 description: Integration with Amazon AWS hosted databases.
 ---
@@ -1703,24 +1674,22 @@ Remember to replace 'user', 'pass', 'your-cluster-name.region-name.redshift.amaz
 
 Paste your connection URL in the "Credentials" section of Add Integration. You can select PostgreSQL for either a postgresql or Redshift database. You can use any name you want for the Integration, but we suggest you pick something that will help you identify the specific database associated.
 
-
+<figure><img src="../../.gitbook/assets/Add a DB Integration to Control Center.png" alt=""><figcaption></figcaption></figure>
 
 ### Accessing Your Data Through SkyDeckAI
 
-Today users can access your database using the Analyst tools available to them in GenStudio. As an admin you can assign an integration to an analyst tool in Control Center's Tools section. You can then assign tags to that tool to ensure only authorized people have access to that tool and its database access in their SkyDeck AI GenStudio workspace.\
-\
+Today users can access your database using the Analyst tools available to them in GenStudio. As an admin you can assign an integration to an analyst tool in Control Center's Tools section. You can then assign tags to that tool to ensure only authorized people have access to that tool and its database access in their SkyDeck AI GenStudio workspace.
 
-
-
+<figure><img src="../../.gitbook/assets/Adding a DB Integration to Analyst Bob.png" alt=""><figcaption><p>Add a database integration to a tool that supports it in order to share access with your members of your organization.</p></figcaption></figure>
 
 #### Security Notes
 
 * Create a read-only user (role) on your database to use with your SkyDeck AI integration. SkyDeck does not need write to your system and it is safest if you use credentials that do not have more rights than necessary. However, the user should be able to query the structure of your data system in order to understand it.
-* Do not share the access URL as it contains confidential connection information.&#x20;
-* You can limit which users in your organization have access to each database by ensuring that tools that use it, such as a copy of Analyst Bob, are assigned tags that correspond only to uers who you wish to have access.&#x20;
+* Do not share the access URL as it contains confidential connection information.
+* You can limit which users in your organization have access to each database by ensuring that tools that use it, such as a copy of Analyst Bob, are assigned tags that correspond only to uers who you wish to have access.
 
 
-==> integrations/perplexity-integration.md <==
+==> integrations/llms-and-databases/perplexity-integration.md <==
 # Perplexity Integration
 
 ### Overview
@@ -1759,7 +1728,7 @@ Perplexity offers several models, each optimized for different use cases and per
 #### Online Models
 
 * **`llama-3.1-sonar-small-128k-online`**: Suitable for general online queries with moderate complexity.
-* **`llama-3.1-sonar-large-128k-online`**  and **`llama-3.1-sonar-huge-128k-online`** : Designed for more complex online queries requiring deeper contextual understanding.
+* **`llama-3.1-sonar-large-128k-online`** and **`llama-3.1-sonar-huge-128k-online`** : Designed for more complex online queries requiring deeper contextual understanding.
 
 #### Chat Models
 
@@ -1770,14 +1739,177 @@ Perplexity offers several models, each optimized for different use cases and per
 
 After integrating Perplexity with the SkyDeck AI Platform, you should see Perplexity models available for selection in your SkyDeck AI GenStudio. The presence of these models indicates a successful integration.
 
-
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 ### Conclusion
 
 Integrating Perplexity with the SkyDeck AI Platform offers a robust set of features and capabilities, leveraging advanced language models to deliver accurate and reliable answers. Ensure you stay updated with the latest models and features to maximize the benefits of this integration. For additional assistance or inquiries, please refer to the [Perplexity Documentation](https://docs.perplexity.ai/) or contact their support team.
 
 
-==> integrations/slack-integration.md <==
+==> integrations/llms-and-databases/vertex-ai-integration.md <==
+# Vertex AI Integration
+
+### Overview
+
+Vertex AI is a fully-managed, unified AI development platform for building and using generative AI. Access and utilize Vertex AI Studio, Agent Builder, and 150+ foundation models. After integrating Skydeck.AI with Vertex AI, you will be able to use the Gemini models from Google in your workspace.
+
+### Generating a service account credential
+
+To enable Vertex AI and generate the necessary credential, you can follow these steps:
+
+1. **Set up your Google Cloud account:** Go to the [Google Cloud Console](https://console.cloud.google.com/) and sign in with your Google account.
+2. **Select a project:** At the top of the page, click on the project dropdown and select an existing project. If you don’t have a project, you’ll need to create one by clicking on "New Project" and following the prompts.
+3. **Enable Vertex AI API:** Go to the [APIs & Services Dashboard](https://console.cloud.google.com/apis/dashboard) (you can choose it from the Menu in the Google Cloud Console), click on the "**+ ENABLE APIS AND SERVICES**" button, search for "**Vertex AI API**" in the API Library, and then enable the API for your project. Please note that Vertex AI API requires a project with a billing account, so you have to set it up [here](https://console.cloud.google.com/billing). You will be charged based on your usage of Vertex AI, so please refer to [their documentation](https://cloud.google.com/vertex-ai) for the latest updates.
+4. **Create a Service Account and get the credential:** Go to the **IAM & Admin** section to create a new service account, assign the appropriate role to use Vertex AI (typically the Vertex AI Administrator role), and then generate a JSON key. You can visit this [link](https://developers.google.com/workspace/guides/create-credentials#service-account) for more details. Save the key securely and see the following section to add it to SkyDeck.AI platform. Here is a sample JSON key:
+
+||CODE_BLOCK||json
+{
+  "type": "service_account",
+  "project_id": "your-project-id",
+  "private_key_id": "your-private-key-id",
+  "private_key": "your-private-key",
+  "client_email": "the-email-of-the-service-account",
+  "client_id": "the-client-id",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "your-client_x509_cert_url",
+  "universe_domain": "googleapis.com"
+}
+||CODE_BLOCK||
+
+### Adding the credential to SkyDeck AI
+
+API Keys are added to the Control Center Integrations Screen
+
+1. Login to or Create a SkyDeck AI Admin account here: [https://admin.skydeck.ai/](https://admin.skydeck.ai/)
+2. Once you have signed in, visit the your Integrations page here [https://admin.skydeck.ai/integrations/ ↗](https://admin.skydeck.ai/integrations/)’, or select **Integrations** on the sidebar.
+3. In the LLM Integration page, click on the **Add Integration** button, choose **VertexAI** as the Integration Service, and enter your entire JSON Key in the Credentials field.
+
+<figure><img src="../../.gitbook/assets/vertex-ai-integration (1).png" alt="" width="563"><figcaption></figcaption></figure>
+
+That’s it! You can now use the powerful SkyDeck AI tools and directly access the Gemini models.
+
+### Conclusion
+
+Integrating Vertex AI with the SkyDeck AI Platform offers a robust set of features and capabilities, leveraging advanced language models from Google to deliver accurate and reliable answers. Ensure you stay updated with the latest Gemini models and features to maximize the benefits of this integration. For additional assistance or inquiries, please refer to the [Vertex AI Documentation](https://cloud.google.com/vertex-ai/docs) or contact their support team.
+
+
+==> integrations/llms-and-databases/anthropic-integration.md <==
+# Anthropic Integration
+
+## Overview
+
+Anthropic is an AI research organization focused on building reliable and interpretable artificial intelligence systems that prioritize safety and alignment with human values. The company is dedicated to addressing the ethical and safety challenges posed by increasingly powerful AI systems, working to ensure that their models behave predictably and in accordance with human intentions.
+
+Anthropic's LLMs, notably the "Claude" series, are designed to process and generate human-like text for a wide range of applications, including natural language understanding, reasoning, and dialogue. These models are developed with a focus on safety and usability, incorporating mechanisms to prevent harmful or biased outputs. As Anthropic continues to evolve its LLMs, it remains committed to creating AI systems that are transparent, interpretable, and aligned with ethical standards, making them useful for both commercial and research purposes.
+
+## **Generating an** Anthropic **API Key**
+
+To use the Anthropic API, you need to generate an API key by following these simple steps:
+
+1. Go to the Anthropic Console at [https://console.anthropic.com/](https://console.anthropic.com/) and sign in. If you don't have an account, you can sign up there.
+2. Once you have signed in, go to **Settings** and select [**API keys**](https://console.anthropic.com/account/keys).
+3. Click the **Create Key** button to generate a new API key. Provide a name and a workspace for that key.
+
+All done! Once you have your API key, you can use Anthropic's LLMs in the SkyDeck AI Platform.
+
+## **Adding the API Key to the SkyDeck AI Control Center**
+
+API Keys are added to the Control Center Integrations Screen.
+
+1. Login to or Create a SkyDeck AI Admin account here: [https://admin.skydeck.ai/](https://admin.skydeck.ai/)
+2. Once you have signed in, visit the your integrations page here [https://admin.skydeck.ai/integrations/ ↗](https://admin.skydeck.ai/integrations/)’, or select **Integrations** in the sidebar.
+3. In the LLM Integration page, click on the **Add Integration** button, choose Anthropic as the Integration Service and enter your API Key in the Credentials key.
+
+<figure><img src="../../.gitbook/assets/anthropic-integration.png" alt="" width="563"><figcaption></figcaption></figure>
+
+That’s it! You can now use the powerful SkyDeck AI tools and directly access the Claude models.
+
+## Conclusion
+
+Integrating Anthropic with the SkyDeck AI Platform offers a robust set of features and capabilities, leveraging advanced language models from Anthropic to deliver accurate and reliable answers. Ensure you stay updated with the latest Claude models and features to maximize the benefits of this integration. For additional assistance or inquiries, please refer to the [Anthropic Documentation](https://docs.anthropic.com/) or contact their support team.
+
+
+==> integrations/app-integrations/rememberizer-integration.md <==
+# Rememberizer Integration
+
+### Introduction
+
+GenStudio offers two types of Rememberizer integrations: one for individual members and another for an entire workspace through the Control Center. This guide provides a comprehensive overview of both integration processes, enhancing search and memory capabilities across your workspace.
+
+<figure><img src="../../.gitbook/assets/email masked.png" alt=""><figcaption></figcaption></figure>
+
+### Steps to Authorize Rememberizer in GenStudio (Individual Members)
+
+#### Step 1: Connect to Rememberizer
+
+1. Go to the Rememberizer authorization page by clicking "Add account" to go to the Rememberizer authorization page.
+2. Review the permissions that GenStudio will access, such as Mementos and Memory.
+
+<figure><img src="../../.gitbook/assets/email masked 2.png" alt=""><figcaption></figcaption></figure>
+
+#### Step 2: Configure Mementos
+
+1. Select the "Change" option next to Memento.
+2. Choose or create a new memento from the available list.
+3. Confirm your selection.
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+#### Step 3: Set Memory Preferences
+
+1. Click on "Change" next to Memory.
+2. Select your preferred memory settings (e.g., Read All/Write Own).
+3. Confirm the settings
+
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+#### Step 4: Authorize
+
+1. Once you've configured your settings, click "Authorize" to complete the connection.
+
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+### Steps to Authorize Rememberizer in Control Center (Workspace-Wide)
+
+#### Step 1: Access Integrations
+
+1. Navigate to the **Integrations** section.
+2. Click on the **Apps** tab.
+3. Locate "Rememberizer" and click **Add**.
+
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+#### Step 2: Follow Authorization Steps
+
+* The authorization process will follow the same steps as for individual members.
+* Once authorized, Rememberizer will be available for the entire workspace.
+
+### Rememberizer Integration Usage
+
+Once authorized, SkyDeck will:
+
+* Automatically call the Rememberizer API. For more details, please visit the [Rememberizer API Documentation](https://docs.rememberizer.ai/developer/api-documentations).
+* Use the response to enhance interactions with the language model (e.g., GPT 4o).
+
+#### Contextual LLM Integration
+
+* The retrieved information is used to improve responses. For example, asking "What is my account?" will provide personalized details using Rememberizer's context.
+
+<figure><img src="../../.gitbook/assets/email masked 3 (1).png" alt=""><figcaption></figcaption></figure>
+
+### Conclusion
+
+By following this guide, you can effectively integrate and utilize Rememberizer within GenStudio, leveraging advanced search capabilities and personalized memory sharing to enhance your application experience.
+
+
+==> integrations/app-integrations/README.md <==
+# App Integrations
+
+
+
+==> integrations/app-integrations/slack-integration.md <==
 # Slack Integration
 
 To further enhance team collaboration, you can integrate Slack with Skydeck.ai to let your GenStudio conversations go directly to your Slack channel. This allows your team to collaborate seamlessly.
@@ -1786,7 +1918,7 @@ To further enhance team collaboration, you can integrate Slack with Skydeck.ai t
 
 You must have admin access of your Slack workspace to perform this action. In the **Integrations** section of your Control Center, choose **Apps**, and then click the **Add** button of Slack.
 
-
+<figure><img src="../../.gitbook/assets/image (57) (1).png" alt=""><figcaption></figcaption></figure>
 
 After that, you will be redirected to a new page where you can allow SkyDeck.ai to access your Slack workspace. Click Allow and then check the Control Center again to check if Slack has been added successfully. This step is only required by the GenStudio workspace owner or admins. The following step can be done by any user in your workspace.
 
@@ -1794,38 +1926,38 @@ After that, you will be redirected to a new page where you can allow SkyDeck.ai 
 
 In your Slack workspace, choose any channel that you want to receive GenStudio conversation messages, and add the **SkyDeck.ai** app to that channel. The channel can be public or private, and each one will have a different way to connect to Slack.
 
-
+<figure><img src="../../.gitbook/assets/image (58) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Send messages to a public channel
 
 For public channels, SkyDeck.ai has already been able to see all of them after you connect Slack in the Control Center, so you don't have to configure more. Any user in your GenStudio Workspace can choose to connect their conversations to a public Slack channel. Here are the steps they need to do:
 
-1. Choose a conversation in the left sidebar and enable [Collaboration](../genstudio-workspace/sharing-and-collaboration.md)
+1. Choose a conversation in the left sidebar and enable [Collaboration](../../genstudio-workspace/sharing-and-collaboration.md)
 2. Toggle the **Share to Slack** button
 3. In the **Pick a channel** dropdown, choose a public channel. Ensure that SkyDeck.ai app has been added to that channel as discussed in the previous section.
 4. Click the **Send** button next to the dropdown. If successful, you will see new messages in that Slack channel posted by SkyDeck.ai. If you have not added the app, you will see a message right under the dropdown explaining why.
 
-
+<figure><img src="../../.gitbook/assets/image (59).png" alt=""><figcaption></figcaption></figure>
 
 ### Authorize Slack to send messages to a private channel
 
 For private channels, each user will have to authorize with Slack. The steps are slightly different:
 
-1. Choose a conversation in the left sidebar and enable [Collaboration](../genstudio-workspace/sharing-and-collaboration.md)
+1. Choose a conversation in the left sidebar and enable [Collaboration](../../genstudio-workspace/sharing-and-collaboration.md)
 2. Toggle the **Share to Slack** button
 3. In the **Authorized applications**, click **Authenticate** right next to Slack. The user will be redirected to a new page to authorize Slack.
 
-
+<figure><img src="../../.gitbook/assets/image (60).png" alt=""><figcaption></figcaption></figure>
 
 4. If the authorization succeeds, the **Pick a channel** dropdown will now contain additional private channels that the user is in and has the SkyDeck.ai app. User can now connect their private channel with a GenStudio conversation.
 
-
+<figure><img src="../../.gitbook/assets/image (61).png" alt=""><figcaption></figcaption></figure>
 
 ### Disconnect the channel
 
 In both cases, if you want to disconnect the channel and the conversation, you can either click the red <mark style="color:red;">**End share**</mark> button in the popup above, or remove the SkyDeck.ai app from that channel.
 
-
+<figure><img src="../../.gitbook/assets/image (62).png" alt=""><figcaption><p>Click the End share button at the below right corner of the popup</p></figcaption></figure>
 
 
 ==> use-cases/creating-a-privacy-policy.md <==
@@ -1834,7 +1966,10 @@ description: A business and legal use case using Strategy Consultant
 ---
 
 # Creating a Privacy Policy
+
+{% hint style="info" %}
 **Professional Services:** there are many complex issues that require the expertise of domain specialists or other professionals such as lawyers. Instead of waiting for access to these experts you can get a head start by using SkyDeck.ai GenStudio tools to write an initial draft or proposal that looks like a finished product. Shared with professionals, this can serve as a starting point for discussion, saving time and money. Or kept to yourself, this can serve as a way for you to be highly prepared before you engage with an expert.
+{% endhint %}
 
 ## Strategy Consultant: Creating Legal Notices
 
@@ -2052,44 +2187,6 @@ description: Control Center
 The Control Center is a part of the Skydeck.ai system, located at admin.skydeck.ai that is intended for use by account owners and designated administrators. This is where an owner sets up their account and from where they invite users into this system. The Control Center is not normally accessed by users of the GenStudio workspace, although owners and admins may choose to use both. This is the first part of the Skydeck.ai system that is seen by account owners. They may, however, quickly move on to a pre-configured trial of the GenStudio workspace before returning to the Control Center to really get started.
 
 
-==> control-center/integrations/openai-integration.md <==
----
-description: OpenAI (ChatGPT) integration with the SkyDeck AI Platform
----
-
-# OpenAI Integration
-
-## **OpenAI Integration with the SkyDeck AI Platform**
-
-\
-ChatGPT is an AI-powered chatbot developed by OpenAI. It is based on the GPT-4 language model and can generate human-like text, translate languages, and write different kinds of creative content. ChatGPT is a powerful tool for a variety of applications. OpenAI is a non-profit research company that develops and deploys AI in a safe and responsible way. Integrating with SkyDeck AI will give you access to all current models of ChatGPT.
-
-### **Generating an OpenAPI API Key**
-
-\
-To use the OpenAI API, you need to generate an API key by following these 3 simple steps:
-
-1. Create a free account on the OpenAI website by signing up here: [https://beta.openai.com/signup. ↗](https://beta.openai.com/signup) You can use your Google or Microsoft account to sign up, or create an account using an email/password combination.
-2. Once you've signed up, visit your OpenAI key page here: [https://beta.openai.com/account/api-keys, ↗](https://beta.openai.com/account/api-keys) or click the menu item "View API keys."
-3. Click the "Create new secret key" button to generate a new API key. This key gives you access to both GPT-4 and ChatGPT models, so you don't need separate API keys.
-
-All done! Once you have your API key, you can use ChatGPT's LLM in the SkyDeck AI Platform.
-
-### **Adding the API Key to the SkyDeck AI Control Center**
-
-API Keys are added to the Control Center Integrations Screen
-
-1. Login to or Create a SkyDeck AI Admin account here: [https://admin.skydeck.ai/](https://admin.skydeck.ai/)
-2. Once you are signed in, visit the your integrations page here [https://admin.skydeck.ai/integrations/ ↗](https://admin.skydeck.ai/integrations/)’, or click on the “Integrations” in the menu
-3. Click on “+Add Integrations” button and enter your API Key as instructed.
-
-That’s it! You can now use the powerful SkyDeck AI tools and directly access the GPT-4 and ChatGPT models.
-
-NOTE: You will be charged based on your monthly usage of the ChatGPT API. The cost structure is based on the number of tokens used, with 750 words (approximately 1000 tokens) being the minimum chargeable unit. The cost per 1000 tokens varies depending on the model used, with the current ChatGPT default model being GPT-3.5 Turbo. As of July 2023 you can start experimenting with $5 in free credit that can be used during your first 3 months. ChatGPT pricing for general use is very low, but if you plan to use the service regularly, you must add your credit card information and are advised to set up a usage limit on the OpenAI website.
-
-OpenAPI ChatGPT Pricing [https://openai.com/pricing ↗](https://openai.com/pricing)
-
-
 ==> control-center/setup-guide/README.md <==
 ---
 layout:
@@ -2116,7 +2213,7 @@ Upon creating your SkyDeck AI account, you'll be introduced to the Setup Guide. 
 * [**Curate Tools**](curate-tools/)
 * [**Manage Members**](manage-members/)
 
-
+<figure><img src="../.gitbook/assets/startup.png" alt=""><figcaption></figcaption></figure>
 
 
 ==> control-center/setup-guide/set-up-account.md <==
@@ -2136,26 +2233,26 @@ layout:
 
 # Set Up Account
 
-From the Account page, you can select the **Information** or **Billing & Plans** tabs.&#x20;
+From the **Account** page, you can select the **Company Profile** or **Billing** tabs.
 
-
+<figure><img src="../../.gitbook/assets/admin-account.png" alt=""><figcaption></figcaption></figure>
 
 ***
 
 ### Account Information
 
-Within the Information tab, you can fill out the following fields:
+Within the **Company Profile** tab, you can fill out the following fields:
 
 * **Account Name** – Add your company name
-* **Subdomain** – Select the subdomain you would like to use for SkyDeck AI — for example, google.skydeck.ai&#x20;
+* **Subdomain** – Select the subdomain you would like to use for SkyDeck AI — for example, google.skydeck.ai
 * **Timezone** – Choose the appropriate timezone
 * **Upload your logo** – Upload a PNG or JPEG image that is at least 100x100 pixels and less than 10MB in size.
 
+<figure><img src="../../.gitbook/assets/admin-account-2.png" alt="" width="375"><figcaption></figcaption></figure>
 
+When these four fields are complete, click **Save**. The page will then update to provide a link to your current workspace URL.
 
-When these four fields are complete, click **Save**. The page will then update to provide a link to your current workspace URL.&#x20;
-
-
+<figure><img src="https://lh6.googleusercontent.com/wRmj6kbqQaPY2yiFexvYjJIloet9K6Zi2ZZYaEONtMbRygmW02cGSjEt4DRthL_Er5ajQClssfUCqMYKmSww1Q1_qB9n3vLKS0XhNR5c5Ri_CsdfJaqpxp5vjR-nfh87ahPb_zLQzr6Tx_D6rpFv9xM" alt=""><figcaption></figcaption></figure>
 
 
 ==> control-center/setup-guide/security/authentication-setup.md <==
@@ -2246,15 +2343,37 @@ layout:
 
 # Assign Tags
 
-Click  for one of the [six AI tools](the-six-ai-tools.md).
+Tags allow you to associate the tools with one or many group of members in your organization. After a tag is assigned to a tool, it can only be used by members who are also assigned that tag.
 
+In the Tools page, click on the **Assign** button for each tool you want to manage. In the pop-up window, you can choose multiple tags from the multi-select dropdown. Toggle between selection and deselection for the tags as needed. Then click **Save**.
 
-
-In the pop-up window, click on any grey tags to turn them blue. Toggle between selection **(blue)** and deselection **(grey)** for the tags as needed. Then click **Assign.**
-
-
+<figure><img src="../../../.gitbook/assets/admin-tags-4.png" alt="" width="563"><figcaption></figcaption></figure>
 
 Repeat this process for each AI tool to create customized permission groups.
+
+
+==> control-center/setup-guide/curate-tools/system-tools.md <==
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
+# System Tools
+
+SkyDeck AI's [GenStudio workspace](https://eastagile.skydeck.ai/) comes with several default AI tools. Here's a quick overview of these tools to help you understand how to set up your permissions.
+
+<table data-full-width="false"><thead><tr><th width="190" align="center">Icon</th><th width="190.33333333333331" align="center">Name</th><th align="center">Description</th></tr></thead><tbody><tr><td align="center"><img src="../../../.gitbook/assets/sql-assistant-logo.png" alt="" data-size="original"></td><td align="center"><strong>SQL Assistant</strong></td><td align="center">Provide the DDL that defines the tables in your database, then ask your SQL Assistant to write SQL code to produce any result.</td></tr><tr><td align="center"><img src="../../../.gitbook/assets/legal-agreement-review-logo.png" alt=""></td><td align="center"><strong>Legal Agreement Review</strong></td><td align="center">Evaluate a clause in your legal document. Have it explained to you. Modify it to change the document’s provisions.</td></tr><tr><td align="center"><img src="../../../.gitbook/assets/strategy-consultant.png" alt="" data-size="original"></td><td align="center"><strong>Strategy Consultant</strong></td><td align="center">Assists users by generating thoughtful responses to a specific question that lead you through a consultative approach to the request.</td></tr><tr><td align="center"><img src="../../../.gitbook/assets/teach-me-anything-logo.png" alt="" data-size="original"></td><td align="center"><strong>Teach Me Anything</strong></td><td align="center">This AI tutor will provide a lesson on any topic under the sun. You can choose the teaching style, language, and sophistication of the lesson.</td></tr><tr><td align="center"><img src="../../../.gitbook/assets/pair-programmer-logo.png" alt="" data-size="original"></td><td align="center"><strong>Pair Programmer</strong></td><td align="center">Your AI pair programmer will review your code, help you add new features, modify existing features, add test coverage, add comments or documentation, and more.</td></tr><tr><td align="center"><img src="../../../.gitbook/assets/image-generator-logo.png" alt="" data-size="original"></td><td align="center"><strong>Image Generator</strong></td><td align="center">Generated an image based on the description with OpenAI's DALL-E model.</td></tr></tbody></table>
+
+You can add a custom tool in the Control Center and it will be enabled in your entire workspace. Learn more at [Develop Your Own Tools](https://docs.skydeck.ai/developers/develop-your-own-tools).
 
 
 ==> control-center/setup-guide/curate-tools/README.md <==
@@ -2274,31 +2393,11 @@ layout:
 
 # Curate Tools
 
-Select **Tools** from the sidebar. From this page, you can use the tags you created within [**Organize**](../organize-teams/) to determine which AI tools are available to specific groups or individuals.
+The Tool feature helps to construct more complex prompts easily by asking users for a few brief inputs and then generating the complete, detailed prompt.
 
+Select **Tools** from the sidebar. From this page, you can manage the tools for the entire organization, including uploading, editing, duplicating, and deleting tools. You can also use the tags you created within [**Organize**](../organize-teams/) to determine which AI tools are available to specific groups or individuals.
 
-
-
-==> control-center/setup-guide/curate-tools/the-six-ai-tools.md <==
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
-# The Six AI Tools
-
-SkyDeck AI's [GenStudio workspace](https://eastagile.skydeck.ai/) comes with six different AI tools or you can create a custom tool. Here's a quick overview of these tools to help you understand how to set up your permissions.
-
-<table data-view="cards" data-full-width="true"><thead><tr><th></th><th></th></tr></thead><tbody><tr><td></td><td>Provide the DDL that defines the tables in your database, then ask your SQL Assistant to write SQL code to produce any result.</td></tr><tr><td></td><td>Evaluate a clause in your legal document. Have it explained to you. Modify it to change the document’s provisions.</td></tr><tr><td></td><td>Assists users by generating thoughtful responses to a specific question that lead you through a consultative approach to the request.</td></tr><tr><td></td><td>This AI tutor will provide a lesson on any topic under the sun. You can choose the teaching style, language, and sophistication of the lesson.</td></tr><tr><td></td><td>Your AI pair programmer will review your code, help you add new features, modify existing features, add test coverage, add comments or documentation, and more.</td></tr><tr><td></td><td>Generated an image based on the description with OpenAI's DALL-E model.</td></tr></tbody></table>
+<figure><img src="https://lh4.googleusercontent.com/ETDbRxZdiQPH3nrVpku_6EYP7FOlgS8BHUF5-euuHuy3rHnVwG5kW2UzOvm10lLK9KN0FDOh5wqpm59cCBxn9tjvMoHk8K7twj6bX_Mec2JP57MxLXdWnVkAc3mnDjIEQIUUegl_ZciqCfINB1XAqD4" alt=""><figcaption></figcaption></figure>
 
 
 ==> control-center/setup-guide/set-up-integrations/integration-assistance.md <==
@@ -2322,14 +2421,14 @@ When you select a service (LLM or SQL database), a prompt labeled **Where can I 
 
 As you switch between LLM Services, the link updates accordingly, ensuring you always have quick access to the right information within SkyDeck AI.
 
-
+<figure><img src="../../../.gitbook/assets/admin-integrations-3.png" alt="" width="563"><figcaption></figcaption></figure>
 
 This information on public pay-as-you-go conversational services is also linked here for easy reference:
 
-* [**OpenAI**](../../integrations/openai-integration.md)
+* [**OpenAI**](../../../integrations/llms-and-databases/openai-integration.md)
 * [**Vertex**](https://developers.google.com/workspace/guides/create-credentials#service-account)
 * [**Anthropic**](https://docs.anthropic.com/claude/reference/getting-started-with-the-api)
-* [**HuggingFace**](../../../integrations/adding-huggingface-credentials.md)
+* [**HuggingFace**](../../../integrations/llms-and-databases/adding-huggingface-credentials.md)
 
 
 ==> control-center/setup-guide/set-up-integrations/README.md <==
@@ -2349,19 +2448,17 @@ layout:
 
 # Set Up Integrations
 
-Head back to the Setup Guide and click **Add Integration** or select **Integrations** from the sidebar.
+Head back to the Setup Guide and click **Add Integration** or select **Integrations** from the sidebar. On the Integrations page, click on the **Add Integrations** button.
 
-
-
-On the Integrations page, select  from the upper right-hand corner.
+<figure><img src="../../../.gitbook/assets/admin-integrations-1.png" alt="" width="563"><figcaption></figcaption></figure>
 
 In the **Add Integration** pop-up window, fill out the following fields:
 
-* **LLM Service** – Choose OpenAI, VertexAI, or Anthropic from the dropdown menu.
+* **Integration Service** – Choose an LLM service such as OpenAI, VertexAI, Anthropic... or a database service from the dropdown menu.
 * **Integration Name** – Create a recognizable name for your integration.
 * **Credentials** – Enter your [API credentials](integration-assistance.md).
 
-
+<figure><img src="../../../.gitbook/assets/admin-integrations-2.png" alt="" width="563"><figcaption></figcaption></figure>
 
 
 ==> control-center/setup-guide/organize-teams/remove-groups.md <==
@@ -2381,9 +2478,9 @@ layout:
 
 # Remove Groups
 
-If you need to remove specific tags, click the **x** next to the tag name.
+If you need to remove specific tags, click on the **Trash** icon next to the tag name and confirm the deletion. This action will also remove all the tag associations and cannot be undone.
 
-
+<figure><img src="../../../.gitbook/assets/admin-tags-3.png" alt="" width="563"><figcaption></figcaption></figure>
 
 
 ==> control-center/setup-guide/organize-teams/README.md <==
@@ -2403,11 +2500,11 @@ layout:
 
 # Organize Teams
 
-Select **Organize** from the sidebar. From this page, you can create tags (or groups) to define and structure various teams within your organization.
+In SkyDeck.AI Control Center, tags are a way to organize the members of your company. A tag (or group) represents a team within your organization. You can assign a tag to a member or a tool, and members can only use tools that are assigned the same tag.
 
+Select **Organize** from the sidebar. From this page, you can create tags to define and structure various teams within your organization. You will notice that the **All** tag already exists and cannot be removed. This is the default tag that applies to all members of your organization.
 
-
-You will notice that the **All** tag already exists. This is the default tag that applies to all members of your organization.
+<figure><img src="../../../.gitbook/assets/admin-tags-1.png" alt=""><figcaption></figcaption></figure>
 
 
 ==> control-center/setup-guide/organize-teams/add-new-group.md <==
@@ -2427,49 +2524,13 @@ layout:
 
 # Add New Group
 
-Select the text box and provide a name for a high level group within your organization. Press **Enter** or click the checkmark to create the tag.
+Click on the **Add tag** button and a popup will appear. Provide a name for a high level group within your organization. Press **Enter** or click on the Add button to create the tag.
 
-
+<figure><img src="../../../.gitbook/assets/admin-tags-2.png" alt="" width="563"><figcaption></figcaption></figure>
 
 ***
 
 > **Tip** – Create one or two high level groups, then add a new group with more tags if you need more granular access control.
-
-Click  to create smaller groupings.
-
-
-
-
-==> control-center/setup-guide/manage-members/assign-tags-to-members.md <==
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
-# Assign Tags to Members
-
-The final step of this workflow is to assign tags to members. [Tags (or groups)](../organize-teams/) are used to curate which [AI tools](../curate-tools/the-six-ai-tools.md) are accessible by whom. They can also provide groups for analytics and reporting. Members can be assigned multiple tags. Typically tags will define roles or departments in your organization.
-
-Click the **Edit** text under the **ACTION** column for a specific member.
-
-
-
-The blue tags are assigned, and the gray tags are unassigned. The All tag is enabled by default for all members.
-
-Removing every tag from a member will remove their access to all tools and remove them from all reporting groups. You might wish to do this to limit access to a minimal level. Or to remove a member from global reports. Reports can still be produced for such members by naming them explicitly.
-
-
-
-Once changes are complete, click **Save**.
 
 
 ==> control-center/setup-guide/manage-members/add-members.md <==
@@ -2489,9 +2550,9 @@ layout:
 
 # Add Members
 
-Click  and then enter the new member’s **Name** and **Email**.
+Click on the **Add members** button on the Members page and then enter the new member’s **Name** and **Email**. You can also [Import a file](import-file.md) to add multiple members at the same time.
 
-
+<figure><img src="../../../.gitbook/assets/admin-members-2.png" alt="" width="563"><figcaption></figcaption></figure>
 
 
 ==> control-center/setup-guide/manage-members/README.md <==
@@ -2511,33 +2572,82 @@ layout:
 
 # Manage Members
 
+## Overview
+
 Select **Members** from the sidebar. From this page, you can manually add members, import member files, send invites to members, and assign tags to members.
 
-
+<figure><img src="../../../.gitbook/assets/admin-members-1.png" alt=""><figcaption><p>Add people to Members to invite them and manage their roles in your SkyDeck AI</p></figcaption></figure>
 
 At the top of the screen you will see guidance about your account in terms of having enough paid seats to invite more members.
 
-Action buttons, Invite, Add Member, Import File, Revoke, Delete will be active (blue) or inactive (grey) depending on whether they are relevant to the members you have checked (or not checked) in the list below.\
-\
-If you have not selected any members then relevant actions at the moment will be to add a single person via email or import a csv file of people to invite.
+## Available Actions
 
-In the list of members, pay particular attention to the Guide column. This provides a quick suggestion about what you should be doing next with tht particular person.\
+The buttons (Add Member, Export members, Transfer Ownership, Edit, Invite, Revoke, Delete, Cancel) will be active or inactive depending on whether they are relevant to the members you have checked (or not checked) in the list below.
 
+If you have not selected any members then relevant actions at the moment will be to add a single person via email or import a csv file of people to invite, and to export the current members of your workspace.
+
+If you have selected one or more member, some actions are available on the list page such as inviting or revoking access. More advanced features that take up more space to work with are found using the **Edit** button. In particular, this is where Role and Tags can be changed to manage permissions within Control Center and access to tools and integrations via the GenStudio workspace.
+
+All these actions will be discussed more in the following sections, which explain what can be done in the Members page.
+
+## Guide action
+
+In the list of members, pay particular attention to the **Guide** column. This provides a quick suggestion about what you should do next with that particular person.
 
 There are different Guide actions:
 
-1. When a member is added, the Guide action is "Invite". We need to invite that member.
-2. When a member is invited, the Guide action is "Wait". We need to wait for that member to accept their email invitation.
-3. When a member accepts their invitation, the Guide action is "OK". It is ok now, we don't need to do anything more.
-4. When a member's invitation expires, the Guide action is "Re-invite". We need to re-invite them by sending another email.
+1. When a member is added, the Guide action is **Invite**. We need to invite that member.
+2. When a member is invited, the Guide action is **Wait**. We need to wait for that member to accept their email invitation.
+3. When a member accepts their invitation, the Guide action is **OK**. It is ok now, we don't need to do anything more.
+4. When a member's invitation expires, the Guide action is **Re-invite**. We need to re-invite them by sending another email.
 5. When a member is revoked, they are still in the list, and the Guide action is back to Invite because you might want to invite them again next.
 
-More advanced features that take up more space to work with are found using the Edit control in the Action column. In particular, this is where Role and Tags can be changed to manage permissions within Control Center and access to tools and integrations via the GenStudio workspace.&#x20;
+## Roles
 
+A member can have one or multiple roles, each granting different levels of access to the Control Center and GenStudio Workspace. The roles are defined as follows:
 
+* Member: Grants access to the GenStudio Workspace, provided the user has been invited and has set up their account.
+* Admin: Provides access to the Control Center, enabling the management of the account, integrations, security, tags, tools, and members.
+* Owner: Includes all admin permissions, plus the ability to manage billing, delete the account, and transfer ownership to another admin.
 
 
 ==> control-center/setup-guide/manage-members/import-file.md <==
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
+# Import File
+
+Before you import, check that your CSV file has the **name** and **email** fields in the following format:
+
+<figure><img src="https://lh6.googleusercontent.com/UWhLOPa6UdBzO66s17El9htjl_JHS95Y4shkQ9nvuHYo8NlUdvAodSZ8nZ5zNgZbFEg2tjvdRZUm4SFP1rKmXNzoO-zRUzT275VOUNeVqTmyr-2ILt0hfkihnavR3BNzg26VUDHyXklms0eOzTC7Le8" alt=""><figcaption></figcaption></figure>
+
+> **Tip** – Your file must be in CSV format or SkyDeck AI will not accept your import.
+
+***
+
+Select **Import File** tab in the Add member popup. Then click **Upload File** from the pop-up window and locate your CSV file.
+
+<figure><img src="../../../.gitbook/assets/admin-members-3.png" alt="" width="563"><figcaption></figcaption></figure>
+
+If the import is successful, you will see a **Success banner** at the top of the screen, and the page will populate with the new members' information.
+
+{% hint style="info" %}
+You can optionally include a third field named **tags** in the CSV file to assign tags to the added members. If not, you can [assign them later](edit-members.md).
+{% endhint %}
+
+
+==> control-center/setup-guide/manage-members/edit-members.md <==
 ---
 layout:
   title:
@@ -2552,25 +2662,49 @@ layout:
     visible: true
 ---
 
-# Import File
+# Edit Members
 
-Before you import, check that your CSV file has the name and email fields in the following format:
+After adding members to your workspace, you can manage them such as changing displayed names, assigning tags, revoking accesses, etc. Each action may be available or not depending on the selected members and their current states (which is implied by their Guide actions).
 
+### Change displayed name
 
+You can change the name of any member after they are added to your workspace. Select one member from the list, click on the **Edit** button, change the user's name and click **Save**.
 
-> **Tip** – Your file must be in CSV format or SkyDeck AI will not accept your import.
+<figure><img src="../../../.gitbook/assets/edit-members-1.png" alt="" width="563"><figcaption></figcaption></figure>
 
-***
+### Assign Admin role
 
-Select  from the buttons at the top of the page.
+A member can be granted the admin role, and they will be able to access Control Center of your organization. Select one member from the list, click on the **Edit** button, toggle the **Administrator role** button and click **Save**. Then that user can sign in the Control Center and manage the account.
 
-Then click **Choose File** from the pop-up window and locate your CSV file.
+<figure><img src="../../../.gitbook/assets/edit-members-2.png" alt="" width="563"><figcaption></figcaption></figure>
 
+### Assign tags
 
+[Tags (or groups)](../organize-teams/) are used to curate which [AI tools](../curate-tools/system-tools.md) are accessible by whom. They can also provide groups for analytics and reporting. Members can be assigned multiple tags. Typically tags will define roles or departments in your organization.
 
-If the import is successful, you will see a **Success banner** at the top of the screen, and the page will populate with the new member information.
+There are 2 ways to assign tags to a user.
 
+You can directly assign or remove tags of a user on the member list. Choose one member (without needing to select the checkbox), and in the **Tags** column, click the "+" icon. You can then see the current tags assigned to that member and will be able to assign or remove the tags by simply checking/unchecking the tags. The All tag is enabled by default for all members.
 
+<figure><img src="../../../.gitbook/assets/edit-members-3.png" alt="" width="563"><figcaption><p>Assign tags on the member list</p></figcaption></figure>
+
+The second way is to select a member by clicking a checkbox next to their name and click on the **Edit** button. You can then see the same interface as the above option, and you can manage the tags similarly. Once changes are complete, click **Save**.
+
+<figure><img src="../../../.gitbook/assets/admin-members-5.png" alt="" width="563"><figcaption><p>Assigning tags in Edit popup</p></figcaption></figure>
+
+Removing every tag from a member will remove their access to all tools and remove them from all reporting groups. You might wish to do this to limit access to a minimal level. Or to remove a member from global reports. Reports can still be produced for such members by naming them explicitly.
+
+### Revoke access
+
+You can revoke access of your members from GenStudio Workspace, after which they won't be able to it anymore. Select one or several invited members, click on the **Revoke** button and confirm the action. When the access is revoked, the user is still in the member list with the Guide action of **Invite**. You might want to invite them again later, so they are not removed completely.
+
+### Delete a member
+
+If you want to completely remove some members, select them and click on the **Delete** button. Once deleted, they will not appear on the list anymore. You will have to re-add them later if you want to using the [Add member](add-members.md) button.
+
+### Transfer ownership
+
+If the owner wish to transfer the ownership of the account to another user, they can select one admin and click on the **Transfer Ownership** button.
 
 
 ==> control-center/setup-guide/manage-members/invite-members.md <==
@@ -2590,15 +2724,17 @@ layout:
 
 # Invite Members
 
-To invite members to use the [GenStudio workspace](https://eastagile.skydeck.ai/), check the first box next to **NAME** to select all members or select individual checkboxes for individual members.
+After adding members to SkyDeck.AI, they are not able to use your workspace yet. Their current Guide action is **Invite**, which indicates that you as an admin or owner will have to invite them by sending an email.
 
-
-
-Click .png) at the top of the page to send email invites to all of the selected members.
+To invite members to use the [GenStudio workspace](https://eastagile.skydeck.ai/), check the first box next to **Name and Email** to select all members or select individual checkboxes for individual members. Then, the **Invite** button will appear at the top of the page. Click on that button to send email invites to all of the selected members.
 
 In the pop-up window, click **Confirm**.
 
+<figure><img src="../../../.gitbook/assets/admin-members-4.png" alt="" width="563"><figcaption></figcaption></figure>
 
+After that, their Guide action will change to **Wait**, which means that you will be waiting for the members' responses. You can also resend the emails for those users if they miss their previous emails. After a member completes their signup process, their Guide action will change to **OK**, and they will be able to access your GenStudio workspace. You cannot resend an email to a member with Guide action of OK.
+
+If the previous link expires, the Guide action will change to **Re-invite**. For more details about each Guide action, please refer to [.](./ "mention").
 
 
 ==> ai-documentations/llm-evaluation-report.md <==
@@ -2606,13 +2742,14 @@ In the pop-up window, click **Confirm**.
 
 | Model                      | Date       |   Total Response Time (s) |   Tests Passed |   Mean CodeBLEU (0-1) |   Mean Usefulness Score (0-4) |   Mean Functional Correctness Score (0-4) |
 |:---------------------------|:-----------|--------------------------:|---------------:|----------------------:|------------------------------:|------------------------------------------:|
-| gpt-4o-mini                | 2024-10-18 |                   180.098 |            113 |              0.331988 |                       3.66463 |                                   3.65854 |
-| gemini-1.5-pro             | 2024-10-18 |                   533.694 |            104 |              0.338663 |                       3.55488 |                                   3.59756 |
-| claude-3-5-sonnet-20240620 | 2024-10-18 |                   339.244 |            112 |              0.300819 |                       3.68293 |                                   3.65854 |
-| gpt-4o                     | 2024-10-18 |                   201.997 |            128 |              0.314057 |                       3.75    |                                   3.71951 |
-| o1-mini                    | 2024-10-18 |                   773.989 |            130 |              0.335063 |                       3.71951 |                                   3.71951 |
-| o1-preview                 | 2024-10-18 |                  2207.5   |            127 |              0.322271 |                       3.60366 |                                   3.60976 |
-| claude-3-opus-20240229     | 2024-10-18 |                  1056.03  |            114 |              0.322514 |                       3.7439  |                                   3.67683 |
+| o1-preview                 | 2024-10-23 |                  2109.27  |            134 |              0.317454 |                      3.62195  |                                  3.60976  |
+| o1-mini                    | 2024-10-23 |                   752.803 |            133 |              0.339456 |                      3.71341  |                                  3.70122  |
+| gpt-4o                     | 2024-10-23 |                   323.091 |            125 |              0.320372 |                      3.69512  |                                  3.70122  |
+| gpt-4o-mini                | 2024-10-23 |                   178.682 |            116 |              0.332857 |                      3.66463  |                                  3.62195  |
+| claude-3-5-sonnet-20240620 | 2024-10-23 |                   327.858 |            110 |              0.296821 |                      3.60976  |                                  3.57927  |
+| claude-3-5-sonnet-20241022 | 2024-10-23 |                   344.526 |            117 |              0.324993 |                      3.69512  |                                  3.65244  |
+| gemini-1.5-pro             | 2024-10-23 |                   557.475 |            106 |              0.335997 |                      3.53659  |                                  3.4878   |
+| gemini-1.5-flash           | 2024-10-23 |                   726.373 |              1 |              0.270527 |                      0.939024 |                                  0.890244 |
 
 **Total Response Time (s):** The total time taken by the model to generate all the outputs.
 
@@ -2640,15 +2777,16 @@ In the pop-up window, click **Confirm**.
 
 This directory contains key documents related to LLM:
 
-1. [LLM Evaluation Report](./llm-evaluation-report.md)
-2. [SkyDeck.ai LLM Ready Documentation](./skydeckai_llm_ready_documentation.md)
+1. [LLM Evaluation Report](llm-evaluation-report.md)
+2. [SkyDeck.ai LLM Ready Documentation](skydeckai-llm-ready-documentation.md)
 
 ## LLM Evaluation Report
 
 Presents a comparative analysis of various LLM models, including:
-- Performance metrics (response time, tests passed)
-- Quality assessments (CodeBLEU, usefulness, functional correctness)
-- Detailed explanations of scoring methodologies
+
+* Performance metrics (response time, tests passed)
+* Quality assessments (CodeBLEU, usefulness, functional correctness)
+* Detailed explanations of scoring methodologies
 
 ## LLM-Ready Documentation
 
@@ -2664,7 +2802,7 @@ These documents offer insights into LLM performance and provide resources for LL
 
 This is where you interact with your Large Language Model (LLM) Artificial Intelligence (AI) models. You do so in a conversational _chat_ fashion. You can 'talk' directly to your models using the "default" tool. This is how your session starts out.
 
-
+<figure><img src="../.gitbook/assets/conversation-start.png" alt=""><figcaption><p>The beginning of a conversation</p></figcaption></figure>
 
 Start a conversation by clicking the **New conversation** button, or you can resume an existing conversation by choosing one on the Sidebar.
 
@@ -2674,17 +2812,17 @@ Your input should be entered in the input field at the bottom of the screen. You
 
 You can select which model is to be used from the middle menu below the input field. You can change your model choice at any time. Some models will be more appropriate than others. For example, GPT-4 is one of the most advanced models to date and tends to produce more carefully thought out responses. However, Anthropic's Claude models can support much larger context windows (about as much as an entire book) which allows you to submit large documents in your prompt for review, background, or modification.
 
-
+<figure><img src="../.gitbook/assets/models-menu.png" alt=""><figcaption><p>Choose your LLM for different messages</p></figcaption></figure>
 
 ### Regenerate and Edit the prompt
 
 If you do not like the result your model produces, you can ask it to regenerate the response using the **Regenerate** button. You can also change your model and send another response.
 
-
+<figure><img src="../.gitbook/assets/regenerate.png" alt="" width="563"><figcaption><p>Regenerate AI response</p></figcaption></figure>
 
 Skydeck.AI also let you edit your prompt and try again. You can click the **Edit message** button, change the input and resubmit.
 
-
+<figure><img src="../.gitbook/assets/edit-message.png" alt="" width="563"><figcaption></figcaption></figure>
 
 ### Sending non-AI messages
 
@@ -2692,13 +2830,13 @@ You can also sending your messages without asking the AI, and it will just appea
 
 To send a non-AI message, simply enter the texts in the input field and click **Send chat message** button, or you can press **Ctrl + Enter** while focusing the input.
 
-
+<figure><img src="../.gitbook/assets/chat-buttons.png" alt=""><figcaption><p><strong>Send chat message (1) and Ask AI (2) buttons</strong></p></figcaption></figure>
 
 ### Retrieve the chat content
 
 You can copy all the text of your prompts and responses to your clipboard using the icon in the upper right hand side. This is a handy way to include your work in other documents. You can also download the conversation content into a markdown file by clicking the **Download** button.
 
-
+<figure><img src="../.gitbook/assets/copy-download-conversation.png" alt="" width="326"><figcaption><p>Download (1) and Copy (2) a conversation</p></figcaption></figure>
 
 © 2023 SkyDeck AI Inc.
 
@@ -2731,23 +2869,33 @@ When snapshot of a conversation is created, the system captures the current stat
 
 To create a snapshot, choose a conversation that you want to share from the left sidebar and click the blue **Collaborate** button in the upper right corner.
 
-
+<figure><img src="../.gitbook/assets/public_snapshot1.png" alt=""><figcaption><p>Click the Collaborate button</p></figcaption></figure>
 
 A popup will appear. Choose the **Share publicly** tab and then click **Create new snapshot**. You have to options: **Share anonymously** or **Share with your name**. Choose the former if you do not want to include your name in the snapshot, and choose the latter if you are willing to share it.
+
+<figure><img src="../.gitbook/assets/public_snapshot2.png" alt=""><figcaption><p>Click Create new snapshot and choose a sharing option</p></figcaption></figure>
+
+{% hint style="info" %}
 Once created, the snapshot will not include changes from the conversation, such as message addition or deletion.
+{% endhint %}
 
 A unique URL is generated for each snapshot so that you can give it to anyone to allow access to the conversation snapshot. The URL generation process employs cryptographic hashing techniques to ensure the uniqueness and integrity of each link.
 
-
+<figure><img src="../.gitbook/assets/public_snapshot3.png" alt=""><figcaption></figcaption></figure>
 
 ### Snapshot View
 
 If you choose **Share anonymously**, the participants' names of the conversation will not appear. Instead, you will see User 1, User 2... as the owner of the messages.
 
-
+<figure><img src="../.gitbook/assets/public_snapshot4.png" alt=""><figcaption><p>Anonymized View</p></figcaption></figure>
 
 If you choose **Share with your name**, the participants' names will appear.
+
+<figure><img src="../.gitbook/assets/public_snapshot5.png" alt=""><figcaption><p>Unanonymized View</p></figcaption></figure>
+
+{% hint style="info" %}
 If you wish to anonymize the participants later, you have to create another snapshot. You can [disable](public-snapshots.md#disable-a-snapshot) or [delete](public-snapshots.md#delete-a-snapshot) the current one later.
+{% endhint %}
 
 ### Continue from a Snapshot
 
@@ -2755,19 +2903,19 @@ When someone accesses your snapshot, they are able to continue the conversation 
 
 If you don't have one, you can sign up by entering your email address, and we will guide you through the process of [Setting up an account](../control-center/setup-guide/). After that, you can continue the snapshot once signed up.
 
-
+<figure><img src="../.gitbook/assets/public_snapshot6.png" alt=""><figcaption></figcaption></figure>
 
 ### Disable a Snapshot
 
 Users have the ability to toggle the accessibility of a snapshot via the management interface. Disabling a snapshot renders the URL inactive, and any attempt to access the URL afterwards will be responded with not found resources. You can choose to re-enable it later.
 
-
+<figure><img src="../.gitbook/assets/public_snapshot7.png" alt=""><figcaption><p>Click the "Eye" icon to disable/enable a Snapshot</p></figcaption></figure>
 
 ### Delete a Snapshot
 
 You can choose to delete a snapshot if you don't want to share it anymore. Be cautious that this action is irreversible, which means that you cannot regain the deleted snapshot with the same URL. When clicking the "Trash" icon, you have to confirm the deletion to avoid unintended removal.
 
-
+<figure><img src="../.gitbook/assets/public_snapshot8.png" alt=""><figcaption><p>Click the "Trash" icon to delete a Snapshot</p></figcaption></figure>
 
 
 
@@ -2780,37 +2928,37 @@ SkyDeck.AI allows you to add different types of documents and images to your con
 
 To add a document, open a conversation and click **Add** next to the prompt input. Then, choose **Upload documents**. We are currently supporting these files extensions: PDF, DOC, DOCX, PPTX, and simple text files.
 
-
+<figure><img src="../.gitbook/assets/image (57).png" alt="" width="563"><figcaption></figcaption></figure>
 
 The document will be attached with your message and sent to LLM. You can see the file associated with the message and you can even re-download it.
 
-
+<figure><img src="../.gitbook/assets/attached-document.png" alt=""><figcaption></figcaption></figure>
 
 ### Add an image
 
 To add an image, click **Add** and then, choose **Upload images**. We are currently supporting these files extensions: JPEG, JPG, WEBP, PNG.
 
-
+<figure><img src="../.gitbook/assets/image (58).png" alt="" width="563"><figcaption></figcaption></figure>
 
 The image will be attached with your message and sent to LLM. Additionally, you can also click on the image, which will open a new popup window displaying it in more clearly.
 
+<figure><img src="../.gitbook/assets/attached-image.png" alt=""><figcaption></figcaption></figure>
 
-
-
+<figure><img src="../.gitbook/assets/preview-image.png" alt="" width="375"><figcaption><p>View the image directly in GenStudio</p></figcaption></figure>
 
 ### Restrictions <a href="#h_52e5a07158" id="h_52e5a07158"></a>
 
 * Total size of all files per message: up to 20MB
 
-
+<figure><img src="../.gitbook/assets/error1.png" alt="" width="490"><figcaption></figcaption></figure>
 
 * If the file is less than 20MB but still exceeds the token limit, another error will be displayed:
 
-
+<figure><img src="../.gitbook/assets/error2.png" alt=""><figcaption></figcaption></figure>
 
 * Total number of files: up to 10
 
-
+<figure><img src="../.gitbook/assets/error3.png" alt="" width="488"><figcaption></figcaption></figure>
 
 ### Rememberizer - Extending AI knowledge
 
@@ -2826,36 +2974,45 @@ SkyDeck.AI is committed to breaking down silos and promoting a culture of collab
 
 To add collaborators to any existing conversation, select the conversation from the left sidebar and click the blue **Collaborate** button in the upper right corner.
 
-
+<figure><img src="../.gitbook/assets/public_snapshot1.png" alt=""><figcaption><p>Click the Collaborate button</p></figcaption></figure>
 
 A popup will appear with the default tab of **Invite to collaborate**. Toggle the **Collaboration** slider and then click the blue **Copy link** button.
+
+{% hint style="info" %}
 Should you wish to discontinue collaboration at any point, simply switch the slider to the off position. Please note that this will invalidate the current link, and it will be different if you generate a new one.
+{% endhint %}
 
-
+<figure><img src="../.gitbook/assets/collab2.png" alt="" width="563"><figcaption><p>Enable collaboration and copy the link</p></figcaption></figure>
 
 With this link, you can invite any colleagues with ease. There is no need to add each collaborator's email address manually.
+
+{% hint style="info" %}
 All invitees must have an account registered in the same SkyDeck.AI workspace as the conversation owner. This protects organizational assets and confidential information that may be contained within the GenStudio Workspace conversation.
-You can further enhance collaboration by synchronizing Slack channels with your GenStudio conversations. To learn more, please visit [Slack Synchronization](slack-synchronization.md) and [Slack Integration](../integrations/slack-integration.md).
+{% endhint %}
+
+{% hint style="info" %}
+You can further enhance collaboration by synchronizing Slack channels with your GenStudio conversations. To learn more, please visit [Slack Synchronization](slack-synchronization.md) and [Slack Integration](../integrations/app-integrations/slack-integration.md).
+{% endhint %}
 
 ### Collaborator View
 
 Collaborators can only see the conversation they have been invited to. They will not be able to see the rest of your GenStudio conversations. To include them in additional conversations, you must provide separate links for each respective dialogue.
 
-
+<figure><img src="../.gitbook/assets/collab3.png" alt="" width="563"><figcaption></figcaption></figure>
 
 Invited collaborators can exit a conversation whenever they want by clicking the **Collaborate** button and then the red **Leave this conversation** button.
 
-
+<figure><img src="../.gitbook/assets/collab4.png" alt="" width="563"><figcaption></figcaption></figure>
 
 ### Your View
 
 Once a colleague contributes to the conversation, you will see a notification bubble on the conversation in your GenStudio Workspace.
 
-
+<figure><img src="../.gitbook/assets/collab6.png" alt="" width="563"><figcaption></figcaption></figure>
 
 Each individual's input or contributions will be marked by their respective initials. Hovering over the initials will reveal your colleague's name.
 
-
+<figure><img src="../.gitbook/assets/collab5.png" alt=""><figcaption></figcaption></figure>
 
 ### Working with your colleagues
 
@@ -2863,7 +3020,7 @@ In GenStudio conversations, not every message needs to be sent to AI. Sending no
 
 You can simply send non-AI messages as discussed in this [page](conversations.md), but collaboration enables a more powerful way to interact with you colleagues. When writing a message, you can use the @ notation followed by the member's name to mention them for the next message. This method ensures that specific individuals are alerted about pertinent information, updates, or actions that require their attention. It streamlines communication by directly tagging the involved parties, reducing the chance of important messages being overlooked and ensuring that everyone stays informed and engaged.
 
-
+<figure><img src="../.gitbook/assets/collab-mentioning.png" alt=""><figcaption></figcaption></figure>
 
 
 ==> genstudio-workspace/web-browsing.md <==
@@ -2871,7 +3028,7 @@ You can simply send non-AI messages as discussed in this [page](conversations.md
 
 Scraping content from websites to include in your prompts is a very helpful feature of GenStudio. Any URL you include in curly brackets will be replaced by the content scraped from that site. For example, you could write "Summarize the most important news from the following \{{https://nytimes.com\}}."
 
-
+<figure><img src="../.gitbook/assets/web-scraping1.png" alt=""><figcaption><p>Web browsing with SkyDeck AI</p></figcaption></figure>
 
 © 2023 SkyDeck AI Inc.
 
@@ -2880,17 +3037,20 @@ Scraping content from websites to include in your prompts is a very helpful feat
 # Slack Synchronization
 
 By integrating with Slack, you can send your GenStudio conversations to a Slack channel and vice versa. This allows your team to collaborate seamlessly.
-This page will discuss about how you can synchronize between Slack and GenStudio. To learn more about how to set up Slack, please visit [Slack Integration](../integrations/slack-integration.md).
+
+{% hint style="info" %}
+This page will discuss about how you can synchronize between Slack and GenStudio. To learn more about how to set up Slack, please visit [Slack Integration](../integrations/app-integrations/slack-integration.md).
+{% endhint %}
 
 ### Sending GenStudio conversations messages to Slack
 
 Once you have connect a conversation with a public or private Slack channel, SkyDeck.AI will send all the current messages to that channel. This will only be done once at the beginning of the connection.
 
-
+<figure><img src="../.gitbook/assets/sync-to-slack.png" alt="" width="563"><figcaption></figcaption></figure>
 
 After that, for every new message that is sent to the conversation, it will also be sent to that Slack channel as well as its response.
 
-
+<figure><img src="../.gitbook/assets/new-msg-from-conv.png" alt="" width="563"><figcaption></figcaption></figure>
 
 ### Sending Slack messages to GenStudio conversations
 
@@ -2900,19 +3060,19 @@ To send a message from Slack to the connected conversation:
 2. Tag the **SkyDeck.ai** app and write your prompt.
 3. The message will be sent to GenStudio and you will receive the response back.
 
-
+<figure><img src="../.gitbook/assets/new-msg-from-slack (1).png" alt="" width="563"><figcaption><p>Open the thread (1) - Send a message (2) - Response from GenStudio (3)</p></figcaption></figure>
 
 Here is how the message will appear on GenStudio:
 
-
+<figure><img src="../.gitbook/assets/gen-view.png" alt="" width="563"><figcaption></figcaption></figure>
 
 ### Formatting
 
 Markdown does not work automatically in Slack when we send content from GenStudio Collaboration. So you will see `*hello*` instead of \*hello\*. This is a recent change in Slack. But there is a solution. In the desktop app you may manually turn markdown recognition \*on\* in the Advanced settings in Slack.
 
+<figure><img src="../.gitbook/assets/Screenshot 2023-12-15 at 10.26.02 PM (1).png" alt=""><figcaption><p>Select "Format messages with markup"</p></figcaption></figure>
 
-
-
+<figure><img src="../.gitbook/assets/Screenshot 2023-12-15 at 10.26.58 PM.png" alt=""><figcaption><p>An example of the improvement seen from turning on "Format messages with markdown".</p></figcaption></figure>
 
 
 ==> genstudio-workspace/tools/README.md <==
@@ -2929,7 +3089,7 @@ The Tool feature helps to construct more complex prompts easily. Generally, a to
 
 To use a tool, click on **Default tool** button below the prompt input field and you will see a list of available tools in the right column of the page. When you click on one of these tools, the input section is modified and you will see the inputs that the tool expects. After you fill these in and submit your choices, the tool will respond with output in your current conversation. You will then fall back into the default conversation mode and you can interact with the response from your tool with replies or follow up.
 
-
+<figure><img src="../../.gitbook/assets/tools-menu.png" alt=""><figcaption><p>The Tools menu</p></figcaption></figure>
 
 Within a conversation you might find you benefit from using many tools. You might start with one tool to get strategy advise. Then you might use a SQL tool to write a query to produce some follow up analysis. And finally you might use a writing tool to take your results and write them up in fashion targeted to the audience for your results.
 
@@ -2945,7 +3105,7 @@ In the following sections, we will show you how to use our default tools for you
 
 Strategy Consultant serves as your digital advisory partner, delivering insightful recommendations to address your unique challenges and requests. Drawing from a wealth of business training data, this tool guides you through consultations that simulate the thought processes of high-end consultants. This LLM offers a holistic view of opportunities, risks, and actionable strategies to help you make decisions that are informed, strategic, and aligned with your objectives.
 
-
+<figure><img src="../../../.gitbook/assets/strategy-consultant-1.png" alt=""><figcaption></figcaption></figure>
 
 ## What Type of Questions Can Strategy Consultant Help With?
 
@@ -3019,23 +3179,23 @@ description: Follow along with a step-by-step demonstration of Strategy Consulta
 
 In this example, we are asking Strategy Consultant that will help a company retain employees during a corporate transition.
 
-
+<figure><img src="../../../.gitbook/assets/strategy-consultant-3.png" alt=""><figcaption></figcaption></figure>
 
 Strategy Consultant starts by decomposing the question down into a few sub-questions:
 
-
+<figure><img src="../../../.gitbook/assets/strategy-consultant-4.png" alt=""><figcaption></figcaption></figure>
 
 The AI then addresses each of those sub-questions:
 
-
+<figure><img src="../../../.gitbook/assets/strategy-consultant-5.png" alt=""><figcaption></figcaption></figure>
 
 And finally, Strategy Consultant asks for specific types of additional information that would help improve the strategy to match your specific needs:
 
-
+<figure><img src="../../../.gitbook/assets/strategy-consultant-6.png" alt=""><figcaption></figcaption></figure>
 
 We then added some extra background information and context, so the AI would better understand the situation:
 
-
+<figure><img src="../../../.gitbook/assets/strategy-consultant-7.png" alt=""><figcaption></figcaption></figure>
 
 
 ==> genstudio-workspace/tools/strategy-consultant/how-to-use.md <==
@@ -3043,7 +3203,7 @@ We then added some extra background information and context, so the AI would bet
 
 To get started with Strategy Consultant, you just need to provide your questions or prompts!
 
-
+<figure><img src="../../../.gitbook/assets/strategy-consultant-2.png" alt=""><figcaption></figcaption></figure>
 
 The AI will follow a structured flow of operations to generate insightful responses:
 
@@ -3065,11 +3225,11 @@ description: Follow along with a step-by-step demonstration of Legal Agreement R
 
 In this example we are asking Legal Agreement Review to review this section of an NDA to see if there are any loopholes.
 
-
+<figure><img src="../../../.gitbook/assets/legal-agreement-review-3.png" alt=""><figcaption></figcaption></figure>
 
 The AI examines the clause and then outputs a thorough answer that looks at the clause from a few different angles.
 
-
+<figure><img src="../../../.gitbook/assets/legal-agreement-review-4.png" alt=""><figcaption></figcaption></figure>
 
 
 ==> genstudio-workspace/tools/legal-agreement-review/README.md <==
@@ -3077,7 +3237,7 @@ The AI examines the clause and then outputs a thorough answer that looks at the 
 
 Legal Agreement Review is your on-demand legal assistant, meticulously scanning contracts and agreements for potential pitfalls, inconsistencies, or non-standard clauses. By leveraging its vast knowledge base, Legal Agreement Review can help ensure that your legal documents are robust and compliant, offering clarity on intricate terms and providing recommendations that align with context.
 
-
+<figure><img src="../../../.gitbook/assets/legal-agreement-review-1.png" alt=""><figcaption></figcaption></figure>
 
 ## What Type of Questions Can Legal Agreement Review Help With?
 
@@ -3137,7 +3297,7 @@ Legal Agreement Review is your on-demand legal assistant, meticulously scanning 
 
 To get started with Legal Agreement Review provide an **Introduction** prompt, which is just any background information, questions, or specific concerns you want to address and the **Clause**, or section of the legal text you want to review.
 
-
+<figure><img src="../../../.gitbook/assets/legal-agreement-review-2.png" alt=""><figcaption></figcaption></figure>
 
 After the initial review, the AI may ask for more information or context to improve it's recommendations for a clause. As always, the more specifics you can provide, the better.
 
@@ -3160,27 +3320,27 @@ In this example, we are interested in learning about Python Programming at an un
 * **Reasoning Framework** – Practical (step-by-step, actionable insights)
 * **Using Emojis** – Yes
 
-
+<figure><img src="../../../.gitbook/assets/teach-me-anything-ex-1.png" alt=""><figcaption></figcaption></figure>
 
 Teach Me Anything generates a curriculum:
 
-
+<figure><img src="../../../.gitbook/assets/teach-me-anything-ex-2.png" alt=""><figcaption></figcaption></figure>
 
 Once the lesson is started, the AI will work through each section of the curriculum:
 
-
+<figure><img src="../../../.gitbook/assets/teach-me-anything-ex-3.png" alt=""><figcaption></figcaption></figure>
 
 At any time you can ask for more help or test your understanding, and Teach Me Anything will cover the topic or question with more depth:
 
-
+<figure><img src="../../../.gitbook/assets/teach-me-anything-ex-4.png" alt=""><figcaption></figcaption></figure>
 
 You can then test your understanding:
 
-
+<figure><img src="../../../.gitbook/assets/teach-me-anything-ex-5.png" alt=""><figcaption></figcaption></figure>
 
 When you are happy with your progress, jump back into the next curriculum topic any time:
 
-
+<figure><img src="../../../.gitbook/assets/teach-me-anything-ex-6.png" alt=""><figcaption></figcaption></figure>
 
 
 ==> genstudio-workspace/tools/teach-me-anything/README.md <==
@@ -3188,7 +3348,7 @@ When you are happy with your progress, jump back into the next curriculum topic 
 
 Teach Me Anything is an LLM tutor offering personalized learning experiences on any topic you can imagine. Tailor each lesson to your preferences, selecting the teaching style, linguistic nuances, and depth of content. Then dive into /test mode, and the AI will asses your grasp of the subject.
 
-
+<figure><img src="../../../.gitbook/assets/teach-me-anything-1.png" alt=""><figcaption></figcaption></figure>
 
 ## What Type of Questions Can Teach Me Anything Help With?
 
@@ -3215,7 +3375,10 @@ Teach Me Anything has a wide scope, so there’s no end to what kinds of lessons
 # How to Use
 
 Teach Me Anything offers 8 different categories to help you create a personalized learning experience. Here's an overview of each field, along with some example selections you might consider:
+
+{% hint style="info" %}
 These examples are not exhaustive, you can enter anything that you think is appropriate, and the AI will adjust.
+{% endhint %}
 
 * **Lesson** – the specific subject or topic you want to learn about.
   * The History of Renaissance Art
@@ -3251,19 +3414,22 @@ These examples are not exhaustive, you can enter anything that you think is appr
   * Practical (step-by-step, actionable insights)
 * **Using Emojis** – Incorporating emojis to add an expressive or illustrative element to the content.
   * True or False
+
+{% hint style="info" %}
 You don't have to fill out every category, but make sure to remove the default text if you don't want it to impact the results of your lesson.
+{% endhint %}
 
-
+<figure><img src="../../../.gitbook/assets/teach-me-anything-2.png" alt=""><figcaption></figcaption></figure>
 
 After you've personalized these categories and pressed the **Generate button**, Teach Me Anything will reiterate your preferences and tell you how to create a lesson plan.
 
-
+<figure><img src="../../../.gitbook/assets/teach-me-anything-3.png" alt=""><figcaption></figcaption></figure>
 
 ### /plan
 
 The `/plan` command asks the AI to create a lesson plan that matches your preferences. The output will vary widely depending on your initial inputs.
 
-
+<figure><img src="../../../.gitbook/assets/teach-me-anything-4.png" alt=""><figcaption></figcaption></figure>
 
 ### /change
 
@@ -3277,19 +3443,19 @@ The `/skip` command allows you to skip a certain part of the lesson For example,
 
 The `/start` command is used to officially start the lesson once you are happy with your preferences and the lesson plan.
 
-
+<figure><img src="../../../.gitbook/assets/teach-me-anything-5.png" alt=""><figcaption></figcaption></figure>
 
 ### /continue
 
 The `/continue` command is used to move the lesson forward to the next topic.
 
-
+<figure><img src="../../../.gitbook/assets/teach-me-anything-6.png" alt=""><figcaption></figcaption></figure>
 
 ### /test
 
 The `/test` command is used to test your understanding of a lesson section. Teach Me Anything will create questions or open-ended dialogue to test if you fully comprehend the curriculum or need more review/practice.
 
-
+<figure><img src="../../../.gitbook/assets/teach-me-anything-7.png" alt=""><figcaption></figcaption></figure>
 
 
 ==> genstudio-workspace/tools/sql-assistant/example-query-debugging.md <==
@@ -3301,13 +3467,13 @@ description: Follow along with a step-by-step demonstration of SQL Assistant
 
 In this example, we are asking SQL Assistant to debug a query that is not working as intended.
 
+<figure><img src="../../../.gitbook/assets/sql-assistant-3.png" alt="" width="563"><figcaption></figcaption></figure>
 
-
-
+<figure><img src="../../../.gitbook/assets/sql-assistant-4.png" alt="" width="563"><figcaption></figcaption></figure>
 
 SQL Assistant identifies what is wrong and provides the correct query needed to fetch the intended customer emails.
 
-
+<figure><img src="../../../.gitbook/assets/sql-assistant-5.png" alt="" width="563"><figcaption></figcaption></figure>
 
 
 ==> genstudio-workspace/tools/sql-assistant/README.md <==
@@ -3315,7 +3481,7 @@ SQL Assistant identifies what is wrong and provides the correct query needed to 
 
 SQL Assistant is an innovative SQL database LLM that serves as your virtual database consultant, aiding in query optimization, schema design, and data management tasks. Whether you're troubleshooting performance bottlenecks or seeking advice on relational design principles, SQL Assistant empowers you to harness the full potential of your data through efficient database operations.
 
-
+<figure><img src="../../../.gitbook/assets/sql-assistant-1.png" alt=""><figcaption></figcaption></figure>
 
 ## What Type of Questions Can SQL Assistant Help With?
 
@@ -3338,7 +3504,7 @@ To get started with SQL Assistant, you will need to provide a Data Definition La
 * **DDL** **segment** – a subset of SQL commands, objects, attributes, and constraints that is focused on defining or modifying the structure of database objects.
 * **Task description** – instructions related to the DDL that tells SQL Assistant what you need help with.
 
-
+<figure><img src="../../../.gitbook/assets/sql-assistant-2.png" alt=""><figcaption></figcaption></figure>
 
 The default placeholder prompt that loads whenever you create a new chat with SQL Assistant, models how to create your own prompts:
 
@@ -3351,7 +3517,7 @@ The default placeholder prompt that loads whenever you create a new chat with SQ
 
 Image Generator uses OpenAI's DALL-E model to produce visual content based on textual prompts. Unlike traditional LLMs that generate textual outputs, this specialized model can understand descriptive prompts and translate them into corresponding images.
 
-
+<figure><img src="../../../.gitbook/assets/image-generator-1.png" alt=""><figcaption></figcaption></figure>
 
 Its capabilities encompass a wide range of applications, including:
 
@@ -3372,15 +3538,20 @@ description: Follow along with a step-by-step demonstration of Image Generator
 # Example – Winter Wonderland
 
 In this example, we are being as specific as possible to create an artistic image:
+
+<figure><img src="../../../.gitbook/assets/image-generator-2.png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="info" %}
 The image link will expire in 1 hour. Save the picture before it expires if you would like to use it or review it later.
+{% endhint %}
 
 Image Generator created the following image:
 
-
+<figure><img src="../../../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
 
 If you don't like the exact composition of the image, click **Regenerate** to create a new image with the same prompt:
 
-
+<figure><img src="../../../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
 
 
 ==> genstudio-workspace/tools/image-generator/how-to-use.md <==
@@ -3397,11 +3568,14 @@ To get started with Image Generator, you need to provide a description of the im
 * **Scenery** – Specify different types of scenery like sunset, beach, mountain, etc.
 * **Moods** – Specify different moods like happy, sad, angry, etc.
 * **Realism** – Specify the degree of accuracy or abstractness like photorealistic, cartoonish, impressionist, etc.
+
+{% hint style="info" %}
 You can only generate one image per request based on the provided description.
+{% endhint %}
 
 Remember, the more specific your description, the more accurate the generated image will be. For example, instead of just saying "cat", you might say "a large orange cat sitting on a blue sofa". This will give the model a more specific image to generate.
 
-.png>).png>)
+![](<../../../.gitbook/assets/image (43).png>)![](<../../../.gitbook/assets/image (44).png>)
 
 
 ==> genstudio-workspace/tools/pair-programmer/README.md <==
@@ -3409,7 +3583,7 @@ Remember, the more specific your description, the more accurate the generated im
 
 Pair Programmer is an advanced AI programming tool that acts as your coding companion, providing immediate assistance with code-related queries, debugging challenges, and optimization tips. Whether you're grappling with complex algorithms or seeking best-practice advice, Pair Programmer is designed to improve your coding and streamline your development process, making software creation more efficient and intuitive.
 
-
+<figure><img src="../../../.gitbook/assets/pair-programmer.png" alt=""><figcaption></figcaption></figure>
 
 ## What Type of Questions Can Pair Programmer Help With?
 
@@ -3498,7 +3672,7 @@ To get started with Pair Programmer, you will need to specify programming langua
 
 Once you submit your programming language, you will receive a message similar to the one below (although the exact wording may differ) that details what Pair Programmer has to offer and provides some useful commands:
 
-
+<figure><img src="../../../.gitbook/assets/pair-programmer-2.png" alt=""><figcaption></figcaption></figure>
 
 If everything looks correct, you can then write your programming question into the prompt area.
 
@@ -3518,9 +3692,12 @@ For example, you could input`/implement task=TaskDescription`. Please replace `T
 #### Example
 
 Let's say you want to implement a program that calculates the sum of all elements in a list.
+
+{% code overflow="wrap" %}
 ||CODE_BLOCK||
 /implement task=Create a Python function that calculates the sum of all elements in a list. The function should take a list of integers as input and return an integer as output.
 ||CODE_BLOCK||
+{% endcode %}
 
 ### /modify
 
@@ -3529,6 +3706,8 @@ The `/modify` command is used when you want changes or adjustments made to an ex
 #### Example
 
 For example, imagine you have a Python function that calculates the area of a rectangle, and you want to modify it to calculate the area of a circle instead.
+
+{% code overflow="wrap" %}
 ||CODE_BLOCK||
 /modify code=
 def rectangle_area(length, width):
@@ -3537,6 +3716,7 @@ def rectangle_area(length, width):
 modifications=
 Change the function to calculate the area of a circle instead, using the formula `pi * radius^2`. The function should take a single argument for the radius.
 ||CODE_BLOCK||
+{% endcode %}
 
 ### /test
 
@@ -3545,6 +3725,8 @@ The `/test` command is used when you want me to create test cases for a given pr
 #### Example
 
 Let's say you have a Python function that calculates the factorial of a number and you want to create test cases for it
+
+{% code overflow="wrap" %}
 ||CODE_BLOCK||
 /test code=
 def factorial(n):
@@ -3556,6 +3738,7 @@ def factorial(n):
 description=
 This function calculates the factorial of a given number. The factorial of a number n is the product of all positive integers less than or equal to n.
 ||CODE_BLOCK||
+{% endcode %}
 
 
 ==> genstudio-workspace/tools/pair-programmer/example-python-script-assistance.md <==
@@ -3567,27 +3750,27 @@ description: Follow along with a step-by-step demonstration of Pair Programmer
 
 In this example, we are asking Pair Programmer to help with a Python script that is not working as intended in relation to large CSV files.
 
-
+<figure><img src="../../../.gitbook/assets/pair-programmer-3.png" alt=""><figcaption></figcaption></figure>
 
 The tool takes a second to analyze your prompt. Every response is customized, so no prompts will have the exact same output. For this prompt, Pair Programmer started with Requirements that reiterated what we asked.
 
-
+<figure><img src="../../../.gitbook/assets/pair-programmer-4.png" alt=""><figcaption></figcaption></figure>
 
 Sometimes you may ask for a solution that does not exist. Pair Programmer may let you know if it can provide an adequate answer and how the tool is going to answer your prompt.
 
-
+<figure><img src="../../../.gitbook/assets/pair-programmer-5.png" alt=""><figcaption></figcaption></figure>
 
 For our Python script prompt, Pair Programmer is explaining different ways we can modify our script, complete with code examples.
 
-
+<figure><img src="../../../.gitbook/assets/pair-programmer-6.png" alt=""><figcaption></figcaption></figure>
 
 Pair Programmer may also provide us some follow-up questions so that AI can understand the specific needs of your situation. You can then ask those questions to request further assistance.
 
-
+<figure><img src="../../../.gitbook/assets/pair-programmer-7.png" alt=""><figcaption></figcaption></figure>
 
 Pair Programmer then provides updated strategies that better suit your needs. There may be more follow-up questions. As you answer more questions and provide further information, your output will be more specific. Pair Programmer automatically understands the context for each additional query.
 
-
+<figure><img src="../../../.gitbook/assets/pair-programmer-8 (1).png" alt=""><figcaption></figcaption></figure>
 
 
 ==> genstudio-workspace/data-security/data-loss-prevention.md <==
@@ -3687,12 +3870,18 @@ This documentation outlines the JSON structures supported by SkyDeck AI for two 
 #### LLM Tools
 
 LLM (Large Language Model) Tools are designed to facilitate user interaction with LLM models by sending user input to predefined prompts.
+
+{% content-ref url="json-format-for-llm-tools.md" %}
 [json-format-for-llm-tools.md](json-format-for-llm-tools.md)
+{% endcontent-ref %}
 
 #### Smart Tools
 
 Smart Tools extend the capabilities of LLM Tools by incorporating Python code execution for data extraction and processing. The integration of Python enables users to perform complex calculations, data transformations, and other advanced operations beyond the scope of standard LLM Tools functionality.
+
+{% content-ref url="json-format-for-smart-tools.md" %}
 [json-format-for-smart-tools.md](json-format-for-smart-tools.md)
+{% endcontent-ref %}
 
 
 ==> developers/develop-your-own-tools/example-text-based-ui-generator.md <==
@@ -3712,15 +3901,15 @@ Here is an example of its usage.\
 \
 User Input:
 
-
+<figure><img src="../../.gitbook/assets/Screenshot 2024-05-07 at 9.26.08 PM.png" alt=""><figcaption><p>Sample input using the specified input fields.</p></figcaption></figure>
 
 Generated Output:
 
-
+<figure><img src="../../.gitbook/assets/Screenshot 2024-05-07 at 9.26.33 PM.png" alt=""><figcaption><p>A text-based user interface with text generated by our app.</p></figcaption></figure>
 
 You add your custom tool json inside Genstudio.
 
-
+<figure><img src="../../.gitbook/assets/Screenshot 2024-05-07 at 9.44.56 PM.png" alt=""><figcaption><p>Upload json to define a custom tool</p></figcaption></figure>
 
 \
 \
@@ -3918,7 +4107,10 @@ def execute(variables):
     result = api_chain.run(question)
     return result
 ||CODE_BLOCK||
+
+{% hint style="info" %}
 Note that Langchain is now integrated with Rememberizer. See [https://python.langchain.com/docs/integrations/retrievers/rememberizer/](https://python.langchain.com/docs/integrations/retrievers/rememberizer/)
+{% endhint %}
 
 #### weather\_reporter.json <a href="#bgnhw14oi99h" id="bgnhw14oi99h"></a>
 
@@ -3970,7 +4162,7 @@ description: >-
 
 You upload json that defines custom tools inside GenStudio.&#x20;
 
-
+<figure><img src="../../.gitbook/assets/Custom Tools Upload Screen - GenStudio.png" alt=""><figcaption><p>Uploading json that defines a custom tool</p></figcaption></figure>
 
 
 ==> developers/develop-your-own-tools/json-format-for-llm-tools.md <==
