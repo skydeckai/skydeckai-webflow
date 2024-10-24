@@ -1,6 +1,6 @@
 # SkyDeck.ai LLM Ready Documentation
 
-*Generated at 2024-10-23 03:26:49 PDT. Available as raw content at [skydeckai-llm-ready-documentation.md](https://raw.githubusercontent.com/skydeckai/skydeckai-webflow/refs/heads/main/skydeckai-llm-ready-documentation.md).*
+*Generated at 2024-10-23 03:26:49 PDT. Available as raw content at [skydeckai-llm-ready-documentation.md](https://raw.githubusercontent.com/skydeckai/skydeckai-webflow/refs/heads/llm-ready/skydeckai-llm-ready-documentation.md).*
 
 This document provides a comprehensive, consolidated reference of SkyDeck.ai's documentation, optimized for large language model (LLM) consumption. It combines various documentation sources into a single, easily accessible format, facilitating efficient information retrieval and processing by AI systems.
 
