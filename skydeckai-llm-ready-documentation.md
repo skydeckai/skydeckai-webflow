@@ -1,6 +1,6 @@
 # SkyDeck.ai LLM Ready Documentation
 
-*Generated at 2024-10-23 03:26:49 PDT. Available as raw content at [skydeckai-llm-ready-documentation.md](https://raw.githubusercontent.com/skydeckai/skydeckai-webflow/refs/heads/llm-ready/skydeckai-llm-ready-documentation.md).*
+*Generated at 2024-10-31 20:37:31 PDT. Available as raw content at [skydeckai-llm-ready-documentation.md](https://raw.githubusercontent.com/skydeckai/skydeckai-webflow/refs/heads/docs/skydeckai-llm-ready-documentation.md).*
 
 This document provides a comprehensive, consolidated reference of SkyDeck.ai's documentation, optimized for large language model (LLM) consumption. It combines various documentation sources into a single, easily accessible format, facilitating efficient information retrieval and processing by AI systems.
 
@@ -67,11 +67,13 @@ This document provides a comprehensive, consolidated reference of SkyDeck.ai's d
 * [Integrations](integrations/README.md)
   * [LLMs and Databases](integrations/llms-and-databases/README.md)
     * [Anthropic Integration](integrations/llms-and-databases/anthropic-integration.md)
-    * [Database Integration](integrations/llms-and-databases/openai-integration-1.md)
-    * [HuggingFace Integration](integrations/llms-and-databases/adding-huggingface-credentials.md)
+    * [Database Integration](integrations/llms-and-databases/database-integration.md)
+    * [Groq Integration](integrations/llms-and-databases/groq-integration.md)
+    * [HuggingFace Integration](integrations/llms-and-databases/huggingface-integration.md)
+    * [Mistral Integration](integrations/llms-and-databases/mistral-integration.md)
     * [OpenAI Integration](integrations/llms-and-databases/openai-integration.md)
     * [Perplexity Integration](integrations/llms-and-databases/perplexity-integration.md)
-    * [Together AI Integration](integrations/llms-and-databases/openai-integration-2.md)
+    * [Together AI Integration](integrations/llms-and-databases/together-ai-integration.md)
     * [Vertex AI Integration](integrations/llms-and-databases/vertex-ai-integration.md)
   * [App Integrations](integrations/app-integrations/README.md)
     * [Rememberizer Integration](integrations/app-integrations/rememberizer-integration.md)
@@ -81,6 +83,8 @@ This document provides a comprehensive, consolidated reference of SkyDeck.ai's d
   * [Privacy Policy](notices/privacy-policy.md)
   * [Cookie Notice](notices/cookie-notice.md)
 * [Releases](releases/README.md)
+  * [Nov 1st, 2024](releases/nov-1st-2024.md)
+  * [Oct 25th, 2024](releases/oct-25th-2024.md)
   * [Oct 18th, 2024](releases/oct-18th-2024.md)
   * [Oct 11th, 2024](releases/oct-11th-2024.md)
   * [Oct 4th, 2024](releases/oct-4th-2024.md)
@@ -325,6 +329,64 @@ description: >-
 
 * **Resolved Message Errors**: Fixed issues with parsing HTML in Markdown that caused errors in messages.
 * **Stability Improvements**: Fixed a crash when using collapsible sections in assistant messages.
+
+
+==> releases/oct-25th-2024.md <==
+---
+description: >-
+  This release focuses on enhancing user experience through improved
+  personalization, messaging features, and user interface refinements. It also
+  includes several bug fixes to enhance stability and perf
+---
+
+# Oct 25th, 2024
+
+## GenStudio
+
+### Improvements
+
+* **Personalized Conversation Views**: Users can now save their preferred conversation view modes for a more tailored experience.
+* **Enhanced Admin Management**: Admins can now manage other admins, providing better control over team roles.
+* **Improved Streaming Error Messages**: More descriptive error messages during streaming issues enhance troubleshooting.
+* **Collaborative Message Editing**: Edited messages are broadcasted to all collaborators, improving real-time collaboration.
+* **Customizable Support Targeting**: Customer support conversations can be configured to engage only new users.
+* **CSA Messages with Documents**: Support agents can now include documents in messages for more effective assistance.
+
+### New Features
+
+* **Tool Max Tokens Support**: Tools now support the max\_tokens parameter, offering better control over outputs.
+* **Refined Tool Editing**: Enhanced tool editing capabilities for a smoother user experience.
+
+### Bug Fixes
+
+* **Login Issue Resolved**: Fixed an issue where sign-ins returned null claims, improving login reliability.
+* **Model API Update Fixed**: Resolved issues with updating the last used model API.
+* **Optimized Vertex AI Credentials**: Vertex AI now uses cached credentials for improved performance.
+* **Workspace Access Bug Fixed**: Addressed the "Visit your workspace" navigation issue.
+* **Parameter Validation Fixed**: Fixed missing validation in parameter correction functions.
+
+## Control Center
+
+### Improvements
+
+* **Optimized Mobile Logo Display**: A smaller Skydeck logo enhances mobile device compatibility.
+* **Conversation View Modes**: Users can change view modes in conversations for a customized interface.
+* **User Avatars in Conversations**: User images are now displayed in conversations for a personal touch.
+* **Enhanced WebSocket Handling**: Improved connection handling with user notifications ensures better connectivity.
+* **Focused Conversation Generation**: The interface now focuses on the conversation when generating messages.
+* **UI Enhancements**: Various interface improvements contribute to a smoother experience.
+* **Message Editing with AI Regeneration**: Users can regenerate AI responses when editing messages.
+
+### New Features
+
+* **Snapshot Visit Analytics**: Added analytics to track when users visit snapshots for better insights.
+
+### Bug Fixes
+
+* **Snapshot Layout Fixed**: Resolved layout issues for a better snapshot viewing experience.
+* **Model Selection Dropdown Fixed**: Fixed truncation issues with the model selection dropdown.
+* **Message Collapse State Fixed**: Corrected the initial collapse state of messages for consistency.
+* **Profile Cancel Function Fixed**: The "Cancel" button now redirects to Conversations, and a "Clear" button was added.
 
 
 ==> releases/nov-12th-2023.md <==
@@ -1037,6 +1099,44 @@ description: >-
 * **reCAPTCHA Integration:** Added reCAPTCHA to authentication pages and the Forgot Password page to enhance security.
 
 
+==> releases/nov-1st-2024.md <==
+---
+description: >-
+  This release enhances search capabilities, introduces new collaboration features, and includes important bug fixes to improve the overall user experience in GenStudio and Control Center.
+---
+# Nov 1st, 2024
+## GenStudio
+### New Features
+- **Conversation Search by Collaborator Names**: Users can now search conversations using collaborators' names, making it easier to find relevant discussions.
+- **Full-Text Search Within Conversations**: Introduced full-text search within conversation messages, allowing users to search message content directly.
+- **Member List Sorting**: Added the ability to sort member lists for easier management and organization.
+
+### Improvements
+- **Optimized CSA Conversation Handling**: CSA conversations are now only created for signed-in GenStudio users, enhancing conversation management.
+
+### Bug Fixes
+- **Transfer Ownership Button Access**: Resolved an issue where the transfer ownership button was not enabled for the owner.
+- **Duplicate CSA Conversations**: Fixed an issue where CSA conversations were being duplicated.
+- **Conversation Deletion Stability**: Addressed a race condition bug when deleting a conversation to improve stability.
+- **Enhanced Error Handling**: Improved handling of streaming errors for increased reliability.
+- **Restored Missing Functions**: Fixed issues caused by missing functions to ensure features work as intended.
+
+## Control Center
+### New Features
+- **Countdown Feature**: Added a countdown feature to enhance time management during tasks.
+
+### Improvements
+- **Optimized Conversation Search**: Improved the performance of conversation search requests for faster results.
+
+### Bug Fixes
+- **Conversation Name Update in Breadcrumb**: Fixed an issue where the conversation name in the breadcrumb did not update after renaming.
+- **Safari Browser Compatibility**: Corrected the positioning of dialog boxes on Safari for a better user experience.
+- **Chat Box Truncation Issue**: Resolved issues where text was being truncated in the conversation chat box.
+- **Conversation Deletion UI Update**: Deleting a conversation now correctly updates the user interface.
+- **Conversation List Loading on Tall Monitors**: Fixed loading issues of the conversation list on tall monitors.
+- **Duplicate Connection Notifications**: Prevented multiple connection success toast notifications for a cleaner interface.
+- **Enhanced Message Rendering**: Improved message rendering to exclude ending tags from URL-highlighted text.
+
 ==> releases/oct-16th-2023.md <==
 ---
 description: >-
@@ -1448,136 +1548,7 @@ coverY: 0
 
 
 
-==> integrations/llms-and-databases/openai-integration.md <==
----
-description: OpenAI (ChatGPT) integration with the SkyDeck AI Platform
----
-
-# OpenAI Integration
-
-## **OpenAI Integration with the SkyDeck AI Platform**
-
-\
-ChatGPT is an AI-powered chatbot developed by OpenAI. It is based on the GPT-4 language model and can generate human-like text, translate languages, and write different kinds of creative content. ChatGPT is a powerful tool for a variety of applications. OpenAI is a non-profit research company that develops and deploys AI in a safe and responsible way. Integrating with SkyDeck AI will give you access to all current models of ChatGPT.
-
-### **Generating an OpenAPI API Key**
-
-\
-To use the OpenAI API, you need to generate an API key by following these 3 simple steps:
-
-1. Create a free account on the OpenAI website by signing up here: [https://beta.openai.com/signup. ↗](https://beta.openai.com/signup) You can use your Google or Microsoft account to sign up, or create an account using an email/password combination.
-2. Once you've signed up, visit your OpenAI key page here: [https://beta.openai.com/account/api-keys, ↗](https://beta.openai.com/account/api-keys) or click the menu item "View API keys."
-3. Click the "Create new secret key" button to generate a new API key. This key gives you access to both GPT-4 and ChatGPT models, so you don't need separate API keys.
-
-All done! Once you have your API key, you can use ChatGPT's LLM in the SkyDeck AI Platform.
-
-### **Adding the API Key to the SkyDeck AI Control Center**
-
-API Keys are added to the Control Center Integrations Screen
-
-1. Login to or Create a SkyDeck AI Admin account here: [https://admin.skydeck.ai/](https://admin.skydeck.ai/)
-2. Once you are signed in, visit the your integrations page here [https://admin.skydeck.ai/integrations/ ↗](https://admin.skydeck.ai/integrations/)’, or click on the “Integrations” in the menu
-3. Click on “+Add Integrations” button and enter your API Key as instructed.
-
-That’s it! You can now use the powerful SkyDeck AI tools and directly access the GPT-4 and ChatGPT models.
-
-NOTE: You will be charged based on your monthly usage of the ChatGPT API. The cost structure is based on the number of tokens used, with 750 words (approximately 1000 tokens) being the minimum chargeable unit. The cost per 1000 tokens varies depending on the model used, with the current ChatGPT default model being GPT-3.5 Turbo. As of July 2023 you can start experimenting with $5 in free credit that can be used during your first 3 months. ChatGPT pricing for general use is very low, but if you plan to use the service regularly, you must add your credit card information and are advised to set up a usage limit on the OpenAI website.
-
-OpenAPI ChatGPT Pricing [https://openai.com/pricing ↗](https://openai.com/pricing)
-
-
-==> integrations/llms-and-databases/openai-integration-2.md <==
----
-description: Together AI integration with the SkyDeck AI Platform
----
-
-# Together AI Integration
-
-## **Together AI Integration with the SkyDeck AI Platform**
-
-Together AI hosts a wide range of open source large language models on their platform. Integrating with SkyDeck AI will give you access to all the chat models of Together AI.
-
-### **Generating a Together AI API Key**
-
-\
-To use the Together AI API, you need to generate an API key by following these 3 simple steps:
-
-1. Create a free account on the Together AI website by signing up here: [https://api.together.xyz/](https://api.together.xyz/).&#x20;
-2. Once you've signed up, visit your API key page here: [https://api.together.xyz/settings/api-keys](https://api.together.xyz/settings/api-keys). You should find your API key.
-3. Once you have your API key, you can use Together AI's LLM in the SkyDeck AI Platform.
-
-### **Adding the API Key to the SkyDeck AI Control Center**
-
-API Keys are added to the Control Center Integrations Screen
-
-1. Login to or Create a SkyDeck AI Admin account here: [https://admin.skydeck.ai/](https://admin.skydeck.ai/)
-2. Once you are signed in, visit the your integrations page here [https://admin.skydeck.ai/integrations/ ↗](https://admin.skydeck.ai/integrations/)’, or click on the “Integrations” in the menu
-3. Click on “+Add Integrations” button, select Together AI as the integration service, and enter your API Key in the Credential field.
-
-That’s it! You can now use the powerful SkyDeck AI tools and directly access the Together AI models.
-
-NOTE: You will be charged based on your monthly usage of the Together AI API. The cost structure is based on the number of tokens used. For more details on their pricing policy, visit [https://api.together.xyz/playground](https://api.together.xyz/playground).
-
-
-==> integrations/llms-and-databases/README.md <==
-# LLMs and Databases
-
-
-
-==> integrations/llms-and-databases/adding-huggingface-credentials.md <==
----
-description: Using SkyDeck.ai as the front end for your HuggingFace models.
----
-
-# HuggingFace Integration
-
-After deploying your inference endpoint on HuggingFace, you should see the following user interface:
-
-<figure><img src="../../.gitbook/assets/Screenshot 2023-09-25 at 10.08.46.png" alt=""><figcaption></figcaption></figure>
-
-On this page, you will need the following information:
-
-* Endpoint URL
-* Model Repository
-* API token. You can view this by checking the "Add API token" box in the Call Examples code block.
-
-In addition to these, you will also need the context window of your model. This can be found on the model's information page.
-
-After collecting this information, format it into JSON as shown in the example below:
-
-||CODE_BLOCK||json
-{
-    "api_key":"your_api_key",
-    "endpoint": "your_api_endpoint",
-    "model_name": "meta-llama/Llama-2-7b-chat-hf",
-    "context_window": 4096
-}
-||CODE_BLOCK||
-
-Next, paste this into the Credential field of your integration.
-
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
-
-Once the credential is successfully validated, you should see your HuggingFace model listed in GenStudio's model list:
-
-<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
-
-### Scaling HuggingFace Endpoints to Zero
-
-Scaling to 0 is a dynamic feature offered by Inference Endpoints, designed to optimize resource utilization and costs. By intelligently monitoring request patterns and reducing the number of replicas to none during idle times, it ensures that you only use resources when necessary.
-
-However, this does introduce a cold start period when traffic resumes, and there are a few considerations to be mindful of. For an in-depth look at how this feature functions, its benefits, and potential challenges, please refer to [HuggingFace's guide on Autoscaling](https://huggingface.co/docs/inference-endpoints/autoscaling).
-
-### Supported models
-
-At the moment, we only support endpoints for models with a `text-generation` tag that are deployed as `text-generation-inference` containers. We are working to expand our list of supported models.
-
-<figure><img src="../../.gitbook/assets/image (48).png" alt=""><figcaption><p>LLaMA 2 is a model with Text Generation tag</p></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/image (49).png" alt=""><figcaption><p>Make sure you select Text Generation Inference as the container type during deployment</p></figcaption></figure>
-
-
-==> integrations/llms-and-databases/openai-integration-1.md <==
+==> integrations/llms-and-databases/database-integration.md <==
 ---
 description: Integration with Amazon AWS hosted databases.
 ---
@@ -1689,6 +1660,135 @@ Today users can access your database using the Analyst tools available to them i
 * You can limit which users in your organization have access to each database by ensuring that tools that use it, such as a copy of Analyst Bob, are assigned tags that correspond only to uers who you wish to have access.
 
 
+==> integrations/llms-and-databases/together-ai-integration.md <==
+---
+description: Together AI integration with the SkyDeck AI Platform
+---
+
+# Together AI Integration
+
+## **Together AI Integration with the SkyDeck AI Platform**
+
+Together AI hosts a wide range of open source large language models on their platform. Integrating with SkyDeck AI will give you access to all the chat models of Together AI.
+
+### **Generating a Together AI API Key**
+
+\
+To use the Together AI API, you need to generate an API key by following these 3 simple steps:
+
+1. Create a free account on the Together AI website by signing up here: [https://api.together.xyz/](https://api.together.xyz/).&#x20;
+2. Once you've signed up, visit your API key page here: [https://api.together.xyz/settings/api-keys](https://api.together.xyz/settings/api-keys). You should find your API key.
+3. Once you have your API key, you can use Together AI's LLM in the SkyDeck AI Platform.
+
+### **Adding the API Key to the SkyDeck AI Control Center**
+
+API Keys are added to the Control Center Integrations Screen
+
+1. Login to or Create a SkyDeck AI Admin account here: [https://admin.skydeck.ai/](https://admin.skydeck.ai/)
+2. Once you are signed in, visit the your integrations page here [https://admin.skydeck.ai/integrations/ ↗](https://admin.skydeck.ai/integrations/)’, or click on the “Integrations” in the menu
+3. Click on “+Add Integrations” button, select Together AI as the integration service, and enter your API Key in the Credential field.
+
+That’s it! You can now use the powerful SkyDeck AI tools and directly access the Together AI models.
+
+NOTE: You will be charged based on your monthly usage of the Together AI API. The cost structure is based on the number of tokens used. For more details on their pricing policy, visit [https://api.together.xyz/playground](https://api.together.xyz/playground).
+
+
+==> integrations/llms-and-databases/openai-integration.md <==
+---
+description: OpenAI (ChatGPT) integration with the SkyDeck AI Platform
+---
+
+# OpenAI Integration
+
+## **OpenAI Integration with the SkyDeck AI Platform**
+
+\
+ChatGPT is an AI-powered chatbot developed by OpenAI. It is based on the GPT-4 language model and can generate human-like text, translate languages, and write different kinds of creative content. ChatGPT is a powerful tool for a variety of applications. OpenAI is a non-profit research company that develops and deploys AI in a safe and responsible way. Integrating with SkyDeck AI will give you access to all current models of ChatGPT.
+
+### **Generating an OpenAPI API Key**
+
+\
+To use the OpenAI API, you need to generate an API key by following these 3 simple steps:
+
+1. Create a free account on the OpenAI website by signing up here: [https://beta.openai.com/signup. ↗](https://beta.openai.com/signup) You can use your Google or Microsoft account to sign up, or create an account using an email/password combination.
+2. Once you've signed up, visit your OpenAI key page here: [https://beta.openai.com/account/api-keys, ↗](https://beta.openai.com/account/api-keys) or click the menu item "View API keys."
+3. Click the "Create new secret key" button to generate a new API key. This key gives you access to both GPT-4 and ChatGPT models, so you don't need separate API keys.
+
+All done! Once you have your API key, you can use ChatGPT's LLM in the SkyDeck AI Platform.
+
+### **Adding the API Key to the SkyDeck AI Control Center**
+
+API Keys are added to the Control Center Integrations Screen
+
+1. Login to or Create a SkyDeck AI Admin account here: [https://admin.skydeck.ai/](https://admin.skydeck.ai/)
+2. Once you are signed in, visit the your integrations page here [https://admin.skydeck.ai/integrations/ ↗](https://admin.skydeck.ai/integrations/)’, or click on the “Integrations” in the menu
+3. Click on “+Add Integrations” button and enter your API Key as instructed.
+
+That’s it! You can now use the powerful SkyDeck AI tools and directly access the GPT-4 and ChatGPT models.
+
+NOTE: You will be charged based on your monthly usage of the ChatGPT API. The cost structure is based on the number of tokens used, with 750 words (approximately 1000 tokens) being the minimum chargeable unit. The cost per 1000 tokens varies depending on the model used, with the current ChatGPT default model being GPT-3.5 Turbo. As of July 2023 you can start experimenting with $5 in free credit that can be used during your first 3 months. ChatGPT pricing for general use is very low, but if you plan to use the service regularly, you must add your credit card information and are advised to set up a usage limit on the OpenAI website.
+
+OpenAPI ChatGPT Pricing [https://openai.com/pricing ↗](https://openai.com/pricing)
+
+
+==> integrations/llms-and-databases/huggingface-integration.md <==
+---
+description: Using SkyDeck.ai as the front end for your HuggingFace models.
+---
+
+# HuggingFace Integration
+
+After deploying your inference endpoint on HuggingFace, you should see the following user interface:
+
+<figure><img src="../../.gitbook/assets/Screenshot 2023-09-25 at 10.08.46.png" alt=""><figcaption></figcaption></figure>
+
+On this page, you will need the following information:
+
+* Endpoint URL
+* Model Repository
+* API token. You can view this by checking the "Add API token" box in the Call Examples code block.
+
+In addition to these, you will also need the context window of your model. This can be found on the model's information page.
+
+After collecting this information, format it into JSON as shown in the example below:
+
+||CODE_BLOCK||json
+{
+    "api_key":"your_api_key",
+    "endpoint": "your_api_endpoint",
+    "model_name": "meta-llama/Llama-2-7b-chat-hf",
+    "context_window": 4096
+}
+||CODE_BLOCK||
+
+Next, paste this into the Credential field of your integration.
+
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+
+Once the credential is successfully validated, you should see your HuggingFace model listed in GenStudio's model list:
+
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+
+### Scaling HuggingFace Endpoints to Zero
+
+Scaling to 0 is a dynamic feature offered by Inference Endpoints, designed to optimize resource utilization and costs. By intelligently monitoring request patterns and reducing the number of replicas to none during idle times, it ensures that you only use resources when necessary.
+
+However, this does introduce a cold start period when traffic resumes, and there are a few considerations to be mindful of. For an in-depth look at how this feature functions, its benefits, and potential challenges, please refer to [HuggingFace's guide on Autoscaling](https://huggingface.co/docs/inference-endpoints/autoscaling).
+
+### Supported models
+
+At the moment, we only support endpoints for models with a `text-generation` tag that are deployed as `text-generation-inference` containers. We are working to expand our list of supported models.
+
+<figure><img src="../../.gitbook/assets/image (48).png" alt=""><figcaption><p>LLaMA 2 is a model with Text Generation tag</p></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/image (49).png" alt=""><figcaption><p>Make sure you select Text Generation Inference as the container type during deployment</p></figcaption></figure>
+
+
+==> integrations/llms-and-databases/README.md <==
+# LLMs and Databases
+
+
+
 ==> integrations/llms-and-databases/perplexity-integration.md <==
 # Perplexity Integration
 
@@ -1746,14 +1846,48 @@ After integrating Perplexity with the SkyDeck AI Platform, you should see Perple
 Integrating Perplexity with the SkyDeck AI Platform offers a robust set of features and capabilities, leveraging advanced language models to deliver accurate and reliable answers. Ensure you stay updated with the latest models and features to maximize the benefits of this integration. For additional assistance or inquiries, please refer to the [Perplexity Documentation](https://docs.perplexity.ai/) or contact their support team.
 
 
+==> integrations/llms-and-databases/groq-integration.md <==
+# Groq Integration
+
+## Overview
+
+Groq is revolutionizing the landscape of artificial intelligence with its fast AI inference capabilities, designed to empower developers and enterprises with instant intelligence. GroqCloud allows seamless integration with openly-available models like Llama 3.1, enabling users to harness the power of AI with minimal latency. With its innovative Language Processing Unit (LPU), Groq delivers unparalleled speed, affordability, and energy efficiency, fundamentally transforming how AI models are deployed in the cloud and on-premises. By making advanced AI technology accessible to all, Groq is driving a new wave of innovation, productivity, and discovery, while maintaining a commitment to open-source principles.
+
+## Generating a Groq API Key
+
+To use the Groq API, you need to generate an API key by following these simple steps:
+
+1. Go to **GroqCloud** at [https://console.groq.com/](https://console.groq.com/) and sign in. If you don't have an account, you can sign up there.
+2. Once you have signed in, go to **API Keys**. You can use a Free Plan with low rate limits APIs, or you can upgrade to higher plans for large-scale needs.
+3. Click on the **Create API key** button to generate a new API key. Provide a name for the token. Copy the token for later use as it will not be shown again.
+
+All done! Once you have your API key, you can use Groq's LLMs in the SkyDeck AI Platform.
+
+## Adding the API Key to the SkyDeck AI Control Center
+
+API Keys are added to the Control Center Integrations Screen.
+
+1. Login to or Create a SkyDeck AI Admin account here: [https://admin.skydeck.ai/](https://admin.skydeck.ai/)
+2. Once you have signed in, visit the your integrations page here [https://admin.skydeck.ai/integrations/ ↗](https://admin.skydeck.ai/integrations/)’, or select **Integrations** in the sidebar.
+3. In the LLM Integration page, click on the **Add Integration** button, choose Groq as the Integration Service and enter your API Key in the Credentials key.
+
+<figure><img src="../../.gitbook/assets/groq-integration.png" alt="" width="563"><figcaption></figcaption></figure>
+
+That’s it! You can now use the powerful SkyDeck AI tools and directly access the Groq's models.
+
+## Conclusion
+
+Integrating Groq with the SkyDeck AI Platform offers a robust set of features and capabilities, leveraging advanced language models from Groq to deliver accurate and reliable answers. Ensure you stay updated with the latest models and features to maximize the benefits of this integration. For additional assistance or inquiries, please refer to the [Groq Documentation](https://console.groq.com/docs/) or contact their support team.
+
+
 ==> integrations/llms-and-databases/vertex-ai-integration.md <==
 # Vertex AI Integration
 
-### Overview
+## Overview
 
 Vertex AI is a fully-managed, unified AI development platform for building and using generative AI. Access and utilize Vertex AI Studio, Agent Builder, and 150+ foundation models. After integrating Skydeck.AI with Vertex AI, you will be able to use the Gemini models from Google in your workspace.
 
-### Generating a service account credential
+## Generating a service account credential
 
 To enable Vertex AI and generate the necessary credential, you can follow these steps:
 
@@ -1778,7 +1912,7 @@ To enable Vertex AI and generate the necessary credential, you can follow these 
 }
 ||CODE_BLOCK||
 
-### Adding the credential to SkyDeck AI
+## Adding the credential to SkyDeck AI
 
 API Keys are added to the Control Center Integrations Screen
 
@@ -1790,9 +1924,47 @@ API Keys are added to the Control Center Integrations Screen
 
 That’s it! You can now use the powerful SkyDeck AI tools and directly access the Gemini models.
 
-### Conclusion
+## Conclusion
 
 Integrating Vertex AI with the SkyDeck AI Platform offers a robust set of features and capabilities, leveraging advanced language models from Google to deliver accurate and reliable answers. Ensure you stay updated with the latest Gemini models and features to maximize the benefits of this integration. For additional assistance or inquiries, please refer to the [Vertex AI Documentation](https://cloud.google.com/vertex-ai/docs) or contact their support team.
+
+
+==> integrations/llms-and-databases/mistral-integration.md <==
+# Mistral Integration
+
+## Overview
+
+Mistral is an AI research company that focuses on developing cutting-edge large language models with a strong emphasis on efficiency and scalability. Their mission is to make frontier AI ubiquitous, and to provide tailor-made AI to all the builders. This requires fierce independence, strong commitment to open, portable and customizable solutions, and an extreme focus on shipping the most advanced technology in limited time.
+
+## Generating a Mistral API Key
+
+To use the Mistral API, you need to generate an API key by following these simple steps:
+
+1. Go to **La Plateforme** of Mistral at [https://console.mistral.ai/](https://console.mistral.ai/) and sign in. If you don't have an account, you can sign up there.
+2. Once you have signed in, go to **API Keys**. Please note that you need to set up a [Billing Plan](https://console.mistral.ai/billing/) first to generate and use Mistral API keys.
+3. Click on the **Create new key** button to generate a new API key. Provide a name and an expiration day for the token. Copy the token for later use as it will not be shown again.
+
+All done! Once you have your API key, you can use Mistral's LLMs in the SkyDeck AI Platform.
+
+{% hint style="info" %}
+Note that the API key may take a few minutes to be usable, so you might see an error message if you immediately add it into the Control Center. Wait a few minutes after generating an API key before integrating Mistral with SkyDeck AI.
+{% endhint %}
+
+## Adding the API Key to the SkyDeck AI Control Center
+
+API Keys are added to the Control Center Integrations Screen.
+
+1. Login to or Create a SkyDeck AI Admin account here: [https://admin.skydeck.ai/](https://admin.skydeck.ai/)
+2. Once you have signed in, visit the your integrations page here [https://admin.skydeck.ai/integrations/ ↗](https://admin.skydeck.ai/integrations/)’, or select **Integrations** in the sidebar.
+3. In the LLM Integration page, click on the **Add Integration** button, choose Mistral as the Integration Service and enter your API Key in the Credentials key.
+
+<figure><img src="../../.gitbook/assets/mistral-integration.png" alt="" width="563"><figcaption></figcaption></figure>
+
+That’s it! You can now use the powerful SkyDeck AI tools and directly access the Mistral's models.
+
+## Conclusion
+
+Integrating Mistral with the SkyDeck AI Platform offers a robust set of features and capabilities, leveraging advanced language models from Mistral to deliver accurate and reliable answers. Ensure you stay updated with the latest Mistral's models and features to maximize the benefits of this integration. For additional assistance or inquiries, please refer to the [Mistral Documentation](https://docs.mistral.ai/) or contact their support team.
 
 
 ==> integrations/llms-and-databases/anthropic-integration.md <==
@@ -1804,17 +1976,17 @@ Anthropic is an AI research organization focused on building reliable and interp
 
 Anthropic's LLMs, notably the "Claude" series, are designed to process and generate human-like text for a wide range of applications, including natural language understanding, reasoning, and dialogue. These models are developed with a focus on safety and usability, incorporating mechanisms to prevent harmful or biased outputs. As Anthropic continues to evolve its LLMs, it remains committed to creating AI systems that are transparent, interpretable, and aligned with ethical standards, making them useful for both commercial and research purposes.
 
-## **Generating an** Anthropic **API Key**
+## Generating an Anthropic API Key
 
 To use the Anthropic API, you need to generate an API key by following these simple steps:
 
 1. Go to the Anthropic Console at [https://console.anthropic.com/](https://console.anthropic.com/) and sign in. If you don't have an account, you can sign up there.
 2. Once you have signed in, go to **Settings** and select [**API keys**](https://console.anthropic.com/account/keys).
-3. Click the **Create Key** button to generate a new API key. Provide a name and a workspace for that key.
+3. Click the **Create Key** button to generate a new API key. Provide a name and a workspace for that key. Copy the token for later use as it will not be shown again.
 
 All done! Once you have your API key, you can use Anthropic's LLMs in the SkyDeck AI Platform.
 
-## **Adding the API Key to the SkyDeck AI Control Center**
+## Adding the API Key to the SkyDeck AI Control Center
 
 API Keys are added to the Control Center Integrations Screen.
 
@@ -2428,7 +2600,7 @@ This information on public pay-as-you-go conversational services is also linked 
 * [**OpenAI**](../../../integrations/llms-and-databases/openai-integration.md)
 * [**Vertex**](https://developers.google.com/workspace/guides/create-credentials#service-account)
 * [**Anthropic**](https://docs.anthropic.com/claude/reference/getting-started-with-the-api)
-* [**HuggingFace**](../../../integrations/llms-and-databases/adding-huggingface-credentials.md)
+* [**HuggingFace**](../../../integrations/llms-and-databases/huggingface-integration.md)
 
 
 ==> control-center/setup-guide/set-up-integrations/README.md <==
@@ -2742,14 +2914,14 @@ If the previous link expires, the Guide action will change to **Re-invite**. For
 
 | Model                      | Date       |   Total Response Time (s) |   Tests Passed |   Mean CodeBLEU (0-1) |   Mean Usefulness Score (0-4) |   Mean Functional Correctness Score (0-4) |
 |:---------------------------|:-----------|--------------------------:|---------------:|----------------------:|------------------------------:|------------------------------------------:|
-| o1-preview                 | 2024-10-23 |                  2109.27  |            134 |              0.317454 |                      3.62195  |                                  3.60976  |
-| o1-mini                    | 2024-10-23 |                   752.803 |            133 |              0.339456 |                      3.71341  |                                  3.70122  |
-| gpt-4o                     | 2024-10-23 |                   323.091 |            125 |              0.320372 |                      3.69512  |                                  3.70122  |
-| gpt-4o-mini                | 2024-10-23 |                   178.682 |            116 |              0.332857 |                      3.66463  |                                  3.62195  |
-| claude-3-5-sonnet-20240620 | 2024-10-23 |                   327.858 |            110 |              0.296821 |                      3.60976  |                                  3.57927  |
-| claude-3-5-sonnet-20241022 | 2024-10-23 |                   344.526 |            117 |              0.324993 |                      3.69512  |                                  3.65244  |
-| gemini-1.5-pro             | 2024-10-23 |                   557.475 |            106 |              0.335997 |                      3.53659  |                                  3.4878   |
-| gemini-1.5-flash           | 2024-10-23 |                   726.373 |              1 |              0.270527 |                      0.939024 |                                  0.890244 |
+| o1-preview                 | 2024-10-31 |                  2926.22  |            134 |              0.316905 |                      3.59146  |                                  3.58537  |
+| o1-mini                    | 2024-10-31 |                   672.968 |            126 |              0.347222 |                      3.7622   |                                  3.79878  |
+| gpt-4o                     | 2024-10-31 |                   237.803 |            122 |              0.31959  |                      3.7439   |                                  3.7439   |
+| gpt-4o-mini                | 2024-10-31 |                   157.638 |            118 |              0.332825 |                      3.65244  |                                  3.64024  |
+| claude-3-5-sonnet-20240620 | 2024-10-31 |                   316.3   |            115 |              0.301222 |                      3.65244  |                                  3.67073  |
+| claude-3-5-sonnet-20241022 | 2024-10-31 |                   343.893 |            117 |              0.318957 |                      3.69512  |                                  3.65244  |
+| gemini-1.5-pro             | 2024-10-31 |                   595.208 |             94 |              0.328057 |                      3.43293  |                                  3.43293  |
+| gemini-1.5-flash           | 2024-10-31 |                   781.461 |              1 |              0.255924 |                      0.646341 |                                  0.792683 |
 
 **Total Response Time (s):** The total time taken by the model to generate all the outputs.
 
