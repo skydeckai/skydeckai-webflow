@@ -1,6 +1,6 @@
 # SkyDeck.ai LLM Ready Documentation
 
-*Generated at 2024-10-31 20:37:31 PDT. Available as raw content at [skydeckai-llm-ready-documentation.md](https://raw.githubusercontent.com/skydeckai/skydeckai-webflow/refs/heads/docs/skydeckai-llm-ready-documentation.md).*
+*Generated at 2024-11-15 00:21:38 PST. Available as raw content at [skydeckai-llm-ready-documentation.md](https://raw.githubusercontent.com/skydeckai/skydeckai-webflow/refs/heads/docs/skydeckai-llm-ready-documentation.md).*
 
 This document provides a comprehensive, consolidated reference of SkyDeck.ai's documentation, optimized for large language model (LLM) consumption. It combines various documentation sources into a single, easily accessible format, facilitating efficient information retrieval and processing by AI systems.
 
@@ -83,6 +83,8 @@ This document provides a comprehensive, consolidated reference of SkyDeck.ai's d
   * [Privacy Policy](notices/privacy-policy.md)
   * [Cookie Notice](notices/cookie-notice.md)
 * [Releases](releases/README.md)
+  * [Nov 15th, 2024](releases/nov-15th-2024.md)
+  * [Nov 8th, 2024](releases/nov-8th-2024.md)
   * [Nov 1st, 2024](releases/nov-1st-2024.md)
   * [Oct 25th, 2024](releases/oct-25th-2024.md)
   * [Oct 18th, 2024](releases/oct-18th-2024.md)
@@ -142,6 +144,25 @@ description: >-
 
 ### New Features
 
+- **Snapshot Management Modal**: Introduced a snapshot management modal for collaborative users to improve workflow.
+
+### Improvements
+
+- **Meta Tags for Public Snapshots**: Added meta tags to public snapshots for better SEO and easier sharing.
+- **DLP Validation Flow**: Implemented a new DLP validation flow for enhanced security.
+- **Markdown Formatting**: Improved formatting of user-submitted Markdown content for better readability.
+- **Expand/Collapse Long Messages**: Added an expand/collapse feature for long user messages in snapshots to improve usability.
+- **Free Trial Countdown Clarity**: Enhanced the free trial countdown clock for improved clarity.
+
+### Bug Fixes
+
+- **Markdown Parsing Errors**: Fixed parsing errors when HTML is included in Markdown in user messages.
+- **Breadcrumb Update Issue**: Resolved an issue where changing conversations didn't update breadcrumbs.
+
+## Control Center
+
+### New Features
+
 - **Tag Support in CSV Uploads**: Added support for tagging members when uploading CSV files to enhance member organization.
 - **Export Members to CSV**: Introduced the ability to export members to CSV, simplifying data management.
 - **Admin Password Reset**: Enabled owners and administrators to reset passwords for better account management.
@@ -160,25 +181,6 @@ description: >-
 - **Admin Role Isolation**: Resolved role isolation issues for admin users to ensure proper access controls.
 - **Account Security Improvement**: Removed verified emails from old admin records to enhance account security.
 
-## Control Center
-
-### New Features
-
-- **Snapshot Management Modal**: Introduced a snapshot management modal for collaborative users to improve workflow.
-
-### Improvements
-
-- **Meta Tags for Public Snapshots**: Added meta tags to public snapshots for better SEO and easier sharing.
-- **DLP Validation Flow**: Implemented a new DLP validation flow for enhanced security.
-- **Markdown Formatting**: Improved formatting of user-submitted Markdown content for better readability.
-- **Expand/Collapse Long Messages**: Added an expand/collapse feature for long user messages in snapshots to improve usability.
-- **Free Trial Countdown Clarity**: Enhanced the free trial countdown clock for improved clarity.
-
-### Bug Fixes
-
-- **Markdown Parsing Errors**: Fixed parsing errors when HTML is included in Markdown in user messages.
-- **Breadcrumb Update Issue**: Resolved an issue where changing conversations didn't update breadcrumbs.
-
 ==> releases/oct-4th-2024.md <==
 ---
 description: >-
@@ -188,26 +190,6 @@ description: >-
 # Oct 4th, 2024
 
 ## GenStudio
-
-### New Features
-
-- **Conversation Search**: Introduced the ability to search for conversations, making it easier to locate past discussions.
-- **Enhanced Tool Management**: Added search, pagination, and sorting functionalities for tools, improving the management and accessibility of your tools.
-
-### Improvements
-
-- **Larger Data Submissions**: Increased the maximum request body size, allowing you to submit larger data without encountering errors.
-- **Improved Snapshot Preview**: Enhanced the public snapshot preview for a better viewing experience.
-- **Automatic Username Population**: Your username now automatically populates from your Google account during Google sign-up, streamlining the registration process.
-- **Updated Default Images**: Refreshed default images for a more appealing visual experience.
-
-### Bug Fixes
-
-- **Snapshot Media Access**: Fixed issues with snapshot media URLs expiring, ensuring uninterrupted access to your media files.
-- **VertexAI Model Stability**: Resolved instability issues with VertexAI models to ensure consistent performance.
-- **Routine Validation**: Added missing token limit validation for routines to prevent errors and maintain system integrity.
-
-## Control Center
 
 ### New Features
 
@@ -231,6 +213,26 @@ description: >-
 - **Participant Submission**: Fixed a bug where participants were undefined upon submission, ensuring correct participant information.
 - **'@' Mention Functionality**: Corrected the '@' mention feature in conversations, allowing you to tag colleagues effectively.
 - **Chat Page Stability**: Fixed crashes on the chat page when using special tokens, improving stability.
+
+## Control Center
+
+### New Features
+
+- **Conversation Search**: Introduced the ability to search for conversations, making it easier to locate past discussions.
+- **Enhanced Tool Management**: Added search, pagination, and sorting functionalities for tools, improving the management and accessibility of your tools.
+
+### Improvements
+
+- **Larger Data Submissions**: Increased the maximum request body size, allowing you to submit larger data without encountering errors.
+- **Improved Snapshot Preview**: Enhanced the public snapshot preview for a better viewing experience.
+- **Automatic Username Population**: Your username now automatically populates from your Google account during Google sign-up, streamlining the registration process.
+- **Updated Default Images**: Refreshed default images for a more appealing visual experience.
+
+### Bug Fixes
+
+- **Snapshot Media Access**: Fixed issues with snapshot media URLs expiring, ensuring uninterrupted access to your media files.
+- **VertexAI Model Stability**: Resolved instability issues with VertexAI models to ensure consistent performance.
+- **Routine Validation**: Added missing token limit validation for routines to prevent errors and maintain system integrity.
 
 ==> releases/nov-6th-2023.md <==
 ---
@@ -293,6 +295,25 @@ description: >-
 
 ### New Features
 
+* **LaTeX Equation Support**: You can now include LaTeX equations in your content.
+
+### Improvements
+
+* **Simplified Account Management**: Access your account settings without needing to re-login.
+* **Improved Code Display**: Code blocks now support word wrapping for better readability.
+* **Enhanced Import Messages**: Clearer error messages when importing JSON tools.
+* **Consistent Title Length**: Titles are now limited to 60 characters for uniformity.
+* **Optimized Sign-in Experience**: Enhanced sign-in and sign-up pages for better work account integration.
+
+### Bug Fixes
+
+* **Resolved Message Errors**: Fixed issues with parsing HTML in Markdown that caused errors in messages.
+* **Stability Improvements**: Fixed a crash when using collapsible sections in assistant messages.
+
+## Control Center
+
+### New Features
+
 * **Perplexity AI Integration**: Access enhanced content generation capabilities with the new Perplexity AI integration.
 * **Expanded AI Models**: Added new OpenAI models, providing enhanced AI capabilities.
 
@@ -311,26 +332,6 @@ description: >-
 
 * **Performance Improvements**: Resolved issues where routines could exhaust resources when called multiple times.
 
-## Control Center
-
-### New Features
-
-* **LaTeX Equation Support**: You can now include LaTeX equations in your content.
-
-### Improvements
-
-* **Simplified Account Management**: Access your account settings without needing to re-login.
-* **Improved Code Display**: Code blocks now support word wrapping for better readability.
-* **Enhanced Import Messages**: Clearer error messages when importing JSON tools.
-* **Consistent Title Length**: Titles are now limited to 60 characters for uniformity.
-* **Optimized Sign-in Experience**: Enhanced sign-in and sign-up pages for better work account integration.
-
-### Bug Fixes
-
-* **Resolved Message Errors**: Fixed issues with parsing HTML in Markdown that caused errors in messages.
-* **Stability Improvements**: Fixed a crash when using collapsible sections in assistant messages.
-
-
 ==> releases/oct-25th-2024.md <==
 ---
 description: >-
@@ -342,6 +343,29 @@ description: >-
 # Oct 25th, 2024
 
 ## GenStudio
+
+### Improvements
+
+* **Optimized Mobile Logo Display**: A smaller Skydeck logo enhances mobile device compatibility.
+* **Conversation View Modes**: Users can change view modes in conversations for a customized interface.
+* **User Avatars in Conversations**: User images are now displayed in conversations for a personal touch.
+* **Enhanced WebSocket Handling**: Improved connection handling with user notifications ensures better connectivity.
+* **Focused Conversation Generation**: The interface now focuses on the conversation when generating messages.
+* **UI Enhancements**: Various interface improvements contribute to a smoother experience.
+* **Message Editing with AI Regeneration**: Users can regenerate AI responses when editing messages.
+
+### New Features
+
+* **Snapshot Visit Analytics**: Added analytics to track when users visit snapshots for better insights.
+
+### Bug Fixes
+
+* **Snapshot Layout Fixed**: Resolved layout issues for a better snapshot viewing experience.
+* **Model Selection Dropdown Fixed**: Fixed truncation issues with the model selection dropdown.
+* **Message Collapse State Fixed**: Corrected the initial collapse state of messages for consistency.
+* **Profile Cancel Function Fixed**: The "Cancel" button now redirects to Conversations, and a "Clear" button was added.
+
+## Control Center
 
 ### Improvements
 
@@ -364,29 +388,6 @@ description: >-
 * **Optimized Vertex AI Credentials**: Vertex AI now uses cached credentials for improved performance.
 * **Workspace Access Bug Fixed**: Addressed the "Visit your workspace" navigation issue.
 * **Parameter Validation Fixed**: Fixed missing validation in parameter correction functions.
-
-## Control Center
-
-### Improvements
-
-* **Optimized Mobile Logo Display**: A smaller Skydeck logo enhances mobile device compatibility.
-* **Conversation View Modes**: Users can change view modes in conversations for a customized interface.
-* **User Avatars in Conversations**: User images are now displayed in conversations for a personal touch.
-* **Enhanced WebSocket Handling**: Improved connection handling with user notifications ensures better connectivity.
-* **Focused Conversation Generation**: The interface now focuses on the conversation when generating messages.
-* **UI Enhancements**: Various interface improvements contribute to a smoother experience.
-* **Message Editing with AI Regeneration**: Users can regenerate AI responses when editing messages.
-
-### New Features
-
-* **Snapshot Visit Analytics**: Added analytics to track when users visit snapshots for better insights.
-
-### Bug Fixes
-
-* **Snapshot Layout Fixed**: Resolved layout issues for a better snapshot viewing experience.
-* **Model Selection Dropdown Fixed**: Fixed truncation issues with the model selection dropdown.
-* **Message Collapse State Fixed**: Corrected the initial collapse state of messages for consistency.
-* **Profile Cancel Function Fixed**: The "Cancel" button now redirects to Conversations, and a "Clear" button was added.
 
 
 ==> releases/nov-12th-2023.md <==
@@ -432,6 +433,49 @@ description: >-
 * **Smooth Sign-Up**: Fixed the sign-up redirection to ensure new users are smoothly transitioned to the sign-in page upon registration.
 
 
+==> releases/nov-8th-2024.md <==
+---
+description: >-
+  This release focuses on enhancing collaboration features, improving user interface elements, and refining real-time communication for a better user experience.
+---
+# Nov 8th, 2024
+
+## GenStudio
+
+### Improvements
+
+- **Optimized Logo for Faster Loading**: Replaced the logo with an optimized version to reduce loading times.
+- **Improved Real-Time Messaging**: Enhanced unread message notifications using WebSockets for instant communication updates.
+- **Visually Distinct User Messages in Snapshots**: User messages in snapshots now have a different background color for better distinction.
+
+### New Features
+
+- **"My Collaborations" Tab**: Added a "My Collaborations" tab in Account Settings for efficient collaboration management.
+- **Clear Search Button**: Introduced a clear search button to the conversation search field for easier navigation.
+
+### Bug Fixes
+
+- **Resolved Collaboration State Inconsistencies**: Fixed issues causing inconsistent collaboration states across conversations.
+- **Fixed UI Rendering Issues**: Addressed rendering issues that reset the conversation title input field unnecessarily.
+- **Corrected Responsive Layout in Chat Box**: Fixed layout problems in the chat box when using responsive design with two sidebars.
+- **UI Bug Fixes in "My Collaborations" Data Tables**: Resolved various UI bugs in the "My Collaborations" data tables for a smoother user experience.
+
+## Control Center
+
+### Improvements
+
+- **Enhanced URL Detection**: Improved recognition of URLs in messages and during content scraping for a smoother experience.
+- **Business Domain Visibility**: Users can now view their business domain information on the account page, providing better account transparency.
+- **Optimized Real-Time Notifications**: Updated conversation notifications via WebSockets for more immediate updates.
+- **Improved Onboarding for Verified Businesses**: Streamlined the onboarding process for verified businesses, making it quicker to get started.
+- **Increased System Reliability**: Implemented high availability with Redis Sentinel to enhance performance and stability.
+
+### New Features
+
+- **"My Collaborations" Tab**: Introduced a new "My Collaborations" tab in the Account Settings page for easier collaboration management.
+- **Enhanced Tool Search**: Enabled searching within tool descriptions and usage notes to help users find tools more efficiently.
+
+
 ==> releases/jun-21st-2024.md <==
 ---
 description: >-
@@ -468,6 +512,21 @@ description: >-
 
 ### New Features
 
+* **Added Caddy Template**: Introduced a new Caddy template to enhance deployment and configuration options.
+
+### Improvements
+
+* **Conversation Titles in Browser Tabs**: Manually edited or auto-generated conversation titles now populate browser tabs and webpage titles, providing better context.
+* **Increased Timeout Settings**: Extended timeout limits to 10 seconds to improve system responsiveness under heavy loads.
+
+### Bug Fixes
+
+* **UI Enhancements**: Resolved various issues in the new user interface to enhance overall experience.
+
+## Control Center
+
+### New Features
+
 * **Tool Pagination**: Implemented pagination in the tool list for easier navigation when managing many tools.
 * **Automated Tag Creation for CSV Upload**: New tags are now automatically created during CSV file uploads if they don't exist, simplifying the tagging process.
 * **Enhanced Conversation Titles with AI**: Conversation titles are now generated using AI for more concise and meaningful summaries.
@@ -485,21 +544,6 @@ description: >-
 * **Routine Deletion Stability**: Ensured routines are properly stopped before deletion to maintain stability.
 * **Corrected Error Reporting**: Fixed an issue where errors were reported to the wrong dashboard, ensuring accurate error tracking.
 * **Adjusted Token Limits for Claude 3 Models**: Set maximum token limits to prevent input errors when using Claude 3 models.
-
-## Control Center
-
-### New Features
-
-* **Added Caddy Template**: Introduced a new Caddy template to enhance deployment and configuration options.
-
-### Improvements
-
-* **Conversation Titles in Browser Tabs**: Manually edited or auto-generated conversation titles now populate browser tabs and webpage titles, providing better context.
-* **Increased Timeout Settings**: Extended timeout limits to 10 seconds to improve system responsiveness under heavy loads.
-
-### Bug Fixes
-
-* **UI Enhancements**: Resolved various issues in the new user interface to enhance overall experience.
 
 
 ==> releases/sep-8th-2023.md <==
@@ -563,6 +607,14 @@ description: >-
 
 ## GenStudio
 
+### Improvements
+
+- **Synchronized Authentication Methods**: GenStudio now reflects the authentication options configured in Control Center, providing a consistent login experience.
+- **Prioritized Google Login**: Placed the Google login option at the top of the login page for easier access.
+- **Updated Translations**: Refreshed internationalization settings for better multilingual support.
+
+## Control Center
+
 ### New Features
 
 - **Multiple Authentication Methods**: Introduced new sign-in options to provide flexibility in accessing your account.
@@ -578,14 +630,6 @@ description: >-
 
 - **Fixed Rememberizer Integration**: Resolved an issue causing Rememberizer to fail in reconnecting, ensuring continuous service.
 
-## Control Center
-
-### Improvements
-
-- **Synchronized Authentication Methods**: GenStudio now reflects the authentication options configured in Control Center, providing a consistent login experience.
-- **Prioritized Google Login**: Placed the Google login option at the top of the login page for easier access.
-- **Updated Translations**: Refreshed internationalization settings for better multilingual support.
-
 ==> releases/oct-11th-2024.md <==
 ---
 description: >-
@@ -597,6 +641,24 @@ description: >-
 # Oct 11th, 2024
 
 ## GenStudio
+
+### Improvements
+
+* **Enhanced LaTeX Rendering**: Improved the display of LaTeX in code blocks for clearer mathematical expressions.
+* **Consistent Set Password Page Design**: Updated the "Set Password" page to match the sign-in/sign-up pages for a uniform experience.
+* **Collapsible Conversation Bar**: Added collapse functionality to the conversation bar to maximize workspace area.
+
+### New Features
+
+* **Scroll to Top Button**: Introduced a button to quickly scroll to the top in conversations for easier navigation.
+* **Message Editing**: Enabled users to edit their messages, allowing corrections and updates.
+* **Markdown Support in Tool Inputs**: Added support for Markdown formatting in tool inputs for enhanced content creation.
+
+### Bug Fixes
+
+* **Safari Copy Conversation Fix**: Resolved an issue that prevented copying conversations in Safari.
+
+## Control Center
 
 ### Improvements
 
@@ -615,57 +677,28 @@ description: >-
 * **Migration Conflict Resolutions**: Fixed database migration conflicts to ensure system stability.
 * **Task Execution Improvement**: Improved task processing by cleaning up connections before and after running tasks.
 
-## Control Center
-
-### Improvements
-
-* **Enhanced LaTeX Rendering**: Improved the display of LaTeX in code blocks for clearer mathematical expressions.
-* **Consistent Set Password Page Design**: Updated the "Set Password" page to match the sign-in/sign-up pages for a uniform experience.
-* **Collapsible Conversation Bar**: Added collapse functionality to the conversation bar to maximize workspace area.
-
-### New Features
-
-* **Scroll to Top Button**: Introduced a button to quickly scroll to the top in conversations for easier navigation.
-* **Message Editing**: Enabled users to edit their messages, allowing corrections and updates.
-* **Markdown Support in Tool Inputs**: Added support for Markdown formatting in tool inputs for enhanced content creation.
-
-### Bug Fixes
-
-* **Safari Copy Conversation Fix**: Resolved an issue that prevented copying conversations in Safari.
-
 
 ==> releases/sep-6th-2024.md <==
 ---
 description: >-
-    This release focuses on enhancing administrative functionalities, resolving errors, and improving user interfaces to provide a smoother and more efficient experience.
+  This release focuses on enhancing snapshot management in GenStudio and improving admin role management and messaging reliability in Control Center.
 ---
+
 # Sep 6th, 2024
+
 ## GenStudio
+
 ### Improvements
-- **Enhanced Admin Role Management**: Improved tools for managing admin roles, offering more control and flexibility.
-- **New 404 and 500 Error Pages**: User-friendly error pages have been introduced for better navigation during errors.
 
-### New Features
-- **CSV File Uploads**: Now supports uploading CSV files to the control center with ease.
-- **Tool Customization**: Administrators can now add custom tools and edit tool metadata in the Control Center.
-
-### Bug Fixes
-- **500 Error Investigation**: Multiple efforts have been made to investigate and resolve persistent 500 errors.
-- **Token Count Fixes**: Resolved issues with token count displays and errors related to nonexistent URLs.
+- **Enhanced Snapshot Management Modal**: The snapshot management interface has been updated for a more user-friendly experience when managing snapshots.
+- **Improved Snapshot Titles**: Snapshot titles have been refined for better clarity and organization.
 
 ## Control Center
+
 ### Improvements
-- **Snapshot Management**: Updated snapshot management modal for a smoother experience.
-- **Favicon Update**: Introduced a new favicon for a refreshed look.
 
-### New Features
-- **Snapshot Title and GA Key Update**: Users can now update snapshot titles and GA keys directly.
-- **Tool Parameters Editing**: Enhanced the ability to edit tool parameters directly within the UI.
-- **Business Sign-Up**: New feature for business sign-up to streamline the onboarding process.
-
-### Bug Fixes
-- **Deleted Item Redirection**: Resolved redirection issues when items are deleted.
-- **Tool Image Display**: Fixed issues where tool images were not displaying correctly.
+- **Enhanced Admin Role Management**: Admins can now manage user roles more effectively, improving access control and permissions.
+- **Improved Messaging Reliability**: The system now better handles concurrent message streams to prevent errors and enhance performance.
 
 ==> releases/jun-28th-2024.md <==
 ---
@@ -743,6 +776,55 @@ description: >-
 
 * **Session Timeout**: Increased session timeout for tenants to 72 hours, ensuring you can stay logged in for longer without interruption.
 * **Case Sensitivity Check**: Reviewed and fixed issues with the case sensitivity checking, enhancing the robustness of our system.
+
+
+==> releases/nov-15th-2024.md <==
+---
+description: >-
+    This release focuses on performance enhancements, new features, and bug fixes to improve your overall experience with GenStudio and Control Center.
+---
+
+# Nov 15th, 2024
+
+## GenStudio
+
+### New Features
+
+- **Resizable Sidebars**: Users can now resize sidebars for a customized workspace layout.
+- **Stop Collaboration Conversation Button**: Added a button to end collaborative conversations, giving users more control.
+- **Sorting by Similarity**: Implemented the option to sort items by similarity for more relevant results.
+
+### Improvements
+
+- **Enhanced UI for Filters Bar**: Improved the user interface for conversation and tool filters for better usability.
+
+### Bug Fixes
+
+- **Fixed Double Scroll Bar**: Resolved an issue where a double scroll bar would appear.
+- **Fixed Collapsible Section Titles**: Corrected default titles in collapsible sections to improve navigation.
+
+## Control Center
+
+### New Features
+
+- **Sorting by Similarity**: Introduced the ability to sort results by similarity, enhancing the relevance of your searches.
+- **Account Ownership Claims**: Added account ownership claim messages to the Members Page and Homepage, improving account management transparency.
+
+### Improvements
+
+- **Enhanced Embedding Performance**: Improved the performance of embeddings for faster and more efficient data processing.
+- **New Blank Tool Supports All Models**: The new blank tool now supports all models by default, offering greater flexibility.
+- **Popular Domain Support**: Streamlined domain usage by focusing on the most popular top-level domains.
+- **Filtered User Authentication**: User authentication attempts are now filtered by email for increased security.
+- **Updated Wording on Embedding Tab**: Revised wording on the embedding tab for better clarity.
+- **Verified Business Info in Signup Emails**: Signup email alerts now include information about verified businesses.
+
+### Bug Fixes
+
+- **Fixed Invitation Status Handling**: Resolved an issue where invitation status was incorrectly set when a member role did not exist.
+- **Replaced Invalid Symbols in Tags**: Corrected tags by replacing invalid symbols to prevent errors.
+- **Limited Search Characters**: Limited the number of characters in search queries to improve reliability.
+- **Fixed Invitation Status for Owners/Admins**: Corrected the display of invitation status for owners and administrators.
 
 
 ==> releases/jul-26th-2024.md <==
@@ -827,6 +909,12 @@ description: >-
 
 ## GenStudio
 
+### Bug Fixes
+
+- **Access to Update Password Page**: Fixed an issue where the Update Password page was not accessible when password authentication was disabled.
+
+## Control Center
+
 ### New Features
 
 - **Media Display in Snapshots**: Enabled viewing of media files within snapshots for enhanced content review.
@@ -842,12 +930,6 @@ description: >-
 - **Enhanced Document Upload Reliability**: Removed null characters in uploaded documents to prevent processing issues.
 - **Corrected Email Links**: Fixed issues with email URLs to ensure proper navigation from email communications.
 - **General Stability Improvements**: Addressed various backend issues to enhance overall system reliability.
-
-## Control Center
-
-### Bug Fixes
-
-- **Access to Update Password Page**: Fixed an issue where the Update Password page was not accessible when password authentication was disabled.
 
 ==> releases/sep-18th-2023.md <==
 ---
@@ -898,32 +980,6 @@ description: >-
 
 ### New Features
 
-- **Microsoft Sign-In Support**: Added the ability to sign in using your Microsoft account, providing a convenient and secure authentication option.
-
-- **Enhanced Tool Creation**: Introduced the capability to create blank tools, allowing for more customization and flexibility in tool development.
-
-- **SMS Verification Management**: Implemented SMS code management and user SMS verification for improved account security.
-
-- **Expanded Tool Context**: Tools can now include documents and images in their context, enriching the information available during tool use.
-
-- **Optimized Conversation Titles**: Conversation titles are now generated by the language model only when they are empty, keeping your workspace organized.
-
-- **Admin Role Management**: Admins can now set other members as admins, and owners can transfer ownership to admins without approval, streamlining team management.
-
-- **Consistent Password Setting Page**: The "Set Password" page now matches the style of the Sign-In and Sign-Up pages for a consistent user experience.
-
-### Bug Fixes
-
-- **Image Upload Issue Resolved**: Fixed an issue where images exceeding the allowed size could not be uploaded.
-
-- **Streaming Disabled for Specific Models**: Addressed a bug that caused streaming issues with certain models.
-
-- **User Deletion Handling**: GenStudio now redirects to the login page if a user has been deleted or revoked, ensuring proper session management.
-
-## Control Center
-
-### New Features
-
 - **Microsoft Sign-In Support**: Added support for signing in with your Microsoft account for a seamless authentication experience.
 
 - **Enhanced Chatbox**: Improved the chatbox with new features for better communication.
@@ -953,6 +1009,32 @@ description: >-
 - **Message Editing Resolved**: Fixed a problem that prevented users from editing messages due to code merging issues.
 
 - **Expired Tool Image Fix**: Corrected an issue where tool images would expire improperly.
+
+## Control Center
+
+### New Features
+
+- **Microsoft Sign-In Support**: Added the ability to sign in using your Microsoft account, providing a convenient and secure authentication option.
+
+- **Enhanced Tool Creation**: Introduced the capability to create blank tools, allowing for more customization and flexibility in tool development.
+
+- **SMS Verification Management**: Implemented SMS code management and user SMS verification for improved account security.
+
+- **Expanded Tool Context**: Tools can now include documents and images in their context, enriching the information available during tool use.
+
+- **Optimized Conversation Titles**: Conversation titles are now generated by the language model only when they are empty, keeping your workspace organized.
+
+- **Admin Role Management**: Admins can now set other members as admins, and owners can transfer ownership to admins without approval, streamlining team management.
+
+- **Consistent Password Setting Page**: The "Set Password" page now matches the style of the Sign-In and Sign-Up pages for a consistent user experience.
+
+### Bug Fixes
+
+- **Image Upload Issue Resolved**: Fixed an issue where images exceeding the allowed size could not be uploaded.
+
+- **Streaming Disabled for Specific Models**: Addressed a bug that caused streaming issues with certain models.
+
+- **User Deletion Handling**: GenStudio now redirects to the login page if a user has been deleted or revoked, ensuring proper session management.
 
 ==> releases/jul-5th-2024.md <==
 ---
@@ -1107,6 +1189,22 @@ description: >-
 # Nov 1st, 2024
 ## GenStudio
 ### New Features
+- **Countdown Feature**: Added a countdown feature to enhance time management during tasks.
+
+### Improvements
+- **Optimized Conversation Search**: Improved the performance of conversation search requests for faster results.
+
+### Bug Fixes
+- **Conversation Name Update in Breadcrumb**: Fixed an issue where the conversation name in the breadcrumb did not update after renaming.
+- **Safari Browser Compatibility**: Corrected the positioning of dialog boxes on Safari for a better user experience.
+- **Chat Box Truncation Issue**: Resolved issues where text was being truncated in the conversation chat box.
+- **Conversation Deletion UI Update**: Deleting a conversation now correctly updates the user interface.
+- **Conversation List Loading on Tall Monitors**: Fixed loading issues of the conversation list on tall monitors.
+- **Duplicate Connection Notifications**: Prevented multiple connection success toast notifications for a cleaner interface.
+- **Enhanced Message Rendering**: Improved message rendering to exclude ending tags from URL-highlighted text.
+
+## Control Center
+### New Features
 - **Conversation Search by Collaborator Names**: Users can now search conversations using collaborators' names, making it easier to find relevant discussions.
 - **Full-Text Search Within Conversations**: Introduced full-text search within conversation messages, allowing users to search message content directly.
 - **Member List Sorting**: Added the ability to sort member lists for easier management and organization.
@@ -1121,21 +1219,6 @@ description: >-
 - **Enhanced Error Handling**: Improved handling of streaming errors for increased reliability.
 - **Restored Missing Functions**: Fixed issues caused by missing functions to ensure features work as intended.
 
-## Control Center
-### New Features
-- **Countdown Feature**: Added a countdown feature to enhance time management during tasks.
-
-### Improvements
-- **Optimized Conversation Search**: Improved the performance of conversation search requests for faster results.
-
-### Bug Fixes
-- **Conversation Name Update in Breadcrumb**: Fixed an issue where the conversation name in the breadcrumb did not update after renaming.
-- **Safari Browser Compatibility**: Corrected the positioning of dialog boxes on Safari for a better user experience.
-- **Chat Box Truncation Issue**: Resolved issues where text was being truncated in the conversation chat box.
-- **Conversation Deletion UI Update**: Deleting a conversation now correctly updates the user interface.
-- **Conversation List Loading on Tall Monitors**: Fixed loading issues of the conversation list on tall monitors.
-- **Duplicate Connection Notifications**: Prevented multiple connection success toast notifications for a cleaner interface.
-- **Enhanced Message Rendering**: Improved message rendering to exclude ending tags from URL-highlighted text.
 
 ==> releases/oct-16th-2023.md <==
 ---
@@ -2914,14 +2997,14 @@ If the previous link expires, the Guide action will change to **Re-invite**. For
 
 | Model                      | Date       |   Total Response Time (s) |   Tests Passed |   Mean CodeBLEU (0-1) |   Mean Usefulness Score (0-4) |   Mean Functional Correctness Score (0-4) |
 |:---------------------------|:-----------|--------------------------:|---------------:|----------------------:|------------------------------:|------------------------------------------:|
-| o1-preview                 | 2024-10-31 |                  2926.22  |            134 |              0.316905 |                      3.59146  |                                  3.58537  |
-| o1-mini                    | 2024-10-31 |                   672.968 |            126 |              0.347222 |                      3.7622   |                                  3.79878  |
-| gpt-4o                     | 2024-10-31 |                   237.803 |            122 |              0.31959  |                      3.7439   |                                  3.7439   |
-| gpt-4o-mini                | 2024-10-31 |                   157.638 |            118 |              0.332825 |                      3.65244  |                                  3.64024  |
-| claude-3-5-sonnet-20240620 | 2024-10-31 |                   316.3   |            115 |              0.301222 |                      3.65244  |                                  3.67073  |
-| claude-3-5-sonnet-20241022 | 2024-10-31 |                   343.893 |            117 |              0.318957 |                      3.69512  |                                  3.65244  |
-| gemini-1.5-pro             | 2024-10-31 |                   595.208 |             94 |              0.328057 |                      3.43293  |                                  3.43293  |
-| gemini-1.5-flash           | 2024-10-31 |                   781.461 |              1 |              0.255924 |                      0.646341 |                                  0.792683 |
+| o1-preview                 | 2024-11-14 |                  1912.99  |            135 |              0.312213 |                      3.65244  |                                  3.7439   |
+| o1-mini                    | 2024-11-14 |                   665.408 |            131 |              0.336815 |                      3.71951  |                                  3.76829  |
+| gpt-4o                     | 2024-11-14 |                   237.915 |            121 |              0.316501 |                      3.71951  |                                  3.65854  |
+| gpt-4o-mini                | 2024-11-14 |                   199.287 |            117 |              0.337357 |                      3.65854  |                                  3.7378   |
+| claude-3-5-sonnet-20240620 | 2024-11-14 |                   476.683 |            112 |              0.301742 |                      3.66463  |                                  3.68293  |
+| claude-3-5-sonnet-20241022 | 2024-11-14 |                   344.884 |            116 |              0.326506 |                      3.70732  |                                  3.66463  |
+| gemini-1.5-pro             | 2024-11-14 |                   568.082 |             95 |              0.330655 |                      3.47561  |                                  3.38415  |
+| gemini-1.5-flash           | 2024-11-14 |                   781.461 |              1 |              0.255924 |                      0.646341 |                                  0.792683 |
 
 **Total Response Time (s):** The total time taken by the model to generate all the outputs.
 
