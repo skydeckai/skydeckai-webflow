@@ -1,6 +1,6 @@
 # SkyDeck.ai LLM Ready Documentation
 
-*Generated at 2024-11-15 00:21:38 PST. Available as raw content at [skydeckai-llm-ready-documentation.md](https://raw.githubusercontent.com/skydeckai/skydeckai-webflow/refs/heads/docs/skydeckai-llm-ready-documentation.md).*
+*Generated at 2024-11-21 22:41:07 PST. Available as raw content at [skydeckai-llm-ready-documentation.md](https://raw.githubusercontent.com/skydeckai/skydeckai-webflow/refs/heads/docs/skydeckai-llm-ready-documentation.md).*
 
 This document provides a comprehensive, consolidated reference of SkyDeck.ai's documentation, optimized for large language model (LLM) consumption. It combines various documentation sources into a single, easily accessible format, facilitating efficient information retrieval and processing by AI systems.
 
@@ -83,6 +83,7 @@ This document provides a comprehensive, consolidated reference of SkyDeck.ai's d
   * [Privacy Policy](notices/privacy-policy.md)
   * [Cookie Notice](notices/cookie-notice.md)
 * [Releases](releases/README.md)
+  * [Nov 22nd, 2024](releases/nov-22nd-2024.md)
   * [Nov 15th, 2024](releases/nov-15th-2024.md)
   * [Nov 8th, 2024](releases/nov-8th-2024.md)
   * [Nov 1st, 2024](releases/nov-1st-2024.md)
@@ -432,6 +433,39 @@ description: >-
 
 * **Smooth Sign-Up**: Fixed the sign-up redirection to ensure new users are smoothly transitioned to the sign-in page upon registration.
 
+
+==> releases/nov-22nd-2024.md <==
+---
+description: >-
+    GenStudio and Control Center receive enhancements focusing on snapshot functionality, error message improvements, UI refinements, and the introduction of new features such as Gemini integration and Auto Join control.
+---
+# Nov 22nd, 2024
+
+## GenStudio
+
+### Improvements
+- **UI Enhancements**: Removed unnecessary refetching indicators for a cleaner interface.
+
+### New Features
+- **Snapshot Interaction Tracking**: Implemented tracking of snapshot interactions to enhance user experience.
+
+### Bug Fixes
+- **Duplicate Snapshots Resolved**: Fixed an issue where duplicated snapshots appeared due to incorrect item IDs.
+- **Improved Error Messages**: Provided user-friendly messages for token limit errors after scraping.
+
+## Control Center
+
+### Improvements
+- **Enhanced LLM Responses**: Improved responses when extra knowledge is irrelevant, providing more accurate information.
+- **Refined Function Prompting**: Prompts now include function call histories, enhancing the context for better interactions.
+
+### New Features
+- **Gemini Integration**: Added integration with Gemini, including Experiment 1114.
+- **Auto Join Control**: Organization owners can now enable or disable the Auto Join feature.
+
+### Bug Fixes
+- **Deadlock Issue Resolved**: Fixed a deadlock that occurred when updating conversation size.
+- **Improved Error Messages**: Provided user-friendly messages for token limit errors after scraping.
 
 ==> releases/nov-8th-2024.md <==
 ---
@@ -2997,14 +3031,14 @@ If the previous link expires, the Guide action will change to **Re-invite**. For
 
 | Model                      | Date       |   Total Response Time (s) |   Tests Passed |   Mean CodeBLEU (0-1) |   Mean Usefulness Score (0-4) |   Mean Functional Correctness Score (0-4) |
 |:---------------------------|:-----------|--------------------------:|---------------:|----------------------:|------------------------------:|------------------------------------------:|
-| o1-preview                 | 2024-11-14 |                  1912.99  |            135 |              0.312213 |                      3.65244  |                                  3.7439   |
-| o1-mini                    | 2024-11-14 |                   665.408 |            131 |              0.336815 |                      3.71951  |                                  3.76829  |
-| gpt-4o                     | 2024-11-14 |                   237.915 |            121 |              0.316501 |                      3.71951  |                                  3.65854  |
-| gpt-4o-mini                | 2024-11-14 |                   199.287 |            117 |              0.337357 |                      3.65854  |                                  3.7378   |
-| claude-3-5-sonnet-20240620 | 2024-11-14 |                   476.683 |            112 |              0.301742 |                      3.66463  |                                  3.68293  |
-| claude-3-5-sonnet-20241022 | 2024-11-14 |                   344.884 |            116 |              0.326506 |                      3.70732  |                                  3.66463  |
-| gemini-1.5-pro             | 2024-11-14 |                   568.082 |             95 |              0.330655 |                      3.47561  |                                  3.38415  |
-| gemini-1.5-flash           | 2024-11-14 |                   781.461 |              1 |              0.255924 |                      0.646341 |                                  0.792683 |
+| o1-preview                 | 2024-11-21 |                  2208.03  |            132 |              0.321908 |                      3.60976  |                                  3.64024  |
+| o1-mini                    | 2024-11-21 |                   718.012 |            134 |              0.322883 |                      3.65244  |                                  3.7561   |
+| gpt-4o                     | 2024-11-21 |                   321.525 |            125 |              0.316051 |                      3.70732  |                                  3.7439   |
+| gpt-4o-mini                | 2024-11-21 |                   191.192 |            114 |              0.339313 |                      3.62805  |                                  3.69512  |
+| claude-3-5-sonnet-20240620 | 2024-11-21 |                   335.662 |            113 |              0.303122 |                      3.60366  |                                  3.62195  |
+| claude-3-5-sonnet-20241022 | 2024-11-21 |                   351.938 |            110 |              0.321726 |                      3.67073  |                                  3.67683  |
+| gemini-1.5-pro             | 2024-11-21 |                   528.459 |            106 |              0.340196 |                      3.43293  |                                  3.5061   |
+| gemini-1.5-flash           | 2024-11-21 |                   759.693 |              2 |              0.270065 |                      0.670732 |                                  0.829268 |
 
 **Total Response Time (s):** The total time taken by the model to generate all the outputs.
 
