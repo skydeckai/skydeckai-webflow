@@ -102,6 +102,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         function executeInlineScripts(doc) {
             const scripts = doc.querySelectorAll('script');
             scripts.forEach(oldScript => {
+                if (oldScript.type === 'application/json') {
+                  return;
+                }
+                
                 if (oldScript.src) {
                     const scriptElement = document.querySelector(`script[src="${oldScript.src}"]`);
                     if (scriptElement) {
