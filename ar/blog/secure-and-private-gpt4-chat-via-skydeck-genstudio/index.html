@@ -136,11 +136,11 @@ document.addEventListener('click', function(event) {
     
     links.forEach(link => {
       const href = link.getAttribute("href");
-      if (href.startsWith("https://docs.rememberizer.ai/") || href.startsWith("https://docs.skydeck.ai/") || href.startsWith("https://admin.skydeck.ai/")) {
+      if (href.startsWith("https://www.skydeck.ai/") || href.startsWith("https://docs.rememberizer.ai/") || href.startsWith("https://docs.skydeck.ai/") || href.startsWith("https://admin.skydeck.ai/")) {
         const url = new URL(href);
         const language = getLanguageFromURL();
         if (language === "en") return;
-        rel="noopener noreferrer"
+        
         const pathParts = url.pathname.split('/').filter(part => part);
         const firstPart = pathParts[0];
         
