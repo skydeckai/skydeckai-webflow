@@ -76,7 +76,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     // Re-execute scripts in the new content
                     executeInlineScripts(doc);
                     
-                    replaceDocsLinks();
+                    replacei18nLinks();
                     
                     addLanguageDropdown();
                 })
@@ -123,11 +123,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             });
         }
         
-        function replaceDocsLinks() {
+        function replacei18nLinks() {
             const links = document.querySelectorAll("a[href]");
             links.forEach(link => {
                 const href = link.getAttribute("href");
-                if (href.startsWith("https://docs.rememberizer.ai/") || href.startsWith("https://docs.skydeck.ai/")) {
+                if (href.startsWith("https://docs.rememberizer.ai/") || href.startsWith("https://docs.skydeck.ai/") || href.startsWith("https://admin.skydeck.ai/")) {
                     const url = new URL(href);
                     const language = getLanguageFromURL();
                     if (language === "en") return;
@@ -289,7 +289,7 @@ document.addEventListener('click', function(event) {
     
     links.forEach(link => {
       const href = link.getAttribute("href");
-      if (href.startsWith("https://docs.rememberizer.ai/") || href.startsWith("https://docs.skydeck.ai/")) {
+      if (href.startsWith("https://docs.rememberizer.ai/") || href.startsWith("https://docs.skydeck.ai/") || href.startsWith("https://admin.skydeck.ai/")) {
         const url = new URL(href);
         const language = getLanguageFromURL();
         if (language === "en") return;
