@@ -301,7 +301,7 @@ document.addEventListener('click', function(event) {
         const url = new URL(href);
         const language = getLanguageFromURL();
         if (language === "en") return;
-        
+        rel="noopener noreferrer"
         const pathParts = url.pathname.split('/').filter(part => part);
         const firstPart = pathParts[0];
         
