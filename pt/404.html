@@ -265,7 +265,175 @@ function getLanguageFromURL() {
     .language-dropdown li.selected {
       font-weight: bold;
     }
-  </style><link rel="alternate" hreflang="en" href="https://skydeckai.github.io/skydeckai-webflow//en/404.html"><link rel="alternate" hreflang="fr" href="https://skydeckai.github.io/skydeckai-webflow//fr/404.html"><link rel="alternate" hreflang="da" href="https://skydeckai.github.io/skydeckai-webflow//da/404.html"><link rel="alternate" hreflang="ja" href="https://skydeckai.github.io/skydeckai-webflow//ja/404.html"><link rel="alternate" hreflang="ko" href="https://skydeckai.github.io/skydeckai-webflow//ko/404.html"><link rel="alternate" hreflang="es" href="https://skydeckai.github.io/skydeckai-webflow//es/404.html"><link rel="alternate" hreflang="de" href="https://skydeckai.github.io/skydeckai-webflow//de/404.html"><link rel="alternate" hreflang="zh-cn" href="https://skydeckai.github.io/skydeckai-webflow//zh-cn/404.html"><link rel="alternate" hreflang="zh-hk" href="https://skydeckai.github.io/skydeckai-webflow//zh-hk/404.html"><link rel="alternate" hreflang="pt" href="https://skydeckai.github.io/skydeckai-webflow//pt/404.html"><link rel="alternate" hreflang="ar" href="https://skydeckai.github.io/skydeckai-webflow//ar/404.html"><link rel="canonical" href="https://skydeckai.github.io/skydeckai-webflow//pt/404.html"></head>
+  </style><style>
+    .language-selector {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 1000;
+      font-family: Arial, sans-serif;
+    }
+    .current-language {
+      padding: 8px 12px;
+      font-size: 12px;
+      border: 1px solid #aaa;
+      background-color: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      width: 90px;
+      justify-content: space-between;
+    }
+    .current-language::after {
+      content: "";
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-left: 5px solid #333;
+      margin-left: 8px;
+      transition: transform 0.3s ease;
+      }
+    .current-language.open::after {
+      transform: rotate(-90deg);
+    }
+    .language-dropdown {
+      display: none;
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      background-color: white;
+      border: 1px solid #aaa;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      max-height: 200px;
+      overflow-y: auto;
+      width: 90px;
+      border-bottom: none;
+      font-size: 12px;
+    }
+    .language-dropdown li {
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    .language-dropdown li:hover {
+      background-color: #f0f0f0;
+    }
+    .language-dropdown li.selected {
+      font-weight: bold;
+    }
+  </style><style>
+    .language-selector {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 1000;
+      font-family: Arial, sans-serif;
+    }
+    .current-language {
+      padding: 8px 12px;
+      font-size: 12px;
+      border: 1px solid #aaa;
+      background-color: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      width: 90px;
+      justify-content: space-between;
+    }
+    .current-language::after {
+      content: "";
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-left: 5px solid #333;
+      margin-left: 8px;
+      transition: transform 0.3s ease;
+      }
+    .current-language.open::after {
+      transform: rotate(-90deg);
+    }
+    .language-dropdown {
+      display: none;
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      background-color: white;
+      border: 1px solid #aaa;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      max-height: 200px;
+      overflow-y: auto;
+      width: 90px;
+      border-bottom: none;
+      font-size: 12px;
+    }
+    .language-dropdown li {
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    .language-dropdown li:hover {
+      background-color: #f0f0f0;
+    }
+    .language-dropdown li.selected {
+      font-weight: bold;
+    }
+  </style><style>
+    .language-selector {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 1000;
+      font-family: Arial, sans-serif;
+    }
+    .current-language {
+      padding: 8px 12px;
+      font-size: 12px;
+      border: 1px solid #aaa;
+      background-color: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      width: 90px;
+      justify-content: space-between;
+    }
+    .current-language::after {
+      content: "";
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-left: 5px solid #333;
+      margin-left: 8px;
+      transition: transform 0.3s ease;
+      }
+    .current-language.open::after {
+      transform: rotate(-90deg);
+    }
+    .language-dropdown {
+      display: none;
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      background-color: white;
+      border: 1px solid #aaa;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      max-height: 200px;
+      overflow-y: auto;
+      width: 90px;
+      border-bottom: none;
+      font-size: 12px;
+    }
+    .language-dropdown li {
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    .language-dropdown li:hover {
+      background-color: #f0f0f0;
+    }
+    .language-dropdown li.selected {
+      font-weight: bold;
+    }
+  </style><link rel="alternate" hreflang="en" href="https://skydeck.ai//en/404.html"><link rel="alternate" hreflang="fr" href="https://skydeck.ai//fr/404.html"><link rel="alternate" hreflang="da" href="https://skydeck.ai//da/404.html"><link rel="alternate" hreflang="ja" href="https://skydeck.ai//ja/404.html"><link rel="alternate" hreflang="ko" href="https://skydeck.ai//ko/404.html"><link rel="alternate" hreflang="es" href="https://skydeck.ai//es/404.html"><link rel="alternate" hreflang="de" href="https://skydeck.ai//de/404.html"><link rel="alternate" hreflang="zh-cn" href="https://skydeck.ai//zh-cn/404.html"><link rel="alternate" hreflang="zh-hk" href="https://skydeck.ai//zh-hk/404.html"><link rel="alternate" hreflang="pt" href="https://skydeck.ai//pt/404.html"><link rel="alternate" hreflang="ar" href="https://skydeck.ai//ar/404.html"><link rel="canonical" href="https://skydeck.ai//pt/404.html"></head>
   <body class="body-4" style="direction: ltr;">
     <div class="navbar-component w-nav" data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" data-w-id="89a538a4-18ec-08f7-bfea-f28bc063fe64" role="banner">
       <div class="navbar-container">
@@ -642,4 +810,4 @@ function getLanguageFromURL() {
     <!-- End Google Tag Manager (noscript) -->
   
 
-<div id="languageSelector" class="language-selector"><div class="current-language">English</div><ul class="language-dropdown"><li data-lang="en" class="selected">English</li><li data-lang="fr">Français</li><li data-lang="da">Dansk</li><li data-lang="ja">日本語</li><li data-lang="ko">한국어</li><li data-lang="es">Español</li><li data-lang="de">Deutsch</li><li data-lang="zh-cn">简体中文</li><li data-lang="zh-hk">繁體中文</li><li data-lang="pt">Português</li><li data-lang="ar">العربية</li></ul></div><div id="languageSelector" class="language-selector"><div class="current-language">Português</div><ul class="language-dropdown"><li data-lang="en">English</li><li data-lang="fr">Français</li><li data-lang="da">Dansk</li><li data-lang="ja">日本語</li><li data-lang="ko">한국어</li><li data-lang="es">Español</li><li data-lang="de">Deutsch</li><li data-lang="zh-cn">简体中文</li><li data-lang="zh-hk">繁體中文</li><li data-lang="pt" class="selected">Português</li><li data-lang="ar">العربية</li></ul></div></body></html>
+<div id="languageSelector" class="language-selector"><div class="current-language">English</div><ul class="language-dropdown"><li data-lang="en" class="selected">English</li><li data-lang="fr">Français</li><li data-lang="da">Dansk</li><li data-lang="ja">日本語</li><li data-lang="ko">한국어</li><li data-lang="es">Español</li><li data-lang="de">Deutsch</li><li data-lang="zh-cn">简体中文</li><li data-lang="zh-hk">繁體中文</li><li data-lang="pt">Português</li><li data-lang="ar">العربية</li></ul></div><div id="languageSelector" class="language-selector"><div class="current-language">English</div><ul class="language-dropdown"><li data-lang="en" class="selected">English</li><li data-lang="fr">Français</li><li data-lang="da">Dansk</li><li data-lang="ja">日本語</li><li data-lang="ko">한국어</li><li data-lang="es">Español</li><li data-lang="de">Deutsch</li><li data-lang="zh-cn">简体中文</li><li data-lang="zh-hk">繁體中文</li><li data-lang="pt">Português</li><li data-lang="ar">العربية</li></ul></div><div id="languageSelector" class="language-selector"><div class="current-language">English</div><ul class="language-dropdown"><li data-lang="en" class="selected">English</li><li data-lang="fr">Français</li><li data-lang="da">Dansk</li><li data-lang="ja">日本語</li><li data-lang="ko">한국어</li><li data-lang="es">Español</li><li data-lang="de">Deutsch</li><li data-lang="zh-cn">简体中文</li><li data-lang="zh-hk">繁體中文</li><li data-lang="pt">Português</li><li data-lang="ar">العربية</li></ul></div><div id="languageSelector" class="language-selector"><div class="current-language">English</div><ul class="language-dropdown"><li data-lang="en" class="selected">English</li><li data-lang="fr">Français</li><li data-lang="da">Dansk</li><li data-lang="ja">日本語</li><li data-lang="ko">한국어</li><li data-lang="es">Español</li><li data-lang="de">Deutsch</li><li data-lang="zh-cn">简体中文</li><li data-lang="zh-hk">繁體中文</li><li data-lang="pt">Português</li><li data-lang="ar">العربية</li></ul></div><div id="languageSelector" class="language-selector"><div class="current-language">Português</div><ul class="language-dropdown"><li data-lang="en">English</li><li data-lang="fr">Français</li><li data-lang="da">Dansk</li><li data-lang="ja">日本語</li><li data-lang="ko">한국어</li><li data-lang="es">Español</li><li data-lang="de">Deutsch</li><li data-lang="zh-cn">简体中文</li><li data-lang="zh-hk">繁體中文</li><li data-lang="pt" class="selected">Português</li><li data-lang="ar">العربية</li></ul></div></body></html>
