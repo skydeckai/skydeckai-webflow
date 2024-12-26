@@ -140,7 +140,15 @@ document.addEventListener('click', function(event) {
         const url = new URL(href);
         const language = getLanguageFromURL();
         if (language === "en") return;
-        const newPath = `/${language}${url.pathname}`;
+        
+        const pathParts = url.pathname.split('/').filter(part => part);
+        const firstPart = pathParts[0];
+        
+        if (firstPart === "en") {
+          pathParts.shift();
+        }
+
+        const newPath = `/${language}/${pathParts.join('/')}`;
         url.pathname = newPath;
         link.setAttribute("href", url.href);
       }

@@ -126,15 +126,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         function replacei18nLinks() {
             const links = document.querySelectorAll("a[href]");
             links.forEach(link => {
-                const href = link.getAttribute("href");
-                if (href.startsWith("https://docs.rememberizer.ai/") || href.startsWith("https://docs.skydeck.ai/") || href.startsWith("https://admin.skydeck.ai/")) {
-                    const url = new URL(href);
-                    const language = getLanguageFromURL();
-                    if (language === "en") return;
-                    const newPath = `/${language}${url.pathname}`;
-                    url.pathname = newPath;
-                    link.setAttribute("href", url.href);
+            const href = link.getAttribute("href");
+            if (href.startsWith("https://docs.rememberizer.ai/") || href.startsWith("https://docs.skydeck.ai/") || href.startsWith("https://admin.skydeck.ai/") || href.startsWith("https://user.skydeck.ai/")) {
+                const url = new URL(href);
+                const language = getLanguageFromURL();
+                if (language === "en") return;
+                
+                const pathParts = url.pathname.split('/').filter(part => part);
+                const firstPart = pathParts[0];
+                
+                if (firstPart === "en") {
+                    pathParts.shift();
                 }
+
+                const newPath = `/${language}/${pathParts.join('/')}`;
+                url.pathname = newPath;
+                link.setAttribute("href", url.href);
+            }
             });
         }
 
@@ -293,7 +301,15 @@ document.addEventListener('click', function(event) {
         const url = new URL(href);
         const language = getLanguageFromURL();
         if (language === "en") return;
-        const newPath = `/${language}${url.pathname}`;
+        
+        const pathParts = url.pathname.split('/').filter(part => part);
+        const firstPart = pathParts[0];
+        
+        if (firstPart === "en") {
+          pathParts.shift();
+        }
+
+        const newPath = `/${language}/${pathParts.join('/')}`;
         url.pathname = newPath;
         link.setAttribute("href", url.href);
       }
