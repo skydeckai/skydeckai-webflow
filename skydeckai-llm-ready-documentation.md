@@ -1,6 +1,6 @@
 # SkyDeck.ai LLM Ready Documentation
 
-*Generated at 2024-12-26 19:46:00 PST. Available as raw content at [SkyDeck.ai llms-full.txt](https://llm.skydeck.ai/llms-full.txt).*
+*Generated at 2025-01-02 19:13:35 PST. Available as raw content at [SkyDeck.ai llms-full.txt](https://llm.skydeck.ai/llms-full.txt).*
 
 This document provides a comprehensive, consolidated reference of SkyDeck.ai's documentation, optimized for large language model (LLM) consumption. It combines various documentation sources into a single, easily accessible format, facilitating efficient information retrieval and processing by AI systems.
 
@@ -83,6 +83,7 @@ This document provides a comprehensive, consolidated reference of SkyDeck.ai's d
   * [Privacy Policy](notices/privacy-policy.md)
   * [Cookie Notice](notices/cookie-notice.md)
 * [Releases](releases/README.md)
+  * [Jan 3rd, 2025](releases/jan-3rd-2025.md)
   * [Dec 27th, 2024](releases/dec-27th-2024.md)
   * [Dec 20th, 2024](releases/dec-20th-2024.md)
   * [Dec 13th, 2024](releases/dec-13th-2024.md)
@@ -1323,7 +1324,7 @@ description: >-
 
 ### Improvements
 - **API Support for Sorting**: Updated APIs to support sorting for collaborations and snapshots, enhancing data management.
-- **Improved User Onboarding Experience**: The business offer is no longer displayed after users complete onboarding.
+- **Improved User Onboarding Experience**: Displayed correct steps after users complete onboarding.
 - **Automatic Cache Invalidation**: CloudFront cache is now automatically invalidated when deleting content, ensuring users see the most up-to-date information.
 - **Regular Security Maintenance and Updates**
 
@@ -2160,6 +2161,30 @@ description: >-
 * **Email Verification:** Added email verification to ensure secure account setups.
 * **reCAPTCHA Integration:** Added reCAPTCHA to authentication pages and the Forgot Password page to enhance security.
 
+
+==> releases/jan-3rd-2025.md <==
+---
+description: >-
+  This release focuses on enhancing billing features, improving account management, and fixing important issues.
+---
+# Jan 3rd, 2025
+
+## Control Center
+
+### New Features
+- **New Billing Tab UI**: Introduced a new billing tab for an improved billing experience.
+- **Price Table Addition**: Added a price table to clearly display pricing information.
+
+### Improvements
+- **Balance Change Tracking**: Enabled tracking of balance changes for better account management.
+- **Improved Balance Calculations**: Enhanced accuracy of balance deductions prior to price model deployment.
+- **Extended Session Duration**: Increased session duration to 4 hours for a smoother user experience.
+- **Security Updates**: Regular security maintenance and updates.
+
+### Bug Fixes
+- **Billing UI Correction**: Resolved an issue with the billing user interface.
+- **Fixed Conversation Timestamps**: Corrected an issue where cloned snapshot conversations displayed incorrect timestamps.
+- **Username Sanitization**: Fixed an issue where social login usernames could contain invalid characters.
 
 ==> releases/dec-6th-2024.md <==
 ---
@@ -4712,14 +4737,14 @@ The AI examines the clause and then outputs a thorough answer that looks at the 
 
 | Model                      | Date       |   Total Response Time (s) |   Tests Passed |   Mean CodeBLEU (0-1) |   Mean Usefulness Score (0-4) |   Mean Functional Correctness Score (0-4) |
 |:---------------------------|:-----------|--------------------------:|---------------:|----------------------:|------------------------------:|------------------------------------------:|
-| o1-preview                 | 2024-12-26 |                  1960.2   |            132 |              0.307475 |                      3.63415  |                                   3.56707 |
-| o1-mini                    | 2024-12-26 |                   849.596 |            133 |              0.334268 |                      3.72561  |                                   3.7439  |
-| gpt-4o                     | 2024-12-26 |                   198.37  |            127 |              0.30484  |                      3.67683  |                                   3.7378  |
-| gpt-4o-mini                | 2024-12-26 |                   205.329 |            116 |              0.32343  |                      3.65854  |                                   3.60366 |
-| claude-3-5-sonnet-20240620 | 2024-12-26 |                   591.715 |            117 |              0.306952 |                      3.64024  |                                   3.57927 |
-| claude-3-5-sonnet-20241022 | 2024-12-26 |                   336.772 |            115 |              0.324196 |                      3.67683  |                                   3.66463 |
-| gemini-1.5-pro             | 2024-12-26 |                   504.702 |             98 |              0.325658 |                      3.48171  |                                   3.44512 |
-| gemini-1.5-flash           | 2024-12-26 |                   768.605 |              0 |              0.264644 |                      0.615854 |                                   0.77439 |
+| o1-preview                 | 2025-01-02 |                  1875.72  |            130 |              0.31245  |                      3.57317  |                                  3.54268  |
+| o1-mini                    | 2025-01-02 |                   816.414 |            130 |              0.339609 |                      3.70122  |                                  3.79878  |
+| gpt-4o                     | 2025-01-02 |                   237.855 |            126 |              0.318606 |                      3.73171  |                                  3.70732  |
+| gpt-4o-mini                | 2025-01-02 |                   232.541 |            120 |              0.330971 |                      3.67683  |                                  3.62195  |
+| claude-3-5-sonnet-20240620 | 2025-01-02 |                   307.512 |            112 |              0.296656 |                      3.68902  |                                  3.62195  |
+| claude-3-5-sonnet-20241022 | 2025-01-02 |                   287.938 |            112 |              0.324156 |                      3.66463  |                                  3.64634  |
+| gemini-1.5-pro             | 2025-01-02 |                   510.963 |            106 |              0.333728 |                      3.48171  |                                  3.45732  |
+| gemini-1.5-flash           | 2025-01-02 |                   768.685 |              1 |              0.265063 |                      0.609756 |                                  0.768293 |
 
 **Total Response Time (s):** The total time taken by the model to generate all the outputs.
 
