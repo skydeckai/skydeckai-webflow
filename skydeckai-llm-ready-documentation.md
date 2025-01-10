@@ -1,6 +1,6 @@
 # SkyDeck.ai LLM Ready Documentation
 
-*Generated at 2025-01-02 19:13:35 PST. Available as raw content at [SkyDeck.ai llms-full.txt](https://llm.skydeck.ai/llms-full.txt).*
+*Generated at 2025-01-09 19:09:02 PST. Available as raw content at [SkyDeck.ai llms-full.txt](https://llm.skydeck.ai/llms-full.txt).*
 
 This document provides a comprehensive, consolidated reference of SkyDeck.ai's documentation, optimized for large language model (LLM) consumption. It combines various documentation sources into a single, easily accessible format, facilitating efficient information retrieval and processing by AI systems.
 
@@ -83,6 +83,7 @@ This document provides a comprehensive, consolidated reference of SkyDeck.ai's d
   * [Privacy Policy](notices/privacy-policy.md)
   * [Cookie Notice](notices/cookie-notice.md)
 * [Releases](releases/README.md)
+  * [Jan 10th, 2025](releases/jan-10th-2025.md)
   * [Jan 3rd, 2025](releases/jan-3rd-2025.md)
   * [Dec 27th, 2024](releases/dec-27th-2024.md)
   * [Dec 20th, 2024](releases/dec-20th-2024.md)
@@ -2664,6 +2665,25 @@ description: >-
 * **Removed Email Verification for Admins**: Admins no longer need to go through email verification, simplifying access and management.
 
 
+==> releases/jan-10th-2025.md <==
+---
+description: >-
+    This release focuses on enhancing security, improving error handling, and refining user interface elements.
+---
+
+# Jan 10th, 2025
+
+## Control Center
+
+### Improvements
+- **Security Updates**: Regular security maintenance and updates.
+- **Improved Data Validation**: Enhanced input validation to ensure data integrity when updating member tags.
+- **Enhanced Admin Interface**: Added visibility of creation dates for credit changes in the admin panel.
+
+### Bug Fixes
+- **Enhanced Error Messages**: Improved clarity of error messages for API-related issues.
+- **Accurate Tool Cost Calculation**: Corrected an issue with cost calculations for smart tools.
+
 ==> releases/jul-5th-2024.md <==
 ---
 description: >-
@@ -4737,14 +4757,14 @@ The AI examines the clause and then outputs a thorough answer that looks at the 
 
 | Model                      | Date       |   Total Response Time (s) |   Tests Passed |   Mean CodeBLEU (0-1) |   Mean Usefulness Score (0-4) |   Mean Functional Correctness Score (0-4) |
 |:---------------------------|:-----------|--------------------------:|---------------:|----------------------:|------------------------------:|------------------------------------------:|
-| o1-preview                 | 2025-01-02 |                  1875.72  |            130 |              0.31245  |                      3.57317  |                                  3.54268  |
-| o1-mini                    | 2025-01-02 |                   816.414 |            130 |              0.339609 |                      3.70122  |                                  3.79878  |
-| gpt-4o                     | 2025-01-02 |                   237.855 |            126 |              0.318606 |                      3.73171  |                                  3.70732  |
-| gpt-4o-mini                | 2025-01-02 |                   232.541 |            120 |              0.330971 |                      3.67683  |                                  3.62195  |
-| claude-3-5-sonnet-20240620 | 2025-01-02 |                   307.512 |            112 |              0.296656 |                      3.68902  |                                  3.62195  |
-| claude-3-5-sonnet-20241022 | 2025-01-02 |                   287.938 |            112 |              0.324156 |                      3.66463  |                                  3.64634  |
-| gemini-1.5-pro             | 2025-01-02 |                   510.963 |            106 |              0.333728 |                      3.48171  |                                  3.45732  |
-| gemini-1.5-flash           | 2025-01-02 |                   768.685 |              1 |              0.265063 |                      0.609756 |                                  0.768293 |
+| o1-preview                 | 2025-01-09 |                  2407.5   |            127 |              0.316124 |                      3.65244  |                                  3.67683  |
+| o1-mini                    | 2025-01-09 |                  1081.68  |            132 |              0.342239 |                      3.72561  |                                  3.81707  |
+| gpt-4o                     | 2025-01-09 |                   319.388 |            127 |              0.327645 |                      3.71951  |                                  3.75     |
+| gpt-4o-mini                | 2025-01-09 |                   206.809 |            118 |              0.335667 |                      3.60976  |                                  3.66463  |
+| claude-3-5-sonnet-20240620 | 2025-01-09 |                   253.944 |            114 |              0.301066 |                      3.66463  |                                  3.60366  |
+| claude-3-5-sonnet-20241022 | 2025-01-09 |                   269.071 |            120 |              0.320338 |                      3.67683  |                                  3.65854  |
+| gemini-1.5-pro             | 2025-01-09 |                   528.315 |            101 |              0.337476 |                      3.56707  |                                  3.5122   |
+| gemini-1.5-flash           | 2025-01-09 |                   768.094 |              1 |              0.262845 |                      0.567073 |                                  0.841463 |
 
 **Total Response Time (s):** The total time taken by the model to generate all the outputs.
 
