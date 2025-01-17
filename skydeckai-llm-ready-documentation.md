@@ -1,6 +1,6 @@
 # SkyDeck.ai LLM Ready Documentation
 
-*Generated at 2025-01-09 19:09:02 PST. Available as raw content at [SkyDeck.ai llms-full.txt](https://llm.skydeck.ai/llms-full.txt).*
+*Generated at 2025-01-16 19:13:50 PST. Available as raw content at [SkyDeck.ai llms-full.txt](https://llm.skydeck.ai/llms-full.txt).*
 
 This document provides a comprehensive, consolidated reference of SkyDeck.ai's documentation, optimized for large language model (LLM) consumption. It combines various documentation sources into a single, easily accessible format, facilitating efficient information retrieval and processing by AI systems.
 
@@ -83,6 +83,7 @@ This document provides a comprehensive, consolidated reference of SkyDeck.ai's d
   * [Privacy Policy](notices/privacy-policy.md)
   * [Cookie Notice](notices/cookie-notice.md)
 * [Releases](releases/README.md)
+  * [Jan 17th, 2025](releases/jan-17th-2025.md)
   * [Jan 10th, 2025](releases/jan-10th-2025.md)
   * [Jan 3rd, 2025](releases/jan-3rd-2025.md)
   * [Dec 27th, 2024](releases/dec-27th-2024.md)
@@ -2162,6 +2163,50 @@ description: >-
 * **Email Verification:** Added email verification to ensure secure account setups.
 * **reCAPTCHA Integration:** Added reCAPTCHA to authentication pages and the Forgot Password page to enhance security.
 
+
+==> releases/jan-17th-2025.md <==
+---
+description: >-
+  This release focuses on new features like commentary support, additional languages, and displaying account balances.
+---
+
+# Jan 17th, 2025
+
+## GenStudio
+
+### New Features
+- **Commentary Support**: Introduced the ability to add commentary within GenStudio, enhancing collaboration and communication.
+- **Display Account Balance**: Users can now view their account balance directly in GenStudio.
+- **Added Danish and Vietnamese Languages**: Support for Danish and Vietnamese languages has been added.
+- **Behavior Button**: Added a new behavior button to enhance user interaction and control.
+
+### Improvements
+- **Enhanced Localization**: Improved locale support in navigations for a better user experience.
+
+### Bug Fixes
+- **Fixed Mentions Highlight**: Resolved an issue where mentions were not highlighted correctly.
+- **Updated Translations and Sign-in Internationalization**: Fixed translation issues and improved internationalization for the sign-in process.
+- **Conversation Details Refresh**: Fixed an issue where conversation details did not refresh when a message was deleted during streaming.
+
+## Control Center
+
+### New Features
+- **Commentary Support**: Introduced commentary features in the Control Center for enhanced collaboration.
+- **Account Admin Dashboard Enhancements**: Admins can now view links to account owners and other admins directly from the dashboard.
+- **Display Account Balance**: Account balance information is now available to users in the Control Center.
+- **Web Scraping Option per Conversation**: Added options to enable web scraping for individual conversations.
+- **Reset Password on First Account Link**: Users are now prompted to reset their password when linking their account for the first time.
+- **Added Danish and Vietnamese Languages**: Support for Danish and Vietnamese languages has been added.
+
+### Improvements
+- **Improved Performance**: Enhanced system capacity to handle more connections, resulting in better reliability and performance.
+- **Enhanced Localization and Redirection**: Improved locale path consistency across sign-in redirections and added locale parameters to GenStudio redirects.
+- **Improved Data Consistency**: Enhanced data consistency in integrations to prevent potential inconsistencies.
+
+### Bug Fixes
+- **Fixed Transfer Ownership Errors**: The transfer ownership feature now returns proper error messages instead of a 404 error.
+- **Fixed Redirect Without Login**: Addressed an issue where users were not redirected to the homepage when accessing the portal without logging in.
+- **Input Data Validation**: Added validation for input data to prevent errors and improve stability.
 
 ==> releases/jan-3rd-2025.md <==
 ---
@@ -4757,14 +4802,14 @@ The AI examines the clause and then outputs a thorough answer that looks at the 
 
 | Model                      | Date       |   Total Response Time (s) |   Tests Passed |   Mean CodeBLEU (0-1) |   Mean Usefulness Score (0-4) |   Mean Functional Correctness Score (0-4) |
 |:---------------------------|:-----------|--------------------------:|---------------:|----------------------:|------------------------------:|------------------------------------------:|
-| o1-preview                 | 2025-01-09 |                  2407.5   |            127 |              0.316124 |                      3.65244  |                                  3.67683  |
-| o1-mini                    | 2025-01-09 |                  1081.68  |            132 |              0.342239 |                      3.72561  |                                  3.81707  |
-| gpt-4o                     | 2025-01-09 |                   319.388 |            127 |              0.327645 |                      3.71951  |                                  3.75     |
-| gpt-4o-mini                | 2025-01-09 |                   206.809 |            118 |              0.335667 |                      3.60976  |                                  3.66463  |
-| claude-3-5-sonnet-20240620 | 2025-01-09 |                   253.944 |            114 |              0.301066 |                      3.66463  |                                  3.60366  |
-| claude-3-5-sonnet-20241022 | 2025-01-09 |                   269.071 |            120 |              0.320338 |                      3.67683  |                                  3.65854  |
-| gemini-1.5-pro             | 2025-01-09 |                   528.315 |            101 |              0.337476 |                      3.56707  |                                  3.5122   |
-| gemini-1.5-flash           | 2025-01-09 |                   768.094 |              1 |              0.262845 |                      0.567073 |                                  0.841463 |
+| o1-preview                 | 2025-01-16 |                  2431.83  |            132 |              0.316242 |                      3.57317  |                                  3.57927  |
+| o1-mini                    | 2025-01-16 |                   811.876 |            131 |              0.336763 |                      3.73171  |                                  3.79268  |
+| gpt-4o                     | 2025-01-16 |                   334.464 |            125 |              0.310818 |                      3.72561  |                                  3.7439   |
+| gpt-4o-mini                | 2025-01-16 |                   223.975 |            117 |              0.344862 |                      3.68293  |                                  3.68293  |
+| claude-3-5-sonnet-20240620 | 2025-01-16 |                   245.016 |            113 |              0.310897 |                      3.68293  |                                  3.62195  |
+| claude-3-5-sonnet-20241022 | 2025-01-16 |                   278.969 |            110 |              0.325765 |                      3.69512  |                                  3.68902  |
+| gemini-1.5-pro             | 2025-01-16 |                   519.554 |            100 |              0.326639 |                      3.4878   |                                  3.41463  |
+| gemini-1.5-flash           | 2025-01-16 |                   772.863 |              0 |              0.271533 |                      0.658537 |                                  0.804878 |
 
 **Total Response Time (s):** The total time taken by the model to generate all the outputs.
 
