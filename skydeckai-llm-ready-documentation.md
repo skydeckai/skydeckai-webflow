@@ -1,6 +1,6 @@
 # SkyDeck.ai LLM Ready Documentation
 
-*Generated at 2025-01-16 19:13:50 PST. Available as raw content at [SkyDeck.ai llms-full.txt](https://llm.skydeck.ai/llms-full.txt).*
+*Generated at 2025-01-23 19:10:38 PST. Available as raw content at [SkyDeck.ai llms-full.txt](https://llm.skydeck.ai/llms-full.txt).*
 
 This document provides a comprehensive, consolidated reference of SkyDeck.ai's documentation, optimized for large language model (LLM) consumption. It combines various documentation sources into a single, easily accessible format, facilitating efficient information retrieval and processing by AI systems.
 
@@ -83,6 +83,7 @@ This document provides a comprehensive, consolidated reference of SkyDeck.ai's d
   * [Privacy Policy](notices/privacy-policy.md)
   * [Cookie Notice](notices/cookie-notice.md)
 * [Releases](releases/README.md)
+  * [Jan 24th, 2025](releases/jan-24th-2025.md)
   * [Jan 17th, 2025](releases/jan-17th-2025.md)
   * [Jan 10th, 2025](releases/jan-10th-2025.md)
   * [Jan 3rd, 2025](releases/jan-3rd-2025.md)
@@ -2729,6 +2730,36 @@ description: >-
 - **Enhanced Error Messages**: Improved clarity of error messages for API-related issues.
 - **Accurate Tool Cost Calculation**: Corrected an issue with cost calculations for smart tools.
 
+==> releases/jan-24th-2025.md <==
+---
+description: >-
+    This release introduces enhanced credit purchase options, new analytics features, and improved user notifications.
+---
+
+# Jan 22nd, 2025
+
+## GenStudio
+
+### Improvements
+- **Enhanced Notifications**: Users without an active plan now receive notifications to assist them in getting started.
+- **Display Credit Models**: Users can view available models based on their credit balance.
+
+- **Updated Default Settings**: Default settings have been improved for a better user experience.
+
+## Control Center
+
+### New Features
+- **Usage Analytics Page**: Introduced a new analytics page for users to monitor their usage.
+- **Cost Analysis Tab**: Added a cost tab within the analytics page for detailed expense tracking.
+
+### Improvements
+- **Expanded Payment Options**: All payment methods are now available for credit purchases, providing greater flexibility.
+- **Display Credit Models**: Users can view credit-based models available for use.
+- **Service Streamlining**: Excluded certain services to enhance performance.
+
+### Bug Fixes
+- **Payment Method Listing Fix**: Resolved an issue where not all payment methods were displayed during credit purchases.
+
 ==> releases/jul-5th-2024.md <==
 ---
 description: >-
@@ -4802,14 +4833,14 @@ The AI examines the clause and then outputs a thorough answer that looks at the 
 
 | Model                      | Date       |   Total Response Time (s) |   Tests Passed |   Mean CodeBLEU (0-1) |   Mean Usefulness Score (0-4) |   Mean Functional Correctness Score (0-4) |
 |:---------------------------|:-----------|--------------------------:|---------------:|----------------------:|------------------------------:|------------------------------------------:|
-| o1-preview                 | 2025-01-16 |                  2431.83  |            132 |              0.316242 |                      3.57317  |                                  3.57927  |
-| o1-mini                    | 2025-01-16 |                   811.876 |            131 |              0.336763 |                      3.73171  |                                  3.79268  |
-| gpt-4o                     | 2025-01-16 |                   334.464 |            125 |              0.310818 |                      3.72561  |                                  3.7439   |
-| gpt-4o-mini                | 2025-01-16 |                   223.975 |            117 |              0.344862 |                      3.68293  |                                  3.68293  |
-| claude-3-5-sonnet-20240620 | 2025-01-16 |                   245.016 |            113 |              0.310897 |                      3.68293  |                                  3.62195  |
-| claude-3-5-sonnet-20241022 | 2025-01-16 |                   278.969 |            110 |              0.325765 |                      3.69512  |                                  3.68902  |
-| gemini-1.5-pro             | 2025-01-16 |                   519.554 |            100 |              0.326639 |                      3.4878   |                                  3.41463  |
-| gemini-1.5-flash           | 2025-01-16 |                   772.863 |              0 |              0.271533 |                      0.658537 |                                  0.804878 |
+| o1-preview                 | 2025-01-23 |                  2299.8   |            127 |              0.319433 |                      3.57317  |                                  3.57927  |
+| o1-mini                    | 2025-01-23 |                   975.839 |            129 |              0.328763 |                      3.71951  |                                  3.72561  |
+| gpt-4o                     | 2025-01-23 |                   277.654 |            125 |              0.320155 |                      3.68902  |                                  3.65854  |
+| gpt-4o-mini                | 2025-01-23 |                   214.264 |            117 |              0.327652 |                      3.62195  |                                  3.65244  |
+| claude-3-5-sonnet-20240620 | 2025-01-23 |                   240.609 |            110 |              0.302778 |                      3.65854  |                                  3.64024  |
+| claude-3-5-sonnet-20241022 | 2025-01-23 |                   260.547 |            112 |              0.321835 |                      3.64024  |                                  3.60976  |
+| gemini-1.5-pro             | 2025-01-23 |                   582.367 |            104 |              0.327964 |                      3.48171  |                                  3.43902  |
+| gemini-1.5-flash           | 2025-01-23 |                   764.864 |              2 |              0.267744 |                      0.689024 |                                  0.914634 |
 
 **Total Response Time (s):** The total time taken by the model to generate all the outputs.
 
