@@ -1,6 +1,6 @@
 # SkyDeck.ai LLM Ready Documentation
 
-*Generated at 2025-01-23 19:10:38 PST. Available as raw content at [SkyDeck.ai llms-full.txt](https://llm.skydeck.ai/llms-full.txt).*
+*Generated at 2025-01-30 19:09:43 PST. Available as raw content at [SkyDeck.ai llms-full.txt](https://llm.skydeck.ai/llms-full.txt).*
 
 This document provides a comprehensive, consolidated reference of SkyDeck.ai's documentation, optimized for large language model (LLM) consumption. It combines various documentation sources into a single, easily accessible format, facilitating efficient information retrieval and processing by AI systems.
 
@@ -83,6 +83,7 @@ This document provides a comprehensive, consolidated reference of SkyDeck.ai's d
   * [Privacy Policy](notices/privacy-policy.md)
   * [Cookie Notice](notices/cookie-notice.md)
 * [Releases](releases/README.md)
+  * [Jan 31st, 2025](releases/jan-31st-2025.md)
   * [Jan 24th, 2025](releases/jan-24th-2025.md)
   * [Jan 17th, 2025](releases/jan-17th-2025.md)
   * [Jan 10th, 2025](releases/jan-10th-2025.md)
@@ -2730,6 +2731,20 @@ description: >-
 - **Enhanced Error Messages**: Improved clarity of error messages for API-related issues.
 - **Accurate Tool Cost Calculation**: Corrected an issue with cost calculations for smart tools.
 
+==> releases/jan-31st-2025.md <==
+---
+description: >-
+  This release focuses on improving administrative controls and enhancing the free trial experience.
+---
+# Jan 31st, 2025
+
+## Control Center
+### Improvements
+- **Enhanced Free Trial Messaging**: Updated the wording for the free trial to provide clearer guidance to users.
+
+### Bug Fixes
+- **Corrected Admin Permissions**: Resolved an issue where admins could purchase credits; admins are now correctly restricted from buying credits.
+
 ==> releases/jan-24th-2025.md <==
 ---
 description: >-
@@ -2747,10 +2762,6 @@ description: >-
 - **Updated Default Settings**: Default settings have been improved for a better user experience.
 
 ## Control Center
-
-### New Features
-- **Usage Analytics Page**: Introduced a new analytics page for users to monitor their usage.
-- **Cost Analysis Tab**: Added a cost tab within the analytics page for detailed expense tracking.
 
 ### Improvements
 - **Expanded Payment Options**: All payment methods are now available for credit purchases, providing greater flexibility.
@@ -4833,14 +4844,14 @@ The AI examines the clause and then outputs a thorough answer that looks at the 
 
 | Model                      | Date       |   Total Response Time (s) |   Tests Passed |   Mean CodeBLEU (0-1) |   Mean Usefulness Score (0-4) |   Mean Functional Correctness Score (0-4) |
 |:---------------------------|:-----------|--------------------------:|---------------:|----------------------:|------------------------------:|------------------------------------------:|
-| o1-preview                 | 2025-01-23 |                  2299.8   |            127 |              0.319433 |                      3.57317  |                                  3.57927  |
-| o1-mini                    | 2025-01-23 |                   975.839 |            129 |              0.328763 |                      3.71951  |                                  3.72561  |
-| gpt-4o                     | 2025-01-23 |                   277.654 |            125 |              0.320155 |                      3.68902  |                                  3.65854  |
-| gpt-4o-mini                | 2025-01-23 |                   214.264 |            117 |              0.327652 |                      3.62195  |                                  3.65244  |
-| claude-3-5-sonnet-20240620 | 2025-01-23 |                   240.609 |            110 |              0.302778 |                      3.65854  |                                  3.64024  |
-| claude-3-5-sonnet-20241022 | 2025-01-23 |                   260.547 |            112 |              0.321835 |                      3.64024  |                                  3.60976  |
-| gemini-1.5-pro             | 2025-01-23 |                   582.367 |            104 |              0.327964 |                      3.48171  |                                  3.43902  |
-| gemini-1.5-flash           | 2025-01-23 |                   764.864 |              2 |              0.267744 |                      0.689024 |                                  0.914634 |
+| o1-preview                 | 2025-01-30 |                  2739.79  |            131 |              0.309345 |                       3.66463 |                                  3.62195  |
+| o1-mini                    | 2025-01-30 |                   929.086 |            130 |              0.339031 |                       3.79268 |                                  3.7561   |
+| gpt-4o                     | 2025-01-30 |                   324.223 |            121 |              0.312351 |                       3.71951 |                                  3.7378   |
+| gpt-4o-mini                | 2025-01-30 |                   348.25  |            120 |              0.334448 |                       3.65244 |                                  3.69512  |
+| claude-3-5-sonnet-20240620 | 2025-01-30 |                   281.125 |            114 |              0.306178 |                       3.68293 |                                  3.65244  |
+| claude-3-5-sonnet-20241022 | 2025-01-30 |                   298.698 |            113 |              0.320084 |                       3.68902 |                                  3.70732  |
+| gemini-1.5-pro             | 2025-01-30 |                   669.482 |            101 |              0.340269 |                       3.52439 |                                  3.46951  |
+| gemini-1.5-flash           | 2025-01-30 |                   768.339 |              1 |              0.26343  |                       0.72561 |                                  0.835366 |
 
 **Total Response Time (s):** The total time taken by the model to generate all the outputs.
 
