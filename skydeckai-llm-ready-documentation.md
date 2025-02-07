@@ -1,6 +1,6 @@
 # SkyDeck.ai LLM Ready Documentation
 
-*Generated at 2025-01-30 19:09:43 PST. Available as raw content at [SkyDeck.ai llms-full.txt](https://llm.skydeck.ai/llms-full.txt).*
+*Generated at 2025-02-06 19:12:11 PST. Available as raw content at [SkyDeck.ai llms-full.txt](https://llm.skydeck.ai/llms-full.txt).*
 
 This document provides a comprehensive, consolidated reference of SkyDeck.ai's documentation, optimized for large language model (LLM) consumption. It combines various documentation sources into a single, easily accessible format, facilitating efficient information retrieval and processing by AI systems.
 
@@ -11,11 +11,11 @@ This document provides a comprehensive, consolidated reference of SkyDeck.ai's d
 * [SkyDeck.ai](README.md)
 * [GenStudio Workspace](genstudio-workspace/README.md)
   * [Conversations](genstudio-workspace/conversations.md)
+  * [Document Upload](genstudio-workspace/document-upload.md)
   * [Sharing and Collaboration](genstudio-workspace/sharing-and-collaboration.md)
   * [Slack Synchronization](genstudio-workspace/slack-synchronization.md)
   * [Public Snapshots](genstudio-workspace/public-snapshots.md)
   * [Web Browsing](genstudio-workspace/web-browsing.md)
-  * [Document Upload](genstudio-workspace/document-upload.md)
   * [Tools](genstudio-workspace/tools/README.md)
     * [Pair Programmer](genstudio-workspace/tools/pair-programmer/README.md)
       * [How to Use](genstudio-workspace/tools/pair-programmer/how-to-use.md)
@@ -37,14 +37,6 @@ This document provides a comprehensive, consolidated reference of SkyDeck.ai's d
       * [Example – Winter Wonderland](genstudio-workspace/tools/image-generator/example-winter-wonderland.md)
   * [Data Security](genstudio-workspace/data-security/README.md)
     * [Data Loss Prevention](genstudio-workspace/data-security/data-loss-prevention.md)
-* [Use Cases](use-cases/README.md)
-  * [Creating a Privacy Policy](use-cases/creating-a-privacy-policy.md)
-* [Developers](developers/README.md)
-  * [Develop Your Own Tools](developers/develop-your-own-tools/README.md)
-    * [JSON format for Tools](developers/develop-your-own-tools/json-format-for-tools.md)
-    * [JSON Format for LLM Tools](developers/develop-your-own-tools/json-format-for-llm-tools.md)
-    * [Example: Text-based UI Generator](developers/develop-your-own-tools/example-text-based-ui-generator.md)
-    * [JSON Format for Smart Tools](developers/develop-your-own-tools/json-format-for-smart-tools.md)
 * [Control Center](control-center/README.md)
   * [Admin & Owner Tools](control-center/admin-and-owner-tools.md)
   * [Setup Guide](control-center/setup-guide/README.md)
@@ -64,6 +56,11 @@ This document provides a comprehensive, consolidated reference of SkyDeck.ai's d
       * [Import File](control-center/setup-guide/manage-members/import-file.md)
       * [Invite Members](control-center/setup-guide/manage-members/invite-members.md)
       * [Edit Members](control-center/setup-guide/manage-members/edit-members.md)
+  * [Billing](control-center/billing/README.md)
+    * [Free Trial](control-center/billing/free-trial.md)
+    * [Buy Credit](control-center/billing/buy-credits.md)
+    * [Plans and Upgrades](control-center/billing/plans-and-upgrades.md)
+    * [Model Usage Prices](control-center/billing/model-usage-prices.md)
 * [Integrations](integrations/README.md)
   * [LLMs and Databases](integrations/llms-and-databases/README.md)
     * [Anthropic Integration](integrations/llms-and-databases/anthropic-integration.md)
@@ -78,11 +75,20 @@ This document provides a comprehensive, consolidated reference of SkyDeck.ai's d
   * [App Integrations](integrations/app-integrations/README.md)
     * [Rememberizer Integration](integrations/app-integrations/rememberizer-integration.md)
     * [Slack Integration](integrations/app-integrations/slack-integration.md)
+* [Developers](developers/README.md)
+  * [Develop Your Own Tools](developers/develop-your-own-tools/README.md)
+    * [JSON format for Tools](developers/develop-your-own-tools/json-format-for-tools.md)
+    * [JSON Format for LLM Tools](developers/develop-your-own-tools/json-format-for-llm-tools.md)
+    * [Example: Text-based UI Generator](developers/develop-your-own-tools/example-text-based-ui-generator.md)
+    * [JSON Format for Smart Tools](developers/develop-your-own-tools/json-format-for-smart-tools.md)
+* [Use Cases](use-cases/README.md)
+  * [Creating a Privacy Policy](use-cases/creating-a-privacy-policy.md)
 * [Notices](notices/README.md)
   * [Terms of Use](notices/terms-of-use.md)
   * [Privacy Policy](notices/privacy-policy.md)
   * [Cookie Notice](notices/cookie-notice.md)
 * [Releases](releases/README.md)
+  * [Feb 7th, 2025](releases/feb-7th-2025.md)
   * [Jan 31st, 2025](releases/jan-31st-2025.md)
   * [Jan 24th, 2025](releases/jan-24th-2025.md)
   * [Jan 17th, 2025](releases/jan-17th-2025.md)
@@ -139,8 +145,6 @@ description: How to get the most out of your generative AI workspace.
 We've put together some helpful guides for you to get set up with our product quickly and easily. GenStudio is the SkyDeck.ai workspace where everyone can interact in a conversational "chat" fashion with the tools and models available to them in their organization. You might find the experience similar to one you have had using OpenAI's ChatGPT.
 
 © 2023 SkyDeck AI Inc.
-
-###
 
 
 ==> integrations/README.md <==
@@ -756,6 +760,209 @@ You can sign in to the Control Center to administer your account, billing, integ
 At [docs.skydeck.ai/genstudio](https://docs.skydeck.ai/genstudio) you can learn more about interacting with models using the SkyDeck AI user workspace we call GenStudio. You can reach your organization or company's workspace by going to your\_company\_domain.skydeck.ai where your\_company\_domain was the sub-domain name set up by the account owner during the onboarding process.
 
 ©2023 SkyDeck AI Inc.
+
+
+==> control-center/billing/plans-and-upgrades.md <==
+---
+description: >-
+  This section explains how to view your current plan, understand its details,
+  and upgrade or change your subscription.
+---
+
+# Plans and Upgrades
+
+## Overview
+
+Plans determine the level of access you have to GenStudio features and the number of member seats available for your team. SkyDeck.ai offers different subscription plans, each with its own set of features and pricing. You can choose a plan that best suits your needs and budget. You can upgrade or downgrade your plan at any time.
+
+## Viewing Your Current Plan
+
+1. **Navigate to the Billing Section:** Go to the "Account" tab in the SkyDeck.ai Control Center, then select "Billing".
+2.  **Current Plan Details:** On the billing page, you'll see a section displaying your current plan. This includes:
+
+    * **Plan Name:** The name of your current subscription plan (e.g., "Free Trial", "Essential", "Advanced").
+    * **Subscription Status:** Whether you are on a free trial, a paid plan, or if your plan has expired.
+    * **Monthly Price:** The base monthly cost of your current plan per seat.
+    * **Total:** The total monthly cost, which is calculated by multiplying the monthly price per seat by the number of member seats included in your plan.
+    * **Credit Balance:** Your current credit balance available for your account to access 40+ LLMs.
+      * For **Essential Plus** and **Advanced Plus** plans, this includes a monthly top up of credit that is based on the number of seats.
+    * **Member Seats:** The number of member seats included in your plan.
+    * **Renewal Date:** The date your subscription will be renewed.&#x20;
+
+    <figure><img src="../../.gitbook/assets/Screenshot 2025-01-24 at 17.45.20.png" alt=""><figcaption><p>Current Plan Details</p></figcaption></figure>
+
+## Upgrading or Changing Your Plan
+
+1. **Find the "Upgrade" or "Change Plan" Button:** If you are on a free trial or your plan has expired, you'll see an "Upgrade" button. If you are on a paid plan, you'll see a "Change Plan" button.&#x20;
+2. **Explore Available Plans:** Clicking the button will open a modal window or redirect you to a new page where you can view and select different subscription plans.
+3. **Select a New Plan:** Choose the plan that best suits your needs.
+4. **Confirm Your Selection:** Follow the prompts to confirm your new plan selection.
+
+<figure><img src="../../.gitbook/assets/Screenshot 2025-01-24 at 16.59.28.png" alt=""><figcaption><p>Plan Selection Modal</p></figcaption></figure>
+
+## Important Notes
+
+* Upgrading your plan will take effect immediately.
+* Downgrading your plan might take effect at the end of your current billing cycle.
+* You will receive a confirmation message once your plan change is successful.
+
+## **Invoices and Receipts**
+
+To obtain an invoice or receipt for your SkyDeck.ai subscription:
+
+1. Click on the "Change Plan" option within your billing settings. This will redirect you to the Stripe platform.
+2. Within Stripe, locate the "Invoice History" section at the bottom of the page.
+3. Click on the specific payment record you wish to view.
+4. On the subsequent screen, you will find options to download either an invoice or a receipt for the selected transaction.
+
+If you encounter any issues while upgrading or changing your plan, please contact [support@skydeck.ai](mailto:support@skydeck.ai) for assistance.
+
+
+==> control-center/billing/model-usage-prices.md <==
+---
+description: >-
+  This section provides information about the pricing for different AI models
+  used within SkyDeck.ai. These prices are applied to your prepaid credit
+  balance.
+---
+
+# Model Usage Prices
+
+## Understanding Model Pricing
+
+Each AI model has its own pricing structure, which is based on the number of tokens used.
+
+* **Tokens:** Tokens are the basic units of text that AI models process.
+* **Input Tokens:** Tokens used when you provide text to the AI model.
+* **Output Tokens:** Tokens generated by the AI model as a response.
+
+## Viewing Model Usage Prices
+
+1. **Navigate to the Billing Section:** Go to the "Account" tab and then select "Billing".
+2. **Model Price Table:** On the billing page, you'll find a table displaying the model usage prices. The table includes the following information:
+   * **Provider:** The provider of the AI model.
+   * **Model:** The name of the specific AI model.
+   * **Input Price:** The price per 1 million input tokens.
+   * **Output Price:** The price per 1 million output tokens.
+   * **Effective Date:** The date when the price became effective.
+   * **Expired Date:** The date when the price expired (if applicable).&#x20;
+
+<figure><img src="../../.gitbook/assets/Screenshot 2025-01-24 at 16.45.03.png" alt=""><figcaption><p><strong>Model Price Table</strong></p></figcaption></figure>
+
+## Important Notes
+
+* Prices are subject to change.
+* The prices are applied to your prepaid credit balance.
+* Your credit balance is reduced based on the number of input and output tokens used.
+
+If you have any questions about model usage prices, please contact [support@skydeck.ai](mailto:support@skydeck.ai) for assistance.
+
+
+==> control-center/billing/README.md <==
+---
+description: >-
+  This section provides information about how billing works within SkyDeck.ai.
+  Here you can manage your subscription, purchase additional credits, and
+  understand your current plan.
+---
+
+# Billing
+
+## Key Features
+
+* **View Current Plan:** See details about your current subscription, including the plan name, number of seats, and renewal date.&#x20;
+* **Buy Credits:** Purchase additional credits to use for various services within GenStudio.&#x20;
+* **Upgrade/Change Plans:** Explore different subscription plans and upgrade or downgrade your current plan.&#x20;
+* **Manage Seats:** See the number of member seats available in your current plan.
+* **View Model Usage Prices:** Understand the pricing for different AI models.
+
+## Getting Started
+
+To access the billing section, navigate to the "Account" tab and select "Billing".
+
+<figure><img src="../../.gitbook/assets/Screenshot 2025-01-24 at 15.55.35.png" alt=""><figcaption><p>Control Center Billing Tab</p></figcaption></figure>
+
+
+==> control-center/billing/buy-credits.md <==
+---
+description: >-
+  This section explains how to purchase additional credit for your account.
+  Credit are used to access various LLMs within GenStudio.
+---
+
+# Buy Credit
+
+## Overview
+
+Credit are a form of prepaid currency used to access AI features within GenStudio. When you use AI models, your credit balance is reduced based on the number of tokens used by the model. You can purchase additional credit at any time. **Only account owners on a paid plan can purchase additional credit.**
+
+## Steps to Purchase Credit
+
+1. **Navigate to the Billing Section:** Go to the "Account" tab in the SkyDeck.ai Control Center, then select "Billing".&#x20;
+2.  **Click the "Buy Credit" Button:** The "Buy Credit" button is only visible to account owners on a paid plan. Click on it if available.
+
+    <figure><img src="../../.gitbook/assets/Screenshot 2025-01-24 at 17.33.01.png" alt=""><figcaption><p>Buy Credit Button</p></figcaption></figure>
+3.  **Enter the Amount:** A modal window will appear. Enter the amount of credit you wish to purchase in the input field.
+
+    <figure><img src="../../.gitbook/assets/Screenshot 2025-01-24 at 17.33.54.png" alt=""><figcaption><p>Buy Credit Modal</p></figcaption></figure>
+4. **Confirm Your Purchase:** Click the "Buy Credit" button in the modal.
+5. **Confirmation:** You will see a confirmation message if your purchase was successful. The transaction might take a moment to process. Your credit balance will be updated shortly.
+
+## Important Notes
+
+* Credit is non-refundable.
+* The minimum amount you can purchase is $1.
+* The maximum amount you can purchase is $100,000.
+* Credit is consumed based on your usage of LLMs within GenStudio.
+
+If you encounter any issues while purchasing credit, please contact [support@skydeck.ai](mailto:support@skydeck.ai) for assistance.
+
+
+==> control-center/billing/free-trial.md <==
+---
+description: This section provides information about the free trial period for new users.
+---
+
+# Free Trial
+
+## Free Trial Details
+
+* The free trial **lasts for 28 days**.
+* During the trial, you have access to all GenStudio features.
+* You have **100 member seats** during the trial.
+* **No payment is required** to start the free trial.
+
+## Trial Status
+
+You can check your trial status in the billing section.
+
+1. **Navigate to the Billing Section:** Go to the "Account" tab and then select "Billing".
+2. **Trial Information:**
+   *   If you are currently in the trial, you will see the remaining days of your free trial and the end date.&#x20;
+
+       <figure><img src="../../.gitbook/assets/Screenshot 2025-01-24 at 17.41.49.png" alt=""><figcaption><p>Free Trial</p></figcaption></figure>
+   *   If the trial has ended, you will see a notification that your free trial is over and your access to GenStudio is blocked.&#x20;
+
+       <figure><img src="../../.gitbook/assets/Screenshot 2025-01-24 at 17.43.20.png" alt=""><figcaption><p>Free Trial Expires</p></figcaption></figure>
+
+## What Happens After the Trial?
+
+Once the free trial ends:
+
+* Your access to GenStudio will be blocked.
+* You will need to upgrade to a paid plan to continue using GenStudio.
+* Your data will be retained, but you will not be able to access it until you upgrade.
+
+## How to Upgrade
+
+If your free trial has ended, you will be prompted to upgrade to a paid plan on the billing page. Please refer to the [Plans and Upgrades section](plans-and-upgrades.md) for more details on how to upgrade.
+
+## Important Notes
+
+* The free trial is only available once per account.
+* You may be asked to provide payment information when you upgrade to a paid plan.
+
+If you have any questions about the free trial, please contact [support@skydeck.ai](mailto:support@skydeck.ai) for assistance.
 
 
 ==> control-center/setup-guide/set-up-account.md <==
@@ -1395,35 +1602,45 @@ description: >-
 ==> releases/nov-22nd-2024.md <==
 ---
 description: >-
-    GenStudio and Control Center receive enhancements focusing on snapshot functionality, error message improvements, UI refinements, and the introduction of new features such as Gemini integration and Auto Join control.
+  GenStudio and Control Center receive enhancements focusing on snapshot
+  functionality, error message improvements, UI refinements, and the
+  introduction of new features such as Gemini integration and Au
 ---
+
 # Nov 22nd, 2024
 
 ## GenStudio
 
 ### Improvements
-- **UI Enhancements**: Removed unnecessary refetching indicators for a cleaner interface.
+
+* **UI Enhancements**: Removed unnecessary refetching indicators for a cleaner interface.
 
 ### New Features
-- **Snapshot Interaction Tracking**: Implemented tracking of snapshot interactions to enhance user experience.
+
+* **Snapshot Interaction Tracking**: Implemented tracking of snapshot interactions to enhance user experience.
 
 ### Bug Fixes
-- **Duplicate Snapshots Resolved**: Fixed an issue where duplicated snapshots appeared due to incorrect item IDs.
-- **Improved Error Messages**: Provided user-friendly messages for token limit errors after scraping.
+
+* **Duplicate Snapshots Resolved**: Fixed an issue where duplicated snapshots appeared due to incorrect item IDs.
+* **Improved Error Messages**: Provided user-friendly messages for token limit errors after scraping.
 
 ## Control Center
 
 ### Improvements
-- **Enhanced LLM Responses**: Improved responses when extra knowledge is irrelevant, providing more accurate information.
-- **Refined Function Prompting**: Prompts now include function call histories, enhancing the context for better interactions.
+
+* **Enhanced LLM Responses**: Improved responses when extra knowledge is irrelevant, providing more accurate information.
+* **Refined Function Prompting**: Prompts now include function call histories, enhancing the context for better interactions.
 
 ### New Features
-- **Gemini Integration**: Added integration with Gemini, including Experiment 1114.
-- **Auto Join Control**: Organization owners can now enable or disable the Auto Join feature.
+
+* **Gemini Integration**: Added integration with Gemini, including Experiment 1114.
+* **Auto Join Control**: Organization owners can now enable or disable the Auto Join feature.
 
 ### Bug Fixes
-- **Deadlock Issue Resolved**: Fixed a deadlock that occurred when updating conversation size.
-- **Improved Error Messages**: Provided user-friendly messages for token limit errors after scraping.
+
+* **Deadlock Issue Resolved**: Fixed a deadlock that occurred when updating conversation size.
+* **Improved Error Messages**: Provided user-friendly messages for token limit errors after scraping.
+
 
 ==> releases/oct-4th-2024.md <==
 ---
@@ -2771,6 +2988,30 @@ description: >-
 ### Bug Fixes
 - **Payment Method Listing Fix**: Resolved an issue where not all payment methods were displayed during credit purchases.
 
+==> releases/feb-7th-2025.md <==
+---
+description: >-
+  This release enhances model organization and introduces real-time streaming, improving overall user experience.
+---
+
+# Feb 5th, 2025
+
+## GenStudio
+
+### Improvements
+- **Improved Model Organization**: The model list has been reorganized for easier navigation.
+
+## Control Center
+
+### New Features
+- **Real-time Response Streaming**: Enabled streaming for OpenAI models, providing faster and more interactive responses.
+
+### Improvements
+- **Improved Model Identification**: Added prefixes to model names for easier recognition.
+
+### Bug Fixes
+- **Conversation Name Length Fix**: Resolved an issue where conversation names longer than 60 characters caused problems.
+
 ==> releases/jul-5th-2024.md <==
 ---
 description: >-
@@ -3016,15 +3257,15 @@ description: A business and legal use case using Strategy Consultant
 
 ## Strategy Consultant: Creating Legal Notices
 
-The following conversation with the Strategy Consultant shows how you can use this tool to create a Privacy Policy from scratch that is compliant with European and U.S. privacy regulations. \
+The following conversation with the Strategy Consultant shows how you can use this tool to create a Privacy Policy from scratch that is compliant with European and U.S. privacy regulations.\
 \
-What we enter into the tool appears in _`italics and blocks`_.  The rest is produced by the Strategy Consultant tool and GenStudio using OpenAI GPT-4.
+What we enter into the tool appears in _`italics and blocks`_. The rest is produced by the Strategy Consultant tool and GenStudio using OpenAI GPT-4.
 
 Strategy Consultant
 
-Your questions or prompts: \
+Your questions or prompts:\
 \
-_`Help me develop a privacy policy for my generative AI platform for business users.`_
+&#xNAN;_`Help me develop a privacy policy for my generative AI platform for business users.`_
 
 ## Thoughts Decomposition:
 
@@ -3118,16 +3359,16 @@ For more information on how we handle your data, please see our Privacy Policy \
 
 You have the right to access, correct, or delete your data at any time. You can also withdraw your consent to data processing at any time. If you wish to do so, please contact us at \[Contact Information]."
 
-_`Please write the privacy policy as it would appear using the following information:`_ \
+_`Please write the privacy policy as it would appear using the following information:`_\
 \
-_`Service: SkyDeck.ai`_ \
-_`Location: https://skydeck.ai`_ \
-_`Company Name: SkyDeck AI Inc`_ \
-_`Company mailing address: SkyDeck AI Inc., 548 Market St. PMB38234, San Francisco, CA 94104`_ \
-_`Contact email: legal@skydeck.ai`_ \
-_`Phone: 1.415.744.1557`_ \
+&#xNAN;_`Service: SkyDeck.ai`_\
+&#xNAN;_`Location: https://skydeck.ai`_\
+&#xNAN;_`Company Name: SkyDeck AI Inc`_\
+&#xNAN;_`Company mailing address: SkyDeck AI Inc., 548 Market St. PMB38234, San Francisco, CA 94104`_\
+&#xNAN;_`Contact email: legal@skydeck.ai`_\
+&#xNAN;_`Phone: 1.415.744.1557`_\
 \
-_`Do not make the privacy policy recursive, as you have done above, by having a policy that refers the reader to follow a link to see the privacy policy.`_
+&#xNAN;_`Do not make the privacy policy recursive, as you have done above, by having a policy that refers the reader to follow a link to see the privacy policy.`_
 
 ## SkyDeck AI Inc. Privacy Policy
 
@@ -3801,7 +4042,7 @@ Scraping content from websites to include in your prompts is a very helpful feat
 
 ### Interact with LLM
 
-This is where you interact with your Large Language Model (LLM) Artificial Intelligence (AI) models. You do so in a conversational _chat_ fashion. You can 'talk' directly to your models using the "default" tool. This is how your session starts out.
+This is where you interact with your Large Language Model (LLM) Artificial Intelligence (AI) models. You do so in a conversational _chat_ fashion. You can "talk" directly to your models using the "default" tool. This is how your session starts out.
 
 <figure><img src="../.gitbook/assets/conversation-start.png" alt="conversation start"><figcaption><p>The beginning of a conversation</p></figcaption></figure>
 
@@ -3821,13 +4062,13 @@ If you do not like the result your model produces, you can ask it to regenerate 
 
 <figure><img width="563" src="../.gitbook/assets/regenerate.png" alt="regenerate"><figcaption><p>Regenerate AI response</p></figcaption></figure>
 
-Skydeck.AI also let you edit your prompt and try again. You can click the **Edit message** button, change the input and resubmit.
+SkyDeck.AI also let you edit your prompt and try again. You can click the **Edit message** button, change the input and resubmit.
 
 <figure><img width="563" src="../.gitbook/assets/edit-message.png" alt="edit message"><figcaption></figcaption></figure>
 
-### Sending non-AI messages
+### Send non-AI messages
 
-You can also sending your messages without asking the AI, and it will just appear like a normal message with no response in the conversation. This is useful when you want to take some notes directly in the conversation, or working with other members (Learn more in [Sharing and Collaboration](sharing-and-collaboration.md)).
+You can also send your messages without asking the AI, and it will just appear like a normal message with no response in the conversation. This is useful when you want to take some notes directly in the conversation, or working with other members (Learn more in [Sharing and Collaboration](sharing-and-collaboration.md)). The non-AI messages will not be included in the conversation history when interacting with LLM.
 
 To send a non-AI message, simply enter the texts in the input field and click **Send chat message** button, or you can press **Ctrl + Enter** while focusing the input.
 
@@ -4056,11 +4297,11 @@ description: GenStudio
 # GenStudio Workspace
 
 * [**Conversations**](conversations.md)
+* [**Document Upload**](document-upload.md)
 * [**Sharing and Collaboration**](sharing-and-collaboration.md)
 * [**Slack Synchronization**](slack-synchronization.md)
 * [**Public Snapshots**](public-snapshots.md)
 * [**Web Browsing**](web-browsing.md)
-* [**Document Upload**](document-upload.md)
 * [**Tools**](tools/)
 * [**Data Security**](data-security/)
 
@@ -4844,14 +5085,14 @@ The AI examines the clause and then outputs a thorough answer that looks at the 
 
 | Model                      | Date       |   Total Response Time (s) |   Tests Passed |   Mean CodeBLEU (0-1) |   Mean Usefulness Score (0-4) |   Mean Functional Correctness Score (0-4) |
 |:---------------------------|:-----------|--------------------------:|---------------:|----------------------:|------------------------------:|------------------------------------------:|
-| o1-preview                 | 2025-01-30 |                  2739.79  |            131 |              0.309345 |                       3.66463 |                                  3.62195  |
-| o1-mini                    | 2025-01-30 |                   929.086 |            130 |              0.339031 |                       3.79268 |                                  3.7561   |
-| gpt-4o                     | 2025-01-30 |                   324.223 |            121 |              0.312351 |                       3.71951 |                                  3.7378   |
-| gpt-4o-mini                | 2025-01-30 |                   348.25  |            120 |              0.334448 |                       3.65244 |                                  3.69512  |
-| claude-3-5-sonnet-20240620 | 2025-01-30 |                   281.125 |            114 |              0.306178 |                       3.68293 |                                  3.65244  |
-| claude-3-5-sonnet-20241022 | 2025-01-30 |                   298.698 |            113 |              0.320084 |                       3.68902 |                                  3.70732  |
-| gemini-1.5-pro             | 2025-01-30 |                   669.482 |            101 |              0.340269 |                       3.52439 |                                  3.46951  |
-| gemini-1.5-flash           | 2025-01-30 |                   768.339 |              1 |              0.26343  |                       0.72561 |                                  0.835366 |
+| o1-preview                 | 2025-02-06 |                  2460.71  |            130 |              0.300355 |                       3.62195 |                                  3.64634  |
+| o1-mini                    | 2025-02-06 |                  1169.48  |            123 |              0.33154  |                       3.68902 |                                  3.67683  |
+| gpt-4o                     | 2025-02-06 |                   413.287 |            122 |              0.312401 |                       3.70122 |                                  3.67683  |
+| gpt-4o-mini                | 2025-02-06 |                   245.404 |            119 |              0.333494 |                       3.65244 |                                  3.71951  |
+| claude-3-5-sonnet-20240620 | 2025-02-06 |                   335.54  |            113 |              0.300797 |                       3.65244 |                                  3.66463  |
+| claude-3-5-sonnet-20241022 | 2025-02-06 |                   374.136 |            117 |              0.333618 |                       3.72561 |                                  3.70732  |
+| gemini-1.5-pro             | 2025-02-06 |                   500.452 |            107 |              0.325038 |                       3.4878  |                                  3.5061   |
+| gemini-1.5-flash           | 2025-02-06 |                   768.339 |              1 |              0.26343  |                       0.72561 |                                  0.835366 |
 
 **Total Response Time (s):** The total time taken by the model to generate all the outputs.
 
