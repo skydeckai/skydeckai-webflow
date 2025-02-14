@@ -1,6 +1,6 @@
 # SkyDeck.ai LLM Ready Documentation
 
-*Generated at 2025-02-06 19:12:11 PST. Available as raw content at [SkyDeck.ai llms-full.txt](https://llm.skydeck.ai/llms-full.txt).*
+*Generated at 2025-02-13 19:10:44 PST. Available as raw content at [SkyDeck.ai llms-full.txt](https://llm.skydeck.ai/llms-full.txt).*
 
 This document provides a comprehensive, consolidated reference of SkyDeck.ai's documentation, optimized for large language model (LLM) consumption. It combines various documentation sources into a single, easily accessible format, facilitating efficient information retrieval and processing by AI systems.
 
@@ -88,6 +88,7 @@ This document provides a comprehensive, consolidated reference of SkyDeck.ai's d
   * [Privacy Policy](notices/privacy-policy.md)
   * [Cookie Notice](notices/cookie-notice.md)
 * [Releases](releases/README.md)
+  * [Feb 14th, 2025](releases/feb-14th-2025.md)
   * [Feb 7th, 2025](releases/feb-7th-2025.md)
   * [Jan 31st, 2025](releases/jan-31st-2025.md)
   * [Jan 24th, 2025](releases/jan-24th-2025.md)
@@ -3035,6 +3036,41 @@ description: >-
 * **Bottom Elements Overlap**: Fixed an issue with the z-index of bottom elements to ensure they display correctly.
 
 
+==> releases/feb-14th-2025.md <==
+---
+description: >-
+  This release focuses on enhancing user experience with improved cost transparency, UI enhancements, and new AI features.
+---
+
+# Feb 14th, 2025
+
+## GenStudio
+
+### Improvements
+- **Replaced Token Count with Usage Cost**: Now displays usage cost instead of token count for better cost transparency.
+- **Pressing Behavior Button Stops Commentary**: Pressing the Behavior Button now stops ongoing commentary, providing better control.
+- **Improved Styling in Chat Box**: Enhanced the appearance of chat box items for better readability.
+
+### New Features
+- **Added Menu Icon to Behavior Button**: Introduced a menu icon to the Behavior Button for easier access to options.
+
+### Bug Fixes
+- **Fixed Version Update Issues**: Resolved issues causing version update delays and errors.
+
+## Control Center
+
+### New Features
+- **Integrated Gemini 2.0 Flash for AI Commentary**: Introduced Gemini 2.0 Flash for enhanced AI response commentary generation.
+
+### Improvements
+- **Display Usage Cost**: Now shows usage cost for better cost transparency.
+- **Enhanced Analytics UI**: Improved the Analytics interface for a better user experience.
+- **Limited AI Commentary Length**: Limited AI commentary to a maximum of 30 words for concise responses.
+- **Improved Stability for Background Chat Processes**: Enhanced stability during background chat tasks.
+
+### Bug Fixes
+- **Fixed Smart Tool Model List**: Corrected an issue where the Smart Tool model list was not displaying correctly.
+
 ==> notices/cookie-notice.md <==
 ---
 description: As of July 20, 2023
@@ -5085,14 +5121,14 @@ The AI examines the clause and then outputs a thorough answer that looks at the 
 
 | Model                      | Date       |   Total Response Time (s) |   Tests Passed |   Mean CodeBLEU (0-1) |   Mean Usefulness Score (0-4) |   Mean Functional Correctness Score (0-4) |
 |:---------------------------|:-----------|--------------------------:|---------------:|----------------------:|------------------------------:|------------------------------------------:|
-| o1-preview                 | 2025-02-06 |                  2460.71  |            130 |              0.300355 |                       3.62195 |                                  3.64634  |
-| o1-mini                    | 2025-02-06 |                  1169.48  |            123 |              0.33154  |                       3.68902 |                                  3.67683  |
-| gpt-4o                     | 2025-02-06 |                   413.287 |            122 |              0.312401 |                       3.70122 |                                  3.67683  |
-| gpt-4o-mini                | 2025-02-06 |                   245.404 |            119 |              0.333494 |                       3.65244 |                                  3.71951  |
-| claude-3-5-sonnet-20240620 | 2025-02-06 |                   335.54  |            113 |              0.300797 |                       3.65244 |                                  3.66463  |
-| claude-3-5-sonnet-20241022 | 2025-02-06 |                   374.136 |            117 |              0.333618 |                       3.72561 |                                  3.70732  |
-| gemini-1.5-pro             | 2025-02-06 |                   500.452 |            107 |              0.325038 |                       3.4878  |                                  3.5061   |
-| gemini-1.5-flash           | 2025-02-06 |                   768.339 |              1 |              0.26343  |                       0.72561 |                                  0.835366 |
+| o1-preview                 | 2025-02-13 |                  2556.4   |            130 |              0.320041 |                      3.56707  |                                  3.61585  |
+| o1-mini                    | 2025-02-13 |                   992.977 |            134 |              0.335913 |                      3.71341  |                                  3.76829  |
+| gpt-4o                     | 2025-02-13 |                   333.536 |            130 |              0.316833 |                      3.72561  |                                  3.73171  |
+| gpt-4o-mini                | 2025-02-13 |                   248.679 |            117 |              0.329977 |                      3.68902  |                                  3.72561  |
+| claude-3-5-sonnet-20240620 | 2025-02-13 |                   376.393 |            115 |              0.299232 |                      3.70122  |                                  3.64634  |
+| claude-3-5-sonnet-20241022 | 2025-02-13 |                   338.149 |            113 |              0.324138 |                      3.67683  |                                  3.64634  |
+| gemini-1.5-pro             | 2025-02-13 |                   487.655 |            100 |              0.335543 |                      3.43902  |                                  3.4878   |
+| gemini-1.5-flash           | 2025-02-13 |                   759.396 |              2 |              0.267396 |                      0.810976 |                                  0.853659 |
 
 **Total Response Time (s):** The total time taken by the model to generate all the outputs.
 
