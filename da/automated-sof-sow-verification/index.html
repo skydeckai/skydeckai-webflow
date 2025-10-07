@@ -1,0 +1,921 @@
+<!DOCTYPE html><!-- Last Published: Tue Oct 07 2025 09:02:49 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain="skydeck.webflow.io" data-wf-page="68df6ba32ce44b1f654524a9" data-wf-site="663b4d698d0e8bf7683d0dd5" lang="en"><head><meta charset="utf-8"><title>Automated SOF/SOW Verification | SkyDeck AI</title><meta content="Automate SOF/SOW verification for property professionals. Faster compliance, reduced risk, AML-ready. Built for estate agencies, auctioneers &amp; developers." name="description"><meta content="Automated SOF/SOW Verification | SkyDeck AI" property="og:title"><meta content="Automate SOF/SOW verification for property professionals. Faster compliance, reduced risk, AML-ready. Built for estate agencies, auctioneers &amp; developers." property="og:description"><meta content="Automated SOF/SOW Verification | SkyDeck AI" property="twitter:title"><meta content="Automate SOF/SOW verification for property professionals. Faster compliance, reduced risk, AML-ready. Built for estate agencies, auctioneers &amp; developers." property="twitter:description"><meta content="website" property="og:type"><meta content="summary_large_image" name="twitter:card"><meta content="width=device-width, initial-scale=1" name="viewport"><link href="https://www.skydeck.ai//assets/3e10bd5b3a.css" rel="stylesheet" type="text/css"><link href="https://fonts.googleapis.com" rel="preconnect"><link href="https://fonts.gstatic.com" rel="preconnect"><script src="https://www.skydeck.ai//assets/3a3adf980c.js" type="text/javascript"></script><script type="text/javascript">WebFont.load({  google: {    families: ["Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic","Oswald:200,300,400,500,600,700","Source Sans Pro:200,300,regular,italic,600,700,900"]  }});</script><script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script><link href="https://cdn.prod.website-files.com/663b4d698d0e8bf7683d0dd5/66c315ef1baf248f50381f65_Genstudio%20favicon.png" rel="shortcut icon" type="image/x-icon"><link href="https://cdn.prod.website-files.com/663b4d698d0e8bf7683d0dd5/66c41ed5963f071293f298b4_Logo%20Mark.png" rel="apple-touch-icon"><script async="" src="https://www.skydeck.ai//assets/00b7f09ffa.bin"></script><script type="text/javascript">window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('set', 'developer_id.dZGVlNj', true);gtag('config', 'G-0S3DSJDG4H');</script><!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N72P33C2');</script>
+<!-- End Google Tag Manager -->
+<meta content="sua6JhWYRvdHIKhUmpgk9EYDWwVsazMGrdUBlv5LTc8" name="google-site-verification">
+<style>
+    .language-selector {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 1000;
+      font-family: Arial, sans-serif;
+    }
+    .current-language {
+      padding: 8px 12px;
+      font-size: 12px;
+      border: 1px solid #aaa;
+      background-color: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      width: 120px;
+      justify-content: space-between;
+    }
+    .current-language::after {
+      content: "";
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-left: 5px solid #333;
+      margin-left: 8px;
+      transition: transform 0.3s ease;
+      }
+    .current-language.open::after {
+      transform: rotate(-90deg);
+    }
+    .language-dropdown {
+      display: none;
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      background-color: white;
+      border: 1px solid #aaa;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      max-height: 200px;
+      overflow-y: auto;
+      width: 120px;
+      border-bottom: none;
+      font-size: 12px;
+    }
+    .language-dropdown li {
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    .language-dropdown li:hover {
+      background-color: #f0f0f0;
+    }
+    .language-dropdown li.selected {
+      font-weight: bold;
+    }
+  </style><script id="i18n-script">
+const supportedLanguages = [{"value":"en","text":"English"},{"value":"fr","text":"Français"},{"value":"da","text":"Dansk"},{"value":"ja","text":"日本語"},{"value":"ko","text":"한국어"},{"value":"es","text":"Español"},{"value":"de","text":"Deutsch"},{"value":"zh-cn","text":"简体中文"},{"value":"zh-hk","text":"繁體中文"},{"value":"pt","text":"Português"},{"value":"ar","text":"العربية"},{"value":"vi","text":"Tiếng Việt"}];
+
+window.changeLanguage = function(language) {
+  const url = new URL(window.location);
+  const pathParts = url.pathname.split('/').filter(Boolean);
+
+  if (true) {
+    if (pathParts[0] && supportedLanguages.some(lang => lang.value === pathParts[0])) {
+      pathParts[0] = language;
+    } else {
+      pathParts.unshift(language);
+    }
+    url.pathname = '/' + pathParts.join('/');
+  } else {
+    if (language === "en") {
+      url.searchParams.delete("lang");
+    } else {
+      url.searchParams.set("lang", language);
+    }
+  }
+
+  window.location.href = url.href;
+};
+
+window.toggleLanguageDropdown = function() {
+  const dropdown = document.querySelector('.language-dropdown');
+  const currentLanguage = document.querySelector('.current-language');
+  if (dropdown) {
+    const isOpen = dropdown.style.display === 'block';
+    dropdown.style.display = isOpen ? 'none' : 'block';
+    currentLanguage.classList.toggle('open', !isOpen);
+  }
+};
+
+document.addEventListener('DOMContentLoaded', function() {
+  const currentLanguageElement = document.querySelector('.current-language');
+  if (currentLanguageElement) {
+    currentLanguageElement.addEventListener('click', window.toggleLanguageDropdown);
+  }
+
+  const dropdownItems = document.querySelectorAll('.language-dropdown li');
+  dropdownItems.forEach(function(item) {
+    item.addEventListener('click', function() {
+      const selectedLang = this.getAttribute('data-lang');
+      window.changeLanguage(selectedLang);
+      window.toggleLanguageDropdown();
+    });
+  });
+});
+
+document.addEventListener('click', function(event) {
+  const languageSelector = document.getElementById('languageSelector');
+  if (languageSelector) {
+    const isClickInside = languageSelector.contains(event.target);
+    if (!isClickInside) {
+      const dropdown = document.querySelector('.language-dropdown');
+      const currentLanguage = document.querySelector('.current-language');
+      if (dropdown) {
+        dropdown.style.display = 'none';
+        currentLanguage.classList.remove('open');
+      }
+    }
+  }
+});
+</script><script>
+  const docsLanguage = [{"value":"en","text":"English"},{"value":"fr","text":"Français"},{"value":"da","text":"Dansk"},{"value":"ja","text":"日本語"},{"value":"ko","text":"한국어"},{"value":"es","text":"Español"},{"value":"de","text":"Deutsch"},{"value":"zh-cn","text":"简体中文"},{"value":"zh-hk","text":"繁體中文"},{"value":"pt","text":"Português"},{"value":"ar","text":"العربية"},{"value":"vi","text":"Tiếng Việt"}];
+
+  document.addEventListener("DOMContentLoaded", function() {
+  
+    const links = document.querySelectorAll("a[href]");
+    
+    links.forEach(link => {
+      const href = link.getAttribute("href");
+      if (href.startsWith("https://www.skydeck.ai/") || href.startsWith("https://docs.rememberizer.ai/") || href.startsWith("https://docs.skydeck.ai/") || href.startsWith("https://admin.skydeck.ai/")) {
+        const url = new URL(href);
+        const language = getLanguageFromURL();
+        if (language === "en") return;
+        
+        const pathParts = url.pathname.split('/').filter(part => part);
+        const firstPart = pathParts[0];
+        
+        if (firstPart === "en") {
+          pathParts.shift();
+        }
+
+        const newPath = `/${language}/${pathParts.join('/')}`;
+        url.pathname = newPath;
+        link.setAttribute("href", url.href);
+      }
+    });
+  });
+
+function getLanguageFromURL() {
+  const pathParts = window.location.pathname.split('/').filter(Boolean);
+  const supportedLanguageCodes = docsLanguage.map(lang => lang.value);
+  
+  if (pathParts.length > 0 && supportedLanguageCodes.includes(pathParts[0])) {
+    return pathParts[0];
+  }
+  
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get("lang") || "en";
+}
+  </script><link rel="alternate" hreflang="en" href="https://www.skydeck.ai//en/automated-sof-sow-verification/index.html"><link rel="alternate" hreflang="fr" href="https://www.skydeck.ai//fr/automated-sof-sow-verification/index.html"><link rel="alternate" hreflang="da" href="https://www.skydeck.ai//da/automated-sof-sow-verification/index.html"><link rel="alternate" hreflang="ja" href="https://www.skydeck.ai//ja/automated-sof-sow-verification/index.html"><link rel="alternate" hreflang="ko" href="https://www.skydeck.ai//ko/automated-sof-sow-verification/index.html"><link rel="alternate" hreflang="es" href="https://www.skydeck.ai//es/automated-sof-sow-verification/index.html"><link rel="alternate" hreflang="de" href="https://www.skydeck.ai//de/automated-sof-sow-verification/index.html"><link rel="alternate" hreflang="zh-cn" href="https://www.skydeck.ai//zh-cn/automated-sof-sow-verification/index.html"><link rel="alternate" hreflang="zh-hk" href="https://www.skydeck.ai//zh-hk/automated-sof-sow-verification/index.html"><link rel="alternate" hreflang="pt" href="https://www.skydeck.ai//pt/automated-sof-sow-verification/index.html"><link rel="alternate" hreflang="ar" href="https://www.skydeck.ai//ar/automated-sof-sow-verification/index.html"><link rel="alternate" hreflang="vi" href="https://www.skydeck.ai//vi/automated-sof-sow-verification/index.html"><link rel="canonical" href="https://www.skydeck.ai//da/automated-sof-sow-verification/index.html"></head><body style="direction: ltr;"><div class="navbar-component w-nav" data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" data-w-id="89a538a4-18ec-08f7-bfea-f28bc063fe64" role="banner"><div class="navbar-container"><a class="navbar-logo-links w-nav-brand" href="https://www.skydeck.ai/"><div class="uui-logo_component"><div class="uui-logo_logomark"><img alt="SkyDeck AI logomark" class="uui-styleguide_logomark-bg" height="" loading="eager" src="https://www.skydeck.ai//assets/0e9cc12c7c.png"></div><img alt="SkyDeck AI UI logotext" class="uui-logo_logotype" loading="lazy" src="https://www.skydeck.ai//assets/a0bd183324.svg"></div></a><nav class="navbar-menu w-nav-menu" role="navigation"><div class="bar-menu-left"><div class="bar-menu-dropdown w-dropdown" data-delay="300" data-hover="true" data-w-id="89a538a4-18ec-08f7-bfea-f28bc063fe6d"><div class="dropdown-toggle w-dropdown-toggle"><div class="uui-dropdown-icon w-embed"><svg fill="none" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.67"></path>
+</svg></div><div class="nav-text">Løsninger</div></div><nav class="bar-dorpdown-list w-dropdown-list"><div class="bar-dopdown-link-list"><a class="bar-dropdown-link w-inline-block" href="/da" id="w-node-_89a538a4-18ec-08f7-bfea-f28bc063fe74-c063fe64"><div class="uui-navbar07_icon-wrapper"><img alt="" class="nav-content-icon" height="Auto" loading="lazy" src="https://www.skydeck.ai//assets/c7edf68fa6.png" width="25"></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">SkyDeck AI</div><div class="uui-text-size-small">Sikker Business-First AI Produktivitetsplatform for Teams.</div></div></a><a class="bar-dropdown-link w-inline-block" href="https://mseep.ai/?utm_source=SkyDeck.ai" id="w-node-_42d94215-164c-521b-5ec8-a62c41020079-c063fe64" rel="noopener noreferrer" target="_blank"><div class="uui-navbar07_icon-wrapper"><img alt="" class="nav-content-icon" height="Auto" loading="lazy" src="https://www.skydeck.ai//assets/473337f1d2.jpg" width="25"></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">MseeP AI</div><div class="uui-text-size-small">Betroede MCP-servere</div></div></a><a class="bar-dropdown-link w-inline-block" href="https://rememberizer.ai/" rel="noopener noreferrer" target="_blank"><div class="uui-navbar07_icon-wrapper"><img alt="" class="nav-content-icon" loading="lazy" src="https://www.skydeck.ai//assets/e8db10689c.png"></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">Huskeren for enkeltpersoner</div><div class="uui-text-size-small">Hvor brugerdata driver AI-personalisering</div></div></a><a class="bar-dropdown-link w-inline-block" href="https://rememberizer.ai/" rel="noopener noreferrer" target="_blank"><div class="uui-navbar07_icon-wrapper"><img alt="" class="nav-content-icon" loading="lazy" src="https://www.skydeck.ai//assets/e8db10689c.png"></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">Huskeren for Teams</div><div class="uui-text-size-small">Kommer snart...</div></div></a><a class="bar-dropdown-link w-inline-block" href="https://try.rememberizer.ai/en/solutions/vector-database/" rel="noopener noreferrer" target="_blank"><div class="uui-navbar07_icon-wrapper"><img alt="" class="nav-content-icon" height="Auto" loading="lazy" src="https://www.skydeck.ai//assets/2ef300e59c.svg" width="25"></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">SkyDeck Vector Server Mark I</div><div class="uui-text-size-small">Hardware og software sammen til vektorembeddings og RAG i skala</div></div></a><a class="bar-dropdown-link w-inline-block" href="https://www.eastagile.com/" rel="noopener noreferrer" target="_blank"><div class="uui-navbar07_icon-wrapper"><img alt="" class="image-25" loading="lazy" src="https://www.skydeck.ai//assets/a54bf2144c.png"></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">East Agile</div><div class="uui-text-size-small">Software professionelle tjenester med AI-drevet udvikling</div></div></a></div></nav></div><div class="bar-menu-dropdown w-dropdown" data-delay="300" data-hover="true" data-w-id="89a538a4-18ec-08f7-bfea-f28bc063fe94"><div class="dropdown-toggle w-dropdown-toggle"><div class="uui-dropdown-icon w-embed"><svg fill="none" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.67"></path>
+</svg></div><div class="nav-text">Brugsscenarier</div></div><nav class="bar-dorpdown-list w-dropdown-list"><div class="bar-dopdown-link-list"><a class="bar-dropdown-link w-inline-block" href="/da/use-cases/skydeck-ai-collaboration-platform-for-teams"><div class="uui-navbar07_icon-wrapper"><div class="uui-icon-1x1-xsmall w-embed"><svg height="25" id="icon" viewBox="0 0 32 32" width="25" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<style>
+      .cls-1{fill:none;}
+      .icon-fill{fill:#1f6fff;}
+    </style>
+</defs>
+<title>begivenheder</title>
+<path class="icon-fill" d="M26,14H24v2h2a3.0033,3.0033,0,0,1,3,3v4h2V19A5.0058,5.0058,0,0,0,26,14Z" transform="translate(0 0)"></path>
+<path class="icon-fill" d="M24,4a3,3,0,1,1-3,3,3,3,0,0,1,3-3m0-2a5,5,0,1,0,5,5A5,5,0,0,0,24,2Z" transform="translate(0 0)"></path>
+<path class="icon-fill" d="M23,30H21V28a3.0033,3.0033,0,0,0-3-3H14a3.0033,3.0033,0,0,0-3,3v2H9V28a5.0059,5.0059,0,0,1,5-5h4a5.0059,5.0059,0,0,1,5,5Z" transform="translate(0 0)"></path>
+<path class="icon-fill" d="M16,13a3,3,0,1,1-3,3,3,3,0,0,1,3-3m0-2a5,5,0,1,0,5,5A5,5,0,0,0,16,11Z" transform="translate(0 0)"></path>
+<path class="icon-fill" d="M8,14H6a5.0059,5.0059,0,0,0-5,5v4H3V19a3.0033,3.0033,0,0,1,3-3H8Z" transform="translate(0 0)"></path>
+<path class="icon-fill" d="M8,4A3,3,0,1,1,5,7,3,3,0,0,1,8,4M8,2a5,5,0,1,0,5,5A5,5,0,0,0,8,2Z" transform="translate(0 0)"></path>
+<rect class="cls-1" data-name="<Transparent Rectangle>" height="25" id="_Transparent_Rectangle_" width="25"></rect>
+</svg></div></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">For Teams</div><div class="uui-text-size-small">Forøg teamproduktiviteten med vores sikre samarbejdsplatform</div></div></a><a class="bar-dropdown-link w-inline-block" href="/da/use-cases/for-ai-driven-development"><div class="uui-navbar07_icon-wrapper"><div class="uui-icon-1x1-xsmall w-embed"><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg height="25" id="icon" viewBox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+    </style>
+</defs>
+<path class="cls-2" d="m19,22v-2h1v-7h-1v-2h4v2h-1v7h1v2h-4Z" fill="currentColor"></path>
+<path class="cls-2" d="m15.5005,22h2l-3.5005-11h-3l-3.4966,11h1.9988l.6018-2h4.7781l.6184,2Zm-4.7947-4l1.6284-5.4111.2559-.0024,1.6736,5.4136h-3.5579Z" fill="currentColor"></path>
+<polygon class="cls-2" fill="currentColor" points="32 4 28 4 28 0 26 0 26 4 22 4 22 6 26 6 26 10 28 10 28 6 32 6 32 4"></polygon>
+<rect class="cls-2" fill="currentColor" height="2" width="2" x="30" y="12"></rect>
+<rect class="cls-2" fill="currentColor" height="2" width="2" x="18" y="0"></rect>
+<polygon class="cls-2" fill="currentColor" points="32 32 0 32 0 0 14 0 14 2 2 2 2 30 30 30 30 18 32 18 32 32"></polygon>
+<rect class="cls-1" data-name="&amp;lt;Transparent Rectangle&amp;gt;" height="32" id="_Transparent_Rectangle_" width="32"></rect>
+</svg></div></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">For Ai-drevet udvikling</div><div class="uui-text-size-small">Oplev AI-forstærket softwareudvikling for teams</div></div></a><a class="bar-dropdown-link w-inline-block" href="/da/use-cases/for-education"><div class="uui-navbar07_icon-wrapper"><div class="uui-icon-1x1-xsmall w-embed"><svg height="25" id="icon" viewBox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<style>
+      .cls-1 {
+        fill: none;
+      }
+    </style>
+</defs>
+<title>uddannelse</title>
+<path d="M26,30H24V27a5.0059,5.0059,0,0,0-5-5H13a5.0059,5.0059,0,0,0-5,5v3H6V27a7.0082,7.0082,0,0,1,7-7h6a7.0082,7.0082,0,0,1,7,7Z" fill="currentColor"></path>
+<path d="M5,6A1,1,0,0,0,4,7v9H6V7A1,1,0,0,0,5,6Z" fill="currentColor"></path>
+<path d="M4,2V4H9v7a7,7,0,0,0,14,0V4h5V2Zm7,2H21V7H11Zm5,12a5,5,0,0,1-5-5V9H21v2A5,5,0,0,1,16,16Z" fill="currentColor"></path>
+<rect class="cls-1" data-name="<Transparent Rectangle>" height="32" id="_Transparent_Rectangle_" width="32"></rect>
+</svg></div></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">For Uddannelse</div><div class="uui-text-size-small">AI-drevet realtid uddannelse for fremtiden.</div></div></a><a class="bar-dropdown-link w-inline-block" href="/da/use-cases/for-entrepreneur"><div class="uui-navbar07_icon-wrapper"><div class="uui-icon-1x1-xsmall w-embed"><svg height="25" id="icon" viewBox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<style>
+      .cls-1 {
+        fill: none;
+      }
+    </style>
+</defs>
+<title>erhverv</title>
+<path d="M28,10H4a2,2,0,0,0-2,2V28a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V12A2,2,0,0,0,28,10ZM4,28V12H28V28Z" fill="currentColor"></path>
+<path d="M20,8V4a2,2,0,0,0-2-2H14a2,2,0,0,0-2,2V8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="16" x2="16" y1="16" y2="24"></line>
+<line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="12" x2="20" y1="20" y2="20"></line>
+<rect class="cls-1" data-name="<Transparent Rectangle>" height="32" id="_Transparent_Rectangle_" width="32"></rect>
+</svg></div></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">For iværksættere</div><div class="uui-text-size-small">AI-drevet assistance til din startup</div></div></a><a class="bar-dropdown-link w-inline-block" href="/da/use-cases/for-consultant"><div class="uui-navbar07_icon-wrapper"><div class="uui-icon-1x1-xsmall w-embed"><svg id="icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<style>
+      .cls-1 {
+        fill: none;
+      }
+    </style>
+</defs>
+<title>partnerskab</title>
+<path d="M8,9a4,4,0,1,1,4-4A4,4,0,0,1,8,9ZM8,3a2,2,0,1,0,2,2A2,2,0,0,0,8,3Z" fill="currentColor" transform="translate(0)"></path>
+<path d="M24,9a4,4,0,1,1,4-4A4,4,0,0,1,24,9Zm0-6a2,2,0,1,0,2,2A2,2,0,0,0,24,3Z" fill="currentColor" transform="translate(0)"></path>
+<path d="M26,30H22a2,2,0,0,1-2-2V21h2v7h4V19h2V13a1,1,0,0,0-1-1H20.58L16,20l-4.58-8H5a1,1,0,0,0-1,1v6H6v9h4V21h2v7a2,2,0,0,1-2,2H6a2,2,0,0,1-2-2V21a2,2,0,0,1-2-2V13a3,3,0,0,1,3-3h7.58L16,16l3.42-6H27a3,3,0,0,1,3,3v6a2,2,0,0,1-2,2v7A2,2,0,0,1,26,30Z" fill="currentColor" transform="translate(0)"></path>
+<rect class="cls-1" data-name="<Transparent Rectangle>" height="32" id="_Transparent_Rectangle_" width="32"></rect>
+</svg></div></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">For Træner &amp; Konsulent</div><div class="uui-text-size-small">Bring AI til dine kunder - Udvid med os</div></div></a></div></nav></div><div class="bar-menu-dropdown w-dropdown" data-delay="300" data-hover="true" data-w-id="89a538a4-18ec-08f7-bfea-f28bc063fed2"><div class="dropdown-toggle w-dropdown-toggle"><div class="uui-dropdown-icon w-embed"><svg fill="none" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.67"></path>
+</svg></div><div class="nav-text">Ressourcer</div></div><nav class="bar-dorpdown-list w-dropdown-list"><div class="bar-dopdown-link-list"><a class="bar-dropdown-link w-inline-block" href="https://docs.skydeck.ai/" rel="noopener noreferrer" target="_blank"><div class="uui-navbar07_icon-wrapper"><div class="uui-icon-1x1-xsmall w-embed"><!--?xml version="1.0" encoding="utf-8"?-->
+<svg height="25" id="icon" viewBox="0 0 32 32" width="24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style type="text/css">
+    .st0 { fill: none; }
+  </style>
+<title>dokument</title>
+<path d="M25.7,9.3l-7-7C18.5,2.1,18.3,2,18,2H8C6.9,2,6,2.9,6,4v24c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V10
+    C26,9.7,25.9,9.5,25.7,9.3z M18,4.4l5.6,5.6H18V4.4z M24,28H8V4h8v6c0,1.1,0.9,2,2,2h6V28z" fill="currentColor"></path>
+<rect fill="currentColor" height="2" width="12" x="10" y="22"></rect>
+<rect fill="currentColor" height="2" width="12" x="10" y="16"></rect>
+<rect class="st0" height="32" width="32"></rect>
+</svg></div></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">Dokumentationer</div><div class="uui-text-size-small">Kom i gang med nye funktioner og teknikker</div></div></a><a class="bar-dropdown-link w-inline-block" href="/da/about/about-skydeckai"><div class="uui-navbar07_icon-wrapper"><div class="uui-icon-1x1-xsmall w-embed"><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg height="25" id="icon" viewBox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<style>
+      .cls-1 {
+        fill: none;
+      }
+    </style>
+</defs>
+<path d="m26,30h-2v-5c-.0033-2.7601-2.2399-4.9967-5-5h-6c-2.7601.0033-4.9967,2.2399-5,5v5h-2v-5c.0045-3.8641,3.1359-6.9955,7-7h6c3.8641.0045,6.9955,3.1359,7,7v5Z" fill="currentColor"></path>
+<path d="m22,6v4c0,1.1025-.8972,2-2,2h-1c-.5522,0-1,.4478-1,1s.4478,1,1,1h1c2.2056,0,4-1.7944,4-4v-4h-2Z" fill="currentColor"></path>
+<path d="m16,16c-3.8599,0-7-3.1401-7-7S12.1401,2,16,2c1.9885,0,3.8901.8503,5.2173,2.3329l-1.4902,1.334c-.9482-1.0593-2.3066-1.6669-3.7271-1.6669-2.7571,0-5,2.243-5,5s2.2429,5,5,5v2Z" fill="currentColor"></path>
+<rect class="cls-1" data-name="&amp;lt;Transparent Rectangle&amp;gt;" height="32" id="_Transparent_Rectangle_" width="32"></rect>
+</svg></div></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">Om os</div><div class="uui-text-size-small">Lær Teams at kende og vores vision</div></div></a><a class="bar-dropdown-link w-inline-block" href="/da/about/blog"><div class="uui-navbar07_icon-wrapper"><div class="uui-icon-1x1-xsmall w-embed"><svg height="25" id="icon" viewBox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<style>
+      .cls-1 {
+        fill: none;
+      }
+    </style>
+</defs>
+<title>blog</title>
+<rect fill="currentColor" height="2" width="10" x="4" y="24"></rect>
+<rect fill="currentColor" height="2" width="10" x="4" y="18"></rect>
+<path d="M26,14H6a2,2,0,0,1-2-2V6A2,2,0,0,1,6,4H26a2,2,0,0,1,2,2v6A2,2,0,0,1,26,14ZM6,6v6H26V6Z" fill="currentColor" transform="translate(0 0)"></path>
+<path d="M26,28H20a2,2,0,0,1-2-2V20a2,2,0,0,1,2-2h6a2,2,0,0,1,2,2v6A2,2,0,0,1,26,28Zm-6-8v6h6V20Z" fill="currentColor" transform="translate(0 0)"></path>
+<rect class="cls-1" data-name="<Transparent Rectangle>" height="32" id="_Transparent_Rectangle_" width="32"></rect>
+</svg></div></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">Blog</div><div class="uui-text-size-small">Seneste branche nyheder, opdateringer og information</div></div></a><a class="bar-dropdown-link w-inline-block" href="/da/about/skydeck-contact-us"><div class="uui-navbar07_icon-wrapper"><div class="uui-icon-1x1-xsmall w-embed"><svg height="25" id="icon" viewBox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<style>
+      .cls-1 {
+        fill: none;
+      }
+    </style>
+</defs>
+<title>email</title>
+<path d="M28,6H4A2,2,0,0,0,2,8V24a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V8A2,2,0,0,0,28,6ZM25.8,8,16,14.78,6.2,8ZM4,24V8.91l11.43,7.91a1,1,0,0,0,1.14,0L28,8.91V24Z" fill="currentColor" transform="translate(0)"></path>
+<rect class="cls-1" data-name="<Transparent Rectangle>" height="32" id="_Transparent_Rectangle_" width="32"></rect>
+</svg></div></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">Kontakt os</div><div class="uui-text-size-small">Kontakt for support</div></div></a><a class="bar-dropdown-link w-inline-block" href="/da/about/security"><div class="uui-navbar07_icon-wrapper"><div class="uui-icon-1x1-xsmall w-embed"><svg height="25" id="icon" viewBox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<style>
+      .cls-1 {
+        fill: none;
+      }
+    </style>
+</defs>
+<title>ibm-sikkerhed</title>
+<path d="M16,.0005,4,5.9784V20.0443a12,12,0,0,0,24,0V5.9784Zm6.83,27.3138L16,23.9119V26.14l5.0361,2.5088A10.0025,10.0025,0,0,1,6,20.0443V7.21L16,2.2284,26,7.21v3.75L16,5.9783V8.2062l10,4.9816v3.75L16,11.9562v2.2279l10,4.9815v.8787a9.9045,9.9045,0,0,1-.37,2.6871L16,17.934v2.2279l8.8952,4.4313A10.0252,10.0252,0,0,1,22.83,27.3143Z" fill="currentColor"></path>
+<rect class="cls-1" data-name="<Transparent Rectangle>" height="32" id="_Transparent_Rectangle_" width="32"></rect>
+</svg></div></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">Sikkerhed</div><div class="uui-text-size-small">SOC 2 Type 2 og CASA certificeret</div></div></a></div></nav></div><div class="bar-menu-dropdown w-dropdown" data-delay="300" data-hover="true" data-w-id="a9eea160-ef98-0e0b-b867-9d7ab6747c9a"><div class="dropdown-toggle w-dropdown-toggle"><div class="uui-dropdown-icon w-embed"><svg fill="none" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.67"></path>
+</svg></div><div class="nav-text">Agenter</div></div><nav class="bar-dorpdown-list w-dropdown-list"><div class="bar-dopdown-link-list"><a class="bar-dropdown-link w-inline-block" href="/da/custom-ai-agent-development"><div class="uui-navbar07_icon-wrapper"><div class="uui-icon-1x1-xsmall w-embed"><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg height="25" id="icon" viewBox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+<style type="text/css">
+    .st0 { fill: none; }
+  </style>
+<path d="m15,19l-1.4141,1.4141,3.5859,3.5859H4v-13h-2v13c0,1.1046.8954,2,2,2h13.1719l-3.5859,3.5859,1.4141,1.4141,6-6-6-6Z" fill="currentColor"></path>
+<path d="m24,18v-2h2V4h-2v-2h6v2h-2v12h2v2h-6Z" fill="currentColor"></path>
+<path d="m21,18h2l-5.5-16-3,.0088-5.5,15.9912h2l1.3333-4h7.3335l1.3333,4Zm-8-6l3-9,3,9h-6Z" fill="currentColor"></path>
+<rect class="st0" height="32" width="32"></rect>
+</svg></div></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">Skræddersyede AI-agenter</div><div class="uui-text-size-small">Vi bygger AI-agenter og agentiske systemer til din virksomhed.</div></div></a><a aria-current="page" class="bar-dropdown-link w-inline-block w--current" href="/da/automated-sof-sow-verification"><div class="uui-navbar07_icon-wrapper"><div class="uui-icon-1x1-xsmall w-embed"><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg height="25" id="icon" viewBox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+<style type="text/css">
+    .st0 { fill: none; }
+  </style>
+<rect fill="currentColor" height="2" width="28" x="2" y="22"></rect>
+<rect fill="currentColor" height="2" width="28" x="2" y="26"></rect>
+<path d="M24,10a2,2,0,1,0,2,2,2,2,0,0,0-2-2Z" fill="currentColor"></path>
+<path d="M16,16a4,4,0,1,1,4-4A4.0045,4.0045,0,0,1,16,16Zm0-6a2,2,0,1,0,2,2A2.002,2.002,0,0,0,16,10Z" fill="currentColor"></path>
+<path d="M8,10a2,2,0,1,0,2,2,2,2,0,0,0-2-2Z" fill="currentColor"></path>
+<path d="M28,20H4a2.0051,2.0051,0,0,1-2-2V6A2.0051,2.0051,0,0,1,4,4H28a2.0051,2.0051,0,0,1,2,2V18A2.0027,2.0027,0,0,1,28,20ZM28,6H4V18H28Z" fill="currentColor"></path>
+<rect class="st0" height="32" width="32"></rect>
+</svg></div></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">SOF/SOW Agent</div><div class="uui-text-size-small">Kilde til midler / Kilde til rigdom Agent for regulerede industrier</div></div></a></div></nav></div><a class="link-block-2 w-inline-block" href="/da/pricing"><div class="nav-text">Prisfastsættelse</div></a></div><div class="bar-menu-right"><div class="uui-navbar07_button-wrapper"><a class="uui-button-secondary-gray show-tablet w-inline-block" href="#"><div>Log ind</div></a><a class="uui-button-tertiary-gray hide-tablet w-inline-block" href="https://admin.skydeck.ai/en/sign-in/" rel="noopener noreferrer" target="_blank"><div class="text-block-20">Admin log ind</div></a><a class="uui-button-3 w-inline-block" href="https://user.skydeck.ai/sign-in" rel="noopener noreferrer" target="_blank"><div class="text-block-21">Brugerlogin</div></a></div></div></nav><div class="bar-menu-button w-nav-button"><div class="menu-icon_component"><div class="menu-icon_line-top"></div><div class="menu-icon_line-middle"><div class="menu-icon_line-middle-inner"></div></div><div class="menu-icon_line-bottom"></div></div></div></div></div><section></section><header class="uui-section_heroheader12grey"><div class="uui-page-padding-2"><div class="uui-container-large-2"><div class="uui-padding-vertical-xhuge"><div class="uui-text-align-center"><div class="uui-max-width-xlarge align-center"><h1 class="uii-heading">Hurtig, Overholdende SOF/SOW Verifikation for Ejendomsmæglere</h1><div class="uui-space-small"></div><div class="uui-max-width-large align-center"><div class="uui-text-size-xlarge">Stop med at drukne i papirarbejde og manuelle dokumentgennemgange. Vores AI-agent automatiserer verifikation af kilde til midler og kilde til formue, samtidig med at der opretholdes fulde revisionsspor og overholdelse af reglerne.</div></div></div></div></div></div></div></header><section class="uui-section_layout56"><div class="uui-page-padding-3"><div class="uui-container-large-3"><div class="uui-padding-vertical-xhuge-2"><div class="w-layout-grid uui-layout56_component"><div class="uui-layout56_image-wrapper"><img alt="Dashboard mockup" class="uui-layout56_image" loading="lazy" src="https://www.skydeck.ai//assets/6f820ba148.webp" width="1440"></div><div class="uui-layout56_content" id="w-node-_6f31ad17-8487-a7d1-a537-acd738ab4054-654524a9"><div class="uui-heading-subheading-2">OVERHOLDELSES AUTOMATISERING FOR EJENDOMSPROFESSIONELLE</div><h2 class="uui-heading-medium-2">Hurtig, Overholdende SOF/SOW Verifikation for Ejendomseksperter<br></h2><div class="uui-space-xsmall-2"></div><div class="uui-text-size-large-2">Stop med at drukne i papirarbejde og manuelle dokumentgennemgange. Vores AI-agent automatiserer verifikation af kilde til midler og kilde til formue, samtidig med at der opretholdes fulde revisionsspor og overholdelse af reglerne.</div><div class="uui-layout56_item-list"><div class="uui-layout56_item" id="w-node-_6f31ad17-8487-a7d1-a537-acd738ab405e-654524a9"><div class="uui-layout56_item-icon-wrapper"><div class="uui-icon-1x1-xsmall-2 w-embed"><svg fill="none" height="currentHeight" viewBox="0 0 28 28" width="currentWidth" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 14C0 6.26801 6.26801 0 14 0V0C21.732 0 28 6.26801 28 14V14C28 21.732 21.732 28 14 28V28C6.26801 28 0 21.732 0 14V14Z" fill="#c7d8fc"></path>
+<path clip-rule="evenodd" d="M19.9457 8.62169L11.5923 16.6834L9.37568 14.315C8.96734 13.93 8.32568 13.9067 7.85901 14.2334C7.40401 14.5717 7.27568 15.1667 7.55568 15.645L10.1807 19.915C10.4373 20.3117 10.8807 20.5567 11.3823 20.5567C11.8607 20.5567 12.3157 20.3117 12.5723 19.915C12.9923 19.3667 21.0073 9.81169 21.0073 9.81169C22.0573 8.73836 20.7857 7.79336 19.9457 8.61002V8.62169Z" fill="#1f6fff" fill-rule="evenodd"></path>
+</svg></div></div><div class="uui-layout56_item-text-wrapper"><div class="uui-text-size-large-2">Reducer verificeringstiden fra uger til minutter</div></div></div><div class="uui-layout56_item" id="w-node-_6f31ad17-8487-a7d1-a537-acd738ab4064-654524a9"><div class="uui-layout56_item-icon-wrapper"><div class="uui-icon-1x1-xsmall-2 w-embed"><svg fill="none" height="currentHeight" viewBox="0 0 28 28" width="currentWidth" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 14C0 6.26801 6.26801 0 14 0V0C21.732 0 28 6.26801 28 14V14C28 21.732 21.732 28 14 28V28C6.26801 28 0 21.732 0 14V14Z" fill="#c7d8fc"></path>
+<path clip-rule="evenodd" d="M19.9457 8.62169L11.5923 16.6834L9.37568 14.315C8.96734 13.93 8.32568 13.9067 7.85901 14.2334C7.40401 14.5717 7.27568 15.1667 7.55568 15.645L10.1807 19.915C10.4373 20.3117 10.8807 20.5567 11.3823 20.5567C11.8607 20.5567 12.3157 20.3117 12.5723 19.915C12.9923 19.3667 21.0073 9.81169 21.0073 9.81169C22.0573 8.73836 20.7857 7.79336 19.9457 8.61002V8.62169Z" fill="#1f6fff" fill-rule="evenodd"></path>
+</svg></div></div><div class="uui-layout56_item-text-wrapper"><div class="uui-text-size-large-2">Oprethold fuld overensstemmelse med dokumentation, der er klar til revision.</div></div></div><div class="uui-layout56_item" id="w-node-_6f31ad17-8487-a7d1-a537-acd738ab406a-654524a9"><div class="uui-layout56_item-icon-wrapper"><div class="uui-icon-1x1-xsmall-2 w-embed"><svg fill="none" height="currentHeight" viewBox="0 0 28 28" width="currentWidth" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 14C0 6.26801 6.26801 0 14 0V0C21.732 0 28 6.26801 28 14V14C28 21.732 21.732 28 14 28V28C6.26801 28 0 21.732 0 14V14Z" fill="#c7d8fc"></path>
+<path clip-rule="evenodd" d="M19.9457 8.62169L11.5923 16.6834L9.37568 14.315C8.96734 13.93 8.32568 13.9067 7.85901 14.2334C7.40401 14.5717 7.27568 15.1667 7.55568 15.645L10.1807 19.915C10.4373 20.3117 10.8807 20.5567 11.3823 20.5567C11.8607 20.5567 12.3157 20.3117 12.5723 19.915C12.9923 19.3667 21.0073 9.81169 21.0073 9.81169C22.0573 8.73836 20.7857 7.79336 19.9457 8.61002V8.62169Z" fill="#1f6fff" fill-rule="evenodd"></path>
+</svg></div></div><div class="uui-layout56_item-text-wrapper"><div class="uui-text-size-large-2">Integrer med dine eksisterende CRM- og sagsbehandlingssystemer</div></div></div></div><div class="uui-button-row-2 is-reverse-mobile-landscape"><div class="uui-button-wrapper-2 max-width-full-mobile-landscape-2"><a class="uui-button-secondary-gray-3 w-inline-block" href="https://app-na2.hubspot.com/meetings/garyctate-ai/gary-c-tate-30m-ict" rel="noopener noreferrer" target="_blank"><div>Planlæg konsultation</div></a></div><div class="uui-button-wrapper-2 max-width-full-mobile-landscape-2"><a class="uui-button-6 w-inline-block" href="/da/sof-sow-agent-roi-calculator"><div>Se ROI-beregner</div></a></div></div></div></div></div></div></div></section><section class="uui-section_layout56"><div class="uui-page-padding-6"><div class="uui-container-large-6"><div class="uui-padding-vertical-xhuge-9"><div class="uui-layout94_component"><div class="uui-max-width-large-3"><div class="uui-heading-subheading-2">NØGLEKAPABILITETER</div><div class="uui-space-xsmall-5"></div><h2 class="uui-heading-medium-9">Bygget til ejendomspersonale, der ikke har råd til overholdelsesfejl.</h2><div class="uui-space-xsmall-5"></div><div class="uui-text-size-large-10">Vores AI-agent håndterer hele SOF/SOW verificeringsprocessen - fra klientinterview til risikovurdering - og leverer komplette overholdelsesrapporter på 15-20 minutter i stedet for uger.</div></div><div class="w-layout-grid uui-layout94_list"><div class="uui-layout94_item"><div class="uui-layout94_item-content"><div class="icon-featured-square-large"><div class="uui-icon-1x1-xsmall-10 w-embed"><svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.09436 11.2288C6.03221 10.8282 5.99996 10.4179 5.99996 10C5.99996 5.58172 9.60525 2 14.0526 2C18.4999 2 22.1052 5.58172 22.1052 10C22.1052 10.9981 21.9213 11.9535 21.5852 12.8345C21.5154 13.0175 21.4804 13.109 21.4646 13.1804C21.4489 13.2512 21.4428 13.301 21.4411 13.3735C21.4394 13.4466 21.4493 13.5272 21.4692 13.6883L21.8717 16.9585C21.9153 17.3125 21.9371 17.4895 21.8782 17.6182C21.8266 17.731 21.735 17.8205 21.6211 17.8695C21.4911 17.9254 21.3146 17.8995 20.9617 17.8478L17.7765 17.3809C17.6101 17.3565 17.527 17.3443 17.4512 17.3448C17.3763 17.3452 17.3245 17.3507 17.2511 17.3661C17.177 17.3817 17.0823 17.4172 16.893 17.4881C16.0097 17.819 15.0524 18 14.0526 18C13.6344 18 13.2237 17.9683 12.8227 17.9073M7.63158 22C10.5965 22 13 19.5376 13 16.5C13 13.4624 10.5965 11 7.63158 11C4.66668 11 2.26316 13.4624 2.26316 16.5C2.26316 17.1106 2.36028 17.6979 2.53955 18.2467C2.61533 18.4787 2.65322 18.5947 2.66566 18.6739C2.67864 18.7567 2.68091 18.8031 2.67608 18.8867C2.67145 18.9668 2.65141 19.0573 2.61134 19.2383L2 22L4.9948 21.591C5.15827 21.5687 5.24 21.5575 5.31137 21.558C5.38652 21.5585 5.42641 21.5626 5.50011 21.5773C5.5701 21.5912 5.67416 21.6279 5.88227 21.7014C6.43059 21.8949 7.01911 22 7.63158 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg></div></div><div class="uui-space-xxlarge"></div><h3 class="uui-heading-xxsmall-2">Intelligent samtaleinterviews</h3><div class="uui-space-xxsmall-2"></div><div class="uui-text-size-medium-4">Udskifter stive formularer med naturlige AI-samtaler, der tilpasser sig hver klients situation. Klienter ønsker faktisk at færdiggøre dette—ingen mere jagt på dokumenter i flere uger.</div></div></div><div class="uui-layout94_item"><div class="uui-layout94_item-content"><div class="icon-featured-square-large"><div class="uui-icon-1x1-xsmall-10 w-embed"><svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M11 3H7.8C6.11984 3 5.27976 3 4.63803 3.32698C4.07354 3.6146 3.6146 4.07354 3.32698 4.63803C3 5.27976 3 6.11984 3 7.8V16.2C3 17.8802 3 18.7202 3.32698 19.362C3.6146 19.9265 4.07354 20.3854 4.63803 20.673C5.27976 21 6.11984 21 7.8 21H16.2C17.8802 21 18.7202 21 19.362 20.673C19.9265 20.3854 20.3854 19.9265 20.673 19.362C21 18.7202 21 17.8802 21 16.2V13M12 8H16V12M15.5 3.5V2M19.4393 4.56066L20.5 3.5M20.5103 8.5H22.0103M3 13.3471C3.65194 13.4478 4.31987 13.5 5 13.5C9.38636 13.5 13.2653 11.3276 15.6197 8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg></div></div><div class="uui-space-xxlarge"></div><h3 class="uui-heading-xxsmall-2">Live finansel sporing<br>‍</h3><div class="uui-space-xxsmall-2"></div><div class="uui-text-size-medium-4">Real-time "totalizer" viser den samlede mængde af erklærede midler i forhold til transaktionsværdien. Fremhæver finansieringshuller øjeblikkeligt og forhindrer ufuldstændige indsendelser.</div></div></div><div class="uui-layout94_item"><div class="uui-layout94_item-content"><div class="icon-featured-square-large"><div class="uui-icon-1x1-xsmall-10 w-embed"><svg fill="none" height="24" viewBox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M20,10h-8v-2h8v2ZM16,28H6v-4h2v-2h-2v-5h2v-2h-2v-5h2v-2h-2v-4h18v17h2V4c0-1.1-.9-2-2-2H6c-1.1,0-2,.9-2,2v4h-2v2h2v5h-2v2h2v5h-2v2h2v4c0,1.1.9,2,2,2h10v-2ZM20,15h-8v2h8v-2ZM23,27.2l-2.6-2.6-1.4,1.4,4,4,7-7-1.4-1.4-5.6,5.6Z" fill="currentColor"></path>
+</svg></div></div><div class="uui-space-xxlarge"></div><h3 class="uui-heading-xxsmall-2">Smart Dokumentverifikation</h3><div class="uui-space-xxsmall-2"></div><div class="uui-text-size-medium-4">OCR-drevne kvalitetskontroller opfanger ufuldstændige eller ulæselige dokumenter, før de forårsager forsinkelser. Validerer kritiske oplysninger automatisk.</div></div></div><div class="uui-layout94_item"><div class="uui-layout94_item-content"><div class="icon-featured-square-large"><div class="uui-icon-1x1-xsmall-10 w-embed"><svg fill="none" height="24" viewBox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M30,30H28V25a5.0057,5.0057,0,0,0-5-5V18a7.0078,7.0078,0,0,1,7,7Z" fill="currentColor"></path>
+<path d="M22,30H20V25a5.0059,5.0059,0,0,0-5-5H9a5.0059,5.0059,0,0,0-5,5v5H2V25a7.0082,7.0082,0,0,1,7-7h6a7.0082,7.0082,0,0,1,7,7Z" fill="currentColor"></path>
+<path d="M20,2V4a5,5,0,0,1,0,10v2A7,7,0,0,0,20,2Z" fill="currentColor"></path>
+<path d="M12,4A5,5,0,1,1,7,9a5,5,0,0,1,5-5m0-2a7,7,0,1,0,7,7A7,7,0,0,0,12,2Z" fill="currentColor"></path>
+</svg></div></div><div class="uui-space-xxlarge"></div><h3 class="uui-heading-xxsmall-2">Multi-Agent Beskyttelse</h3><div class="uui-space-xxsmall-2"></div><div class="uui-text-size-medium-4">Fire AI-agenter arbejder sammen: én gennemfører interviews, én sporingsfinansiering, én screener risici, én genererer rapporter. Redundans indbygget.</div></div></div><div class="uui-layout94_item"><div class="uui-layout94_item-content"><div class="icon-featured-square-large"><div class="uui-icon-1x1-xsmall-10 w-embed"><svg fill="none" height="24" viewBox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M28,2H16a2.002,2.002,0,0,0-2,2V14H4a2.002,2.002,0,0,0-2,2V30H30V4A2.0023,2.0023,0,0,0,28,2ZM9,28V21h4v7Zm19,0H15V20a1,1,0,0,0-1-1H8a1,1,0,0,0-1,1v8H4V16H16V4H28Z" fill="currentColor"></path>
+<rect fill="currentColor" height="2" width="2" x="18" y="8"></rect>
+<rect fill="currentColor" height="2" width="2" x="24" y="8"></rect>
+<rect fill="currentColor" height="2" width="2" x="18" y="14"></rect>
+<rect fill="currentColor" height="2" width="2" x="24" y="14"></rect>
+<rect fill="currentColor" height="2" width="2" x="18" y="19.9996"></rect>
+<rect fill="currentColor" height="2" width="2" x="24" y="19.9996"></rect>
+<path d="M9,12H7a5.0059,5.0059,0,0,1,5-5V9A3.0033,3.0033,0,0,0,9,12Z" fill="currentColor"></path>
+<path d="M4,12H2A10.0114,10.0114,0,0,1,12,2V4A8.0092,8.0092,0,0,0,4,12Z" fill="currentColor"></path>
+</svg></div></div><div class="uui-space-xxlarge"></div><h3 class="uui-heading-xxsmall-2">Ejendomsspecifik intelligens</h3><div class="uui-space-xxsmall-2"></div><div class="uui-text-size-medium-4">Specielt designet til ejendomshandler med dyb viden om ejendomstransaktionsmønstre, almindelige finansieringskilder og sektorspecifikke advarsler.</div></div></div><div class="uui-layout94_item"><div class="uui-layout94_item-content"><div class="icon-featured-square-large"><div class="uui-icon-1x1-xsmall-10 w-embed"><svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 17.5H3.5M6.5 12H2M9 6.5H4M17 3L10.4036 12.235C10.1116 12.6438 9.96562 12.8481 9.97194 13.0185C9.97744 13.1669 10.0486 13.3051 10.1661 13.3958C10.3011 13.5 10.5522 13.5 11.0546 13.5H16L15 21L21.5964 11.765C21.8884 11.3562 22.0344 11.1519 22.0281 10.9815C22.0226 10.8331 21.9514 10.6949 21.8339 10.6042C21.6989 10.5 21.4478 10.5 20.9454 10.5H16L17 3Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg></div></div><div class="uui-space-xxlarge"></div><h3 class="uui-heading-xxsmall-2">Automatiseret risikovurdering</h3><div class="uui-space-xxsmall-2"></div><div class="uui-text-size-medium-4">Integrerede OSINT-tjek på PEP-lister, sanktionsdatabaser, Companies House og negativ medieovervågning. 90% reduktion i manuel forskningstid.</div></div></div><div class="uui-layout94_item"><div class="uui-layout94_item-content"><div class="icon-featured-square-large"><div class="uui-icon-1x1-xsmall-10 w-embed"><svg fill="none" height="24" viewBox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+<rect fill="currentColor" height="2" width="8" x="10" y="18"></rect>
+<rect fill="currentColor" height="2" width="12" x="10" y="13"></rect>
+<rect fill="currentColor" height="2" width="5" x="10" y="23"></rect>
+<path d="M25,5H22V4a2,2,0,0,0-2-2H12a2,2,0,0,0-2,2V5H7A2,2,0,0,0,5,7V28a2,2,0,0,0,2,2H25a2,2,0,0,0,2-2V7A2,2,0,0,0,25,5ZM12,4h8V8H12ZM25,28H7V7h3v3H22V7h3Z" fill="currentColor"></path>
+</svg></div></div><div class="uui-space-xxlarge"></div><h3 class="uui-heading-xxsmall-2">Komplette overholdelsesrapporter</h3><div class="uui-space-xxsmall-2"></div><div class="uui-text-size-medium-4">Genererer Client Matter Risk Assessment (CMRA) med finansieringsopdeling, risikovurdering og røde flag. Eksporter direkte til dit dokumenthåndteringssystem.</div></div></div><div class="uui-layout94_item"><div class="uui-layout94_item-content"><div class="icon-featured-square-large"><div class="uui-icon-1x1-xsmall-10 w-embed"><svg fill="none" height="24" viewBox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+<rect fill="currentColor" height="2" width="4" x="14" y="19"></rect>
+<path d="M6,2V28a2,2,0,0,0,2,2H24a2,2,0,0,0,2-2V2ZM24,28H8V16H24Zm0-14H8V10H24ZM8,8V4H24V8Z" fill="currentColor"></path>
+</svg></div></div><div class="uui-space-xxlarge"></div><h3 class="uui-heading-xxsmall-2">Komplet revisionsspor</h3><div class="uui-space-xxsmall-2"></div><div class="uui-text-size-medium-4">Hver interaktion logget og tidsstemplet. SRA-klar dokumentation med fuld integration i dit eksisterende praksisstyringssystem.</div></div></div></div><div class="uui-button-row-4 is-reverse-mobile-landscape"><div class="uui-button-wrapper-4 max-width-full-mobile-landscape-4"><a class="uui-button-secondary-gray-3 w-inline-block" href="https://app-na2.hubspot.com/meetings/garyctate-ai/gary-c-tate-30m-ict" rel="noopener noreferrer" target="_blank"><div>Planlæg konsultation</div><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/placeholder.svg"></a></div><div class="uui-button-wrapper-4 max-width-full-mobile-landscape-4"><a class="uui-button-6 w-inline-block" href="/da/sof-sow-agent-roi-calculator"><div>Se ROI-beregner</div></a></div></div></div></div></div></div></section><section class="section-8"><div class="w-layout-blockcontainer uui-container-large-2 w-container"><div class="uui-padding-vertical-xhuge"><div class="w-embed w-script"><style>
+.sof-faq-section {
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.sof-faq-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.sof-faq-section .faq-subtitle {
+  font-size: 1.125rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.sof-faq-item {
+  background: #ffffff;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+.sof-faq-item:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.sof-faq-question {
+  width: 100%;
+  padding: 20px 24px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.sof-faq-question:hover {
+  color: #146EF5;
+}
+
+.sof-faq-icon {
+  font-size: 1.5rem;
+  color: #146EF5;
+  transition: transform 0.3s;
+  flex-shrink: 0;
+  margin-left: 16px;
+}
+
+.sof-faq-item.active .sof-faq-icon {
+  transform: rotate(180deg);
+}
+
+.sof-faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.sof-faq-answer-content {
+  padding: 0 24px 24px 24px;
+  color: #4b5563;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.sof-faq-answer-content p {
+  margin-bottom: 12px;
+}
+
+.sof-faq-answer-content ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 12px 0;
+}
+
+.sof-faq-answer-content ul li {
+  padding: 6px 0;
+  padding-left: 28px;
+  position: relative;
+}
+
+.sof-faq-answer-content ul li:before {
+  content: "✓";
+  position: absolute;
+  left: 8px;
+  color: #146EF5;
+  font-weight: bold;
+}
+
+.sof-faq-answer-content strong {
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+@media (max-width: 767px) {
+  .sof-faq-section h2 {
+    font-size: 2rem;
+  }
+  
+  .sof-faq-section .faq-subtitle {
+    font-size: 1rem;
+  }
+  
+  .sof-faq-question {
+    font-size: 1rem;
+    padding: 16px 20px;
+  }
+  
+  .sof-faq-answer-content {
+    padding: 0 20px 20px 20px;
+    font-size: 0.95rem;
+  }
+}
+</style>
+<div class="sof-faq-section">
+<h2>Ofte Stillede Spørgsmål</h2>
+<p class="faq-subtitle">Alt, hvad du behøver at vide om SOF Agenten</p>
+<div class="sof-faq-item">
+<button aria-expanded="false" class="sof-faq-question">
+<span>Hvad er SOF Agent, og hvordan fungerer det?</span>
+<span class="sof-faq-icon">▼</span>
+</button>
+<div class="sof-faq-answer">
+<div class="sof-faq-answer-content">
+<p>SOF-agenten er en AI-drevet automatiseringsplatform, der håndterer verifikation af midlernes kilde (SOF) og velstandens kilde (SOW) for ejendomsmæglere. Den omdanner det, der typisk tager 3-5 timers manuelt arbejde, til en strømlinet, automatiseret proces.</p>
+<p>Systemet fungerer ved:</p>
+<ul>
+<li>Automatisk udtrækning og analyse af data fra finansielle dokumenter</li>
+<li>Krydsreferencing af information mod multiple verifikationskilder</li>
+<li>Identifikation af inkonsekvenser og risikoflag ved hjælp af AI</li>
+<li>Generering af omfattende CMRA (Client Money Risk Assessment) rapporter</li>
+<li>Opretholdelse af komplette revisionsspor for overholdelse af regler</li>
+</ul>
+<p>Hele processen kører i baggrunden, mens den opretholder fuld overholdelse af SRA, HMRC og kravene til bekæmpelse af hvidvaskning af penge.</p>
+</div>
+</div>
+</div>
+<div class="sof-faq-item">
+<button aria-expanded="false" class="sof-faq-question">
+<span>Er SOF Agenten i overensstemmelse med britiske regler?</span>
+<span class="sof-faq-icon">▼</span>
+</button>
+<div class="sof-faq-answer">
+<div class="sof-faq-answer-content">
+<p>Ja, SOF-agenten er designet specifikt til at opfylde og overgå de britiske lovgivningskrav. Systemet er fuldt ud i overensstemmelse med:</p>
+<ul>
+<li>SRA-standarder (Solicitors Regulation Authority)</li>
+<li>Peng regulering af hvidvaskning af penge 2017 (som ændret)</li>
+<li>HMRC krav til verifikation af midlernes oprindelse</li>
+<li>Lovenes samfunds AML vejledning</li>
+<li>GDPR databeskyttelsesstandarder</li>
+</ul>
+<p>Platformen opretholder omfattende revisionsspor, leverer detaljeret dokumentation for hver verifikation og sikrer, at alle kontroller opfylder den "rimelige sikkerhed" standard, der kræves af regulatorer. Vores compliance-ramme bliver regelmæssigt gennemgået og opdateret for at afspejle regulatoriske ændringer.</p>
+</div>
+</div>
+</div>
+<div class="sof-faq-item">
+<button aria-expanded="false" class="sof-faq-question">
+<span>Hvilke typer dokumenter og kilder understøtter SOF Agent?</span>
+<span class="sof-faq-icon">▼</span>
+</button>
+<div class="sof-faq-answer">
+<div class="sof-faq-answer-content">
+<p>SOF-agenten kan behandle og verificere information fra en bred vifte af dokumentation og kilder:</p>
+<p><strong>Finansdokumenter:</strong></p>
+<ul>
+<li>Bankudskrifter og kontooptegnelser</li>
+<li>Realkreditopgørelser og ejendomsvurderinger</li>
+<li>Investeringsporteføljer og mæglererklæringer</li>
+<li>Skatteopgørelser og HMRC-dokumenter</li>
+<li>Lønsedler og ansættelseskontrakter</li>
+<li>Forretningskonti og virksomhedens optegnelser</li>
+</ul>
+<p><strong>Verifikationskilder:</strong></p>
+<ul>
+<li>Virksomhedens registreringsoptegnelser</li>
+<li>Landinspektørdata</li>
+<li>Kreditvurderingsbureauer</li>
+<li>Åbne bankforbindelser</li>
+<li>PEP- og sanktionsscreening-databaser</li>
+</ul>
+<p>Systemet udtrækker automatisk relevante data fra PDF-filer, scannede dokumenter og digitale filer, hvilket eliminerer manuel dataindtastning.</p>
+</div>
+</div>
+</div>
+<div class="sof-faq-item">
+<button aria-expanded="false" class="sof-faq-question">
+<span>Hvor lang tid tager implementeringen?</span>
+<span class="sof-faq-icon">▼</span>
+</button>
+<div class="sof-faq-answer">
+<div class="sof-faq-answer-content">
+<p>De fleste organisationer er fuldt operationelle inden for 2-4 uger. Implementeringsprocessen inkluderer:</p>
+<p><strong>Uge 1-2: Opsætning &amp; Konfiguration</strong></p>
+<ul>
+<li>Systemintegration med din sagsbehandlingsplatform</li>
+<li>Tilpasning af verificeringsarbejdsprocesser til dine processer</li>
+<li>Brugeradgangsprovidering og opsætning af tilladelser</li>
+<li>Dokument skabelon konfiguration</li>
+</ul>
+<p><strong>Uge 2-3: Træning &amp; Testning</strong></p>
+<ul>
+<li>Personaletræningssessioner (typisk 2-3 timer i alt)</li>
+<li>Pilotbehandling af prøvesager</li>
+<li>Kvalitetssikring og procesforbedring</li>
+</ul>
+<p><strong>Uge 3-4: Gå i luften &amp; Support</strong></p>
+<ul>
+<li>Gradvis udrulning til fuld sagsbelastning</li>
+<li>Dedikeret implementeringssupport</li>
+<li>Ydelsesmåling og optimering</li>
+</ul>
+<p>Vores implementeringsteam arbejder efter din tidsplan for at minimere forstyrrelser i dine igangværende sager.</p>
+</div>
+</div>
+</div>
+<div class="sof-faq-item">
+<button aria-expanded="false" class="sof-faq-question">
+<span>Hvilke integrationer er tilgængelige?</span>
+<span class="sof-faq-icon">▼</span>
+</button>
+<div class="sof-faq-answer">
+<div class="sof-faq-answer-content">
+<p>SOF-agenten integreres problemfrit med de værktøjer, du allerede bruger:</p>
+<p><strong>Sagsstyringssystemer:</strong></p>
+<ul>
+<li>InfoTrack</li>
+<li>Quill</li>
+<li>Spring</li>
+<li>Adgang til Juridisk</li>
+<li>Øvning Uvikle</li>
+<li>Custom integrationer via API</li>
+</ul>
+<p><strong>Datastrømme:</strong></p>
+<ul>
+<li>Åben Banking-udbydere</li>
+<li>Virksomheders Hus API</li>
+<li>Landregistrering</li>
+<li>Kreditvurderingsbureauer</li>
+<li>Dokumenthåndteringssystemer</li>
+</ul>
+<p><strong>Kommunikationsværktøjer:</strong></p>
+<ul>
+<li>E-mail systemer (Outlook, Gmail)</li>
+<li>Klientportaler</li>
+<li>Sikre dokumentdelingsplatforme</li>
+</ul>
+<p>Hvis du bruger en platform, der ikke er nævnt her, giver vores API mulighed for tilpassede integrationer. Vi arbejder sammen med dit IT-team for at sikre en gnidningsløs forbindelse.</p>
+</div>
+</div>
+</div>
+<div class="sof-faq-item">
+<button aria-expanded="false" class="sof-faq-question">
+<span>Hvor præcise er de automatiserede verificeringer?</span>
+<span class="sof-faq-icon">▼</span>
+</button>
+<div class="sof-faq-answer">
+<div class="sof-faq-answer-content">
+<p>SOF-agenten opretholder ekstremt høje nøjagtighedsrater på tværs af alle verificeringsopgaver:</p>
+<ul>
+<li><strong>Dataudtræk:</strong> 98%+ nøjagtighed i udtrækning af finansielle oplysninger fra dokumenter</li>
+<li><strong>Risikovurdering:</strong> 95%+ nøjagtighed i identifikation af ægte risikoindikatorer</li>
+<li><strong>Falske positiver:</strong> Mindre end 5% falsk positiv rate (branchens førende)</li>
+<li><strong>Ufuldstændighed:</strong> 90-95% first-time completion rate uden behov for genindsendelse</li>
+</ul>
+<p>Systemet bruger maskinlæring trænet på millioner af reelle verifikationssager og fortsætter med at forbedre sig over tid. Når AI'en støder på usikkerhed, markerer den sagen til menneskelig gennemgang i stedet for at lave antagelser.</p>
+<p>Alle automatiserede beslutninger inkluderer tillidsscorer, hvilket giver dit team mulighed for hurtigt at gennemgå og validere resultaterne. Du har fuld kontrol og tilsyn over hver verifikation.</p>
+</div>
+</div>
+</div>
+<div class="sof-faq-item">
+<button aria-expanded="false" class="sof-faq-question">
+<span>Behøver vi teknisk ekspertise for at bruge SOF Agent?</span>
+<span class="sof-faq-icon">▼</span>
+</button>
+<div class="sof-faq-answer">
+<div class="sof-faq-answer-content">
+<p>Ingen teknisk ekspertise er påkrævet. SOF Agent er designet til ejendomspersonale og compliance-teams, ikke IT-specialister.</p>
+<p>Brugergrænsefladen er intuitiv og kræver minimal træning:</p>
+<ul>
+<li>Upload dokumenter eller forbind direkte til sagsstyringssystemer</li>
+<li>Gennemgå automatiserede verifikationsresultater i et rent dashboard</li>
+<li>Godkend, forespørg eller anmod om yderligere oplysninger med ét klik</li>
+<li>Generer overholdelsesrapporter automatisk</li>
+</ul>
+<p>De fleste brugere er fuldt ud kompetente inden for deres første par sager. Vores træning tager typisk kun 2-3 timer, og vi tilbyder:</p>
+<ul>
+<li>Video tutorials og dokumentation</li>
+<li>Live support i arbejdstiden</li>
+<li>Løbende træningsressourcer</li>
+<li>Dedikeret kundeansvarlig</li>
+</ul>
+<p>Dit IT-team skal kun involveres under den indledende opsætning af systemintegrationer, hvis det er relevant.</p>
+</div>
+</div>
+</div>
+<div class="sof-faq-item">
+<button aria-expanded="false" class="sof-faq-question">
+<span>Hvilken slags support tilbyder I?</span>
+<span class="sof-faq-icon">▼</span>
+</button>
+<div class="sof-faq-answer">
+<div class="sof-faq-answer-content">
+<p>Vi tilbyder omfattende support for at sikre din succes:</p>
+<p><strong>Implementeringssupport:</strong></p>
+<ul>
+<li>Dedikeret implementeringsleder</li>
+<li>Brugerdefineret arbejdsflowkonfiguration</li>
+<li>Personaletræning og onboarding</li>
+<li>Teknisk integrationshjælp</li>
+</ul>
+<p><strong>Løbende support:</strong></p>
+<ul>
+<li>Email- og telefon-support i britiske arbejdstimer</li>
+<li>Gennemsnitlig svartid under 2 timer</li>
+<li>Regelmæssige opfølgninger med kundesucces-teamet</li>
+<li>Kvartalsvise forretningsanmeldelser</li>
+</ul>
+<p><strong>Ressourcer:</strong></p>
+<ul>
+<li>Omfattende vidensbase og dokumentation</li>
+<li>Videovejledninger og bedste praksis guidinger</li>
+<li>Regelmæssige produktopdateringer og funktionsudgivelser</li>
+<li>Overholdelsesadvarsler for regulatoriske ændringer</li>
+</ul>
+<p>Vi tilbyder også premium supportpakker med dedikeret kontoadministration, prioriterede svartider og skræddersyet udvikling til virksomhedskunder.</p>
+</div>
+</div>
+</div>
+<div class="sof-faq-item">
+<button aria-expanded="false" class="sof-faq-question">
+<span>Hvordan er prissætningen struktureret?</span>
+<span class="sof-faq-icon">▼</span>
+</button>
+<div class="sof-faq-answer">
+<div class="sof-faq-answer-content">
+<p>Vi tilbyder fleksible prisstrukturer, der passer til forskellige organisationsstørrelser og verificeringsvolumener:</p>
+<p><strong>Abonnementsmodel:</strong></p>
+<ul>
+<li>Månedlige eller årlige planer baseret på verificeringsvolumen</li>
+<li>Tiered priser, der skalerer med dit forbrug</li>
+<li>Ingen brugerafgifter - ubegrænset teamadgang</li>
+<li>Inkluderer alle funktioner, opdateringer og support</li>
+</ul>
+<p><strong>Betal-per-verifikation:</strong></p>
+<ul>
+<li>Ideelt til organisationer med variable verificeringsmængder</li>
+<li>Ingen minimumsforpligtelse krævet</li>
+<li>Konkurrencedygtig prissætning pr. sag</li>
+<li>Mængderabatter tilgængelige</li>
+</ul>
+<p><strong>Virksomhedsløsninger:</strong></p>
+<ul>
+<li>Custom pricing for high-volume organisations (1.000+ verificeringer årligt)</li>
+<li>Dedikeret infrastruktur og support</li>
+<li>Tilpassede integrationer og arbejdsgange</li>
+<li>Hvide etiket muligheder tilgængelige</li>
+</ul>
+<p>De fleste organisationer ser en positiv ROI inden for 3-6 måneder. Brug vores <a href="/da/sof-sow-agent-roi-calculator" style="color: #146EF5; text-decoration: underline;">ROI Calculator</a> til at estimere dine specifikke besparelser, eller kontakt os for et skræddersyet tilbud.</p>
+</div>
+</div>
+</div>
+<div class="sof-faq-item">
+<button aria-expanded="false" class="sof-faq-question">
+<span>Hvad sker der med vores data? Er det sikkert?</span>
+<span class="sof-faq-icon">▼</span>
+</button>
+<div class="sof-faq-answer">
+<div class="sof-faq-answer-content">
+<p>Data sikkerhed og kundens fortrolighed er vores højeste prioriteter:</p>
+<p><strong>Sikkerhedsforanstaltninger:</strong></p>
+<ul>
+<li>Bankklasse kryptering for data i hvile og under transport (AES-256)</li>
+<li>UK-baserede datacentre med ISO 27001 certificering</li>
+<li>Multi-faktorautentifikation og rollebaseret adgangskontrol</li>
+<li>Regelmæssige sikkerhedsrevisioner og penetrationstest</li>
+<li>SOC 2 Type II overholdelse</li>
+</ul>
+<p><strong>Data Privatliv:</strong></p>
+<ul>
+<li>Fuldt GDPR-overholdelse</li>
+<li>Din data bliver aldrig delt med tredjeparter.</li>
+<li>Du bevarer fuld ejerskab over alle kundedata.</li>
+<li>Automatiserede dataopbevaringspolitikker</li>
+<li>Ret til at eksportere eller slette data når som helst</li>
+</ul>
+<p><strong>AI-træning:</strong></p>
+<ul>
+<li>Din fortrolige data bruges aldrig til at træne vores AI-modeller.</li>
+<li>Modeller trænes kun på anonymiserede, aggregerede datasæt.</li>
+<li>Komplet kundekonfidencialitet opretholdes</li>
+</ul>
+<p>Vi opretholder omfattende sikkerhedsdokumentation og er glade for at besvare dine IT-sikkerhedsspørgeskemaer.</p>
+</div>
+</div>
+</div>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the SOF Agent and how does it work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The SOF Agent is an AI-powered automation platform that handles Source of Funds (SOF) and Source of Wealth (SOW) verification for property professionals. It transforms what typically takes 3-5 hours of manual work into a streamlined, automated process. The system works by automatically extracting and analyzing data from financial documents, cross-referencing information against multiple verification sources, identifying inconsistencies and risk flags using AI, generating comprehensive CMRA reports, and maintaining complete audit trails for regulatory compliance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the SOF Agent compliant with UK regulations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, the SOF Agent is designed specifically to meet and exceed UK regulatory requirements. The system is fully compliant with Solicitors Regulation Authority (SRA) standards, Money Laundering Regulations 2017 (as amended), HMRC requirements for source of funds verification, Law Society AML guidance, and GDPR data protection standards. The platform maintains comprehensive audit trails, provides detailed documentation for every verification, and ensures all checks meet the reasonable assurance standard required by regulators."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What types of documents and sources does the SOF Agent support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The SOF Agent can process and verify information from bank statements, mortgage statements, investment portfolios, tax returns, payslips, business accounts, Companies House records, Land Registry data, credit reference agencies, open banking connections, and PEP and sanctions screening databases. The system automatically extracts relevant data from PDFs, scanned documents, and digital files, eliminating manual data entry."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does implementation take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most organisations are fully operational within 2-4 weeks. The implementation process includes system integration with case management platforms, customization of verification workflows, user access provisioning, staff training sessions (typically 2-3 hours total), pilot processing of sample cases, quality assurance, and dedicated implementation support. Our implementation team works around your schedule to minimize disruption to your ongoing cases."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What integrations are available?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The SOF Agent integrates with major case management systems including InfoTrack, Quill, Leap, Access Legal, and Practice Evolve. It connects to data sources like Open Banking providers, Companies House API, Land Registry, credit reference agencies, and communication tools including email systems and client portals. Custom integrations are available via API for platforms not listed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How accurate is the automated verification?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The SOF Agent maintains 98%+ accuracy in extracting financial information from documents, 95%+ accuracy in identifying genuine risk flags, less than 5% false positive rate, and 90-95% first-time completion rate without requiring re-submission. The system uses machine learning trained on millions of real verification cases and continues to improve over time. When the AI encounters uncertainty, it flags the case for human review rather than making assumptions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do we need technical expertise to use the SOF Agent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No technical expertise is required. The SOF Agent is designed for property professionals and compliance teams, not IT specialists. The interface is intuitive and requires minimal training. Most users are fully proficient within their first few cases. Training typically takes just 2-3 hours, and includes video tutorials, live support during business hours, ongoing training resources, and a dedicated customer success manager."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What kind of support do you provide?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We provide comprehensive support including dedicated implementation managers, custom workflow configuration, staff training, technical integration assistance, email and phone support during UK business hours with average response time under 2 hours, regular check-ins with customer success team, quarterly business reviews, comprehensive knowledge base, video tutorials, regular product updates, and compliance alerts for regulatory changes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is pricing structured?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer flexible pricing models including subscription plans based on verification volume with no per-user fees, pay-per-verification for organisations with variable volumes, and enterprise solutions for high-volume organisations processing 1,000+ verifications annually. Most organisations see positive ROI within 3-6 months. Pricing includes all features, updates, and support."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to our data? Is it secure?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Data security and client confidentiality are top priorities. The system uses bank-grade encryption (AES-256), UK-based ISO 27001 certified data centers, multi-factor authentication, SOC 2 Type II compliance, and is fully GDPR compliant. Your data is never shared with third parties, you retain complete ownership, and your confidential data is never used to train AI models. We maintain comprehensive security documentation and complete client confidentiality."
+      }
+    }
+  ]
+}
+</script>
+<script>
+// Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+  // Small delay to ensure Webflow has finished loading
+  setTimeout(function() {
+    const faqItems = document.querySelectorAll('.sof-faq-item');
+    
+    if (faqItems.length === 0) {
+      console.log('FAQ items not found');
+      return;
+    }
+    
+    faqItems.forEach(function(item) {
+      const question = item.querySelector('.sof-faq-question');
+      const answer = item.querySelector('.sof-faq-answer');
+      
+      if (!question || !answer) {
+        console.log('Question or answer not found in item');
+        return;
+      }
+      
+      question.addEventListener('click', function() {
+        const isActive = item.classList.contains('active');
+        
+        // Close all items
+        faqItems.forEach(function(otherItem) {
+          otherItem.classList.remove('active');
+          const otherQuestion = otherItem.querySelector('.sof-faq-question');
+          const otherAnswer = otherItem.querySelector('.sof-faq-answer');
+          if (otherQuestion) otherQuestion.setAttribute('aria-expanded', 'false');
+          if (otherAnswer) otherAnswer.style.maxHeight = null;
+        });
+        
+        // Open clicked item if it wasn't active
+        if (!isActive) {
+          item.classList.add('active');
+          question.setAttribute('aria-expanded', 'true');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
+    });
+    
+    console.log('FAQ accordion initialized with ' + faqItems.length + ' items');
+  }, 100);
+});
+</script></div></div></div></section><div class="footer"><div class="about-text footer-container w-container"><div class="footer-row block w-row"><div class="footer-column badge w-col w-col-9 w-col-small-small-stack w-col-tiny-tiny-stack"><div class="div-block-4"><a class="social-btn github w-button" href="https://github.com/skydeckai" rel="noopener noreferrer" target="_blank"></a><a class="social-btn x w-button" href="https://x.com/SkyDeckAI" rel="noopener noreferrer" target="_blank"></a><a class="social-btn linkedin w-button" href="https://www.linkedin.com/company/skydeck-ai" rel="noopener noreferrer" target="_blank"></a><a class="social-btn youtube w-button" href="https://www.youtube.com/@SkyDeckAI" rel="noopener noreferrer" target="_blank"></a></div><div class="div-block-3"><a class="footer-link" href="https://docs.skydeck.ai/notices/terms-of-use" rel="noopener noreferrer" target="_blank">Brugsbetingelser</a><a class="footer-link" href="https://docs.skydeck.ai/notices/privacy-policy" rel="noopener noreferrer" target="_blank">Privatlivspolitik</a><a class="footer-link" href="https://docs.skydeck.ai/notices/cookie-notice" rel="noopener noreferrer" target="_blank">Cookie-meddelelse</a></div><div class="footer-text">© 2025 SkyDeck AI Inc.</div></div><div class="footer-column w-col w-col-3 w-col-small-small-stack w-col-tiny-tiny-stack"><div class="link-block"><a class="w-inline-block" href="https://app.vanta.com/skydeckai/trust/hglgloe5scxyzulfgon9" rel="noopener noreferrer" target="_blank"><img alt="" class="image-10" loading="lazy" src="https://www.skydeck.ai//assets/d011dd7a9b.svg"></a><a class="w-inline-block" href="https://appdefensealliance.dev/casa/tier-2/tier2-overview" rel="noopener noreferrer" target="_blank"><img alt="" class="image-11" loading="lazy" src="https://www.skydeck.ai//assets/25aff628bf.png"></a></div></div></div></div></div><script src="https://www.skydeck.ai//assets/f3a7396718.js" type="text/javascript"></script><script src="https://www.skydeck.ai//assets/68014a6fc5.js" type="text/javascript"></script><script src="https://www.skydeck.ai//assets/f21b2f1f7b.js" type="text/javascript"></script><script src="https://www.skydeck.ai//assets/6c257daacf.js" type="text/javascript"></script><!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-N72P33C2" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div id="languageSelector" class="language-selector"><div class="current-language">Dansk</div><ul class="language-dropdown"><li data-lang="en">English</li><li data-lang="fr">Français</li><li data-lang="da" class="selected">Dansk</li><li data-lang="ja">日本語</li><li data-lang="ko">한국어</li><li data-lang="es">Español</li><li data-lang="de">Deutsch</li><li data-lang="zh-cn">简体中文</li><li data-lang="zh-hk">繁體中文</li><li data-lang="pt">Português</li><li data-lang="ar">العربية</li><li data-lang="vi">Tiếng Việt</li></ul></div></body></html>

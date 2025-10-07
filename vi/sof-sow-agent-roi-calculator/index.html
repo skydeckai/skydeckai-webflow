@@ -1,0 +1,1028 @@
+<!DOCTYPE html><!-- Last Published: Tue Oct 07 2025 09:02:49 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain="skydeck.webflow.io" data-wf-page="68e4bdccc9f028c13e24c7b0" data-wf-site="663b4d698d0e8bf7683d0dd5" lang="en"><head><meta charset="utf-8"><title>SOF Agent ROI Calculator - Calculate Your Savings</title><meta content="Calculate how much time and money your firm can save with the Source of Funds (SOF) Agent for automated source of funds verification." name="description"><meta content="SOF Agent ROI Calculator - Calculate Your Savings" property="og:title"><meta content="Calculate how much time and money your firm can save with the Source of Funds (SOF) Agent for automated source of funds verification." property="og:description"><meta content="SOF Agent ROI Calculator - Calculate Your Savings" property="twitter:title"><meta content="Calculate how much time and money your firm can save with the Source of Funds (SOF) Agent for automated source of funds verification." property="twitter:description"><meta content="website" property="og:type"><meta content="summary_large_image" name="twitter:card"><meta content="width=device-width, initial-scale=1" name="viewport"><link href="https://www.skydeck.ai//assets/3e10bd5b3a.css" rel="stylesheet" type="text/css"><link href="https://fonts.googleapis.com" rel="preconnect"><link href="https://fonts.gstatic.com" rel="preconnect"><script src="https://www.skydeck.ai//assets/3a3adf980c.js" type="text/javascript"></script><script type="text/javascript">WebFont.load({  google: {    families: ["Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic","Oswald:200,300,400,500,600,700","Source Sans Pro:200,300,regular,italic,600,700,900"]  }});</script><script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script><link href="https://cdn.prod.website-files.com/663b4d698d0e8bf7683d0dd5/66c315ef1baf248f50381f65_Genstudio%20favicon.png" rel="shortcut icon" type="image/x-icon"><link href="https://cdn.prod.website-files.com/663b4d698d0e8bf7683d0dd5/66c41ed5963f071293f298b4_Logo%20Mark.png" rel="apple-touch-icon"><script async="" src="https://www.skydeck.ai//assets/00b7f09ffa.bin"></script><script type="text/javascript">window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('set', 'developer_id.dZGVlNj', true);gtag('config', 'G-0S3DSJDG4H');</script><!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N72P33C2');</script>
+<!-- End Google Tag Manager -->
+<meta content="sua6JhWYRvdHIKhUmpgk9EYDWwVsazMGrdUBlv5LTc8" name="google-site-verification">
+<style>
+    .language-selector {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 1000;
+      font-family: Arial, sans-serif;
+    }
+    .current-language {
+      padding: 8px 12px;
+      font-size: 12px;
+      border: 1px solid #aaa;
+      background-color: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      width: 120px;
+      justify-content: space-between;
+    }
+    .current-language::after {
+      content: "";
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-left: 5px solid #333;
+      margin-left: 8px;
+      transition: transform 0.3s ease;
+      }
+    .current-language.open::after {
+      transform: rotate(-90deg);
+    }
+    .language-dropdown {
+      display: none;
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      background-color: white;
+      border: 1px solid #aaa;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      max-height: 200px;
+      overflow-y: auto;
+      width: 120px;
+      border-bottom: none;
+      font-size: 12px;
+    }
+    .language-dropdown li {
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    .language-dropdown li:hover {
+      background-color: #f0f0f0;
+    }
+    .language-dropdown li.selected {
+      font-weight: bold;
+    }
+  </style><script id="i18n-script">
+const supportedLanguages = [{"value":"en","text":"English"},{"value":"fr","text":"Français"},{"value":"da","text":"Dansk"},{"value":"ja","text":"日本語"},{"value":"ko","text":"한국어"},{"value":"es","text":"Español"},{"value":"de","text":"Deutsch"},{"value":"zh-cn","text":"简体中文"},{"value":"zh-hk","text":"繁體中文"},{"value":"pt","text":"Português"},{"value":"ar","text":"العربية"},{"value":"vi","text":"Tiếng Việt"}];
+
+window.changeLanguage = function(language) {
+  const url = new URL(window.location);
+  const pathParts = url.pathname.split('/').filter(Boolean);
+
+  if (true) {
+    if (pathParts[0] && supportedLanguages.some(lang => lang.value === pathParts[0])) {
+      pathParts[0] = language;
+    } else {
+      pathParts.unshift(language);
+    }
+    url.pathname = '/' + pathParts.join('/');
+  } else {
+    if (language === "en") {
+      url.searchParams.delete("lang");
+    } else {
+      url.searchParams.set("lang", language);
+    }
+  }
+
+  window.location.href = url.href;
+};
+
+window.toggleLanguageDropdown = function() {
+  const dropdown = document.querySelector('.language-dropdown');
+  const currentLanguage = document.querySelector('.current-language');
+  if (dropdown) {
+    const isOpen = dropdown.style.display === 'block';
+    dropdown.style.display = isOpen ? 'none' : 'block';
+    currentLanguage.classList.toggle('open', !isOpen);
+  }
+};
+
+document.addEventListener('DOMContentLoaded', function() {
+  const currentLanguageElement = document.querySelector('.current-language');
+  if (currentLanguageElement) {
+    currentLanguageElement.addEventListener('click', window.toggleLanguageDropdown);
+  }
+
+  const dropdownItems = document.querySelectorAll('.language-dropdown li');
+  dropdownItems.forEach(function(item) {
+    item.addEventListener('click', function() {
+      const selectedLang = this.getAttribute('data-lang');
+      window.changeLanguage(selectedLang);
+      window.toggleLanguageDropdown();
+    });
+  });
+});
+
+document.addEventListener('click', function(event) {
+  const languageSelector = document.getElementById('languageSelector');
+  if (languageSelector) {
+    const isClickInside = languageSelector.contains(event.target);
+    if (!isClickInside) {
+      const dropdown = document.querySelector('.language-dropdown');
+      const currentLanguage = document.querySelector('.current-language');
+      if (dropdown) {
+        dropdown.style.display = 'none';
+        currentLanguage.classList.remove('open');
+      }
+    }
+  }
+});
+</script><script>
+  const docsLanguage = [{"value":"en","text":"English"},{"value":"fr","text":"Français"},{"value":"da","text":"Dansk"},{"value":"ja","text":"日本語"},{"value":"ko","text":"한국어"},{"value":"es","text":"Español"},{"value":"de","text":"Deutsch"},{"value":"zh-cn","text":"简体中文"},{"value":"zh-hk","text":"繁體中文"},{"value":"pt","text":"Português"},{"value":"ar","text":"العربية"},{"value":"vi","text":"Tiếng Việt"}];
+
+  document.addEventListener("DOMContentLoaded", function() {
+  
+    const links = document.querySelectorAll("a[href]");
+    
+    links.forEach(link => {
+      const href = link.getAttribute("href");
+      if (href.startsWith("https://www.skydeck.ai/") || href.startsWith("https://docs.rememberizer.ai/") || href.startsWith("https://docs.skydeck.ai/") || href.startsWith("https://admin.skydeck.ai/")) {
+        const url = new URL(href);
+        const language = getLanguageFromURL();
+        if (language === "en") return;
+        
+        const pathParts = url.pathname.split('/').filter(part => part);
+        const firstPart = pathParts[0];
+        
+        if (firstPart === "en") {
+          pathParts.shift();
+        }
+
+        const newPath = `/${language}/${pathParts.join('/')}`;
+        url.pathname = newPath;
+        link.setAttribute("href", url.href);
+      }
+    });
+  });
+
+function getLanguageFromURL() {
+  const pathParts = window.location.pathname.split('/').filter(Boolean);
+  const supportedLanguageCodes = docsLanguage.map(lang => lang.value);
+  
+  if (pathParts.length > 0 && supportedLanguageCodes.includes(pathParts[0])) {
+    return pathParts[0];
+  }
+  
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get("lang") || "en";
+}
+  </script><link rel="alternate" hreflang="en" href="https://www.skydeck.ai//en/sof-sow-agent-roi-calculator/index.html"><link rel="alternate" hreflang="fr" href="https://www.skydeck.ai//fr/sof-sow-agent-roi-calculator/index.html"><link rel="alternate" hreflang="da" href="https://www.skydeck.ai//da/sof-sow-agent-roi-calculator/index.html"><link rel="alternate" hreflang="ja" href="https://www.skydeck.ai//ja/sof-sow-agent-roi-calculator/index.html"><link rel="alternate" hreflang="ko" href="https://www.skydeck.ai//ko/sof-sow-agent-roi-calculator/index.html"><link rel="alternate" hreflang="es" href="https://www.skydeck.ai//es/sof-sow-agent-roi-calculator/index.html"><link rel="alternate" hreflang="de" href="https://www.skydeck.ai//de/sof-sow-agent-roi-calculator/index.html"><link rel="alternate" hreflang="zh-cn" href="https://www.skydeck.ai//zh-cn/sof-sow-agent-roi-calculator/index.html"><link rel="alternate" hreflang="zh-hk" href="https://www.skydeck.ai//zh-hk/sof-sow-agent-roi-calculator/index.html"><link rel="alternate" hreflang="pt" href="https://www.skydeck.ai//pt/sof-sow-agent-roi-calculator/index.html"><link rel="alternate" hreflang="ar" href="https://www.skydeck.ai//ar/sof-sow-agent-roi-calculator/index.html"><link rel="alternate" hreflang="vi" href="https://www.skydeck.ai//vi/sof-sow-agent-roi-calculator/index.html"><link rel="canonical" href="https://www.skydeck.ai//vi/sof-sow-agent-roi-calculator/index.html"></head><body style="direction: ltr;"><div class="navbar-component w-nav" data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" data-w-id="89a538a4-18ec-08f7-bfea-f28bc063fe64" role="banner"><div class="navbar-container"><a class="navbar-logo-links w-nav-brand" href="https://www.skydeck.ai/"><div class="uui-logo_component"><div class="uui-logo_logomark"><img alt="SkyDeck AI logomark" class="uui-styleguide_logomark-bg" height="" loading="eager" src="https://www.skydeck.ai//assets/0e9cc12c7c.png"></div><img alt="SkyDeck AI UI logotext" class="uui-logo_logotype" loading="lazy" src="https://www.skydeck.ai//assets/a0bd183324.svg"></div></a><nav class="navbar-menu w-nav-menu" role="navigation"><div class="bar-menu-left"><div class="bar-menu-dropdown w-dropdown" data-delay="300" data-hover="true" data-w-id="89a538a4-18ec-08f7-bfea-f28bc063fe6d"><div class="dropdown-toggle w-dropdown-toggle"><div class="uui-dropdown-icon w-embed"><svg fill="none" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.67"></path>
+</svg></div><div class="nav-text">Giải pháp</div></div><nav class="bar-dorpdown-list w-dropdown-list"><div class="bar-dopdown-link-list"><a class="bar-dropdown-link w-inline-block" href="/vi" id="w-node-_89a538a4-18ec-08f7-bfea-f28bc063fe74-c063fe64"><div class="uui-navbar07_icon-wrapper"><img alt="" class="nav-content-icon" height="Auto" loading="lazy" src="https://www.skydeck.ai//assets/c7edf68fa6.png" width="25"></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">SkyDeck&nbsp;&nbsp;AI</div><div class="uui-text-size-small">Nền tảng Năng suất AI Đầu tiên cho Doanh nghiệp An toàn cho Các nhóm.</div></div></a><a class="bar-dropdown-link w-inline-block" href="https://mseep.ai/?utm_source=SkyDeck.ai" id="w-node-_42d94215-164c-521b-5ec8-a62c41020079-c063fe64" rel="noopener noreferrer" target="_blank"><div class="uui-navbar07_icon-wrapper"><img alt="" class="nav-content-icon" height="Auto" loading="lazy" src="https://www.skydeck.ai//assets/473337f1d2.jpg" width="25"></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">MseeP AI</div><div class="uui-text-size-small">Máy chủ MCP Đáng tin cậy</div></div></a><a class="bar-dropdown-link w-inline-block" href="https://rememberizer.ai/" rel="noopener noreferrer" target="_blank"><div class="uui-navbar07_icon-wrapper"><img alt="" class="nav-content-icon" loading="lazy" src="https://www.skydeck.ai//assets/e8db10689c.png"></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">Rememberizer cho Cá nhân</div><div class="uui-text-size-small">Nơi Dữ Liệu Người Dùng Điều Khiển Cá Nhân Hóa AI</div></div></a><a class="bar-dropdown-link w-inline-block" href="https://rememberizer.ai/" rel="noopener noreferrer" target="_blank"><div class="uui-navbar07_icon-wrapper"><img alt="" class="nav-content-icon" loading="lazy" src="https://www.skydeck.ai//assets/e8db10689c.png"></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">Rememberizer cho Nhóm</div><div class="uui-text-size-small">Sắp ra mắt...</div></div></a><a class="bar-dropdown-link w-inline-block" href="https://try.rememberizer.ai/en/solutions/vector-database/" rel="noopener noreferrer" target="_blank"><div class="uui-navbar07_icon-wrapper"><img alt="" class="nav-content-icon" height="Auto" loading="lazy" src="https://www.skydeck.ai//assets/2ef300e59c.svg" width="25"></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">Máy chủ Vector SkyDeck Mark I</div><div class="uui-text-size-small">Phần cứng và phần mềm cùng nhau cho Vector Embeddings và RAG ở quy mô lớn</div></div></a><a class="bar-dropdown-link w-inline-block" href="https://www.eastagile.com/" rel="noopener noreferrer" target="_blank"><div class="uui-navbar07_icon-wrapper"><img alt="" class="image-25" loading="lazy" src="https://www.skydeck.ai//assets/a54bf2144c.png"></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">Đông Agile</div><div class="uui-text-size-small">Dịch vụ Chuyên nghiệp Phần mềm sử dụng Phát triển Dựa trên AI</div></div></a></div></nav></div><div class="bar-menu-dropdown w-dropdown" data-delay="300" data-hover="true" data-w-id="89a538a4-18ec-08f7-bfea-f28bc063fe94"><div class="dropdown-toggle w-dropdown-toggle"><div class="uui-dropdown-icon w-embed"><svg fill="none" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.67"></path>
+</svg></div><div class="nav-text">Các trường hợp sử dụng</div></div><nav class="bar-dorpdown-list w-dropdown-list"><div class="bar-dopdown-link-list"><a class="bar-dropdown-link w-inline-block" href="/vi/use-cases/skydeck-ai-collaboration-platform-for-teams"><div class="uui-navbar07_icon-wrapper"><div class="uui-icon-1x1-xsmall w-embed"><svg height="25" id="icon" viewBox="0 0 32 32" width="25" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<style>
+      .cls-1{fill:none;}
+      .icon-fill{fill:#1f6fff;}
+    </style>
+</defs>
+<title>sự kiện</title>
+<path class="icon-fill" d="M26,14H24v2h2a3.0033,3.0033,0,0,1,3,3v4h2V19A5.0058,5.0058,0,0,0,26,14Z" transform="translate(0 0)"></path>
+<path class="icon-fill" d="M24,4a3,3,0,1,1-3,3,3,3,0,0,1,3-3m0-2a5,5,0,1,0,5,5A5,5,0,0,0,24,2Z" transform="translate(0 0)"></path>
+<path class="icon-fill" d="M23,30H21V28a3.0033,3.0033,0,0,0-3-3H14a3.0033,3.0033,0,0,0-3,3v2H9V28a5.0059,5.0059,0,0,1,5-5h4a5.0059,5.0059,0,0,1,5,5Z" transform="translate(0 0)"></path>
+<path class="icon-fill" d="M16,13a3,3,0,1,1-3,3,3,3,0,0,1,3-3m0-2a5,5,0,1,0,5,5A5,5,0,0,0,16,11Z" transform="translate(0 0)"></path>
+<path class="icon-fill" d="M8,14H6a5.0059,5.0059,0,0,0-5,5v4H3V19a3.0033,3.0033,0,0,1,3-3H8Z" transform="translate(0 0)"></path>
+<path class="icon-fill" d="M8,4A3,3,0,1,1,5,7,3,3,0,0,1,8,4M8,2a5,5,0,1,0,5,5A5,5,0,0,0,8,2Z" transform="translate(0 0)"></path>
+<rect class="cls-1" data-name="<Transparent Rectangle>" height="25" id="_Transparent_Rectangle_" width="25"></rect>
+</svg></div></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">Dành cho các Nhóm</div><div class="uui-text-size-small">Nâng cao năng suất đội ngũ với nền tảng hợp tác an toàn của chúng tôi</div></div></a><a class="bar-dropdown-link w-inline-block" href="/vi/use-cases/for-ai-driven-development"><div class="uui-navbar07_icon-wrapper"><div class="uui-icon-1x1-xsmall w-embed"><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg height="25" id="icon" viewBox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+    </style>
+</defs>
+<path class="cls-2" d="m19,22v-2h1v-7h-1v-2h4v2h-1v7h1v2h-4Z" fill="currentColor"></path>
+<path class="cls-2" d="m15.5005,22h2l-3.5005-11h-3l-3.4966,11h1.9988l.6018-2h4.7781l.6184,2Zm-4.7947-4l1.6284-5.4111.2559-.0024,1.6736,5.4136h-3.5579Z" fill="currentColor"></path>
+<polygon class="cls-2" fill="currentColor" points="32 4 28 4 28 0 26 0 26 4 22 4 22 6 26 6 26 10 28 10 28 6 32 6 32 4"></polygon>
+<rect class="cls-2" fill="currentColor" height="2" width="2" x="30" y="12"></rect>
+<rect class="cls-2" fill="currentColor" height="2" width="2" x="18" y="0"></rect>
+<polygon class="cls-2" fill="currentColor" points="32 32 0 32 0 0 14 0 14 2 2 2 2 30 30 30 30 18 32 18 32 32"></polygon>
+<rect class="cls-1" data-name="&amp;lt;Transparent Rectangle&amp;gt;" height="32" id="_Transparent_Rectangle_" width="32"></rect>
+</svg></div></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">Để phát triển dựa trên AI</div><div class="uui-text-size-small">Trải nghiệm phát triển phần mềm được tăng cường bởi AI cho các đội nhóm</div></div></a><a class="bar-dropdown-link w-inline-block" href="/vi/use-cases/for-education"><div class="uui-navbar07_icon-wrapper"><div class="uui-icon-1x1-xsmall w-embed"><svg height="25" id="icon" viewBox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<style>
+      .cls-1 {
+        fill: none;
+      }
+    </style>
+</defs>
+<title>giáo dục</title>
+<path d="M26,30H24V27a5.0059,5.0059,0,0,0-5-5H13a5.0059,5.0059,0,0,0-5,5v3H6V27a7.0082,7.0082,0,0,1,7-7h6a7.0082,7.0082,0,0,1,7,7Z" fill="currentColor"></path>
+<path d="M5,6A1,1,0,0,0,4,7v9H6V7A1,1,0,0,0,5,6Z" fill="currentColor"></path>
+<path d="M4,2V4H9v7a7,7,0,0,0,14,0V4h5V2Zm7,2H21V7H11Zm5,12a5,5,0,0,1-5-5V9H21v2A5,5,0,0,1,16,16Z" fill="currentColor"></path>
+<rect class="cls-1" data-name="<Transparent Rectangle>" height="32" id="_Transparent_Rectangle_" width="32"></rect>
+</svg></div></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">Cho Giáo Dục</div><div class="uui-text-size-small">Giáo dục thời gian thực được hỗ trợ bởi AI cho tương lai.</div></div></a><a class="bar-dropdown-link w-inline-block" href="/vi/use-cases/for-entrepreneur"><div class="uui-navbar07_icon-wrapper"><div class="uui-icon-1x1-xsmall w-embed"><svg height="25" id="icon" viewBox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<style>
+      .cls-1 {
+        fill: none;
+      }
+    </style>
+</defs>
+<title>kinh doanh</title>
+<path d="M28,10H4a2,2,0,0,0-2,2V28a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V12A2,2,0,0,0,28,10ZM4,28V12H28V28Z" fill="currentColor"></path>
+<path d="M20,8V4a2,2,0,0,0-2-2H14a2,2,0,0,0-2,2V8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="16" x2="16" y1="16" y2="24"></line>
+<line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="12" x2="20" y1="20" y2="20"></line>
+<rect class="cls-1" data-name="<Transparent Rectangle>" height="32" id="_Transparent_Rectangle_" width="32"></rect>
+</svg></div></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">Dành cho Doanh Nhân</div><div class="uui-text-size-small">Hỗ trợ dựa trên trí tuệ nhân tạo cho công ty khởi nghiệp của bạn</div></div></a><a class="bar-dropdown-link w-inline-block" href="/vi/use-cases/for-consultant"><div class="uui-navbar07_icon-wrapper"><div class="uui-icon-1x1-xsmall w-embed"><svg id="icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<style>
+      .cls-1 {
+        fill: none;
+      }
+    </style>
+</defs>
+<title>đối tác</title>
+<path d="M8,9a4,4,0,1,1,4-4A4,4,0,0,1,8,9ZM8,3a2,2,0,1,0,2,2A2,2,0,0,0,8,3Z" fill="currentColor" transform="translate(0)"></path>
+<path d="M24,9a4,4,0,1,1,4-4A4,4,0,0,1,24,9Zm0-6a2,2,0,1,0,2,2A2,2,0,0,0,24,3Z" fill="currentColor" transform="translate(0)"></path>
+<path d="M26,30H22a2,2,0,0,1-2-2V21h2v7h4V19h2V13a1,1,0,0,0-1-1H20.58L16,20l-4.58-8H5a1,1,0,0,0-1,1v6H6v9h4V21h2v7a2,2,0,0,1-2,2H6a2,2,0,0,1-2-2V21a2,2,0,0,1-2-2V13a3,3,0,0,1,3-3h7.58L16,16l3.42-6H27a3,3,0,0,1,3,3v6a2,2,0,0,1-2,2v7A2,2,0,0,1,26,30Z" fill="currentColor" transform="translate(0)"></path>
+<rect class="cls-1" data-name="<Transparent Rectangle>" height="32" id="_Transparent_Rectangle_" width="32"></rect>
+</svg></div></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">Dành cho Huấn luyện viên &amp; Tư vấn viên</div><div class="uui-text-size-small">Mang AI đến với khách hàng của bạn - Mở rộng cùng chúng tôi</div></div></a></div></nav></div><div class="bar-menu-dropdown w-dropdown" data-delay="300" data-hover="true" data-w-id="89a538a4-18ec-08f7-bfea-f28bc063fed2"><div class="dropdown-toggle w-dropdown-toggle"><div class="uui-dropdown-icon w-embed"><svg fill="none" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.67"></path>
+</svg></div><div class="nav-text">Tài nguyên</div></div><nav class="bar-dorpdown-list w-dropdown-list"><div class="bar-dopdown-link-list"><a class="bar-dropdown-link w-inline-block" href="https://docs.skydeck.ai/" rel="noopener noreferrer" target="_blank"><div class="uui-navbar07_icon-wrapper"><div class="uui-icon-1x1-xsmall w-embed"><!--?xml version="1.0" encoding="utf-8"?-->
+<svg height="25" id="icon" viewBox="0 0 32 32" width="24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style type="text/css">
+    .st0 { fill: none; }
+  </style>
+<title>Xin vui lòng cung cấp nội dung cần dịch, bao gồm nội dung được đặt trong ba dấu nháy đơn (```).</title>
+<path d="M25.7,9.3l-7-7C18.5,2.1,18.3,2,18,2H8C6.9,2,6,2.9,6,4v24c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V10
+    C26,9.7,25.9,9.5,25.7,9.3z M18,4.4l5.6,5.6H18V4.4z M24,28H8V4h8v6c0,1.1,0.9,2,2,2h6V28z" fill="currentColor"></path>
+<rect fill="currentColor" height="2" width="12" x="10" y="22"></rect>
+<rect fill="currentColor" height="2" width="12" x="10" y="16"></rect>
+<rect class="st0" height="32" width="32"></rect>
+</svg></div></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">Tài liệu</div><div class="uui-text-size-small">Bắt đầu và triển khai các tính năng và kỹ thuật mới</div></div></a><a class="bar-dropdown-link w-inline-block" href="/vi/about/about-skydeckai"><div class="uui-navbar07_icon-wrapper"><div class="uui-icon-1x1-xsmall w-embed"><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg height="25" id="icon" viewBox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<style>
+      .cls-1 {
+        fill: none;
+      }
+    </style>
+</defs>
+<path d="m26,30h-2v-5c-.0033-2.7601-2.2399-4.9967-5-5h-6c-2.7601.0033-4.9967,2.2399-5,5v5h-2v-5c.0045-3.8641,3.1359-6.9955,7-7h6c3.8641.0045,6.9955,3.1359,7,7v5Z" fill="currentColor"></path>
+<path d="m22,6v4c0,1.1025-.8972,2-2,2h-1c-.5522,0-1,.4478-1,1s.4478,1,1,1h1c2.2056,0,4-1.7944,4-4v-4h-2Z" fill="currentColor"></path>
+<path d="m16,16c-3.8599,0-7-3.1401-7-7S12.1401,2,16,2c1.9885,0,3.8901.8503,5.2173,2.3329l-1.4902,1.334c-.9482-1.0593-2.3066-1.6669-3.7271-1.6669-2.7571,0-5,2.243-5,5s2.2429,5,5,5v2Z" fill="currentColor"></path>
+<rect class="cls-1" data-name="&amp;lt;Transparent Rectangle&amp;gt;" height="32" id="_Transparent_Rectangle_" width="32"></rect>
+</svg></div></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">Giới Thiệu Về Chúng Tôi</div><div class="uui-text-size-small">Tìm hiểu về các đội ngũ và tầm nhìn của chúng tôi</div></div></a><a class="bar-dropdown-link w-inline-block" href="/vi/about/blog"><div class="uui-navbar07_icon-wrapper"><div class="uui-icon-1x1-xsmall w-embed"><svg height="25" id="icon" viewBox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<style>
+      .cls-1 {
+        fill: none;
+      }
+    </style>
+</defs>
+<title>blog</title>
+<rect fill="currentColor" height="2" width="10" x="4" y="24"></rect>
+<rect fill="currentColor" height="2" width="10" x="4" y="18"></rect>
+<path d="M26,14H6a2,2,0,0,1-2-2V6A2,2,0,0,1,6,4H26a2,2,0,0,1,2,2v6A2,2,0,0,1,26,14ZM6,6v6H26V6Z" fill="currentColor" transform="translate(0 0)"></path>
+<path d="M26,28H20a2,2,0,0,1-2-2V20a2,2,0,0,1,2-2h6a2,2,0,0,1,2,2v6A2,2,0,0,1,26,28Zm-6-8v6h6V20Z" fill="currentColor" transform="translate(0 0)"></path>
+<rect class="cls-1" data-name="<Transparent Rectangle>" height="32" id="_Transparent_Rectangle_" width="32"></rect>
+</svg></div></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">Blog</div><div class="uui-text-size-small">Tin tức, cập nhật và thông tin mới nhất trong ngành</div></div></a><a class="bar-dropdown-link w-inline-block" href="/vi/about/skydeck-contact-us"><div class="uui-navbar07_icon-wrapper"><div class="uui-icon-1x1-xsmall w-embed"><svg height="25" id="icon" viewBox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<style>
+      .cls-1 {
+        fill: none;
+      }
+    </style>
+</defs>
+<title>email</title>
+<path d="M28,6H4A2,2,0,0,0,2,8V24a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V8A2,2,0,0,0,28,6ZM25.8,8,16,14.78,6.2,8ZM4,24V8.91l11.43,7.91a1,1,0,0,0,1.14,0L28,8.91V24Z" fill="currentColor" transform="translate(0)"></path>
+<rect class="cls-1" data-name="<Transparent Rectangle>" height="32" id="_Transparent_Rectangle_" width="32"></rect>
+</svg></div></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">Liên hệ với chúng tôi</div><div class="uui-text-size-small">Liên hệ để được hỗ trợ</div></div></a><a class="bar-dropdown-link w-inline-block" href="/vi/about/security"><div class="uui-navbar07_icon-wrapper"><div class="uui-icon-1x1-xsmall w-embed"><svg height="25" id="icon" viewBox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<style>
+      .cls-1 {
+        fill: none;
+      }
+    </style>
+</defs>
+<title>ibm-security</title>
+<path d="M16,.0005,4,5.9784V20.0443a12,12,0,0,0,24,0V5.9784Zm6.83,27.3138L16,23.9119V26.14l5.0361,2.5088A10.0025,10.0025,0,0,1,6,20.0443V7.21L16,2.2284,26,7.21v3.75L16,5.9783V8.2062l10,4.9816v3.75L16,11.9562v2.2279l10,4.9815v.8787a9.9045,9.9045,0,0,1-.37,2.6871L16,17.934v2.2279l8.8952,4.4313A10.0252,10.0252,0,0,1,22.83,27.3143Z" fill="currentColor"></path>
+<rect class="cls-1" data-name="<Transparent Rectangle>" height="32" id="_Transparent_Rectangle_" width="32"></rect>
+</svg></div></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">Bảo mật</div><div class="uui-text-size-small">SOC 2 Loại 2 và chứng nhận CASA</div></div></a></div></nav></div><div class="bar-menu-dropdown w-dropdown" data-delay="300" data-hover="true" data-w-id="a9eea160-ef98-0e0b-b867-9d7ab6747c9a"><div class="dropdown-toggle w-dropdown-toggle"><div class="uui-dropdown-icon w-embed"><svg fill="none" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.67"></path>
+</svg></div><div class="nav-text">Đại lý</div></div><nav class="bar-dorpdown-list w-dropdown-list"><div class="bar-dopdown-link-list"><a class="bar-dropdown-link w-inline-block" href="/vi/custom-ai-agent-development"><div class="uui-navbar07_icon-wrapper"><div class="uui-icon-1x1-xsmall w-embed"><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg height="25" id="icon" viewBox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+<style type="text/css">
+    .st0 { fill: none; }
+  </style>
+<path d="m15,19l-1.4141,1.4141,3.5859,3.5859H4v-13h-2v13c0,1.1046.8954,2,2,2h13.1719l-3.5859,3.5859,1.4141,1.4141,6-6-6-6Z" fill="currentColor"></path>
+<path d="m24,18v-2h2V4h-2v-2h6v2h-2v12h2v2h-6Z" fill="currentColor"></path>
+<path d="m21,18h2l-5.5-16-3,.0088-5.5,15.9912h2l1.3333-4h7.3335l1.3333,4Zm-8-6l3-9,3,9h-6Z" fill="currentColor"></path>
+<rect class="st0" height="32" width="32"></rect>
+</svg></div></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">Đại lý AI tùy chỉnh</div><div class="uui-text-size-small">Chúng tôi xây dựng các Đại lý AI và Hệ thống Đại lý cho doanh nghiệp của bạn.</div></div></a><a class="bar-dropdown-link w-inline-block" href="/vi/automated-sof-sow-verification"><div class="uui-navbar07_icon-wrapper"><div class="uui-icon-1x1-xsmall w-embed"><!--?xml version="1.0" encoding="UTF-8"?-->
+<svg height="25" id="icon" viewBox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+<style type="text/css">
+    .st0 { fill: none; }
+  </style>
+<rect fill="currentColor" height="2" width="28" x="2" y="22"></rect>
+<rect fill="currentColor" height="2" width="28" x="2" y="26"></rect>
+<path d="M24,10a2,2,0,1,0,2,2,2,2,0,0,0-2-2Z" fill="currentColor"></path>
+<path d="M16,16a4,4,0,1,1,4-4A4.0045,4.0045,0,0,1,16,16Zm0-6a2,2,0,1,0,2,2A2.002,2.002,0,0,0,16,10Z" fill="currentColor"></path>
+<path d="M8,10a2,2,0,1,0,2,2,2,2,0,0,0-2-2Z" fill="currentColor"></path>
+<path d="M28,20H4a2.0051,2.0051,0,0,1-2-2V6A2.0051,2.0051,0,0,1,4,4H28a2.0051,2.0051,0,0,1,2,2V18A2.0027,2.0027,0,0,1,28,20ZM28,6H4V18H28Z" fill="currentColor"></path>
+<rect class="st0" height="32" width="32"></rect>
+</svg></div></div><div class="uui-navbar07_item-right"><div class="uui-navbar07_item-heading">Đại lý SOF/SOW</div><div class="uui-text-size-small">Nguồn vốn / Đại lý nguồn tài sản cho các ngành công nghiệp được quy định</div></div></a></div></nav></div><a class="link-block-2 w-inline-block" href="/vi/pricing"><div class="nav-text">Giá cả</div></a></div><div class="bar-menu-right"><div class="uui-navbar07_button-wrapper"><a class="uui-button-secondary-gray show-tablet w-inline-block" href="#"><div>Đăng nhập</div></a><a class="uui-button-tertiary-gray hide-tablet w-inline-block" href="https://admin.skydeck.ai/en/sign-in/" rel="noopener noreferrer" target="_blank"><div class="text-block-20">Đăng Nhập Quản Trị</div></a><a class="uui-button-3 w-inline-block" href="https://user.skydeck.ai/sign-in" rel="noopener noreferrer" target="_blank"><div class="text-block-21">Đăng Nhập Người Dùng</div></a></div></div></nav><div class="bar-menu-button w-nav-button"><div class="menu-icon_component"><div class="menu-icon_line-top"></div><div class="menu-icon_line-middle"><div class="menu-icon_line-middle-inner"></div></div><div class="menu-icon_line-bottom"></div></div></div></div></div><div class="uui-page-padding-2"><div class="uui-container-large-2"><div class="uui-padding-vertical-xhuge"><div class="uui-text-align-center"><div class="uui-max-width-xlarge align-center"><h1 class="uii-heading">Xem mức tiết kiệm mà công ty bạn có thể đạt được với xác minh tự động</h1><div class="uui-space-small"></div><div class="uui-max-width-large align-center"><div class="uui-text-size-xlarge">Việc xác minh thủ công SOF/SOW đang tốn kém cho công ty của bạn nhiều hơn bạn nghĩ. Máy tính của chúng tôi cho thấy tiềm năng tiết kiệm hàng năm của bạn, số giờ được phục hồi, và những cải tiến về tuân thủ trong vòng chưa tới 2 phút. Khám phá lý do tại sao các công ty luật hàng đầu đang chuyển sang tự động hóa.</div></div></div></div></div></div></div><section class="section-8"><div class="w-layout-blockcontainer uui-container-large-2 w-container"><div class="uui-padding-vertical-xhuge"><div class="w-embed w-script"><style>
+.roi-calculator {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.roi-calc-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.roi-calc-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #1a1a1a;
+}
+
+.roi-calc-header p {
+  font-size: 1.125rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.roi-calc-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+@media (max-width: 991px) {
+  .roi-calc-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.roi-calc-inputs,
+.roi-calc-results {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 10px 15px rgba(0, 0, 0, 0.05);
+}
+
+.roi-calc-inputs h3,
+.roi-calc-results h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #1a1a1a;
+}
+
+.input-group {
+  margin-bottom: 24px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.input-group .help-text {
+  display: block;
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 4px;
+}
+
+.input-group input[type="number"],
+.input-group input[type="range"] {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  transition: border-color 0.2s;
+}
+
+.input-group input[type="number"]:focus {
+  outline: none;
+  border-color: #146EF5;
+}
+
+.input-group input[type="range"] {
+  padding: 0;
+  height: 8px;
+  background: #e5e7eb;
+  border: none;
+  border-radius: 4px;
+}
+
+.range-value {
+  display: inline-block;
+  margin-left: 12px;
+  font-weight: 600;
+  color: #146EF5;
+}
+
+.hero-metric {
+  text-align: center;
+  padding: 32px 0;
+  margin-bottom: 32px;
+  background: #146EF5;
+  border-radius: 12px;
+  color: white;
+}
+
+.hero-metric .label {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.9;
+  margin-bottom: 8px;
+}
+
+.hero-metric .value {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+@media (max-width: 767px) {
+  .hero-metric .value {
+    font-size: 2.5rem;
+  }
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 767px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.metric-card {
+  background: #f9fafb;
+  padding: 24px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.metric-card .metric-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #146EF5;
+  margin-bottom: 8px;
+}
+
+.metric-card .metric-label {
+  font-size: 0.875rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.secondary-benefits {
+  background: #eff6ff;
+  border-left: 4px solid #146EF5;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.secondary-benefits h4 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #1e40af;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.secondary-benefits ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.secondary-benefits li {
+  padding: 6px 0;
+  font-size: 0.9rem;
+  color: #334155;
+}
+
+.secondary-benefits li:before {
+  content: "✓ ";
+  color: #146EF5;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.risk-warning {
+  background: #fef3c7;
+  border-left: 4px solid #f59e0b;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  font-size: 0.9rem;
+  color: #92400e;
+  font-weight: 500;
+}
+
+.cta-button {
+  display: block;
+  width: 100%;
+  padding: 16px 32px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-align: center;
+  color: white;
+  background: #146EF5;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(20, 110, 245, 0.3);
+  background: #0D5FDB;
+}
+
+/* FAQ Accordion Styles */
+.roi-faq-section {
+  margin-top: 64px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.roi-faq-section h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.faq-item {
+  background: #ffffff;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+.faq-item:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 20px 24px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.faq-question:hover {
+  color: #146EF5;
+}
+
+.faq-icon {
+  font-size: 1.5rem;
+  color: #146EF5;
+  transition: transform 0.3s;
+  flex-shrink: 0;
+  margin-left: 16px;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.faq-answer-content {
+  padding: 0 24px 24px 24px;
+  color: #4b5563;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.faq-answer-content p {
+  margin-bottom: 12px;
+}
+
+.faq-answer-content ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 12px 0;
+}
+
+.faq-answer-content ul li {
+  padding: 6px 0;
+  padding-left: 28px;
+  position: relative;
+}
+
+.faq-answer-content ul li:before {
+  content: "•";
+  position: absolute;
+  left: 8px;
+  color: #146EF5;
+  font-weight: bold;
+}
+
+.faq-answer-content strong {
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+@media (max-width: 767px) {
+  .roi-faq-section h3 {
+    font-size: 1.5rem;
+  }
+  
+  .faq-question {
+    font-size: 1rem;
+    padding: 16px 20px;
+  }
+  
+  .faq-answer-content {
+    padding: 0 20px 20px 20px;
+    font-size: 0.95rem;
+  }
+}
+</style>
+<div class="roi-calculator">
+<div class="roi-calc-header">
+<h2>Tính Toán ROI Của Bạn</h2>
+<p>Xem xem tổ chức của bạn có thể tiết kiệm bao nhiêu thời gian và tiền bạc với việc xác minh SOF/SOW tự động.</p>
+</div>
+<div class="roi-calc-container">
+<div class="roi-calc-inputs">
+<h3>Quy trình hiện tại của bạn</h3>
+<div class="input-group">
+<label for="verifications">Kiểm tra SOF/SOW hàng năm đã được xử lý</label>
+<input id="verifications" max="10000" min="100" type="number" value="2000">
+<span class="help-text">Giao dịch tài sản, tiếp nhận khách hàng, hoặc các vấn đề có giá trị cao yêu cầu xác minh</span>
+</div>
+<div class="input-group">
+<label for="hours">Số giờ trung bình mỗi lần xác minh</label>
+<input id="hours" max="12" min="1" step="0.5" type="number" value="5">
+<span class="help-text">Bao gồm thời gian liên lạc với khách hàng, xem xét tài liệu, theo dõi và báo cáo.</span>
+</div>
+<div class="input-group">
+<label for="staffCost">Giá nhân viên theo giờ (£)</label>
+<input id="staffCost" max="150" min="30" type="number" value="65">
+<span class="help-text">Tỷ lệ pha trộn cho các nhân viên tuân thủ, nhân viên pháp lý hoặc luật sư</span>
+</div>
+<div class="input-group">
+<label for="staffCount">Số lượng nhân viên xử lý SOF/SOW</label>
+<input id="staffCount" max="50" min="1" type="number" value="3">
+</div>
+<div class="input-group">
+<label for="completionRate">Tỷ lệ hoàn thành hiện tại trong lần nộp đầu tiên  
+          <span class="range-value" id="completionRateValue">60%</span></label>
+<input id="completionRate" max="85" min="40" step="1" type="range" value="60">
+<span class="help-text">Tỷ lệ xác minh hoàn thành mà không cần gửi lại</span>
+</div>
+</div>
+<div class="roi-calc-results">
+<h3>Tiết kiệm Tiềm năng của Bạn</h3>
+<div class="hero-metric">
+<div class="label">Tiết kiệm hàng năm</div>
+<div class="value" id="annualSavings">£468,000</div>
+</div>
+<div class="metrics-grid">
+<div class="metric-card">
+<div class="metric-value" id="hoursReclaimed">6.000</div>
+<div class="metric-label">Giờ đã được lấy lại</div>
+</div>
+<div class="metric-card">
+<div class="metric-value" id="fteEquivalent">3.3</div>
+<div class="metric-label">FTE Freed</div>
+</div>
+<div class="metric-card">
+<div class="metric-value" id="completionGain">+32%</div>
+<div class="metric-label">Cải thiện hoàn thành</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">&lt;5%</div>
+<div class="metric-label">Tỷ lệ dương tính giả</div>
+</div>
+</div>
+<div class="secondary-benefits">
+<h4>Lợi ích bổ sung</h4>
+<ul>
+<li>Mục tiêu không có bất kỳ vi phạm tuân thủ nào</li>
+<li>Giảm 93% công sức của khách hàng</li>
+<li>Độ hoàn thiện dữ liệu hàng đầu trong ngành (90-95%)</li>
+<li>Tạo CMRA tự động</li>
+</ul>
+</div>
+<div class="risk-warning">⚠️ Tránh các khoản phạt không tuân thủ SRA từ £7K-£52K+</div>
+<button class="cta-button" onclick="window.location.href='#contact'">Nhận Đánh Giá Tùy Chỉnh</button>
+</div>
+</div>
+<!-- FAQ Section -->
+<div class="roi-faq-section">
+<h3>Câu hỏi thường gặp về Máy tính ROI</h3>
+<div class="faq-item">
+<button aria-expanded="false" class="faq-question">
+<span>Lợi tức đầu tư (ROI) của tôi được tính như thế nào?</span>
+<span class="faq-icon">▼</span>
+</button>
+<div class="faq-answer">
+<div class="faq-answer-content">
+<p>Máy tính ước lượng khoản tiết kiệm hàng năm của bạn bằng cách so sánh chi phí quy trình thủ công hiện tại với chi phí khi tự động hóa. Nó xem xét các chi phí lao động trực tiếp của bạn (kiểm tra × giờ × tỷ lệ theo giờ) cộng với chi phí ẩn do làm lại từ các bài nộp không hoàn chỉnh.</p>
+<p>Với Đ agents SOF, chúng tôi áp dụng giảm thời gian 60% dựa trên các triển khai khách hàng hiện tại, có nghĩa là mỗi lần xác minh mất khoảng 40% thời gian ban đầu. Máy tính cũng tính đến tỷ lệ hoàn thành lần đầu cao hơn (92% so với tỷ lệ hiện tại của bạn), điều này loại bỏ các chu kỳ làm lại tốn kém.</p>
+</div>
+</div>
+</div>
+<div class="faq-item">
+<button aria-expanded="false" class="faq-question">
+<span>Công cụ tính toán sử dụng những giả định nào?</span>
+<span class="faq-icon">▼</span>
+</button>
+<div class="faq-answer">
+<div class="faq-answer-content">
+<p>Máy tính dựa trên những giả định chính này:</p>
+<ul>
+<li><strong>Giảm thời gian 50-70%</strong> mỗi lần xác minh thông qua phân tích tài liệu tự động, trích xuất dữ liệu và đánh giá rủi ro (máy tính sử dụng 60% làm điểm giữa bảo thủ)</li>
+<li><strong>Tỉ lệ hoàn thành lần đầu 90-95%</strong> với tự động hóa, so với tỉ lệ hiện tại của bạn (máy tính sử dụng 92%)</li>
+<li><strong>1.800 giờ làm việc mỗi FTE</strong> hàng năm (tiêu chuẩn ngành cho các vai trò tuân thủ, bao gồm cả ngày lễ và sự vắng mặt)</li>
+<li><strong>Việc làm lại tăng thời gian đầu tư lên 50-100%</strong> cho các xác minh cần nộp lại</li>
+</ul>
+<p>Những con số này dựa trên các nghiên cứu trong ngành từ các nhà cung cấp tự động hóa tuân thủ (bao gồm nghiên cứu của KPMG cho thấy tiết kiệm chi phí trung bình 25% thông qua tự động hóa), các nghiên cứu điển hình từ các triển khai xác minh tự động và dữ liệu từ các triển khai khách hàng hiện tại trong số các chuyên gia bất động sản ở Vương quốc Anh.</p>
+</div>
+</div>
+</div>
+<div class="faq-item">
+<button aria-expanded="false" class="faq-question">
+<span>Có những gì trong ước tính tiết kiệm?</span>
+<span class="faq-icon">▼</span>
+</button>
+<div class="faq-answer">
+<div class="faq-answer-content">
+<p>Việc tính toán tiết kiệm của bạn bao gồm:</p>
+<ul>
+<li>Giảm chi phí lao động trực tiếp từ quy trình tự động hóa</li>
+<li>Loại bỏ chi phí làm lại từ các hồ sơ không hoàn chỉnh hoặc bị từ chối</li>
+<li>Giảm thời gian theo dõi khách hàng và tìm kiếm tài liệu</li>
+<li>Nhân lực được giải phóng để thực hiện công việc tư vấn có giá trị cao hơn.</li>
+<li>Giá trị giảm thiểu rủi ro tuân thủ</li>
+</ul>
+<p>Các chỉ số "Giờ đã được lấy lại" và "FTE đã được giải phóng" cho thấy có bao nhiêu thời gian của nhân viên trở nên sẵn có cho công việc khác, trong khi "Cải thiện Hoàn thành" cho thấy sự giảm thiểu trong các xác thực không thành công.</p>
+</div>
+</div>
+</div>
+<div class="faq-item">
+<button aria-expanded="false" class="faq-question">
+<span>Những gì KHÔNG được bao gồm trong những tính toán này?</span>
+<span class="faq-icon">▼</span>
+</button>
+<div class="faq-answer">
+<div class="faq-answer-content">
+<p>Công cụ tính toán này tập trung vào việc tiết kiệm thời gian và lao động trực tiếp. Các lợi ích bổ sung mang lại giá trị vượt ngoài những phép tính này bao gồm:</p>
+<ul>
+<li>Cải thiện sự hài lòng của khách hàng từ thời gian hoàn thành nhanh hơn</li>
+<li>Giảm thiểu rủi ro tuân thủ và sự tiếp xúc với quy định</li>
+<li>Cải thiện chất lượng và tài liệu của theo dõi kiểm toán.</li>
+<li>Giảm bớt sự thất vọng của khách hàng và cải thiện trải nghiệm</li>
+<li>Tăng cường tinh thần làm việc của nhân viên nhờ việc loại bỏ công việc thủ công t tedious.</li>
+<li>Lợi thế cạnh tranh trong việc thu hút khách hàng</li>
+</ul>
+<p>Nhiều tổ chức nhận thấy những lợi ích "mềm" này có giá trị tương đương với việc tiết kiệm chi phí trực tiếp.</p>
+</div>
+</div>
+</div>
+<div class="faq-item">
+<button aria-expanded="false" class="faq-question">
+<span>Các dự đoán này có độ chính xác như thế nào đối với tổ chức của tôi?</span>
+<span class="faq-icon">▼</span>
+</button>
+<div class="faq-answer">
+<div class="faq-answer-content">
+<p>Kết quả cá nhân sẽ khác nhau dựa trên hoàn cảnh cụ thể của tổ chức bạn, bao gồm:</p>
+<ul>
+<li>Độ phức tạp và sự đa dạng của các trường hợp xác minh của bạn</li>
+<li>Hiệu quả quy trình hiện tại và mức độ trải nghiệm của nhân viên</li>
+<li>Chất lượng tài liệu được khách hàng nộp</li>
+<li>Công nghệ hiện tại của bạn và các tích hợp</li>
+<li>Khối lượng và độ nhất quán của các yêu cầu xác minh</li>
+</ul>
+<p>Giảm thời gian 60% là ước lượng bảo thủ ở mức trung bình dựa trên dữ liệu tổng hợp. Một số tổ chức thấy sự cải thiện ở mức cao hơn (70%+), đặc biệt là những tổ chức xử lý khối lượng lớn các trường hợp đơn giản. Chúng tôi khuyến nghị một đánh giá tùy chỉnh để cung cấp các dự đoán cụ thể cho tình hình của tổ chức bạn.</p>
+</div>
+</div>
+</div>
+<div class="faq-item">
+<button aria-expanded="false" class="faq-question">
+<span>Chúng ta có thể mong đợi thấy ROI nhanh chóng như thế nào?</span>
+<span class="faq-icon">▼</span>
+</button>
+<div class="faq-answer">
+<div class="faq-answer-content">
+<p>Đại lý SOF thường mang lại ROI tích cực trong vòng 3-6 tháng cho các tổ chức xử lý hơn 500 xác minh hàng năm. Thời gian này phụ thuộc vào:</p>
+<ul>
+<li><strong>Tốc độ triển khai:</strong> Hầu hết các tổ chức hoạt động đầy đủ trong 2-4 tuần</li>
+<li><strong>Khối lượng xác minh:</strong> Khối lượng lớn hơn làm tăng tốc độ đạt được ROI</li>
+<li><strong>Độ phức tạp của quy trình:</strong> Các trường hợp đơn giản hơn cho thấy kết quả nhanh hơn</li>
+<li><strong>Nhân viên chấp nhận:</strong> Các đội thường đạt được hiệu suất tối đa trong vòng 30 ngày</li>
+</ul>
+<p>Các tổ chức xử lý hơn 2.000 xác minh mỗi năm (giống như ví dụ mặc định) thường đạt được điểm hòa vốn trong quý đầu tiên và nhận ra toàn bộ dự đoán tiết kiệm hàng năm vào tháng thứ 6.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How is my ROI calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The calculator estimates your annual savings by comparing your current manual process costs against the costs with automation. It factors in your direct labor costs (verifications × hours × hourly rate) plus the hidden costs of rework from incomplete submissions. With the SOF Agent, we apply a 60% time reduction based on current customer implementations, meaning each verification takes approximately 40% of the original time. The calculator also accounts for improved first-time completion rates (92% vs. your current rate), which eliminates costly rework cycles."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What assumptions does the calculator use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The calculator is based on these key assumptions: 50-70% time reduction per verification through automated document analysis, data extraction, and risk assessment (calculator uses 60% as a conservative mid-point); 90-95% first-time completion rate with automation, compared to your current rate (calculator uses 92%); 1,800 working hours per FTE annually (industry standard for compliance roles, accounting for holidays and absence); and rework increases time investment by 50-100% for verifications requiring re-submission. These figures are based on industry studies from compliance automation providers, case studies from automated verification implementations, and data from current customer implementations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's included in the savings estimate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your savings calculation includes: direct labor cost reduction from automated processing, eliminated rework costs from incomplete or rejected submissions, reduced client follow-up and document chase time, staff capacity freed for higher-value advisory work, and compliance risk mitigation value. The Hours Reclaimed and FTE Freed metrics show how much staff time becomes available for other work, while the Completion Improvement demonstrates the reduction in failed verifications."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's NOT included in these calculations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This calculator focuses on direct time and labor savings. Additional benefits that provide value beyond these calculations include: improved client satisfaction from faster turnaround times, reduced compliance risk and regulatory exposure, enhanced audit trail quality and documentation, reduced client frustration and improved experience, better staff morale from eliminating tedious manual work, and competitive advantage in client acquisition."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How accurate are these projections for my organisation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Individual results will vary based on your organisation's specific circumstances, including: complexity and variety of your verification cases, current process efficiency and staff experience levels, quality of client-submitted documentation, your existing technology stack and integrations, and volume and consistency of verification requests. The 60% time reduction is a conservative mid-range estimate based on aggregate data. Some organisations see improvements at the higher end (70%+), particularly those handling high volumes of straightforward cases."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can we expect to see ROI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The SOF Agent typically delivers positive ROI within 3-6 months for organisations processing 500+ verifications annually. Most organisations are fully operational within 2-4 weeks. Higher volumes accelerate ROI achievement, and teams typically reach full efficiency within 30 days. Organisations processing 2,000+ verifications annually often break even within the first quarter and realize the full annual savings projection by month 6."
+      }
+    }
+  ]
+}
+</script>
+<script>
+(function() {
+  // Get all input elements
+  const verifications = document.getElementById('verifications');
+  const hours = document.getElementById('hours');
+  const staffCost = document.getElementById('staffCost');
+  const staffCount = document.getElementById('staffCount');
+  const completionRate = document.getElementById('completionRate');
+  const completionRateValue = document.getElementById('completionRateValue');
+
+  // Get output elements
+  const annualSavings = document.getElementById('annualSavings');
+  const hoursReclaimed = document.getElementById('hoursReclaimed');
+  const fteEquivalent = document.getElementById('fteEquivalent');
+  const completionGain = document.getElementById('completionGain');
+
+  // Format number with commas
+  function formatNumber(num) {
+    return Math.round(num).toLocaleString('en-GB');
+  }
+
+  // Format currency
+  function formatCurrency(num) {
+    return '£' + formatNumber(num);
+  }
+
+  // Calculate ROI
+  function calculateROI() {
+    const v = parseFloat(verifications.value) || 2000;
+    const h = parseFloat(hours.value) || 5;
+    const sc = parseFloat(staffCost.value) || 65;
+    const cr = parseFloat(completionRate.value) || 60;
+
+    // Current state calculations
+    const annualLaborCost = v * h * sc;
+    const reworkCost = (1 - cr/100) * v * 1.75 * sc; // Average of 50-100% rework impact
+    const totalCurrentCost = annualLaborCost + reworkCost;
+
+    // With SOF Agent (60% time reduction - conservative mid-point of 50-70% range)
+    const newTimePerVerification = h * 0.40;
+    const newAnnualCost = v * newTimePerVerification * sc;
+
+    // Savings
+    const savings = totalCurrentCost - newAnnualCost;
+    const hours_saved = v * (h * 0.6); // 60% time reduction
+    const fte = hours_saved / 1800;
+    const completion_improvement = 92 - cr; // Conservative 92% instead of 95%
+
+    // Update display
+    annualSavings.textContent = formatCurrency(savings);
+    hoursReclaimed.textContent = formatNumber(hours_saved);
+    fteEquivalent.textContent = fte.toFixed(1);
+    completionGain.textContent = '+' + Math.round(completion_improvement) + '%';
+  }
+
+  // Update completion rate display
+  function updateCompletionRateDisplay() {
+    completionRateValue.textContent = completionRate.value + '%';
+  }
+
+  // Add event listeners for calculator
+  verifications.addEventListener('input', calculateROI);
+  hours.addEventListener('input', calculateROI);
+  staffCost.addEventListener('input', calculateROI);
+  staffCount.addEventListener('input', calculateROI);
+  completionRate.addEventListener('input', function() {
+    updateCompletionRateDisplay();
+    calculateROI();
+  });
+
+  // Initial calculation
+  calculateROI();
+  updateCompletionRateDisplay();
+
+  // FAQ Accordion functionality
+  const faqItems = document.querySelectorAll('.faq-item');
+  
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+    
+    question.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+      
+      // Close all items
+      faqItems.forEach(otherItem => {
+        otherItem.classList.remove('active');
+        otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        otherItem.querySelector('.faq-answer').style.maxHeight = null;
+      });
+      
+      // Open clicked item if it wasn't active
+      if (!isActive) {
+        item.classList.add('active');
+        question.setAttribute('aria-expanded', 'true');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+})();
+</script></div></div></div></section><div class="footer"><div class="about-text footer-container w-container"><div class="footer-row block w-row"><div class="footer-column badge w-col w-col-9 w-col-small-small-stack w-col-tiny-tiny-stack"><div class="div-block-4"><a class="social-btn github w-button" href="https://github.com/skydeckai" rel="noopener noreferrer" target="_blank"></a><a class="social-btn x w-button" href="https://x.com/SkyDeckAI" rel="noopener noreferrer" target="_blank"></a><a class="social-btn linkedin w-button" href="https://www.linkedin.com/company/skydeck-ai" rel="noopener noreferrer" target="_blank"></a><a class="social-btn youtube w-button" href="https://www.youtube.com/@SkyDeckAI" rel="noopener noreferrer" target="_blank"></a></div><div class="div-block-3"><a class="footer-link" href="https://docs.skydeck.ai/notices/terms-of-use" rel="noopener noreferrer" target="_blank">Điều khoản sử dụng</a><a class="footer-link" href="https://docs.skydeck.ai/notices/privacy-policy" rel="noopener noreferrer" target="_blank">Chính Sách Bảo Mật</a><a class="footer-link" href="https://docs.skydeck.ai/notices/cookie-notice" rel="noopener noreferrer" target="_blank">Thông báo Cookie</a></div><div class="footer-text">© 2025 SkyDeck AI Inc.</div></div><div class="footer-column w-col w-col-3 w-col-small-small-stack w-col-tiny-tiny-stack"><div class="link-block"><a class="w-inline-block" href="https://app.vanta.com/skydeckai/trust/hglgloe5scxyzulfgon9" rel="noopener noreferrer" target="_blank"><img alt="" class="image-10" loading="lazy" src="https://www.skydeck.ai//assets/d011dd7a9b.svg"></a><a class="w-inline-block" href="https://appdefensealliance.dev/casa/tier-2/tier2-overview" rel="noopener noreferrer" target="_blank"><img alt="" class="image-11" loading="lazy" src="https://www.skydeck.ai//assets/25aff628bf.png"></a></div></div></div></div></div><script src="https://www.skydeck.ai//assets/f3a7396718.js" type="text/javascript"></script><script src="https://www.skydeck.ai//assets/68014a6fc5.js" type="text/javascript"></script><script src="https://www.skydeck.ai//assets/f21b2f1f7b.js" type="text/javascript"></script><script src="https://www.skydeck.ai//assets/6c257daacf.js" type="text/javascript"></script><!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-N72P33C2" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div id="languageSelector" class="language-selector"><div class="current-language">Tiếng Việt</div><ul class="language-dropdown"><li data-lang="en">English</li><li data-lang="fr">Français</li><li data-lang="da">Dansk</li><li data-lang="ja">日本語</li><li data-lang="ko">한국어</li><li data-lang="es">Español</li><li data-lang="de">Deutsch</li><li data-lang="zh-cn">简体中文</li><li data-lang="zh-hk">繁體中文</li><li data-lang="pt">Português</li><li data-lang="ar">العربية</li><li data-lang="vi" class="selected">Tiếng Việt</li></ul></div></body></html>
