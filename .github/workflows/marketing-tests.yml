@@ -1,0 +1,42 @@
+name: marketing-contract-tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "43 7 * * *"
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: "Deployment to test (default: production)"
+        required: false
+        default: "https://www.skydeck.ai"
+
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: tests/marketing
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install dependencies
+        run: npm ci || npm install
+      - name: Install Playwright browser
+        run: npx playwright install chromium --with-deps
+      - name: Run contract tests
+        env:
+          BASE_URL: ${{ github.event.inputs.base_url || 'https://www.skydeck.ai' }}
+        run: npx playwright test
+      - name: Upload report on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: tests/marketing/playwright-report/
+          retention-days: 14

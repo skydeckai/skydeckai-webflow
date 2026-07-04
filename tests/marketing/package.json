@@ -1,0 +1,14 @@
+{
+  "name": "skydeck-marketing-tests",
+  "private": true,
+  "description": "Functional contract tests for www.skydeck.ai — see CONTRACTS.md",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.54.0",
+    "@types/node": "^22.0.0"
+  }
+}
