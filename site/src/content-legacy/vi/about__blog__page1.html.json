@@ -1,0 +1,7 @@
+{
+  "path": "about/blog/page1.html",
+  "title": "Blog — SkyDeck.ai",
+  "description": "Các bài viết mới nhất từ blog của SkyDeck.ai.",
+  "h1": "Blog",
+  "html": "<ul><li><a href=\"/vi/blog/skydeck-ai-hugging-face-a-strategic-ai-integration-for-businesses\">SkyDeck.ai & Hugging Face: Tích hợp cho Doanh nghiệp</a></li><li><a href=\"/vi/blog/ai-revolution-keep-your-business-ahead-securely\">Cách mạng AI: Giữ cho Doanh nghiệp của Bạn Tiến Đằng Trước, An Toàn.</a></li><li><a href=\"/vi/blog/vendor-lock-in-avoid-getting-locked-into-one-ai-vendor\">Khóa nhà cung cấp: Tránh bị ràng buộc với một nhà cung cấp AI duy nhất</a></li><li><a href=\"/vi/blog/fortify-your-use-of-generative-ai-with-skydeck-ai\">Tăng cường việc sử dụng AI sinh sinh với SkyDeck.ai</a></li></ul>"
+}

@@ -1,0 +1,7 @@
+{
+  "path": "about/blog/page2.html",
+  "title": "Blog — SkyDeck.ai",
+  "description": "Willkommen bei Nachrichten, technischen Gesprächen und Einblicken vom SkyDeck AI-Team.",
+  "h1": "Blog",
+  "html": "<h3><a href=\"/de/blog/program-in-english\">Programm in Englisch</a></h3><h3><a href=\"/de/blog/skydeck-ai-the-enterprise-ai-frontend\">SkyDeck.ai: Das Enterprise AI Frontend</a></h3><h3><a href=\"/de/blog/secure-and-private-gpt4-chat-via-skydeck-genstudio\">Sichere und private GPT4-Chat über SkyDeck Genstudio</a></h3><h3><a href=\"/de/blog/were-a-front-end-for-your-llm-backend\">Wir sind ein Frontend für dein LLM-Backend</a></h3>"
+}

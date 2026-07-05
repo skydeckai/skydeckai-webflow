@@ -1,0 +1,10 @@
+{
+  "path": "blog/secure-and-private-gpt4-chat-via-skydeck-genstudio/",
+  "title": "Secure and Private GPT4 Chat via SkyDeck Genstudio",
+  "description": "Explore GPT4 free with SkyDeck.AI",
+  "h1": "Secure and Private GPT4 Chat via SkyDeck Genstudio",
+  "lede": "GPT-4 is amazing. But GPT-4 on ChatGPT is not private. We solve this problem. GPT-4 on SkyDeck AI gives you private chat.",
+  "date": "May 26, 2024",
+  "ogImage": "/assets/6645b4fe56307e5406581df2_safe-full-of-private-letters-1024x675.png",
+  "html": "<p><strong>When you use consumer ChatGPT, even if you have paid for it, your discussions do not remain private. They may be used by OpenAI to train their models. This is why many organizations have banned the use of ChatGPT.<br/><br/>But if you use your OpenAI API key in SkyDeck to enable chat and smart tools in our GenStudio workspace those conversations are not used by OpenAI and remain private. This is true for all classes of OpenAI API keys. This is a path to security use of OpenAI’s advanced GPT-4 and GPT3.5 models.<br/><br/>OpenAI API Usage</strong></p><p><strong>One of the key advantages of using your OpenAI api key in SkyDeck AI is that it enables private access to OpenAI systems. If one uses free or paid ChatGPT services OpenAI makes no promises about data security. But if one uses an OpenAI API key in Control Center then all of the chat interaction by your users in GenStudio remains private.<br/><br/>This is what </strong><a href=\"https://openai.com/security\"><strong>OpenAI writes</strong></a><strong> on the subject:<br/><br/>“Data submitted through the OpenAI API is not used to train OpenAI models or improve OpenAI’s service offering. Data submitted through non-API consumer services ChatGPT or DALL·E may be used to improve our models.”<br/><br/>Be sure to </strong><a href=\"https://skydeck.ai/contact/\"><strong>contact us</strong></a><strong> to learn more about privacy and security options with SkyDeck AI.</strong></p>"
+}

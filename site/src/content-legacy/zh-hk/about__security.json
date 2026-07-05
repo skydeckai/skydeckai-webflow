@@ -1,0 +1,8 @@
+{
+  "path": "about/security/",
+  "title": "SkyDeck.Ai 安全",
+  "description": "創建、策劃和控制與 SkyDeck.AI。我們已獲得 SOC 2 第 2 類證書。",
+  "h1": "安全至上",
+  "lede": "SkyDeck AI Inc. 以 SOC 2 Type 1 和 2 及 CASA Tier 2 證書為我們的 SkyDeck.ai 平台和 Rememberizer 服務優先考慮安全性。",
+  "html": "<img alt=\"SkyDeck Soc 2 type 2\" src=\"/assets/d011dd7a9b.svg\"/><p>SOC 2 類型 2 認證</p><h2>系統及組織控制</h2><p>SOC 2 框架包括 64 項不同的要求，根據五個信任服務標準 (TSC) 進行組織，為評估組織的控制提供基礎。這些標準分為安全控制和隱私控制。<br/><br/>SkyDeck AI Inc. 自 2024 年 1 月起獲得 SOC 2 Type 1 認證，並於 2024 年 6 月取得 SOC 2 Type 2 認證。</p><p><a href=\"https://app.vanta.com/skydeckai/trust/hglgloe5scxyzulfgon9\">了解更多</a>CASA Tier 2 認證</p><h2>雲端應用程式安全評估</h2><p>Tier 2 CASA 與 OWASP 應用程式安全驗證標準 (ASVS) v4.0 一致。總共有 134 項要求，每項要求都有其獨特的驗收標準。<br/><br/>Rememberizer Service 在 2024 年 4 月通過了 CASA Tier 2 認證。</p><p><a href=\"https://appdefensealliance.dev/casa/tier-2/tier2-overview\">了解更多</a></p><img alt=\"\" src=\"/assets/484e20bfd0.png\"/>"
+}

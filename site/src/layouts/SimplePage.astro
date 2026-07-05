@@ -1,0 +1,66 @@
+---
+import Base from "./Base.astro";
+import BlogList from "../components/BlogList.astro";
+import type { Locale } from "../i18n/locales";
+
+interface Props {
+  locale: Locale;
+  path: string;
+  title: string;
+  description: string;
+  h1: string;
+  eyebrow?: string;
+  lede?: string;
+  date?: string;
+  author?: string;
+  ogImage?: string;
+  atRoot?: boolean;
+  /** trusted legacy HTML (ported from the old site, semantic tags only) */
+  html: string;
+}
+const {
+  locale,
+  path,
+  title,
+  description,
+  h1,
+  eyebrow,
+  lede,
+  date,
+  author,
+  ogImage,
+  atRoot = false,
+} = Astro.props;
+const html = Astro.props.html ?? "";
+
+const isListingPath = /^about\/blog(\/|$)/.test(path);
+const needsGeneratedList = isListingPath && html.replace(/<[^>]+>/g, "").trim().length < 80;
+---
+
+<Base locale={locale} path={path} title={title} description={description} ogImage={ogImage} atRoot={atRoot}>
+  <section style="position:relative;overflow:hidden;padding:64px 40px 34px">
+    <div
+      data-px="0.14"
+      style="position:absolute;top:-140px;right:-60px;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(58,79,160,.12),transparent 62%);filter:blur(34px);pointer-events:none"
+    >
+    </div>
+    <div style="position:relative;max-width:840px;margin:0 auto" data-reveal>
+      {eyebrow && <div class="eyebrow" style="margin-bottom:14px">{eyebrow}</div>}
+      <h1 style="font-weight:600;font-size:clamp(34px,4.6vw,52px);line-height:1.08;letter-spacing:-.02em;margin:0 0 14px">
+        {h1}
+      </h1>
+      {lede && <p style="font-size:19px;line-height:1.55;color:#5A5F78;margin:0">{lede}</p>}
+      {(date || author) && (
+        <p style="font-size:14px;color:#8A8FA6;margin:14px 0 0">
+          {[author, date].filter(Boolean).join(" · ")}
+        </p>
+      )}
+    </div>
+  </section>
+  <section style="padding:10px 40px 90px">
+    <div style={`max-width:${needsGeneratedList ? "1140px" : "840px"};margin:0 auto`}>
+      <div class="prose-mado" set:html={html} />
+      {needsGeneratedList && <BlogList locale={locale} atRoot={atRoot} />}
+    </div>
+  </section>
+</Base>

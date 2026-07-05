@@ -122,20 +122,42 @@ export async function expectAuthForm(page: Page, contract: string): Promise<void
     }
   }
 
-  await expect(
-    email,
-    `${contract}: expected an email field on ${page.url()} (looked for a visible field, then tried ` +
-      `an SSO-first reveal option matching /sign in with work email/).${reanchor("auth form (email field / SSO reveal)")}`,
-  ).toBeVisible({ timeout: 20_000 });
-  await expect(
-    password,
-    `${contract}: expected a password field on ${page.url()}.${reanchor("auth form (password field)")}`,
-  ).toBeVisible({ timeout: 20_000 });
-  const submit = page.locator('button[type="submit"], input[type="submit"], form button').first();
-  await expect(
-    submit,
-    `${contract}: expected a submit control on ${page.url()}.${reanchor("auth form (submit)")}`,
-  ).toBeVisible();
+  // Two legitimate shapes:
+  //  (a) a credentials form (email + password + submit) — admin/console pages;
+  //  (b) the multi-tenant workspace finder ("Sign in to GenStudio" + a subdomain
+  //      field) — user.skydeck.ai's first sign-in step; credentials come on the
+  //      org's own subdomain one step later.
+  const emailVisible = await email
+    .waitFor({ state: "visible", timeout: 25_000 })
+    .then(() => true)
+    .catch(() => false);
+
+  if (emailVisible) {
+    await expect(
+      password,
+      `${contract}: expected a password field next to the email field on ${page.url()}.${reanchor("auth form (password field)")}`,
+    ).toBeVisible({ timeout: 20_000 });
+    const submit = page.locator('button[type="submit"], input[type="submit"], form button').first();
+    await expect(
+      submit,
+      `${contract}: expected a submit control on ${page.url()}.${reanchor("auth form (submit)")}`,
+    ).toBeVisible();
+    return;
+  }
+
+  const signInHeading = page.getByRole("heading", { name: /sign in|log in/i }).first();
+  const anyField = page
+    .locator('input[type="text"], input:not([type]), input[name*="subdomain" i], input[placeholder*="subdomain" i]')
+    .first();
+  const headingOk = await signInHeading.isVisible().catch(() => false);
+  const fieldOk = await anyField.isVisible().catch(() => false);
+  if (!(headingOk && fieldOk)) {
+    throw new Error(
+      `${contract}: ${page.url()} showed neither a credentials form (email+password) nor a ` +
+        `workspace-finder sign-in step (a "Sign in…" heading with a subdomain/workspace field). ` +
+        `The sign-in entry point is broken or moved.${reanchor("auth form (either shape)")}`,
+    );
+  }
 }
 
 /** Follow a link that may open a new tab (marketing CTAs use target=_blank). */

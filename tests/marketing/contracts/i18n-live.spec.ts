@@ -85,20 +85,23 @@ test.describe("i18n (live site)", () => {
     });
   }
 
-  test.fixme(
-    "C13 (known-broken): each locale page declares its own lang attribute",
-    async ({ page }) => {
-      // Today every exported page hardcodes lang="en" — an SEO/accessibility bug in
-      // the i18n pipeline. When the pipeline is fixed to rewrite <html lang>, remove
-      // this fixme so the contract is enforced.
-      for (const lang of LANGS) {
-        await page.goto(`/${lang}/`);
-        const declared = await page.locator("html").getAttribute("lang");
+  test("C13: each locale page declares its own lang attribute", async ({ page }) => {
+    // Enforced since the Astro rebuild — every locale page must declare its own
+    // BCP-47 lang (and Arabic must be dir=rtl). A regression here is an
+    // SEO/accessibility bug in the site generator, not a content problem.
+    for (const lang of LANGS) {
+      await page.goto(`/${lang}/`);
+      const declared = await page.locator("html").getAttribute("lang");
+      expect(
+        declared?.toLowerCase().startsWith(lang.split("-")[0]),
+        `C13: /${lang}/ declares lang="${declared}" — expected a ${lang} language tag.`,
+      ).toBe(true);
+      if (lang === "ar") {
         expect(
-          declared?.toLowerCase().startsWith(lang.split("-")[0]),
-          `C13: /${lang}/ declares lang="${declared}"`,
-        ).toBe(true);
+          await page.locator("html").getAttribute("dir"),
+          "C13: /ar/ must declare dir=\"rtl\".",
+        ).toBe("rtl");
       }
-    },
-  );
+    }
+  });
 });

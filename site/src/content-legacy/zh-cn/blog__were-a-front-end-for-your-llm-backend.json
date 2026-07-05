@@ -1,0 +1,9 @@
+{
+  "path": "blog/were-a-front-end-for-your-llm-backend/",
+  "title": "我们是您 LLM 后端的前端",
+  "description": "SkyDeck AI，一个交互式AI界面，允许轻松集成您的自定义LLM，无论是Meta的Llama 2、斯坦福的Alpaca LLM与GPT-4交叉训练，还是来自OpenAI、Anthropic、Google以及您的私有版本的模型组合。",
+  "h1": "我们是您 LLM 后端的前端",
+  "date": "2024年5月27日",
+  "ogImage": "/assets/6645b52add965961ea356fbe_Screenshot%202024-05-16%20at%2014.26.30.png",
+  "html": "<p><strong>SkyDeck AI作为一个互动式AI前端，允许将您的大型语言模型（LLM）无缝集成到您的AI团队中。您可以使用您自己预训练或微调的Meta的Llama 2版本，斯坦福大学的Alpaca LLM与GPT-4交叉训练的版本，或多种模型的组合，例如OpenAI的GPT-4、Anthropic的Claude、Google以及您自己的私有模型。这种灵活性使您能够满足更广泛的应用需求，并确保有效的AI管理。</strong></p><p><strong>Meta的Llama 2：一个强大的人工智能工具</strong></p><p><strong>Meta的Llama 2是一种强大的AI商业工具，其能力与GPT 3.5相当，并具有4096个令牌的上下文窗口。它的商业友好许可证使其成为一个高效的LLM商业工具。尽管Llama 2具备强大的功能，但其体积远小于OpenAI的GPT 3.5。您可以轻松地在AI基础设施上进行部署，甚至在单个AWS机器上。对于较小的版本，您可以使用</strong><a href=\"https://huggingface.co/\" rel=\"noopener noreferrer\" target=\"_blank\"><strong>HuggingFace</strong></a><strong>展示其可扩展性。</strong></p><p><strong>斯坦福的 Alpaca：紧凑且具有成本效益</strong></p><p><strong>S</strong><a href=\"https://crfm.stanford.edu/2023/03/13/alpaca.html\" rel=\"noopener noreferrer\" target=\"_blank\"><strong>tanford的Alpaca</strong></a><strong>是一款出色的模型，表现得非常像 OpenAI 的 text-davinci-003。它的体积非常紧凑，复制它既简单又经济实惠（不到 $600）。预训练版本可在 HuggingFace 上轻松获取，使其成为企业顶级且易于获取的 AI 解决方案。</strong></p><p><strong>SkyDeck AI：您在AI部署中的合作伙伴</strong></p><p><strong>与</strong><a href=\"/\"><strong>天顶 AI</strong></a><strong>您不仅仅获得了一个AI集成工具。您获得了一个全面的AI管理平台，该平台支持AI可扩展性，确保AI数据安全，并提高LLM生产力。我们的重点是帮助您充分利用动态AI环境，确保您的业务在AI竞争中保持领先。</strong></p>"
+}

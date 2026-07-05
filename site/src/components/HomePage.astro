@@ -1,0 +1,273 @@
+---
+import Base from "../layouts/Base.astro";
+import Workspace from "./mocks/Workspace.astro";
+import Convos from "./mocks/Convos.astro";
+import Budget from "./mocks/Budget.astro";
+import Launcher from "./mocks/Launcher.astro";
+import { copyFor } from "../i18n/copy";
+import { localeUrl, type Locale } from "../i18n/locales";
+
+interface Props {
+  locale: Locale;
+  atRoot?: boolean;
+}
+const { locale, atRoot = false } = Astro.props;
+const c = copyFor(locale).home;
+const l = (p: string) => localeUrl(locale, p);
+const h1Lines = c.h1Pre.split("\n");
+const llms = ["ChatGPT", "Claude", "Gemini", "Llama", "Mistral", "HuggingFace", "Together.ai", "Grok", "DeepSeek", "Command R"];
+const marquee = [...llms, ...llms];
+const chipStyles = [
+  { bg: "#ECEBF3", fg: "#2A336B" },
+  { bg: "#E4E6F0", fg: "#3A4FA0" },
+  { bg: "#E7E5EE", fg: "#5A5F78" },
+];
+---
+
+<Base
+  locale={locale}
+  path=""
+  title={c.metaTitle}
+  description={c.metaDescription}
+  atRoot={atRoot}
+>
+  <!-- HERO · Aurora -->
+  <section style="position:relative;overflow:hidden;padding:74px 40px 84px;text-align:center">
+    <div
+      data-px="0.16"
+      style="position:absolute;top:-120px;right:-40px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(58,79,160,.16),transparent 62%);filter:blur(34px);pointer-events:none"
+    >
+    </div>
+    <div
+      data-px="0.1"
+      style="position:absolute;top:20px;left:-120px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(90,95,120,.14),transparent 62%);filter:blur(34px);pointer-events:none"
+    >
+    </div>
+    <div style="position:relative;max-width:1000px;margin:0 auto" data-reveal>
+      <div
+        style="display:inline-flex;align-items:center;gap:9px;padding:7px 15px;border-radius:100px;border:1px solid rgba(42,51,107,.18);background:rgba(251,248,240,.7);font-size:14px;font-weight:500;color:#5A5F78;margin-bottom:26px"
+      >
+        <span style="width:7px;height:7px;border-radius:50%;background:#2F8F5F"></span>
+        {c.badge}
+      </div>
+      <h1
+        style="font-weight:600;font-size:clamp(40px,6vw,72px);line-height:1.04;letter-spacing:-.02em;margin:0 0 22px"
+      >
+        {h1Lines.map((line, i) => (
+          <>
+            {line}
+            {i < h1Lines.length - 1 && <br />}
+          </>
+        ))}<span class="accent-italic">{c.h1Italic}</span>
+      </h1>
+      <p style="max-width:660px;margin:0 auto 34px;font-size:21px;line-height:1.55;color:#5A5F78">
+        {c.sub}
+      </p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:12px">
+        <a
+          href="https://admin.skydeck.ai/en/sign-up/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-primary">{c.ctaPrimary}</a
+        >
+        <a href={l("agent-pods/")} class="btn-secondary">{c.ctaSecondary}</a>
+      </div>
+    </div>
+    <div
+      data-px="-0.04"
+      style="position:relative;max-width:1120px;margin:48px auto 0;animation:floaty 10s ease-in-out infinite"
+    >
+      <Workspace />
+    </div>
+    <div
+      style="max-width:1120px;margin:16px auto 0;display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap;font-size:14px;color:#8A8FA6"
+    >
+      <span style="display:inline-flex;align-items:center;gap:7px"
+        ><span style="width:7px;height:7px;border-radius:50%;background:#2F8F5F"></span>{c.heroCaptions[0]}</span
+      >
+      <span style="display:inline-flex;align-items:center;gap:7px"
+        ><span style="width:7px;height:7px;border-radius:50%;background:#3A4FA0"></span>{c.heroCaptions[1]}</span
+      >
+      <span style="display:inline-flex;align-items:center;gap:7px"
+        ><span style="width:7px;height:7px;border-radius:50%;background:#B58A34"></span>{c.heroCaptions[2]}</span
+      >
+    </div>
+  </section>
+
+  <!-- TRUST / NO LOCK-IN -->
+  <section
+    style="padding:26px 40px 46px;border-top:1px solid rgba(42,51,107,.12);border-bottom:1px solid rgba(42,51,107,.12)"
+  >
+    <p
+      style="text-align:center;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#8A8FA6;margin:0 0 22px"
+    >
+      {c.marqueeLabel}
+    </p>
+    <div
+      style="max-width:1000px;margin:0 auto;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)"
+    >
+      <div style="display:flex;gap:44px;width:max-content;animation:marquee 26s linear infinite">
+        {marquee.map((n) => (
+          <span
+            style="font-weight:600;font-size:23px;font-style:italic;color:#8A8FA6;white-space:nowrap"
+          >
+            {n}
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- THREE PILLARS -->
+  <section style="padding:92px 40px">
+    <div style="text-align:center;max-width:720px;margin:0 auto 54px" data-reveal>
+      <div class="eyebrow" style="margin-bottom:14px">{c.pillarsEyebrow}</div>
+      <h2 style="font-weight:600;font-size:clamp(32px,4vw,46px);line-height:1.1;letter-spacing:-.02em;margin:0">
+        {c.pillarsH2}
+      </h2>
+    </div>
+    <div
+      style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px"
+      data-reveal
+    >
+      {c.pillars.map((p, i) => (
+        <div style="padding:34px 30px 32px;border-radius:16px;background:#FBF8F0;border:1px solid rgba(42,51,107,.14)">
+          <div
+            style={`font-weight:600;font-size:15px;width:42px;height:42px;display:flex;align-items:center;justify-content:center;border-radius:11px;background:${chipStyles[i % 3].bg};color:${chipStyles[i % 3].fg};margin-bottom:22px`}
+          >
+            {p.num}
+          </div>
+          <h3 style="font-weight:600;font-size:23px;margin:0 0 12px;letter-spacing:-.01em">{p.title}</h3>
+          <p style="font-size:16.5px;line-height:1.6;color:#5A5F78;margin:0">{p.body}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section style="padding:20px 40px 40px">
+    <div style="text-align:center;max-width:720px;margin:0 auto 50px" data-reveal>
+      <div class="eyebrow" style="margin-bottom:14px">{c.productsEyebrow}</div>
+      <h2 style="font-weight:600;font-size:clamp(32px,4vw,46px);line-height:1.1;letter-spacing:-.02em;margin:0">
+        {c.productsH2}
+      </h2>
+    </div>
+    <div style="max-width:1140px;margin:0 auto;display:flex;flex-direction:column;gap:24px">
+      <div
+        id="genstudio"
+        style="display:grid;grid-template-columns:1fr 1.15fr;gap:44px;align-items:center;padding:34px;border-radius:18px;background:#FBF8F0;border:1px solid rgba(42,51,107,.14)"
+        class="product-card"
+        data-reveal
+      >
+        <div>
+          <div
+            style="font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:#3A4FA0;margin-bottom:12px"
+          >
+            {c.genstudio.eyebrow}
+          </div>
+          <h3 style="font-weight:600;font-size:29px;margin:0 0 14px;letter-spacing:-.01em">{c.genstudio.h3}</h3>
+          <p style="font-size:17px;line-height:1.6;color:#5A5F78;margin:0 0 18px">{c.genstudio.body}</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            {c.genstudio.tags.map((tag) => (
+              <span
+                style="font-size:13px;font-weight:500;padding:6px 12px;border-radius:100px;background:rgba(42,51,107,.05);border:1px solid rgba(42,51,107,.14);color:#5A5F78"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+        <Convos />
+      </div>
+      <div
+        id="control-center"
+        style="display:grid;grid-template-columns:1.15fr 1fr;gap:44px;align-items:center;padding:34px;border-radius:18px;background:#FBF8F0;border:1px solid rgba(42,51,107,.14)"
+        class="product-card"
+        data-reveal
+      >
+        <Budget />
+        <div>
+          <div
+            style="font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:#3A4FA0;margin-bottom:12px"
+          >
+            {c.control.eyebrow}
+          </div>
+          <h3 style="font-weight:600;font-size:29px;margin:0 0 14px;letter-spacing:-.01em">{c.control.h3}</h3>
+          <p style="font-size:17px;line-height:1.6;color:#5A5F78;margin:0 0 18px">{c.control.body}</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            {c.control.tags.map((tag) => (
+              <span
+                style="font-size:13px;font-weight:500;padding:6px 12px;border-radius:100px;background:rgba(42,51,107,.05);border:1px solid rgba(42,51,107,.14);color:#5A5F78"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div
+        style="position:relative;overflow:hidden;display:grid;grid-template-columns:1fr 1.15fr;gap:44px;align-items:center;padding:34px;border-radius:18px;background:#ECEBF3;border:1px solid rgba(42,51,107,.2)"
+        class="product-card"
+        data-reveal
+      >
+        <div style="position:relative">
+          <div
+            style="display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:#2A336B;margin-bottom:12px"
+          >
+            {c.pods.eyebrow}
+            <span
+              class="mono"
+              style="font-size:9px;padding:2px 6px;border-radius:5px;background:#2A336B;color:#F4EEE1">{c.pods.badge}</span
+            >
+          </div>
+          <h3 style="font-weight:600;font-size:29px;margin:0 0 14px;letter-spacing:-.01em">{c.pods.h3}</h3>
+          <p style="font-size:17px;line-height:1.6;color:#454B6E;margin:0 0 18px">{c.pods.body}</p>
+          <a
+            href={l("agent-pods/")}
+            style="display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600;padding:12px 22px;border-radius:9px;background:#2A336B;color:#F4EEE1;text-decoration:none"
+            >{c.pods.cta}</a
+          >
+        </div>
+        <Launcher />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding:70px 40px 100px">
+    <div
+      style="max-width:1140px;margin:0 auto;position:relative;overflow:hidden;border-radius:22px;padding:68px 48px;text-align:center;background:#1E2447"
+      data-reveal
+    >
+      <div
+        style="position:absolute;top:-90px;left:16%;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(58,79,160,.5),transparent 62%);filter:blur(30px)"
+      >
+      </div>
+      <div style="position:relative">
+        <h2 style="font-weight:600;font-size:clamp(32px,4vw,44px);letter-spacing:-.02em;margin:0 0 16px;color:#F4EEE1">
+          {c.ctaH2}
+        </h2>
+        <p style="max-width:560px;margin:0 auto 30px;font-size:19px;line-height:1.5;color:rgba(244,238,225,.78)">
+          {c.ctaBody}
+        </p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+          <a
+            href="https://admin.skydeck.ai/en/sign-up/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary-inverted">{c.ctaPrimary2}</a
+          >
+          <a href={l("about/skydeck-contact-us/")} class="btn-ghost-inverted">{c.ctaSecondary2}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  @media (max-width: 960px) {
+    .product-card {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>

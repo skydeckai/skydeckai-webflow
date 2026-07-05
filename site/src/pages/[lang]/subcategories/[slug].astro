@@ -1,0 +1,13 @@
+---
+import RedirectStub from "../../../components/RedirectStub.astro";
+import { LOCALES, localeUrl, type Locale } from "../../../i18n/locales";
+
+export function getStaticPaths() {
+  const SLUGS = ["consectetur-adipiscing", "do-dolore", "do-et-sit", "sed", "sit-sit"];
+  return LOCALES.flatMap((lang) => SLUGS.map((slug) => ({ params: { lang, slug } })));
+}
+
+const locale = Astro.params.lang as Locale;
+---
+
+<RedirectStub target={localeUrl(locale, "about/blog/")} />

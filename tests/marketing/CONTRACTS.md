@@ -20,8 +20,8 @@ sign-off, recorded here.
 | C9 | Every supported language variant of the homepage loads (12 locales) | i18n-live.spec.ts |
 | C10 | Language variants are actually translated: CJK/Hangul/Arabic pages contain their script; Latin-language pages differ substantially from English | i18n-live.spec.ts |
 | C11 | Every supported language variant of the pricing page loads and shows prices (spot-checked live; full parity via C12) | i18n-live.spec.ts |
-| C12 | i18n artifact parity: every English page in the repo exists in all 11 other language trees (the translation pipeline may not silently skip pages) | i18n-parity.spec.ts |
-| C13 | *(known-broken, `fixme`)* Each language page declares its own `lang` attribute — today every page hardcodes `lang="en"`; flip this on when the i18n pipeline is fixed | i18n-live.spec.ts |
+| C12 | i18n artifact parity: every locale ships its strings/copy modules and every English legacy-content page exists in all 11 other locales (the translation pipeline may not silently skip pages) | i18n-parity.spec.ts |
+| C13 | Each locale page declares its own `lang` attribute (and `/ar/` is `dir="rtl"`) | i18n-live.spec.ts |
 
 ## Known product gaps (documented, not asserted)
 
@@ -34,3 +34,7 @@ sign-off, recorded here.
 
 - 2026-07-04 — Initial contracts C1–C13 established against the current Webflow
   export (pre-redesign baseline).
+- 2026-07-04 — Astro rebuild (Mado design): C13 promoted from `fixme` to enforced
+  (the generator now sets per-locale `lang`/`dir`); C12 re-anchored from the old
+  export trees to the new translation artifacts under `site/src/`. Functional
+  contracts C1–C11 unchanged — they gated the redesign.

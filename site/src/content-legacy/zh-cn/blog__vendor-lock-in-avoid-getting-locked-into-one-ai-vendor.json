@@ -1,0 +1,9 @@
+{
+  "path": "blog/vendor-lock-in-avoid-getting-locked-into-one-ai-vendor/",
+  "title": "供应商锁定：避免被锁定在一个 AI 供应商中",
+  "description": "SkyDeck AI 提供一个独特的平台，满足大型语言模型（LLMs）快速发展的需求，包括 OpenAI 的 ChatGPT 和 GPT-4、Anthropic Claude、Google Vertex AI 以及私有 LLM，从而避免供应商锁定。",
+  "h1": "供应商锁定：避免被锁定在一个 AI 供应商中",
+  "date": "2024年6月11日",
+  "ogImage": "/assets/6645b38113a396b6b686e474_Screenshot%202024-05-16%20at%2014.19.22.png",
+  "html": "<p>在快速发展的人工智能领域，跟上大型语言模型（LLMs）的进步至关重要。SkyDeck AI是一种企业人工智能解决方案，提供了一个能够适应这些进步的独特平台。它支持越来越多的顶级人工智能解决方案，从<a href=\"https://openai.com/\" rel=\"noopener noreferrer\" target=\"_blank\">OpenAI的</a> ChatGPT和GPT-4到<a href=\"https://www.anthropic.com/\" rel=\"noopener noreferrer\" target=\"_blank\">Anthropic</a> Claude以及谷歌的Vertex AI，此外，私人LLMs完全消除了供应商锁定。</p><h3>应对人工智能的挑战</h3><p>AI商业是一个动态变化的领域。OpenAI，作为先驱之一，推出了创新的ChatGPT模型。尽管这是一个突破，但它也面临着挑战。用户对模型结果和数据隐私中的潜在偏见表示担忧。此外，访问OpenAI模型的权限有限，而其短暂的上下文窗口限制了它们能够处理的信息的广度。这些挑战凸显了对改进AI治理的需求。</p><h3>克服限制，利用新人工智能工具</h3><p>随着人工智能的不断发展，新的基于人工智能的工具正在出现，以解决这些局限性。Anthropic 的 Claude 是一个显著的例子。该模型最小化了恶意言论的潜在可能性，并支持高达 100,000 个 token 的更大上下文窗口。未来看起来更加光明，<a href=\"https://arxiv.org/abs/2307.02486\" rel=\"noopener noreferrer\" target=\"_blank\">微软的 LongNet</a> 旨在支持高达 10 亿个 token 的上下文窗口。此功能将使得全面的人工智能团队提示成为可能，例如：“考虑到 {{我们公司曾经写过的所有内容}} 和 {{我们行业内曾经写过的所有内容}}，创建一个提案来……”。</p><h3>SkyDeck AI：您在AI部署中的合作伙伴</h3><p>SkyDeck AI 确保您为这些变化做好准备。我们的平台支持主要供应商的最新模型，并允许快速部署。与其他可能偏向其专有模型或基于转售协议限制访问的人工智能公司不同，我们赋予您灵活的人工智能部署能力。使用 SkyDeck AI，您可以使用自己的凭证并直接购买访问权限。</p><h3>使用 SkyDeck AI 训练您的私人 LLM</h3><p>我们还提供训练私有 LLM 的能力。<a href=\"https://ai.meta.com/llama/\" rel=\"noopener noreferrer\" target=\"_blank\">Meta 的 Llama 2</a>，例如，是一个具有成本效益的人工智能管理平台，其性能几乎可以与 OpenAI 的 ChatGPT 3.5 相媲美。作为额外优势，它确保您的数据保持机密。企业客户可以利用我们的平台提高 LLM 生产力，将他们的模型托管在自己的人工智能基础设施上或我们的云上。</p><h3>在人工智能竞争中保持领先</h3><p>本质上，<a href=\"/\">SkyDeck.ai</a> 是您在AI竞争中领先的通行证。我们确保您拥有选择的自由、数据隐私以及适应新进展的能力。我们致力于帮助我们的客户在这个动态的AI环境中获得最大收益，而不受供应商锁定的限制。</p>"
+}

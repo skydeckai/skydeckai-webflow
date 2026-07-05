@@ -1,0 +1,31 @@
+---
+import SimplePage from "../../layouts/SimplePage.astro";
+import { LOCALES, type Locale } from "../../i18n/locales";
+import { legacyEntries, slugOf, type LegacyEntry } from "../../lib/legacy";
+
+export function getStaticPaths() {
+  return LOCALES.flatMap((lang) =>
+    legacyEntries(lang as Locale).map((entry) => ({
+      params: { lang, slug: slugOf(entry.path) },
+      props: { entry },
+    }))
+  );
+}
+
+const locale = Astro.params.lang as Locale;
+const { entry } = Astro.props as { entry: LegacyEntry };
+---
+
+<SimplePage
+  locale={locale}
+  path={entry.path}
+  title={entry.title}
+  description={entry.description}
+  h1={entry.h1}
+  eyebrow={entry.eyebrow}
+  lede={entry.lede}
+  date={entry.date}
+  author={entry.author}
+  ogImage={entry.ogImage}
+  html={entry.html}
+/>

@@ -1,0 +1,7 @@
+{
+  "path": "category/product-update/page2.html",
+  "title": "Cập nhật sản phẩm — SkyDeck.ai",
+  "description": "Các bài viết cập nhật sản phẩm từ SkyDeck.ai.",
+  "h1": "Cập nhật sản phẩm",
+  "html": "<ul><li><a href=\"/vi/blog/skydeck-ai-the-enterprise-ai-frontend\">SkyDeck.ai: Giao diện AI Doanh Nghiệp</a></li><li><a href=\"/vi/blog/secure-and-private-gpt4-chat-via-skydeck-genstudio\">Chat GPT4 Bảo Mật và Riêng Tư qua SkyDeck Genstudio</a></li><li><a href=\"/vi/blog/were-a-front-end-for-your-llm-backend\">Chúng tôi là một Front-end cho Backend LLM của bạn</a></li></ul>"
+}

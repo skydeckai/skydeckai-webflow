@@ -1,0 +1,311 @@
+---
+import Base from "../layouts/Base.astro";
+import Launcher from "./mocks/Launcher.astro";
+import PodPane from "./mocks/PodPane.astro";
+import Budget from "./mocks/Budget.astro";
+import { copyFor } from "../i18n/copy";
+import { localeUrl, type Locale } from "../i18n/locales";
+
+interface Props {
+  locale: Locale;
+  atRoot?: boolean;
+}
+const { locale, atRoot = false } = Astro.props;
+const c = copyFor(locale).pods;
+const l = (p: string) => localeUrl(locale, p);
+const h1Lines = c.h1Pre.split("\n");
+
+const statusColor = { running: "#2F8F5F", building: "#B58A34", sleeping: "#B58A34", stopped: "#8A8FA6" } as const;
+const glow = { running: true, building: false, sleeping: false, stopped: false } as const;
+const rows = [
+  { ini: "CC", tint: "linear-gradient(135deg,#3A4FA0,#6472C8)", name: "billing-agent", agent: "claude-code", driver: "You", status: "running" as const, cost: "$4.82" },
+  { ini: "OC", tint: "linear-gradient(135deg,#54608F,#8590E8)", name: "nightly-crawler", agent: "openclaw", driver: "AI (agent)", status: "running" as const, cost: "$11.40" },
+  { ini: "CC", tint: "linear-gradient(135deg,#3A4FA0,#6472C8)", name: "docs-refactor", agent: "claude-code", driver: "J. Diaz", status: "building" as const, cost: "$2.15" },
+  { ini: "SP", tint: "linear-gradient(135deg,#C79A44,#E0C07E)", name: "support-triage", agent: "system pod", driver: "M. Park", status: "sleeping" as const, cost: "$0.90" },
+  { ini: "AC", tint: "linear-gradient(135deg,#54608F,#7D88B8)", name: "analytics-custom", agent: "custom pod", driver: "—", status: "stopped" as const, cost: "$0.00" },
+];
+---
+
+<Base locale={locale} path="agent-pods/" title={c.metaTitle} description={c.metaDescription} atRoot={atRoot}>
+  <!-- PODS HERO -->
+  <section style="position:relative;overflow:hidden;padding:68px 40px 40px;text-align:center">
+    <div
+      data-px="0.18"
+      style="position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:700px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(58,79,160,.15),transparent 60%);filter:blur(36px);pointer-events:none"
+    >
+    </div>
+    <div style="position:relative;max-width:960px;margin:0 auto" data-reveal>
+      <div
+        style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:100px;border:1px solid rgba(42,51,107,.24);background:rgba(236,235,243,.8);font-size:13px;font-weight:600;color:#2A336B;margin-bottom:24px"
+      >
+        {c.badge}
+      </div>
+      <h1 style="font-weight:600;font-size:clamp(38px,5.6vw,68px);line-height:1.03;letter-spacing:-.02em;margin:0 0 22px">
+        {h1Lines.map((line, i) => (
+          <>
+            {line}
+            {i < h1Lines.length - 1 && <br />}
+          </>
+        ))}<span class="accent-italic">{c.h1Italic}</span>
+      </h1>
+      <p style="max-width:640px;margin:0 auto 32px;font-size:21px;line-height:1.55;color:#5A5F78">{c.sub}</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <a href="https://admin.skydeck.ai/en/sign-up/" target="_blank" rel="noopener noreferrer" class="btn-primary"
+          >{c.ctaPrimary}</a
+        >
+        <a
+          href="https://docs.skydeck.ai/genstudio-workspace/pods"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-secondary">{c.ctaSecondary}</a
+        >
+      </div>
+    </div>
+  </section>
+
+  <!-- LAUNCH -->
+  <section style="padding:36px 40px 40px">
+    <div style="max-width:1140px;margin:0 auto" data-reveal>
+      <div style="text-align:center;max-width:640px;margin:0 auto 30px">
+        <div class="eyebrow" style="margin-bottom:12px">{c.launchEyebrow}</div>
+        <h2 style="font-weight:600;font-size:clamp(28px,3.4vw,36px);line-height:1.12;letter-spacing:-.02em;margin:0">
+          {c.launchH2}
+        </h2>
+      </div>
+      <Launcher />
+    </div>
+  </section>
+
+  <!-- GUIDE / ANATOMY -->
+  <section style="padding:44px 40px 80px">
+    <div class="guide-grid" style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr .92fr;gap:48px;align-items:start">
+      <div data-reveal>
+        <div class="eyebrow" style="margin-bottom:14px">{c.guideEyebrow}</div>
+        <h2 style="font-weight:600;font-size:clamp(30px,3.8vw,40px);line-height:1.1;letter-spacing:-.02em;margin:0 0 28px">
+          {c.guideH2}
+        </h2>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          {c.guide.map((g) => (
+            <div style="display:flex;gap:16px;padding:18px 20px;border-radius:13px;background:#FBF8F0;border:1px solid rgba(42,51,107,.13)">
+              <div
+                style={`flex:none;width:40px;height:40px;border-radius:11px;background:${g.iconBg};display:flex;align-items:center;justify-content:center;font-size:19px`}
+              >
+                {g.icon}
+              </div>
+              <div>
+                <div style="font-weight:600;font-size:16.5px;margin-bottom:3px;color:#1E2447">{g.title}</div>
+                <div style="font-size:15px;line-height:1.55;color:#5A5F78">{g.body}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div class="guide-sticky" style="position:sticky;top:96px"><PodPane /></div>
+    </div>
+  </section>
+
+  <!-- USE CASES (tabbed) -->
+  <section
+    id="use-cases"
+    style="padding:78px 40px;background:#ECEBF3;border-top:1px solid rgba(42,51,107,.1);border-bottom:1px solid rgba(42,51,107,.1)"
+  >
+    <div style="text-align:center;max-width:720px;margin:0 auto 38px" data-reveal>
+      <div class="eyebrow" style="margin-bottom:12px">{c.useCasesEyebrow}</div>
+      <h2 style="font-weight:600;font-size:clamp(30px,4vw,42px);line-height:1.1;letter-spacing:-.02em;margin:0">
+        {c.useCasesH2}
+      </h2>
+    </div>
+    <div style="max-width:900px;margin:0 auto 32px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+      {c.useCases.map((u, i) => (
+        <button type="button" class:list={["uc-tab", { on: i === 0 }]} data-uc-tab={i} data-anchor={u.anchor}>
+          {u.tab}
+        </button>
+      ))}
+    </div>
+    {c.useCases.map((u, i) => (
+      <div
+        id={u.anchor}
+        class="uc-panel"
+        data-uc-panel={i}
+        style={`max-width:1120px;margin:0 auto;display:${i === 0 ? "grid" : "none"};grid-template-columns:1fr 1fr;gap:44px;align-items:center;padding:40px;border-radius:20px;background:#FBF8F0;border:1px solid rgba(42,51,107,.13);box-shadow:0 20px 50px rgba(30,36,71,.08)`}
+      >
+        <div>
+          <div style="font-size:42px;margin-bottom:16px">{u.icon}</div>
+          <h3 style="font-weight:600;font-size:30px;line-height:1.14;letter-spacing:-.02em;margin:0 0 14px">{u.title}</h3>
+          <p style="font-size:18px;line-height:1.55;color:#5A5F78;margin:0">{u.body}</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:11px">
+          {u.points.map((pt) => (
+            <div style="display:flex;gap:13px;align-items:flex-start;padding:15px 18px;border-radius:12px;background:#F4EEE1;border:1px solid rgba(42,51,107,.1)">
+              <span
+                style="flex:none;margin-top:2px;width:20px;height:20px;border-radius:6px;background:#2A336B;color:#F4EEE1;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700"
+                >✓</span
+              >
+              <div>
+                <span style="font-weight:600;color:#1E2447">{pt.h}</span>
+                <span style="color:#5A5F78"> — {pt.d}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </section>
+
+  <!-- SPEND CONTROLS -->
+  <section style="padding:84px 40px">
+    <div style="max-width:1180px;margin:0 auto">
+      <div class="spend-top" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-bottom:42px" data-reveal>
+        <div>
+          <div class="eyebrow" style="margin-bottom:14px">{c.spendEyebrow}</div>
+          <h2 style="font-weight:600;font-size:clamp(30px,3.8vw,40px);line-height:1.1;letter-spacing:-.02em;margin:0 0 16px">
+            {c.spendH2}
+          </h2>
+          <p style="font-size:18px;line-height:1.55;color:#5A5F78;margin:0">{c.spendBody}</p>
+        </div>
+        <Budget />
+      </div>
+      <div
+        style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:32px"
+        data-reveal
+      >
+        {c.spend.map((s) => (
+          <div style="padding:24px;border-radius:15px;background:#FBF8F0;border:1px solid rgba(42,51,107,.13)">
+            <div style="width:38px;height:38px;border-radius:10px;background:#ECEBF3;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:14px">
+              {s.icon}
+            </div>
+            <div style="font-weight:600;font-size:17px;margin-bottom:5px;color:#1E2447">{s.title}</div>
+            <div style="font-size:14.5px;line-height:1.55;color:#5A5F78">{s.body}</div>
+          </div>
+        ))}
+      </div>
+      <div style="padding:24px 26px;border-radius:18px;background:#FBF8F0;border:1px solid rgba(42,51,107,.13);overflow-x:auto" data-reveal>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px;flex-wrap:wrap;gap:10px">
+          <div style="font-weight:600;font-size:19px;color:#1E2447">{c.overseeTitle}</div>
+          <div style="font-size:13px;color:#8A8FA6">{c.overseeSub}</div>
+        </div>
+        <div style="min-width:640px">
+          <div
+            style="display:grid;grid-template-columns:1.4fr 1fr 1fr .9fr .8fr;gap:8px;padding:0 12px 10px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9A9EB2"
+          >
+            {c.overseeCols.map((col, i) => (
+              <span style={i === 4 ? "text-align:right" : undefined}>{col}</span>
+            ))}
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            {rows.map((r) => (
+              <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr .9fr .8fr;gap:8px;align-items:center;padding:12px;border-radius:11px;background:#F4EEE1;border:1px solid rgba(42,51,107,.1)">
+                <span style="display:flex;align-items:center;gap:9px;font-weight:600;font-size:14px;color:#1E2447">
+                  <span
+                    class="mono"
+                    style={`flex:none;width:22px;height:22px;border-radius:6px;background:${r.tint};color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:9px`}
+                  >
+                    {r.ini}
+                  </span>
+                  {r.name}
+                </span>
+                <span class="mono" style="font-size:12.5px;color:#5A5F78">{r.agent}</span>
+                <span style="font-size:13px;color:#5A5F78">{r.driver}</span>
+                <span
+                  style={`display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:${statusColor[r.status]}`}
+                >
+                  <span
+                    style={`width:6px;height:6px;border-radius:50%;background:${statusColor[r.status]};${glow[r.status] ? `box-shadow:0 0 6px ${statusColor[r.status]}` : ""}`}
+                  >
+                  </span>
+                  {c.statusWords[r.status]}
+                </span>
+                <span class="mono" style="text-align:right;font-size:12.5px;color:#2A336B">{r.cost}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PODS CTA -->
+  <section style="padding:20px 40px 100px">
+    <div
+      style="max-width:1140px;margin:0 auto;position:relative;overflow:hidden;border-radius:22px;padding:68px 48px;text-align:center;background:#1E2447"
+      data-reveal
+    >
+      <div
+        style="position:absolute;bottom:-90px;right:16%;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(58,79,160,.5),transparent 62%);filter:blur(30px)"
+      >
+      </div>
+      <div style="position:relative">
+        <h2 style="font-weight:600;font-size:clamp(32px,4vw,44px);letter-spacing:-.02em;margin:0 0 16px;color:#F4EEE1">
+          {c.ctaH2}
+        </h2>
+        <p style="max-width:560px;margin:0 auto 30px;font-size:19px;line-height:1.5;color:rgba(244,238,225,.8)">
+          {c.ctaBody}
+        </p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+          <a href="https://admin.skydeck.ai/en/sign-up/" target="_blank" rel="noopener noreferrer" class="btn-primary-inverted"
+            >{c.ctaPrimary2}</a
+          >
+          <a href={l("")} class="btn-ghost-inverted">{c.ctaSecondary2}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    (function () {
+      var tabs = document.querySelectorAll("[data-uc-tab]");
+      var panels = document.querySelectorAll("[data-uc-panel]");
+      function select(i) {
+        tabs.forEach(function (tab, j) {
+          tab.classList.toggle("on", i === j);
+        });
+        panels.forEach(function (panel, j) {
+          panel.style.display = i === j ? "grid" : "none";
+        });
+      }
+      tabs.forEach(function (tab, i) {
+        tab.addEventListener("click", function () {
+          select(i);
+        });
+      });
+      var hash = (location.hash || "").slice(1);
+      if (hash) {
+        tabs.forEach(function (tab, i) {
+          if (tab.getAttribute("data-anchor") === hash) select(i);
+        });
+      }
+    })();
+  </script>
+
+  <style>
+    .uc-tab {
+      cursor: pointer;
+      font-family: var(--font-serif);
+      font-size: 15px;
+      font-weight: 500;
+      padding: 11px 20px;
+      border-radius: 100px;
+      background: rgba(251, 248, 240, 0.7);
+      color: #5a5f78;
+      border: 1px solid rgba(42, 51, 107, 0.18);
+    }
+    .uc-tab.on {
+      font-weight: 600;
+      background: #2a336b;
+      color: #f4eee1;
+      border-color: #2a336b;
+    }
+    @media (max-width: 960px) {
+      .guide-grid,
+      .spend-top {
+        grid-template-columns: 1fr !important;
+      }
+      .guide-sticky {
+        position: static !important;
+      }
+      .uc-panel {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
+</Base>

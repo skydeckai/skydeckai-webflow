@@ -1,0 +1,7 @@
+{
+  "path": "about/blog/page2.html",
+  "title": "Blog — SkyDeck.ai",
+  "description": "Các bài viết mới nhất từ blog của SkyDeck.ai.",
+  "h1": "Blog",
+  "html": "<ul><li><a href=\"/vi/blog/program-in-english\">Lập trình bằng tiếng Anh</a></li><li><a href=\"/vi/blog/skydeck-ai-the-enterprise-ai-frontend\">SkyDeck.ai: Giao diện AI Doanh Nghiệp</a></li><li><a href=\"/vi/blog/secure-and-private-gpt4-chat-via-skydeck-genstudio\">Chat GPT4 Bảo Mật và Riêng Tư qua SkyDeck Genstudio</a></li><li><a href=\"/vi/blog/were-a-front-end-for-your-llm-backend\">Chúng tôi là một Front-end cho Backend LLM của bạn</a></li></ul>"
+}

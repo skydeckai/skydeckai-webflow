@@ -1,0 +1,9 @@
+{
+  "path": "blog/were-a-front-end-for-your-llm-backend/",
+  "title": "우리는 당신의 LLM 백엔드를 위한 프론트엔드입니다.",
+  "description": "SkyDeck AI는 상호작용 AI 인터페이스로, Meta의 Llama 2, Stanford의 Alpaca LLM(GPT-4에 대해 교차 학습됨) 또는 OpenAI, Anthropic, Google 및 귀하의 개인 버전에서 온 모델의 조합 등 귀하의 LLM을 쉽게 통합할 수 있도록 합니다.",
+  "h1": "우리는 당신의 LLM 백엔드를 위한 프론트엔드입니다.",
+  "date": "2024년 5월 27일",
+  "ogImage": "/assets/6645b52add965961ea356fbe_Screenshot_2024-05-16_at_14.26.30.png",
+  "html": "<p><strong>SkyDeck AI는 상호작용 가능한 AI 프론트 엔드로서 귀하의 대형 언어 모델(LLM)을 AI 팀에 원활하게 통합할 수 있게 해줍니다. 귀하는 Meta의 Llama 2의 자체 사전 훈련된 또는 미세 조정된 버전, GPT-4에 대해 크로스 훈련된 SStanford의 Alpaca LLM 버전 또는 OpenAI의 GPT-4, Anthropic의 Claude, Google 및 귀하의 개인 모델과 같은 모델의 혼합을 사용할 수 있습니다. 이 유연성은 보다 넓은 애플리케이션 범위를 수용할 수 있게 하며 효과적인 AI 관리를 보장합니다.</strong></p><p><strong>Meta의 Llama 2: 강력한 AI 도구</strong></p><p><strong>메타의 Llama 2는 강력한 AI 비즈니스 도구로, 기능 면에서 GPT 3.5와 동일하며 4096 토큰의 컨텍스트 윈도를 가지고 있습니다. 비즈니스 친화적인 라이센스 덕분에 효율적인 LLM 비즈니스 도구입니다. Llama 2는 강력한 기능을 갖추고 있지만, OpenAI의 GPT 3.5보다 훨씬 작습니다. AI 인프라에서 쉽게 배포할 수 있으며, 단일 AWS 머신에서도 가능합니다. 더 작은 버전은 다음을 사용할 수 있습니다.</strong><a href=\"https://huggingface.co/\" rel=\"noopener noreferrer\" target=\"_blank\"><strong>HuggingFace</strong></a><strong>확장성을 보여줍니다.</strong></p><p><strong>스탠포드의 알파카: 컴팩트하고 비용 효율적</strong></p><p><a href=\"https://crfm.stanford.edu/2023/03/13/alpaca.html\" rel=\"noopener noreferrer\" target=\"_blank\"><strong>Stanford의 Alpaca</strong></a><strong>우수한 모델로, OpenAI의 text-davinci-003과 매우 유사한 동작을 합니다. 놀랍게도 컴팩트하며, 그것을 재현하는 것은 쉽고 비용 효과적입니다(600달러 미만). 사전 훈련된 버전은 HuggingFace에서 쉽게 구할 수 있어 비즈니스를 위한 최고의 접근 가능한 AI 솔루션입니다.</strong></p><p><strong>SkyDeck AI: AI 배포의 파트너</strong></p><p><strong>함께</strong><a href=\"/\"><strong>SkyDeck AI</strong></a><strong>, 당신은 AI 통합 도구 이상을 얻게 됩니다. 당신은 AI 확장성을 지원하고, AI 데이터 보안을 보장하며, LLM 생산성을 향상시키는 포괄적인 AI 관리 플랫폼을 얻게 됩니다. 우리는 역동적인 AI 환경을 최대한 활용할 수 있도록 돕는 데 중점을 두며, 귀하의 비즈니스가 AI 경쟁에서 앞서 나갈 수 있도록 보장합니다.</strong></p>"
+}

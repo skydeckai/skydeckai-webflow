@@ -1,0 +1,8 @@
+{
+  "path": "404/",
+  "title": "404 – Siden blev ikke fundet",
+  "description": "Siden, du leder efter, findes ikke.",
+  "h1": "Siden blev ikke fundet",
+  "eyebrow": "404",
+  "html": "<p>Beklager – den side, du leder efter, findes ikke.</p><p><a href=\"/da/\">Tilbage til startsiden</a></p>"
+}

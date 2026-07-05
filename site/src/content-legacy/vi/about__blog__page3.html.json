@@ -1,0 +1,7 @@
+{
+  "path": "about/blog/page3.html",
+  "title": "Blog — SkyDeck.ai",
+  "description": "Các bài viết mới nhất từ blog của SkyDeck.ai.",
+  "h1": "Blog",
+  "html": "<ul><li><a href=\"/vi/blog/things-to-consider-when-deploying-ai-tools\">Các yếu tố cần xem xét khi triển khai công cụ AI</a></li></ul>"
+}
