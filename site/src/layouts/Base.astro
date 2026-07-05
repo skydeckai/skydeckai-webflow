@@ -1,0 +1,140 @@
+---
+import "../styles/global.css";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import { LANG_TAG, RTL, SITE, alternates, localeUrl, type Locale } from "../i18n/locales";
+
+interface Props {
+  locale: Locale;
+  /** locale-relative path with trailing slash, "" for the locale home */
+  path: string;
+  title: string;
+  description: string;
+  ogImage?: string;
+  /** true when rendering the root (unprefixed) English copy of this page */
+  atRoot?: boolean;
+  /** hide chrome (nav/footer) — used by redirect stubs */
+  bare?: boolean;
+}
+
+const { locale, path, title, description, ogImage, atRoot = false, bare = false } = Astro.props;
+
+const canonicalPath = atRoot ? `/${path}` : localeUrl(locale, path);
+const canonical = `${SITE}${canonicalPath}`;
+const og = ogImage ?? "/assets/og-default.png";
+const dir = RTL.includes(locale) ? "rtl" : "ltr";
+
+const strings = import.meta.glob<Record<string, string>>("../i18n/strings/*.json", {
+  eager: true,
+  import: "default",
+});
+const en = strings["../i18n/strings/en.json"];
+const t = { ...en, ...(strings[`../i18n/strings/${locale}.json`] ?? {}) };
+---
+
+<!doctype html>
+<html lang={LANG_TAG[locale]} dir={dir}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {alternates(path).map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href} />)}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="SkyDeck.ai" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL(og, SITE).href} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(og, SITE).href} />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,ital,wght@8..60,0,400;8..60,0,500;8..60,0,600;8..60,0,700;8..60,1,400;8..60,1,600&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script is:inline>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-N72P33C2");
+    </script>
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-0S3DSJDG4H"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-0S3DSJDG4H");
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-N72P33C2"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    {!bare && <Nav locale={locale} t={t} />}
+    <slot />
+    {!bare && <Footer locale={locale} path={path} t={t} />}
+    <script is:inline>
+      (function () {
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          document.querySelectorAll("[data-reveal]").forEach(function (el) {
+            el.classList.add("revealed");
+          });
+          return;
+        }
+        if ("IntersectionObserver" in window) {
+          var io = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (e) {
+                if (e.isIntersecting) {
+                  e.target.classList.add("revealed");
+                  io.unobserve(e.target);
+                }
+              });
+            },
+            { threshold: 0.08, rootMargin: "0px 0px -5% 0px" }
+          );
+          document.querySelectorAll("[data-reveal]").forEach(function (el) {
+            io.observe(el);
+          });
+        } else {
+          document.querySelectorAll("[data-reveal]").forEach(function (el) {
+            el.classList.add("revealed");
+          });
+        }
+        var px = function () {
+          var y = window.scrollY || 0;
+          document.querySelectorAll("[data-px]").forEach(function (el) {
+            var s = parseFloat(el.getAttribute("data-px")) || 0;
+            var cx = el.getAttribute("data-cx") ? " translateX(-50%)" : "";
+            el.style.transform = "translate3d(0," + (y * s).toFixed(1) + "px,0)" + cx;
+          });
+        };
+        document.querySelectorAll("[data-px]").forEach(function (el) {
+          if ((el.getAttribute("style") || "").indexOf("translateX(-50%)") !== -1)
+            el.setAttribute("data-cx", "1");
+        });
+        window.addEventListener("scroll", px, { passive: true });
+        px();
+      })();
+    </script>
+  </body>
+</html>

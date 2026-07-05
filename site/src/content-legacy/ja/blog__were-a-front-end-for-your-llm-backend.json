@@ -1,0 +1,9 @@
+{
+  "path": "blog/were-a-front-end-for-your-llm-backend/",
+  "title": "私たちはあなたのLLMバックエンドのためのフロントエンドです。",
+  "description": "SkyDeck AI、インタラクティブなAIインターフェースにより、MetaのLlama 2、StanfordのGPT-4でクロストレーニングされたAlpaca LLM、またはOpenAI、Anthropic、Google、あなたのプライベートバージョンのモデルの組み合わせなど、独自のLLMを簡単に統合できます。",
+  "h1": "私たちはあなたのLLMバックエンドのためのフロントエンドです。",
+  "date": "2024年5月27日",
+  "ogImage": "/assets/6645b52add965961ea356fbe_Screenshot-2024-05-16-at-14.26.30.png",
+  "html": "<p><strong>SkyDeck AIはインタラクティブなAIフロントエンドとして機能し、あなたの大規模言語モデル（LLM）をAIチームにシームレスに統合することを可能にします。あなた自身の事前学習済みまたは微調整されたMetaのLlama 2、スタンフォードのAlpaca LLMのGPT-4とのクロストレーニングバージョン、またはOpenAIのGPT-4、AnthropicのClaude、Google、そしてあなた自身のプライベートモデルなどのモデルの組み合わせを利用できます。この柔軟性により、より広範なアプリケーションに対応し、効果的なAI管理を保証します。</strong></p><p><strong>MetaのLlama 2：強力なAIツール</strong></p><p><strong>MetaのLlama 2は、強力なAIビジネスツールであり、GPT 3.5と同等の能力を持ち、4096トークンのコンテキストウィンドウを有しています。そのビジネスフレンドリーなライセンスにより、効率的なLLMビジネスツールとなっています。Llama 2は強力な機能を備えていますが、OpenAIのGPT 3.5よりもはるかに小型です。それをAIインフラストラクチャ上、単一のAWSマシン上でも簡単に展開できます。小型版については、使用できます。</strong><a href=\"https://huggingface.co/\"><strong>HuggingFace</strong></a><strong>, 拡張性を示しています。</strong></p><p><strong>スタンフォードのアルパカ：コンパクトでコスト効率が良い</strong></p><p><a href=\"https://crfm.stanford.edu/2023/03/13/alpaca.html\"><strong>スタンフォードのアルパカ</strong></a><strong>は際立ったモデルであり、OpenAIのtext-davinci-003に非常に似ています。驚くほどコンパクトで、再現するのは簡単でコスト効率も良い（600ドル未満）。事前学習済みのバージョンはHuggingFaceで簡単に入手できるため、ビジネスにとって優れたアクセス可能なAIソリューションとなっています。</strong></p><p><strong>SkyDeck AI: あなたのAI導入のパートナー</strong></p><p><a href=\"http://skydeck.ai/\"><strong>SkyDeck AI</strong></a><strong>、あなたはAI統合ツール以上のものを手に入れます。AIのスケーラビリティをサポートし、AIデータのセキュリティを確保し、LLMの生産性を高める包括的なAI管理プラットフォームを手に入れます。私たちは、ダイナミックなAIの環境を最大限に活用できるようお手伝いし、あなたのビジネスがAI競争で先を行くことを確実にします。</strong></p>"
+}

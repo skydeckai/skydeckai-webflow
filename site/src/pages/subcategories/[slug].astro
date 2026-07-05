@@ -1,0 +1,10 @@
+---
+import RedirectStub from "../../components/RedirectStub.astro";
+
+export function getStaticPaths() {
+  const SLUGS = ["consectetur-adipiscing", "do-dolore", "do-et-sit", "sed", "sit-sit"];
+  return SLUGS.map((slug) => ({ params: { slug } }));
+}
+---
+
+<RedirectStub target="/about/blog/" />

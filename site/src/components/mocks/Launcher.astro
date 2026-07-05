@@ -1,0 +1,113 @@
+---
+// Static port of launcherMock from the design doc.
+// Pure HTML + inline styles mirroring the source React.createElement builder.
+---
+
+<div
+  class="app"
+  style="border-radius:14px;overflow:hidden;border:1px solid rgba(42,51,107,.2);box-shadow:0 26px 60px rgba(30,36,71,.22);background:#0F1330;text-align:left"
+>
+  <!-- header -->
+  <div style="padding:18px 20px 14px;border-bottom:1px solid rgba(255,255,255,.09)">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+      <span
+        style="width:38px;height:38px;border-radius:10px;background:rgba(133,144,232,.16);color:#8590E8;display:flex;align-items:center;justify-content:center;font-size:18px"
+      >▤</span>
+      <div>
+        <div style="font-size:16px;font-weight:700;color:#E9EAF6">Spin up a Pod</div>
+        <div style="font-size:12px;color:rgba(233,234,246,.55);margin-top:1px">Your own Linux container, pre-baked with an AI agent or analyst toolkit.</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:7px">
+      <span style="font-size:11px;font-weight:600;padding:6px 11px;border-radius:100px;background:rgba(255,255,255,.05);color:rgba(233,234,246,.62);border:1px solid rgba(255,255,255,.09)">All</span>
+      <span style="font-size:11px;font-weight:600;padding:6px 11px;border-radius:100px;background:#4351B4;color:#fff;border:none">Coding agents</span>
+      <span style="font-size:11px;font-weight:600;padding:6px 11px;border-radius:100px;background:rgba(255,255,255,.05);color:rgba(233,234,246,.62);border:1px solid rgba(255,255,255,.09)">Data</span>
+      <span style="font-size:11px;font-weight:600;padding:6px 11px;border-radius:100px;background:rgba(255,255,255,.05);color:rgba(233,234,246,.62);border:1px solid rgba(255,255,255,.09)">Web apps</span>
+      <span style="font-size:11px;font-weight:600;padding:6px 11px;border-radius:100px;background:rgba(255,255,255,.05);color:rgba(233,234,246,.62);border:1px solid rgba(255,255,255,.09)">E2E testing</span>
+      <span style="font-size:11px;font-weight:600;padding:6px 11px;border-radius:100px;background:rgba(255,255,255,.05);color:rgba(233,234,246,.62);border:1px solid rgba(255,255,255,.09)">Analyst</span>
+    </div>
+  </div>
+
+  <!-- template cards -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:16px 18px">
+    <!-- Claude Code -->
+    <div style="position:relative;border-radius:11px;background:#161B3C;border:1px solid rgba(255,255,255,.09);padding:15px;display:flex;flex-direction:column;gap:9px">
+      <span style="position:absolute;top:12px;right:12px;font-size:10px;color:rgba(233,234,246,.55)">$0.48/h</span>
+      <div style="display:flex;align-items:center;gap:10px">
+        <span class="mono" style="width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,#3A4FA0,#6472C8);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600">CC</span>
+        <div>
+          <div style="font-size:13.5px;font-weight:700;color:#E9EAF6">Claude Code</div>
+          <div class="mono" style="font-size:10.5px;color:rgba(233,234,246,.55);margin-top:1px">ubuntu-24.04 · 4 vCPU · 8 GB</div>
+        </div>
+      </div>
+      <div style="font-size:12px;line-height:1.5;color:rgba(233,234,246,.66)">Anthropic Claude Code CLI, pre-authenticated and ready to run.</div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:rgba(233,234,246,.55)">
+        <span style="color:#8590E8">▶</span>Opens with: Terminal
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;margin-top:2px">
+        <span style="font-size:10px;padding:2px 7px;border-radius:6px;background:rgba(255,255,255,.06);color:rgba(233,234,246,.55)">Personal</span>
+        <span style="margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:600;padding:6px 12px;border-radius:7px;background:#4351B4;color:#fff">▶ Launch Pod</span>
+      </div>
+    </div>
+
+    <!-- OpenClaw Gateway -->
+    <div style="position:relative;border-radius:11px;background:#161B3C;border:1px solid rgba(255,255,255,.09);padding:15px;display:flex;flex-direction:column;gap:9px">
+      <span style="position:absolute;top:12px;right:12px;font-size:10px;color:rgba(233,234,246,.55)">$0.48/h</span>
+      <div style="display:flex;align-items:center;gap:10px">
+        <span class="mono" style="width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,#54608F,#8590E8);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600">OC</span>
+        <div>
+          <div style="font-size:13.5px;font-weight:700;color:#E9EAF6">OpenClaw Gateway</div>
+          <div class="mono" style="font-size:10.5px;color:rgba(233,234,246,.55);margin-top:1px">ubuntu-24.04 · 4 vCPU · 8 GB</div>
+        </div>
+      </div>
+      <div style="font-size:12px;line-height:1.5;color:rgba(233,234,246,.66)">Detached openclaw gateway service other tools can call.</div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:rgba(233,234,246,.55)">
+        <span style="color:#8590E8">▶</span>Opens with: Terminal
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;margin-top:2px">
+        <span style="font-size:10px;padding:2px 7px;border-radius:6px;background:rgba(255,255,255,.06);color:rgba(233,234,246,.55)">Team</span>
+        <span style="margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:600;padding:6px 12px;border-radius:7px;background:#4351B4;color:#fff">▶ Launch Pod</span>
+      </div>
+    </div>
+
+    <!-- Data Analyst -->
+    <div style="position:relative;border-radius:11px;background:#161B3C;border:1px solid rgba(255,255,255,.09);padding:15px;display:flex;flex-direction:column;gap:9px">
+      <span style="position:absolute;top:12px;right:12px;font-size:10px;color:rgba(233,234,246,.55)">$0.92/h</span>
+      <div style="display:flex;align-items:center;gap:10px">
+        <span class="mono" style="width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,#C79A44,#E0C07E);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600">DA</span>
+        <div>
+          <div style="font-size:13.5px;font-weight:700;color:#E9EAF6">Data Analyst</div>
+          <div class="mono" style="font-size:10.5px;color:rgba(233,234,246,.55);margin-top:1px">jupyter · 8 vCPU · 16 GB</div>
+        </div>
+      </div>
+      <div style="font-size:12px;line-height:1.5;color:rgba(233,234,246,.66)">JupyterLab with pandas, DuckDB and a plotting toolkit.</div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:rgba(233,234,246,.55)">
+        <span style="color:#8590E8">▶</span>Opens with: Web browser
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;margin-top:2px">
+        <span style="font-size:10px;padding:2px 7px;border-radius:6px;background:rgba(255,255,255,.06);color:rgba(233,234,246,.55)">Team</span>
+        <span style="margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:600;padding:6px 12px;border-radius:7px;background:#4351B4;color:#fff">▶ Launch Pod</span>
+      </div>
+    </div>
+
+    <!-- E2E Runner -->
+    <div style="position:relative;border-radius:11px;background:#161B3C;border:1px solid rgba(255,255,255,.09);padding:15px;display:flex;flex-direction:column;gap:9px">
+      <span style="position:absolute;top:12px;right:12px;font-size:10px;color:rgba(233,234,246,.55)">$0.64/h</span>
+      <div style="display:flex;align-items:center;gap:10px">
+        <span class="mono" style="width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,#3E7C6B,#5BC08D);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600">E2</span>
+        <div>
+          <div style="font-size:13.5px;font-weight:700;color:#E9EAF6">E2E Runner</div>
+          <div class="mono" style="font-size:10.5px;color:rgba(233,234,246,.55);margin-top:1px">playwright · 8 vCPU · 16 GB</div>
+        </div>
+      </div>
+      <div style="font-size:12px;line-height:1.5;color:rgba(233,234,246,.66)">Headless browser grid for end-to-end test suites.</div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:rgba(233,234,246,.55)">
+        <span style="color:#8590E8">▶</span>Opens with: Terminal + Web browser
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;margin-top:2px">
+        <span style="font-size:10px;padding:2px 7px;border-radius:6px;background:rgba(255,255,255,.06);color:rgba(233,234,246,.55)">Team</span>
+        <span style="margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:600;padding:6px 12px;border-radius:7px;background:#4351B4;color:#fff">▶ Launch Pod</span>
+      </div>
+    </div>
+  </div>
+</div>

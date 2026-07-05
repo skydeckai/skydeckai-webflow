@@ -1,0 +1,211 @@
+---
+import { localeUrl, type Locale } from "../i18n/locales";
+
+interface Props {
+  locale: Locale;
+  t: Record<string, string>;
+}
+const { locale, t } = Astro.props;
+const l = (p: string) => localeUrl(locale, p);
+---
+
+<nav class="site-nav">
+  <a href={l("")} class="brand" aria-label="SkyDeck AI — home">
+    <img src="/assets/logo-mark.png" alt="SkyDeck AI" style="height:34px;width:auto" />
+    <img src="/assets/logo-word.svg" alt="" style="height:19px;width:auto" />
+  </a>
+  <div class="links">
+    <a href={l("agent-pods/")} class="toplink strong">
+      {t["nav.agentPods"]}
+      <span class="mono newtag">{t["nav.new"]}</span>
+    </a>
+    <a href={l("")} class="toplink">{t["nav.platform"]}</a>
+    <div class="dd">
+      <span class="toplink" tabindex="0">{t["nav.useCases"]} <span class="chev">▾</span></span>
+      <div class="dd-wrap">
+        <div class="dd-panel" style="width:320px">
+          <a href={l("agent-pods/") + "#run-around-the-clock"}>
+            <span class="dd-t">{t["nav.uc1.title"]}</span>
+            <span class="dd-s">{t["nav.uc1.sub"]}</span>
+          </a>
+          <a href={l("agent-pods/") + "#operate-together"}>
+            <span class="dd-t">{t["nav.uc2.title"]}</span>
+            <span class="dd-s">{t["nav.uc2.sub"]}</span>
+          </a>
+          <a href={l("use-cases/skydeck-ai-collaboration-platform-for-teams/")}>
+            <span class="dd-t">{t["nav.uc3.title"]}</span>
+            <span class="dd-s">{t["nav.uc3.sub"]}</span>
+          </a>
+          <a href={l("use-cases/for-ai-driven-development/")}>
+            <span class="dd-t">{t["nav.uc4.title"]}</span>
+            <span class="dd-s">{t["nav.uc4.sub"]}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="dd">
+      <span class="toplink" tabindex="0">{t["nav.resources"]} <span class="chev">▾</span></span>
+      <div class="dd-wrap">
+        <div class="dd-panel" style="width:300px">
+          <a href="https://docs.skydeck.ai/" target="_blank" rel="noopener noreferrer">
+            <span class="dd-t"
+              >{t["nav.docs.title"]}
+              <span style="font-size:11px;color:var(--color-faint)">↗</span></span
+            >
+            <span class="dd-s">{t["nav.docs.sub"]}</span>
+          </a>
+          <a href={l("about/blog/")}>
+            <span class="dd-t">{t["nav.blog.title"]}</span>
+            <span class="dd-s">{t["nav.blog.sub"]}</span>
+          </a>
+          <a href={l("about/security/")}>
+            <span class="dd-t">{t["nav.security.title"]}</span>
+            <span class="dd-s">{t["nav.security.sub"]}</span>
+          </a>
+          <a href={l("about/skydeck-contact-us/")}>
+            <span class="dd-t">{t["nav.about.title"]}</span>
+            <span class="dd-s">{t["nav.about.sub"]}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <a href={l("pricing/pricing/")} class="toplink">{t["nav.pricing"]}</a>
+  </div>
+  <div class="actions">
+    <a href="https://user.skydeck.ai/sign-in" target="_blank" rel="noopener noreferrer" class="toplink"
+      >{t["nav.signIn"]}</a
+    >
+    <a href="https://admin.skydeck.ai/en/sign-up/" target="_blank" rel="noopener noreferrer" class="cta"
+      >{t["nav.cta"]}</a
+    >
+  </div>
+</nav>
+
+<style>
+  .site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 15px 40px;
+    background: rgba(244, 238, 225, 0.84);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--hairline);
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    text-decoration: none;
+  }
+  .links,
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+  .actions {
+    gap: 16px;
+  }
+  .toplink {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(90, 95, 120, 0.9);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    cursor: pointer;
+  }
+  .toplink:hover,
+  .toplink.strong {
+    color: var(--color-deepink);
+  }
+  .newtag {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    padding: 2px 6px;
+    border-radius: 5px;
+    background: var(--color-ink);
+    color: var(--color-paper);
+  }
+  .chev {
+    font-size: 10px;
+    opacity: 0.6;
+  }
+  .cta {
+    font-size: 15px;
+    font-weight: 600;
+    padding: 11px 20px;
+    border-radius: 9px;
+    background: var(--color-ink);
+    color: var(--color-paper);
+    text-decoration: none;
+  }
+  .dd {
+    position: relative;
+  }
+  .dd-wrap {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 12px;
+    z-index: 60;
+    display: none;
+  }
+  .dd:hover .dd-wrap,
+  .dd:focus-within .dd-wrap {
+    display: block;
+  }
+  .dd-panel {
+    background: var(--color-warmwhite);
+    border: 1px solid var(--hairline);
+    border-radius: 14px;
+    box-shadow: 0 24px 54px rgba(30, 36, 71, 0.16);
+    padding: 9px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+  .dd-panel > a {
+    display: block;
+    text-decoration: none;
+    padding: 10px 12px;
+    border-radius: 9px;
+  }
+  .dd-panel > a:hover {
+    background: #f1ede3;
+  }
+  .dd-t {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-deepink);
+  }
+  .dd-s {
+    display: block;
+    font-size: 12px;
+    color: var(--color-faint);
+    margin-top: 1px;
+  }
+  @media (max-width: 900px) {
+    .site-nav {
+      padding: 12px 18px;
+      gap: 12px;
+    }
+    .links {
+      gap: 16px;
+    }
+    .toplink,
+    .cta {
+      font-size: 14px;
+    }
+  }
+</style>

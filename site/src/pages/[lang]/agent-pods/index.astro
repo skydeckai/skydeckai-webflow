@@ -1,0 +1,12 @@
+---
+import PodsPage from "../../../components/PodsPage.astro";
+import { LOCALES, type Locale } from "../../../i18n/locales";
+
+export function getStaticPaths() {
+  return LOCALES.map((lang) => ({ params: { lang } }));
+}
+
+const locale = Astro.params.lang as Locale;
+---
+
+<PodsPage locale={locale} />

@@ -1,0 +1,8 @@
+{
+  "path": "about/security/",
+  "title": "SkyDeck.ai Seguridad",
+  "description": "Crea, Cura y Controla con SkyDeck.AI. Somos certificados SOC 2 Tipo 2.",
+  "h1": "Seguridad Primero",
+  "lede": "SkyDeck AI Inc. prioriza la seguridad con certificaciones SOC 2 Tipo 1 y 2 y CASA Nivel 2 para nuestra plataforma SkyDeck.ai y el servicio Rememberizer.",
+  "html": "<h2>Sistemas y Controles de Organización</h2>\n<p><strong>CERTIFICADO SOC 2 TIPO 2</strong></p>\n<p><img src=\"/assets/d011dd7a9b.svg\" alt=\"SkyDeck Soc 2 type 2\"></p>\n<p>El marco SOC 2 incluye 64 requisitos distintos organizados en cinco Criterios de Servicios de Confianza (TSC), que proporcionan la base para evaluar los controles de una organización. Estos criterios se dividen en Controles de Seguridad y Controles de Privacidad.</p>\n<p>SkyDeck AI Inc. ha sido certificado como SOC 2 Tipo 1 desde enero de 2024 y consiguió la certificación SOC 2 Tipo 2 en junio de 2024.</p>\n<p><a href=\"https://app.vanta.com/skydeckai/trust/hglgloe5scxyzulfgon9\" target=\"_blank\" rel=\"noopener noreferrer\">Aprender más</a></p>\n<h2>Evaluación de Seguridad de Aplicaciones en la Nube</h2>\n<p><strong>CASA certificado de nivel 2</strong></p>\n<p><img src=\"/assets/484e20bfd0.png\" alt=\"CASA certificado de nivel 2\"></p>\n<p>El Tier 2 CASA está alineado con el OWASP Application Security Verification Standard (ASVS) v4.0. Hay un total de 134 requisitos, cada uno mapeado a su propio conjunto de criterios de aceptación.</p>\n<p>El Servicio Rememberizer ha pasado la Certificación CASA Tier 2 en abril de 2024.</p>\n<p><a href=\"https://appdefensealliance.dev/casa/tier-2/tier2-overview\" target=\"_blank\" rel=\"noopener noreferrer\">Aprender más</a></p>"
+}

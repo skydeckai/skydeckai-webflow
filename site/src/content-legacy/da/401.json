@@ -1,0 +1,8 @@
+{
+  "path": "401/",
+  "title": "Beskyttet side",
+  "description": "Denne side er beskyttet med en adgangskode.",
+  "h1": "Beskyttet side",
+  "eyebrow": "401",
+  "html": "<p>Denne side er beskyttet med en adgangskode.</p><p><a href=\"/da/\">Tilbage til startsiden</a></p>"
+}

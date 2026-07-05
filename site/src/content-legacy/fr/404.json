@@ -1,0 +1,7 @@
+{
+  "path": "404/",
+  "title": "404",
+  "description": "La page que vous recherchez est introuvable.",
+  "h1": "404 | Cette page n'a pas pu être trouvée.",
+  "html": "<p><a href=\"/fr\">Retour à la page d'accueil</a></p>"
+}

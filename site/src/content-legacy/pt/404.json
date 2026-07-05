@@ -1,0 +1,7 @@
+{
+  "path": "404/",
+  "title": "404 — Página não encontrada",
+  "description": "A página que você procura não pôde ser encontrada.",
+  "h1": "Esta página não pôde ser encontrada.",
+  "html": "<p>A página que você procura não existe ou foi movida.</p><p><a href=\"/pt/\">Voltar para a Página Inicial</a></p>"
+}

@@ -1,0 +1,29 @@
+---
+import SimplePage from "../../../layouts/SimplePage.astro";
+import { LOCALES, type Locale } from "../../../i18n/locales";
+import { legacyEntry } from "../../../lib/legacy";
+
+/**
+ * The old site serves the pricing page at BOTH /{lang}/pricing/ (the nav target,
+ * via a flat pricing.html) and /{lang}/pricing/pricing/ (SEO map KEEP). Mirror
+ * that: same content on both, each self-canonical, exactly as before.
+ */
+export function getStaticPaths() {
+  return LOCALES.map((lang) => ({ params: { lang } }));
+}
+
+const locale = Astro.params.lang as Locale;
+const entry = legacyEntry(locale, "pricing/pricing/")!;
+---
+
+<SimplePage
+  locale={locale}
+  path="pricing/"
+  title={entry.title}
+  description={entry.description}
+  h1={entry.h1}
+  eyebrow={entry.eyebrow}
+  lede={entry.lede}
+  ogImage={entry.ogImage}
+  html={entry.html}
+/>

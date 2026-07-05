@@ -1,0 +1,8 @@
+{
+  "path": "about/blog/page3.html",
+  "title": "Blogs",
+  "description": "Welcome to news, tech talks and insights from the SkyDeck AI team.",
+  "h1": "Blog Posts",
+  "lede": "Follow our stories and unique insights!",
+  "html": "<p><a href=\"/en/category/product-update\">PRODUCT UPDATE</a> &middot; <a href=\"/en/category/use-cases\">USE CASES</a> &middot; <a href=\"/en/category/industry-insights\">INDUSTRY INSIGHT</a></p><p><a href=\"/en/blog/things-to-consider-when-deploying-ai-tools\"><img src=\"/assets/663b4d698d0e8bf7683d0f3b_Dev-background.png\" alt=\"Things to Consider When Deploying AI Tools\"></a></p><h3><a href=\"/en/blog/things-to-consider-when-deploying-ai-tools\">Things to Consider When Deploying AI Tools</a></h3><p>INDUSTRY INSIGHT &middot; 2 MIN READ &middot; May 21, 2024</p>"
+}

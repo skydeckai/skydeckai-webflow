@@ -1,0 +1,7 @@
+{
+  "path": "401/",
+  "title": "Page protégée",
+  "description": "Cette page est protégée par un mot de passe.",
+  "h1": "Page protégée",
+  "html": "<p>Cette page est protégée par un mot de passe. Veuillez saisir le mot de passe pour continuer.</p><p><a href=\"/fr\">Retour à la page d'accueil</a></p>"
+}

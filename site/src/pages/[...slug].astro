@@ -1,0 +1,30 @@
+---
+import SimplePage from "../layouts/SimplePage.astro";
+import { legacyEntries, slugOf, type LegacyEntry } from "../lib/legacy";
+
+export function getStaticPaths() {
+  return legacyEntries("en")
+    .filter((entry) => entry.path !== "404/")
+    .map((entry) => ({
+      params: { slug: slugOf(entry.path) },
+      props: { entry },
+    }));
+}
+
+const { entry } = Astro.props as { entry: LegacyEntry };
+---
+
+<SimplePage
+  locale="en"
+  path={entry.path}
+  title={entry.title}
+  description={entry.description}
+  h1={entry.h1}
+  eyebrow={entry.eyebrow}
+  lede={entry.lede}
+  date={entry.date}
+  author={entry.author}
+  ogImage={entry.ogImage}
+  html={entry.html}
+  atRoot
+/>

@@ -1,0 +1,47 @@
+---
+import Base from "../layouts/Base.astro";
+import type { Locale } from "../i18n/locales";
+
+interface Props {
+  locale: Locale;
+  atRoot?: boolean;
+}
+const { locale, atRoot = false } = Astro.props;
+
+const strings = import.meta.glob<Record<string, string>>("../i18n/strings/*.json", {
+  eager: true,
+  import: "default",
+});
+const en = strings["../i18n/strings/en.json"];
+const s = { ...en, ...(strings[`../i18n/strings/${locale}.json`] ?? {}) };
+const t = {
+  title: s["search.title"],
+  h1: s["search.h1"],
+  placeholder: s["search.placeholder"],
+  button: s["search.button"],
+};
+---
+
+<Base locale={locale} path="search/" title={t.title} description={t.h1} atRoot={atRoot}>
+  <section style="padding:80px 40px 120px">
+    <div style="max-width:640px;margin:0 auto;text-align:center" data-reveal>
+      <h1 style="font-weight:600;font-size:clamp(34px,4.6vw,52px);letter-spacing:-.02em;margin:0 0 26px">{t.h1}</h1>
+      <form action="https://www.google.com/search" method="get" id="site-search" style="display:flex;gap:10px">
+        <input
+          type="search"
+          name="q"
+          required
+          placeholder={t.placeholder}
+          style="flex:1;font-family:var(--font-serif);font-size:17px;padding:14px 18px;border-radius:10px;border:1px solid var(--hairline-strong);background:var(--color-warmwhite);color:var(--color-deepink)"
+        />
+        <button type="submit" class="btn-primary" style="border:none">{t.button}</button>
+      </form>
+    </div>
+  </section>
+  <script is:inline>
+    document.getElementById("site-search").addEventListener("submit", function () {
+      var q = this.elements.q;
+      if (q.value.indexOf("site:") === -1) q.value = q.value + " site:www.skydeck.ai";
+    });
+  </script>
+</Base>

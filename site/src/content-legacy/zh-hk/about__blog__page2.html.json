@@ -1,0 +1,37 @@
+{
+  "path": "about/blog/page2.html",
+  "title": "博客",
+  "description": "歡迎來到SkyDeck AI團隊的新聞、科技討論和見解。",
+  "h1": "部落格文章",
+  "html": "<p><a href=\"/zh-hk/category/product-update\">產品更新</a> · <a href=\"/zh-hk/category/use-cases\">使用案例</a> · <a href=\"/zh-hk/category/industry-insights\">行業洞察</a></p><p><a href=\"/zh-hk/blog/program-in-english\"><img src=\"/assets/6645b4bf3e441e3a4c33ddf5_italian-poet-writing-program-1024x675.png\" alt=\"用英語編程\"></a></p><h3><a href=\"/zh-hk/blog/program-in-english\">用英語編程</a></h3><p>行業洞察 · 7 分鐘閱讀 · 2024年5月20日</p><p><a href=\"/zh-hk/blog/skydeck-ai-the-enterprise-ai-frontend\"><img src=\"/assets/6645b4e0fbe3faa2b67ca344_img-2QqRwNAP8I3475D4UfhVN6Xd-1024x675.png\" alt=\"SkyDeck.ai：企業人工智能前端\"></a></p><h3><a href=\"/zh-hk/blog/skydeck-ai-the-enterprise-ai-frontend\">SkyDeck.ai：企業人工智能前端</a></h3><p>產品更新 · 2 分鐘閱讀 · 2024年5月27日</p><p><a href=\"/zh-hk/blog/secure-and-private-gpt4-chat-via-skydeck-genstudio\"><img src=\"/assets/6645b4fe56307e5406581df2_safe-full-of-private-letters-1024x675.png\" alt=\"安全和私密的 GPT-4 聊天通過 SkyDeck GenStudio\"></a></p><h3><a href=\"/zh-hk/blog/secure-and-private-gpt4-chat-via-skydeck-genstudio\">安全和私密的 GPT-4 聊天通過 SkyDeck GenStudio</a></h3><p>產品更新 · 2 分鐘閱讀 · 2024年5月26日</p><p><a href=\"/zh-hk/blog/were-a-front-end-for-your-llm-backend\"><img src=\"/assets/6645b52add965961ea356fbe_Screenshot-2024-05-16-at-14.26.30.png\" alt=\"我們是您的 LLM 後端的前端\"></a></p><h3><a href=\"/zh-hk/blog/were-a-front-end-for-your-llm-backend\">我們是您的 LLM 後端的前端</a></h3><p>產品更新 · 2 分鐘閱讀 · 2024年5月27日</p>",
+  "_cards": [
+    {
+      "slug": "program-in-english",
+      "title": "用英語編程",
+      "cat": "行業洞察",
+      "read": "7 分鐘閱讀",
+      "date": ""
+    },
+    {
+      "slug": "skydeck-ai-the-enterprise-ai-frontend",
+      "title": "SkyDeck.ai：企業人工智能前端",
+      "cat": "產品更新",
+      "read": "2 分鐘閱讀",
+      "date": ""
+    },
+    {
+      "slug": "secure-and-private-gpt4-chat-via-skydeck-genstudio",
+      "title": "安全和私密的 GPT-4 聊天通過 SkyDeck GenStudio",
+      "cat": "產品更新",
+      "read": "2 分鐘閱讀",
+      "date": ""
+    },
+    {
+      "slug": "were-a-front-end-for-your-llm-backend",
+      "title": "我們是您的 LLM 後端的前端",
+      "cat": "產品更新",
+      "read": "2 分鐘閱讀",
+      "date": ""
+    }
+  ]
+}

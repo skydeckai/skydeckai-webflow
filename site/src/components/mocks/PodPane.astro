@@ -1,0 +1,74 @@
+---
+// Static port of podMock (wrapping _podPane(false)) from the design doc.
+// Pure HTML + inline styles mirroring the source React.createElement builders.
+---
+
+<div
+  class="app"
+  style="border-radius:13px;overflow:hidden;border:1px solid rgba(42,51,107,.22);box-shadow:0 26px 60px rgba(30,36,71,.24);text-align:left"
+>
+  <div class="app" style="display:flex;flex-direction:column;min-width:0;flex:1;background:#0F1330">
+    <!-- header -->
+    <div
+      style="display:flex;align-items:center;gap:8px;padding:11px 13px;background:#1B2048;border-bottom:1px solid rgba(255,255,255,.09);flex-wrap:wrap"
+    >
+      <span
+        class="mono"
+        style="flex:none;width:25px;height:25px;border-radius:6px;background:linear-gradient(135deg,#3A4FA0,#6472C8);color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600"
+      >CC</span>
+      <span style="font-weight:700;font-size:13.5px;color:#F1F1FA">billing-agent</span>
+      <span
+        style="font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:3px 7px;border-radius:100px;background:rgba(91,192,141,.18);color:#7FD3A6"
+      >Pod</span>
+      <span
+        style="display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:600;padding:3px 8px;border-radius:100px;background:rgba(91,192,141,.12);color:#7FD3A6"
+      >
+        <span style="width:6px;height:6px;border-radius:50%;background:#5BC08D;box-shadow:0 0 6px #5BC08D;display:inline-block"></span>
+        running
+      </span>
+      <span class="mono" style="font-size:11px;padding:3px 8px;border-radius:6px;background:rgba(255,255,255,.05);color:rgba(233,234,246,.62)">claude-code</span>
+      <span class="mono" style="font-size:11px;padding:3px 8px;border-radius:6px;background:rgba(255,255,255,.05);color:rgba(233,234,246,.62)">⎇ main</span>
+      <span
+        class="mono"
+        style="margin-left:auto;font-size:11px;padding:3px 8px;border-radius:6px;border:1px solid rgba(255,255,255,.09);color:rgba(233,234,246,.85)"
+      ><span style="color:rgba(233,234,246,.55)">$</span>4.82<span style="color:rgba(233,234,246,.55)"> / session</span></span>
+    </div>
+
+    <!-- presence -->
+    <div
+      style="display:flex;align-items:center;gap:9px;padding:8px 13px;background:#141834;border-bottom:1px solid rgba(255,255,255,.09)"
+    >
+      <div style="display:flex;align-items:center">
+        <span style="width:23px;height:23px;border-radius:50%;background:#3A4FA0;color:#fff;font-size:8.5px;font-weight:700;display:flex;align-items:center;justify-content:center;border:2px solid #141834;z-index:2">YOU</span>
+        <span style="width:23px;height:23px;border-radius:50%;background:#8590E8;color:#141834;font-size:8.5px;font-weight:800;display:flex;align-items:center;justify-content:center;border:2px solid #141834;margin-left:-6px">AI</span>
+        <span style="width:23px;height:23px;border-radius:50%;background:#37406B;color:#cdd2ee;font-size:8.5px;font-weight:700;display:flex;align-items:center;justify-content:center;border:2px solid #141834;margin-left:-6px">JD</span>
+      </div>
+      <span style="font-size:11px;color:rgba(233,234,246,.55)">you drive · 2 read-only observers</span>
+      <div style="margin-left:auto;display:flex;gap:5px">
+        <span class="mono" style="display:flex;align-items:center;gap:5px;font-size:10.5px;padding:4px 9px;border-radius:6px;background:rgba(133,144,232,.18);color:#B7BEEA">› terminal</span>
+        <span class="mono" style="font-size:10.5px;padding:4px 9px;border-radius:6px;color:rgba(233,234,246,.55)">□ browser :3000</span>
+      </div>
+    </div>
+
+    <!-- terminal -->
+    <div class="mono" style="padding:16px 15px;font-size:12px;line-height:1.9;color:#E5E8F4">
+      <div><span style="color:rgba(229,232,244,.45)"># /workspace persists · ~/.claude persists</span></div>
+      <div><span style="color:#8FA0E0">you@pod</span>:<span style="color:#C7B27E">~/workspace</span>$ claude-code --resume</div>
+      <div><span style="color:#6FD3A6">✓ restored session · 3 branches ahead</span></div>
+      <div><span style="color:#8FA0E0">you@pod</span>$ openclaw gateway --detach</div>
+      <div><span style="color:rgba(229,232,244,.75)">[detached] gateway up · working around the clock…</span></div>
+      <div><span style="color:rgba(229,232,244,.45);display:inline-block;margin-top:6px"># you close your laptop — the main terminal keeps going</span></div>
+      <div><span style="color:#C7B27E">◐ idle 4m</span> · auto-sleep in 11m<span style="display:inline-block;width:7px;height:14px;background:#8590E8;margin-left:3px;vertical-align:-2px;animation:blink 1s step-end infinite"></span></div>
+    </div>
+
+    <!-- status bar -->
+    <div
+      class="mono"
+      style="display:flex;align-items:center;gap:12px;padding:7px 13px;background:#1B2048;border-top:1px solid rgba(255,255,255,.09);font-size:10.5px;color:rgba(233,234,246,.55)"
+    >
+      <span>⎇ main</span>
+      <span style="margin-left:auto">connected</span>
+      <span>⚙</span>
+    </div>
+  </div>
+</div>

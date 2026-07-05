@@ -1,0 +1,8 @@
+{
+  "title": "SkyDeck.ai 安全",
+  "description": "创建、策划和控制，与 SkyDeck.ai 一起。我们获得了 SOC 2 Type 2 认证。",
+  "h1": "安全第一",
+  "lede": "SOC 2框架包括64个独特的要求，分为五个信任服务标准（TSC），为评估组织的控制措施提供基础。这些标准被划分为安全控制和隐私控制。 SkyDeck AI Inc. 自2024年1月起获得SOC 2 Type 1认证，并于2024年6月获得SOC 2 Type 2认证。",
+  "html": "<h2>安全第一</h2>SkyDeck AI Inc. 优先考虑安全性，获得了 SOC 2 Type 1 和 Type 2 以及 CASA Tier 2 认证，适用于我们的 SkyDeck.ai 平台和 Rememberizer 服务。<img alt=\"SkyDeck Soc 2 type 2\" src=\"/assets/d011dd7a9b.svg\"/>SOC 2 类型 2 认证<h2>系统与组织控制</h2><a href=\"https://app.vanta.com/skydeckai/trust/hglgloe5scxyzulfgon9\" rel=\"noopener noreferrer\" target=\"_blank\">了解更多</a>CASA 二级认证<h2>云应用安全评估</h2><p>第二层 CASA 符合 OWASP 应用程序安全验证标准 (ASVS) v4.0。总共有 134 个要求，每个要求都有自己的一套接受标准。<br/><br/>Rememberizer 服务已于 2024 年 4 月通过 CASA 第二层认证。</p><a href=\"https://appdefensealliance.dev/casa/tier-2/tier2-overview\" rel=\"noopener noreferrer\" target=\"_blank\">了解更多</a><img src=\"/assets/484e20bfd0.png\"/>",
+  "path": "about/security/"
+}

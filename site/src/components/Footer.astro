@@ -1,0 +1,192 @@
+---
+import { AUTONYM, LOCALES, localeUrl, type Locale } from "../i18n/locales";
+
+interface Props {
+  locale: Locale;
+  path: string;
+  t: Record<string, string>;
+}
+const { locale, path, t } = Astro.props;
+const l = (p: string) => localeUrl(locale, p);
+---
+
+<footer class="site-footer">
+  <div class="inner top">
+    <div class="brandcol">
+      <div class="logos">
+        <img src="/assets/logo-mark.png" alt="SkyDeck AI" style="height:30px" />
+        <img src="/assets/logo-word.svg" alt="" style="height:17px;filter:brightness(0) invert(1)" />
+      </div>
+      <p class="tagline">{t["footer.tagline"]}</p>
+      <div class="badges">
+        <a
+          href="https://app.vanta.com/skydeckai/trust/hglgloe5scxyzulfgon9"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="badge"><img src="/assets/soc2-badge.png" alt="SOC 2 Type 2" style="height:42px;display:block" /></a
+        >
+        <a
+          href="https://appdefensealliance.dev/casa/tier-2/tier2-overview"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="badge"><img src="/assets/casa-badge.png" alt="CASA Tier 2" style="height:42px;display:block" /></a
+        >
+      </div>
+    </div>
+    <div class="cols">
+      <div>
+        <div class="colhead">{t["footer.product"]}</div>
+        <div class="collinks">
+          <a href={l("")}>{t["footer.platform"]}</a>
+          <a href={l("") + "#genstudio"}>{t["footer.genstudio"]}</a>
+          <a href={l("") + "#control-center"}>{t["footer.controlCenter"]}</a>
+          <a href={l("agent-pods/")} class="hot">{t["footer.agentPods"]}</a>
+        </div>
+      </div>
+      <div>
+        <div class="colhead">{t["footer.company"]}</div>
+        <div class="collinks">
+          <a href={l("about/about-skydeckai/")}>{t["footer.about"]}</a>
+          <a href={l("about/blog/")}>{t["footer.blog"]}</a>
+          <a href={l("about/security/")}>{t["footer.security"]}</a>
+          <a href={l("about/skydeck-contact-us/")}>{t["footer.contact"]}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="inner lang" aria-label={t["footer.language"]}>
+    {LOCALES.map((loc) => (
+      <a href={localeUrl(loc, path)} class:list={["langlink", { on: loc === locale }]} lang={loc}>
+        {AUTONYM[loc]}
+      </a>
+    ))}
+  </div>
+  <div class="inner bottom">
+    <span>{t["footer.copyright"]}</span>
+    <span class="legal">
+      <a href="https://docs.skydeck.ai/notices/terms-of-use" target="_blank" rel="noopener noreferrer"
+        >{t["footer.terms"]}</a
+      >
+      ·
+      <a href="https://docs.skydeck.ai/notices/privacy-policy" target="_blank" rel="noopener noreferrer"
+        >{t["footer.privacy"]}</a
+      >
+      ·
+      <a href="https://docs.skydeck.ai/notices/cookie-notice" target="_blank" rel="noopener noreferrer"
+        >{t["footer.cookies"]}</a
+      >
+    </span>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    padding: 56px 40px 40px;
+    background: var(--color-footer);
+    color: var(--color-paper);
+  }
+  .inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .brandcol {
+    max-width: 320px;
+  }
+  .logos {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-bottom: 16px;
+  }
+  .tagline {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(244, 238, 225, 0.6);
+    margin: 0 0 18px;
+  }
+  .badges {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 12px;
+    padding: 10px 13px;
+  }
+  .cols {
+    display: flex;
+    gap: 64px;
+    flex-wrap: wrap;
+  }
+  .colhead {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: rgba(244, 238, 225, 0.44);
+    margin-bottom: 16px;
+  }
+  .collinks {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+  }
+  .collinks a {
+    font-size: 15px;
+    color: rgba(244, 238, 225, 0.74);
+    text-decoration: none;
+  }
+  .collinks a:hover {
+    color: var(--color-paper);
+  }
+  .collinks a.hot {
+    color: #b7beea;
+    font-weight: 600;
+  }
+  .lang {
+    margin-top: 34px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    font-size: 13.5px;
+  }
+  .langlink {
+    color: rgba(244, 238, 225, 0.55);
+    text-decoration: none;
+  }
+  .langlink:hover {
+    color: var(--color-paper);
+  }
+  .langlink.on {
+    color: #b7beea;
+    font-weight: 600;
+  }
+  .bottom {
+    margin-top: 22px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(244, 238, 225, 0.14);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 13.5px;
+    color: rgba(244, 238, 225, 0.44);
+  }
+  .legal a {
+    color: rgba(244, 238, 225, 0.44);
+    text-decoration: none;
+  }
+  .legal a:hover {
+    color: var(--color-paper);
+  }
+</style>

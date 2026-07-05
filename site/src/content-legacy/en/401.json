@@ -1,0 +1,7 @@
+{
+  "path": "401/",
+  "title": "Protected Page — SkyDeck.ai",
+  "description": "This page is password protected.",
+  "h1": "Protected Page",
+  "html": "<p>This page is password protected. <a href=\"/en\">Back to the Homepage</a>.</p>"
+}

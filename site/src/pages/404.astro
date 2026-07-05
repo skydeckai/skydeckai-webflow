@@ -1,0 +1,24 @@
+---
+import SimplePage from "../layouts/SimplePage.astro";
+import { legacyEntry } from "../lib/legacy";
+
+const entry = legacyEntry("en", "404/");
+const fallback = {
+  path: "404/",
+  title: "Page not found — SkyDeck.ai",
+  description: "The page you were looking for could not be found.",
+  h1: "Page not found",
+  html: '<p>The page you were looking for does not exist. <a href="/">Back to the homepage</a>.</p>',
+};
+const e = entry ?? fallback;
+---
+
+<SimplePage
+  locale="en"
+  path={e.path}
+  title={e.title}
+  description={e.description}
+  h1={e.h1}
+  html={e.html}
+  atRoot
+/>

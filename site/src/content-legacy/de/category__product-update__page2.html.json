@@ -1,0 +1,7 @@
+{
+  "path": "category/product-update/page2.html",
+  "title": "Produkt-Updates — SkyDeck.ai",
+  "description": "Produkt-Updates und Neuigkeiten zur SkyDeck.ai-Plattform.",
+  "h1": "Produkt-Updates",
+  "html": "<h3><a href=\"/de/blog/skydeck-ai-the-enterprise-ai-frontend\">SkyDeck.ai: Das Enterprise AI Frontend</a></h3><h3><a href=\"/de/blog/secure-and-private-gpt4-chat-via-skydeck-genstudio\">Sichere und private GPT4-Chat über SkyDeck Genstudio</a></h3><h3><a href=\"/de/blog/were-a-front-end-for-your-llm-backend\">Wir sind ein Frontend für dein LLM-Backend</a></h3>"
+}

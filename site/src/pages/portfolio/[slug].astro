@@ -1,0 +1,18 @@
+---
+import RedirectStub from "../../components/RedirectStub.astro";
+
+export function getStaticPaths() {
+  const SLUGS = [
+    "freelancer-platform",
+    "freelancers-united",
+    "ipad-app-store",
+    "ipad-iphone-apps",
+    "photographer-portfolio",
+    "webflow-startup-template",
+    "website-projects",
+  ];
+  return SLUGS.map((slug) => ({ params: { slug } }));
+}
+---
+
+<RedirectStub target="/" />
