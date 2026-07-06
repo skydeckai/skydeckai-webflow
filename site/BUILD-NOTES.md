@@ -59,3 +59,14 @@ Source of truth trio (fetched from the Claude Design project "Skydeck.ai website
 `cd tests/marketing && BASE_URL=http://localhost:4321 npx playwright test` → C1–C12
 green + C13 un-fixme'd and green; then Actions workflow builds `site/` → Pages,
 contract suite green against production.
+
+## Deployment landmines (learned the hard way)
+
+- **GitHub Pages rejects artifacts containing `tel:` links** (generic "Deployment
+  failed, try again later" from actions/deploy-pages; proven by A/B bisection
+  2026-07-06 — identical artifacts differing only in contact-page content, tel:
+  removal flipped red→green). Phone numbers must ship as plain text on Pages.
+- **Pages also rejects directories named `*.html`** — hence
+  `scripts/flatten-html-dirs.mjs` in the build (pagination URLs ship as real files).
+- The `github-pages` environment's branch policy must include `main`
+  (it originally allowed only the legacy `production` branch).
