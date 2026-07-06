@@ -42,5 +42,13 @@
   "search.title": "Pesquisar — SkyDeck.ai",
   "search.h1": "Pesquisar",
   "search.placeholder": "Pesquisar em skydeck.ai…",
-  "search.button": "Pesquisar"
+  "search.button": "Pesquisar",
+  "form.title": "Envie-nos uma mensagem",
+  "form.name": "Nome",
+  "form.email": "E-mail",
+  "form.message": "Mensagem",
+  "form.submit": "Enviar mensagem",
+  "form.success": "Obrigado — sua mensagem foi enviada.",
+  "form.fallback": "Seu aplicativo de e-mail foi aberto com a mensagem — basta enviar.",
+  "form.error": "Algo deu errado. Escreva diretamente para legal@skydeck.ai."
 }

@@ -42,5 +42,13 @@
   "search.title": "搜索 — SkyDeck.ai",
   "search.h1": "搜索",
   "search.placeholder": "搜索 skydeck.ai…",
-  "search.button": "搜索"
+  "search.button": "搜索",
+  "form.title": "给我们留言",
+  "form.name": "姓名",
+  "form.email": "电子邮件",
+  "form.message": "留言内容",
+  "form.submit": "发送留言",
+  "form.success": "谢谢——您的留言已发送。",
+  "form.fallback": "已为您打开邮件应用并填好内容——点击发送即可。",
+  "form.error": "出了点问题。请直接发送邮件至 legal@skydeck.ai。"
 }

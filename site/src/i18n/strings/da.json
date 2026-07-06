@@ -42,5 +42,13 @@
   "search.title": "Søg — SkyDeck.ai",
   "search.h1": "Søg",
   "search.placeholder": "Søg på skydeck.ai…",
-  "search.button": "Søg"
+  "search.button": "Søg",
+  "form.title": "Send os en besked",
+  "form.name": "Navn",
+  "form.email": "E-mail",
+  "form.message": "Besked",
+  "form.submit": "Send besked",
+  "form.success": "Tak — din besked er sendt.",
+  "form.fallback": "Din mailapp er åbnet med din besked — tryk blot på send.",
+  "form.error": "Noget gik galt. Skriv direkte til legal@skydeck.ai."
 }

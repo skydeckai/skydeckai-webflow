@@ -22,13 +22,13 @@ sign-off, recorded here.
 | C11 | Every supported language variant of the pricing page loads and shows prices (spot-checked live; full parity via C12) | i18n-live.spec.ts |
 | C12 | i18n artifact parity: every locale ships its strings/copy modules and every English legacy-content page exists in all 11 other locales (the translation pipeline may not silently skip pages) | i18n-parity.spec.ts |
 | C13 | Each locale page declares its own `lang` attribute (and `/ar/` is `dir="rtl"`) | i18n-live.spec.ts |
+| C14 | A visitor can submit the contact form and their message has a path out (API success, or mailto fallback while the endpoint is unreleased) | contact.spec.ts |
 
 ## Known product gaps (documented, not asserted)
 
-- **No contact form exists** — the contact page shows contact info (as images) only.
-  If a form is added in the redesign, add a contract (C14: "a visitor can submit the
-  contact form and see confirmation") and a spec for it.
-- **No sitemap.xml / robots.txt** on the site. Add contracts when introduced.
+- ~~No contact form~~ — closed 2026-07-06 by C14 (form + Django endpoint; mailto
+  fallback until the backend release ships the endpoint).
+- ~~No sitemap.xml / robots.txt~~ — closed by the Astro rebuild (both exist).
 
 ## Amendment log
 

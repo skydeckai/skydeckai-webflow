@@ -30,6 +30,25 @@ const strings = import.meta.glob<Record<string, string>>("../i18n/strings/*.json
 });
 const en = strings["../i18n/strings/en.json"];
 const t = { ...en, ...(strings[`../i18n/strings/${locale}.json`] ?? {}) };
+
+/**
+ * Content-Security-Policy via <meta> (GitHub Pages cannot set response headers).
+ * Scripts are Astro-bundled external files, so no unsafe-inline for script-src.
+ * style-src keeps 'unsafe-inline' for the design's style attributes. meta-CSP
+ * cannot express frame-ancestors/report-uri — that needs a fronting CDN.
+ */
+const csp = [
+  "default-src 'self'",
+  "script-src 'self' https://www.googletagmanager.com",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com",
+  "font-src 'self'",
+  "connect-src 'self' https://*.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://*.googletagmanager.com https://admin.skydeck.ai",
+  "frame-src https://www.googletagmanager.com",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "form-action 'self' https://www.google.com https://admin.skydeck.ai mailto:",
+].join("; ");
 ---
 
 <!doctype html>
@@ -37,6 +56,8 @@ const t = { ...en, ...(strings[`../i18n/strings/${locale}.json`] ?? {}) };
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Security-Policy" content={csp} />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
@@ -53,33 +74,6 @@ const t = { ...en, ...(strings[`../i18n/strings/${locale}.json`] ?? {}) };
     <meta name="twitter:image" content={new URL(og, SITE).href} />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,ital,wght@8..60,0,400;8..60,0,500;8..60,0,600;8..60,0,700;8..60,1,400;8..60,1,600&family=JetBrains+Mono:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <script is:inline>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-N72P33C2");
-    </script>
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-0S3DSJDG4H"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-0S3DSJDG4H");
-    </script>
   </head>
   <body>
     <noscript>
@@ -92,49 +86,9 @@ const t = { ...en, ...(strings[`../i18n/strings/${locale}.json`] ?? {}) };
     {!bare && <Nav locale={locale} t={t} />}
     <slot />
     {!bare && <Footer locale={locale} path={path} t={t} />}
-    <script is:inline>
-      (function () {
-        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-          document.querySelectorAll("[data-reveal]").forEach(function (el) {
-            el.classList.add("revealed");
-          });
-          return;
-        }
-        if ("IntersectionObserver" in window) {
-          var io = new IntersectionObserver(
-            function (entries) {
-              entries.forEach(function (e) {
-                if (e.isIntersecting) {
-                  e.target.classList.add("revealed");
-                  io.unobserve(e.target);
-                }
-              });
-            },
-            { threshold: 0.08, rootMargin: "0px 0px -5% 0px" }
-          );
-          document.querySelectorAll("[data-reveal]").forEach(function (el) {
-            io.observe(el);
-          });
-        } else {
-          document.querySelectorAll("[data-reveal]").forEach(function (el) {
-            el.classList.add("revealed");
-          });
-        }
-        var px = function () {
-          var y = window.scrollY || 0;
-          document.querySelectorAll("[data-px]").forEach(function (el) {
-            var s = parseFloat(el.getAttribute("data-px")) || 0;
-            var cx = el.getAttribute("data-cx") ? " translateX(-50%)" : "";
-            el.style.transform = "translate3d(0," + (y * s).toFixed(1) + "px,0)" + cx;
-          });
-        };
-        document.querySelectorAll("[data-px]").forEach(function (el) {
-          if ((el.getAttribute("style") || "").indexOf("translateX(-50%)") !== -1)
-            el.setAttribute("data-cx", "1");
-        });
-        window.addEventListener("scroll", px, { passive: true });
-        px();
-      })();
+    <script>
+      import "../scripts/analytics.ts";
+      import "../scripts/motion.ts";
     </script>
   </body>
 </html>

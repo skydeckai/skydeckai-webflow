@@ -12,6 +12,10 @@ export default defineConfig({
       filter: (page) => !page.includes("/portfolio/") && !page.includes("/subcategories/"),
     }),
   ],
-  vite: { plugins: [tailwindcss()] },
+  vite: {
+    plugins: [tailwindcss()],
+    // CSP has no unsafe-inline for scripts: every script must be an external file.
+    build: { assetsInlineLimit: 0 },
+  },
   trailingSlash: "ignore",
 });

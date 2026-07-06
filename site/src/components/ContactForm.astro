@@ -1,0 +1,163 @@
+---
+import type { Locale } from "../i18n/locales";
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+
+const strings = import.meta.glob<Record<string, string>>("../i18n/strings/*.json", {
+  eager: true,
+  import: "default",
+});
+const en = strings["../i18n/strings/en.json"];
+const t = { ...en, ...(strings[`../i18n/strings/${locale}.json`] ?? {}) };
+---
+
+<section class="contact-form-wrap" data-reveal>
+  <h2>{t["form.title"]}</h2>
+  <form
+    id="contact-form"
+    method="post"
+    action="https://admin.skydeck.ai/api/v1/marketing/contact/"
+    novalidate
+  >
+    <label>
+      <span>{t["form.name"]}</span>
+      <input type="text" name="name" required maxlength="120" autocomplete="name" />
+    </label>
+    <label>
+      <span>{t["form.email"]}</span>
+      <input type="email" name="email" required maxlength="320" autocomplete="email" />
+    </label>
+    <label>
+      <span>{t["form.message"]}</span>
+      <textarea name="message" required maxlength="4000" rows="6"></textarea>
+    </label>
+    <!-- honeypot: humans never see or fill this -->
+    <label class="hp" aria-hidden="true">
+      <span>Website</span>
+      <input type="text" name="website" tabindex="-1" autocomplete="off" />
+    </label>
+    <button type="submit" class="btn-primary" style="border:none">{t["form.submit"]}</button>
+    <p class="form-note success" hidden>{t["form.success"]}</p>
+    <p class="form-note fallback" hidden>{t["form.fallback"]}</p>
+    <p class="form-note error" hidden>{t["form.error"]}</p>
+  </form>
+</section>
+
+<script>
+  const form = document.getElementById("contact-form") as HTMLFormElement | null;
+  if (form) {
+    const note = (cls: string) => {
+      form.querySelectorAll<HTMLElement>(".form-note").forEach((n) => (n.hidden = true));
+      const el = form.querySelector<HTMLElement>(`.form-note.${cls}`);
+      if (el) el.hidden = false;
+    };
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+      const data = Object.fromEntries(new FormData(form).entries());
+      if ((data.website as string)?.length) return; // honeypot: silently drop
+      const button = form.querySelector("button")!;
+      button.disabled = true;
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name: data.name, email: data.email, message: data.message, website: "" }),
+        });
+        if (response.ok) {
+          form.reset();
+          note("success");
+          return;
+        }
+        throw new Error(String(response.status));
+      } catch {
+        // Endpoint unreachable (not yet released, network, adblock): fall back
+        // to composing an email so the form still works for the visitor.
+        const subject = encodeURIComponent(`Contact form — ${data.name}`);
+        const body = encodeURIComponent(`${data.message}\n\n— ${data.name} <${data.email}>`);
+        window.location.href = `mailto:legal@skydeck.ai?subject=${subject}&body=${body}`;
+        note("fallback");
+      } finally {
+        button.disabled = false;
+      }
+    });
+  }
+</script>
+
+<style>
+  .contact-form-wrap {
+    max-width: 640px;
+    margin: 44px 0 0;
+    padding: 30px 32px 32px;
+    border-radius: 18px;
+    background: var(--color-warmwhite);
+    border: 1px solid var(--hairline);
+    box-shadow: var(--card-shadow);
+  }
+  .contact-form-wrap h2 {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0 0 18px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  label span {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-deepink);
+  }
+  input,
+  textarea {
+    font-family: var(--font-serif);
+    font-size: 16px;
+    color: var(--color-deepink);
+    background: var(--color-paper);
+    border: 1px solid var(--hairline-strong);
+    border-radius: 10px;
+    padding: 11px 14px;
+  }
+  input:focus,
+  textarea:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 1px;
+  }
+  button {
+    align-self: flex-start;
+    cursor: pointer;
+  }
+  button:disabled {
+    opacity: 0.6;
+  }
+  .hp {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .form-note {
+    margin: 4px 0 0;
+    font-size: 14.5px;
+  }
+  .form-note.success {
+    color: var(--color-running);
+  }
+  .form-note.fallback {
+    color: var(--color-inksoft);
+  }
+  .form-note.error {
+    color: #b0503e;
+  }
+</style>

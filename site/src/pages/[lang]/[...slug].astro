@@ -1,5 +1,6 @@
 ---
 import SimplePage from "../../layouts/SimplePage.astro";
+import ContactForm from "../../components/ContactForm.astro";
 import { LOCALES, type Locale } from "../../i18n/locales";
 import { legacyEntries, slugOf, type LegacyEntry } from "../../lib/legacy";
 
@@ -28,4 +29,6 @@ const { entry } = Astro.props as { entry: LegacyEntry };
   author={entry.author}
   ogImage={entry.ogImage}
   html={entry.html}
-/>
+>
+  {entry.path === "about/skydeck-contact-us/" && <ContactForm locale={locale} />}
+</SimplePage>

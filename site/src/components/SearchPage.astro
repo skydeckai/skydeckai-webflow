@@ -38,7 +38,7 @@ const t = {
       </form>
     </div>
   </section>
-  <script is:inline>
+  <script>
     document.getElementById("site-search").addEventListener("submit", function () {
       var q = this.elements.q;
       if (q.value.indexOf("site:") === -1) q.value = q.value + " site:www.skydeck.ai";

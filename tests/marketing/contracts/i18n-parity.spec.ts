@@ -60,4 +60,27 @@ test.describe("i18n (repo artifacts)", () => {
         (missing.length > 40 ? `\n  …and ${missing.length - 40} more` : ""),
     ).toEqual([]);
   });
+
+  test("C12b: legacy content JSONs contain no active-content injection vectors", () => {
+    // set:html renders these — repo-committed only, but pin it structurally so a
+    // future extraction/translation pass can never smuggle script into pages.
+    const offenders: string[] = [];
+    const contentRoot = path.join(siteSrc, "content-legacy");
+    for (const locale of fs.readdirSync(contentRoot)) {
+      const dir = path.join(contentRoot, locale);
+      if (!fs.statSync(dir).isDirectory()) continue;
+      for (const file of fs.readdirSync(dir)) {
+        const raw = fs.readFileSync(path.join(dir, file), "utf8");
+        if (/<script|<iframe|<object|<embed|javascript:|onerror=|onload=/i.test(raw)) {
+          offenders.push(`${locale}/${file}`);
+        }
+      }
+    }
+    expect(
+      offenders,
+      "C12b: active-content markers found in legacy content JSONs (script/iframe/object/" +
+        "event handlers are banned by the extraction rules):\n  " +
+        offenders.join("\n  "),
+    ).toEqual([]);
+  });
 });

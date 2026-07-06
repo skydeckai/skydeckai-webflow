@@ -42,5 +42,13 @@
   "search.title": "検索 — SkyDeck.ai",
   "search.h1": "検索",
   "search.placeholder": "skydeck.aiを検索…",
-  "search.button": "検索"
+  "search.button": "検索",
+  "form.title": "メッセージを送る",
+  "form.name": "お名前",
+  "form.email": "メールアドレス",
+  "form.message": "メッセージ",
+  "form.submit": "送信する",
+  "form.success": "ありがとうございます。メッセージを送信しました。",
+  "form.fallback": "メールアプリが開きました。内容をご確認のうえ送信してください。",
+  "form.error": "エラーが発生しました。legal@skydeck.ai まで直接ご連絡ください。"
 }
