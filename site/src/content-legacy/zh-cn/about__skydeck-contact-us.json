@@ -1,7 +1,7 @@
 {
-  "title": "联系我们",
-  "description": "与我们联系以获取信息、支持和一般询问。",
-  "h1": "联系我们",
-  "html": "电子邮件<img alt=\"电子邮件\" src=\"/assets/73a7c2e76e.png\"/>电话号码<img alt=\"电话号码\" src=\"/assets/744056d5ee.png\"/>邮件<img alt=\"邮件\" src=\"/assets/01b6247966.png\"/>支持<img alt=\"支持\" src=\"/assets/b9c08a7e0e.png\"/>",
-  "path": "about/skydeck-contact-us/"
+ "title": "联系我们",
+ "description": "与我们联系以获取信息、支持和一般询问。",
+ "h1": "联系我们",
+ "html": "电子邮件<a href=\"mailto:legal@skydeck.ai\">legal@skydeck.ai</a>电话号码<a href=\"tel:+14157441557\">415-744-1557</a>邮件548 Market St. PM38234<br>San Francisco, CA 94104支持请发送邮件至 <a href=\"mailto:legal@skydeck.ai\">legal@skydeck.ai</a>，并注明由支持团队处理。",
+ "path": "about/skydeck-contact-us/"
 }

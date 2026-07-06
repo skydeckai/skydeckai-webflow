@@ -12,19 +12,27 @@ test.describe("contact", () => {
     const contact = await followLink(page, link);
     await contact.waitForLoadState("load");
 
-    const text = await contact.locator("body").innerText();
-    const channels = ["email", "phone", "support"].filter((c) =>
-      new RegExp(`\\b${c}\\b`, "i").test(text),
-    );
-    expect(
-      channels.length,
-      `C7: expected the contact page to list contact channels (Email/Phone/Support); found only: ${channels.join(", ") || "none"}. ` +
-        "If the redesign replaced the channel list with a contact form, add the form contract " +
-        "(see CONTRACTS.md 'Known product gaps') instead of weakening this one.",
-    ).toBeGreaterThanOrEqual(2);
+    // Contact details are real text with actionable links (since the Astro
+    // rebuild — the old anti-scrape images shipped white-on-transparent and
+    // were unreadable on the new background; images passing a broken-image
+    // check told us nothing about legibility).
+    const mailto = contact.locator('a[href^="mailto:"]').first();
+    await expect(
+      mailto,
+      "C7: expected a visible mailto: link on the contact page — a visitor must have a " +
+        "clickable way to email the company.",
+    ).toBeVisible();
+    const tel = contact.locator('a[href^="tel:"]').first();
+    await expect(
+      tel,
+      "C7: expected a visible tel: link on the contact page.",
+    ).toBeVisible();
+    await expect(
+      contact.getByText(/94104|market st/i).first(),
+      "C7: expected the mailing address to be visible as text on the contact page.",
+    ).toBeVisible();
 
-    // The actual email/phone values are rendered as images today — a regression
-    // that breaks those images silently removes every way to contact the company.
+    // And nothing on the page may be a broken image.
     const broken: string[] = [];
     for (const img of await contact.locator("img:visible").all()) {
       const ok = await img.evaluate(
@@ -34,9 +42,7 @@ test.describe("contact", () => {
     }
     expect(
       broken,
-      `C7: broken images on the contact page (contact details are images today): ${broken.join(", ")}. ` +
-        "If the redesign renders contact details as text instead, replace this image check " +
-        "with a text/mailto assertion — the contract is 'contact details are visible and intact'.",
+      `C7: broken images on the contact page: ${broken.join(", ")}.`,
     ).toEqual([]);
   });
 });

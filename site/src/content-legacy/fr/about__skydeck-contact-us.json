@@ -1,8 +1,8 @@
 {
-  "path": "about/skydeck-contact-us/",
-  "title": "Contactez-nous",
-  "description": "Contactez-nous pour des informations, de l'assistance et des demandes générales.",
-  "h1": "Contactez-nous",
-  "lede": "Contactez-nous pour des informations, de l'assistance et des demandes générales.",
-  "html": "<p><strong>Email</strong><br><img src=\"/assets/73a7c2e76e.png\" alt=\"Email\"></p>\n<p><strong>Numéro de téléphone</strong><br><img src=\"/assets/744056d5ee.png\" alt=\"Numéro de téléphone\"></p>\n<p><strong>Mail</strong><br><img src=\"/assets/01b6247966.png\" alt=\"Mail\"></p>\n<p><strong>Soutien</strong><br><img src=\"/assets/b9c08a7e0e.png\" alt=\"Soutien\"></p>"
+ "path": "about/skydeck-contact-us/",
+ "title": "Contactez-nous",
+ "description": "Contactez-nous pour des informations, de l'assistance et des demandes générales.",
+ "h1": "Contactez-nous",
+ "lede": "Contactez-nous pour des informations, de l'assistance et des demandes générales.",
+ "html": "<p><strong>Email</strong><br><a href=\"mailto:legal@skydeck.ai\">legal@skydeck.ai</a></p>\n<p><strong>Numéro de téléphone</strong><br><a href=\"tel:+14157441557\">415-744-1557</a></p>\n<p><strong>Mail</strong><br>548 Market St. PM38234<br>San Francisco, CA 94104</p>\n<p><strong>Soutien</strong><br>Écrivez-nous à <a href=\"mailto:legal@skydeck.ai\">legal@skydeck.ai</a> en précisant que votre message est destiné à notre équipe d'assistance.</p>"
 }
