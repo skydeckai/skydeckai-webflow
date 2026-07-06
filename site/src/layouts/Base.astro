@@ -3,6 +3,7 @@ import "../styles/global.css";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import { LANG_TAG, RTL, SITE, alternates, localeUrl, type Locale } from "../i18n/locales";
+import { POSTHOG } from "../config/analytics";
 
 interface Props {
   locale: Locale;
@@ -39,11 +40,11 @@ const t = { ...en, ...(strings[`../i18n/strings/${locale}.json`] ?? {}) };
  */
 const csp = [
   "default-src 'self'",
-  "script-src 'self' https://www.googletagmanager.com",
+  `script-src 'self' https://www.googletagmanager.com ${POSTHOG.assetsHost}`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com",
   "font-src 'self'",
-  "connect-src 'self' https://*.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://*.googletagmanager.com https://admin.skydeck.ai",
+  `connect-src 'self' https://*.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://*.googletagmanager.com https://admin.skydeck.ai ${POSTHOG.apiHost} ${POSTHOG.assetsHost}`,
   "frame-src https://www.googletagmanager.com",
   "object-src 'none'",
   "base-uri 'self'",
