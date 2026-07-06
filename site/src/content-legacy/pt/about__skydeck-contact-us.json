@@ -1,7 +1,7 @@
 {
-  "path": "about/skydeck-contact-us/",
-  "title": "Entre em Contato conosco",
-  "description": "Entre em contato conosco para informações, suporte e consultas gerais.",
-  "h1": "Entre em Contato conosco",
-  "html": "<h3>Email</h3><img src=\"/assets/73a7c2e76e.png\" alt=\"Email\"><h3>Número de telefone</h3><img src=\"/assets/744056d5ee.png\" alt=\"Número de telefone\"><h3>Correio</h3><img src=\"/assets/01b6247966.png\" alt=\"Correio\"><h3>Suporte</h3><img src=\"/assets/b9c08a7e0e.png\" alt=\"Suporte\">"
+ "path": "about/skydeck-contact-us/",
+ "title": "Entre em Contato conosco",
+ "description": "Entre em contato conosco para informações, suporte e consultas gerais.",
+ "h1": "Entre em Contato conosco",
+ "html": "<h3>Email</h3><a href=\"mailto:legal@skydeck.ai\">legal@skydeck.ai</a><h3>Número de telefone</h3><a href=\"tel:+14157441557\">415-744-1557</a><h3>Correio</h3>548 Market St. PM38234<br>San Francisco, CA 94104<h3>Suporte</h3>Escreva para <a href=\"mailto:legal@skydeck.ai\">legal@skydeck.ai</a> indicando que sua mensagem é para a equipe de suporte."
 }

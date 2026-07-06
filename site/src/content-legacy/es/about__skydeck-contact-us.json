@@ -1,8 +1,8 @@
 {
-  "path": "about/skydeck-contact-us/",
-  "title": "Contáctanos — SkyDeck.ai",
-  "description": "Ponte en contacto con nosotros para obtener información, soporte y consultas generales.",
-  "h1": "Contáctanos",
-  "lede": "Ponte en contacto con nosotros para obtener información, soporte y consultas generales.",
-  "html": "<p><strong>Correo electrónico</strong><br><img src=\"/assets/73a7c2e76e.png\" alt=\"Correo electrónico\"></p>\n<p><strong>Número de teléfono</strong><br><img src=\"/assets/744056d5ee.png\" alt=\"Número de teléfono\"></p>\n<p><strong>Correo</strong><br><img src=\"/assets/01b6247966.png\" alt=\"Correo\"></p>\n<p><strong>Soporte</strong><br><img src=\"/assets/b9c08a7e0e.png\" alt=\"Soporte\"></p>"
+ "path": "about/skydeck-contact-us/",
+ "title": "Contáctanos — SkyDeck.ai",
+ "description": "Ponte en contacto con nosotros para obtener información, soporte y consultas generales.",
+ "h1": "Contáctanos",
+ "lede": "Ponte en contacto con nosotros para obtener información, soporte y consultas generales.",
+ "html": "<p><strong>Correo electrónico</strong><br><a href=\"mailto:legal@skydeck.ai\">legal@skydeck.ai</a></p>\n<p><strong>Número de teléfono</strong><br><a href=\"tel:+14157441557\">415-744-1557</a></p>\n<p><strong>Correo</strong><br>548 Market St. PM38234<br>San Francisco, CA 94104</p>\n<p><strong>Soporte</strong><br>Escríbenos a <a href=\"mailto:legal@skydeck.ai\">legal@skydeck.ai</a> indicando que tu mensaje va dirigido a nuestro equipo de soporte.</p>"
 }

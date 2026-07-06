@@ -38,3 +38,8 @@ sign-off, recorded here.
   (the generator now sets per-locale `lang`/`dir`); C12 re-anchored from the old
   export trees to the new translation artifacts under `site/src/`. Functional
   contracts C1–C11 unchanged — they gated the redesign.
+- 2026-07-06 — C7 strengthened: contact details are now real text with working
+  `mailto:`/`tel:` links (all 12 locales). The old anti-scrape images were
+  white-on-transparent and unreadable on the new background — an invisibility
+  class the "no broken images" check could not detect. The contract now asserts
+  actionable links + visible address text.

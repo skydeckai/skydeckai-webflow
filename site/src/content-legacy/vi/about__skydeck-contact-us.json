@@ -1,7 +1,7 @@
 {
-  "path": "about/skydeck-contact-us/",
-  "title": "Liên hệ với chúng tôi — SkyDeck.ai",
-  "description": "Liên hệ với đội ngũ SkyDeck.ai qua email, điện thoại, thư tín hoặc kênh hỗ trợ.",
-  "h1": "Liên hệ với chúng tôi",
-  "html": "<h3>Email</h3><p><img src=\"/assets/73a7c2e76e.png\" alt=\"Email\"></p><h3>Số điện thoại</h3><p><img src=\"/assets/744056d5ee.png\" alt=\"Số điện thoại\"></p><h3>Thư</h3><p><img src=\"/assets/01b6247966.png\" alt=\"Thư\"></p><h3>Hỗ trợ</h3><p><img src=\"/assets/b9c08a7e0e.png\" alt=\"Hỗ trợ\"></p>"
+ "path": "about/skydeck-contact-us/",
+ "title": "Liên hệ với chúng tôi — SkyDeck.ai",
+ "description": "Liên hệ với đội ngũ SkyDeck.ai qua email, điện thoại, thư tín hoặc kênh hỗ trợ.",
+ "h1": "Liên hệ với chúng tôi",
+ "html": "<h3>Email</h3><p><a href=\"mailto:legal@skydeck.ai\">legal@skydeck.ai</a></p><h3>Số điện thoại</h3><p><a href=\"tel:+14157441557\">415-744-1557</a></p><h3>Thư</h3><p>548 Market St. PM38234<br>San Francisco, CA 94104</p><h3>Hỗ trợ</h3><p>Hãy gửi email cho chúng tôi tại <a href=\"mailto:legal@skydeck.ai\">legal@skydeck.ai</a> và ghi rõ tin nhắn dành cho đội ngũ hỗ trợ.</p>"
 }
