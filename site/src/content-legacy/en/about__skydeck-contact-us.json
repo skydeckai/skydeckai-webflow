@@ -4,5 +4,5 @@
  "description": "Get in touch with us for info, support, and general inquiries.",
  "h1": "Contact Us",
  "lede": "Get in touch with us for info, support, and general inquiries.",
- "html": "<p><strong>Email</strong><br><a href=\"mailto:legal@skydeck.ai\">legal@skydeck.ai</a></p>\n<p><strong>Phone number</strong><br><a href=\"tel:+14157441557\">415-744-1557</a></p>\n<p><strong>Mail</strong><br>548 Market St. PM38234<br>San Francisco, CA 94104</p>\n<p><strong>Support</strong><br>You can email us at <a href=\"mailto:legal@skydeck.ai\">legal@skydeck.ai</a> — mark your message for the attention of our support team.</p>"
+ "html": "<p><strong>Email</strong><br><a href=\"mailto:legal@skydeck.ai\">legal@skydeck.ai</a></p>\n<p><strong>Phone number</strong><br>415-744-1557</p>\n<p><strong>Mail</strong><br>548 Market St. PM38234<br>San Francisco, CA 94104</p>\n<p><strong>Support</strong><br>You can email us at <a href=\"mailto:legal@skydeck.ai\">legal@skydeck.ai</a> — mark your message for the attention of our support team.</p>"
 }
