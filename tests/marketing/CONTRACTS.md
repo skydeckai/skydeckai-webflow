@@ -38,8 +38,13 @@ sign-off, recorded here.
   (the generator now sets per-locale `lang`/`dir`); C12 re-anchored from the old
   export trees to the new translation artifacts under `site/src/`. Functional
   contracts C1–C11 unchanged — they gated the redesign.
-- 2026-07-06 — C7 strengthened: contact details are now real text with working
-  `mailto:`/`tel:` links (all 12 locales). The old anti-scrape images were
+- 2026-07-06 — C7 strengthened: contact details are now real text with a working
+  `mailto:` link (all 12 locales). The old anti-scrape images were
   white-on-transparent and unreadable on the new background — an invisibility
   class the "no broken images" check could not detect. The contract now asserts
-  actionable links + visible address text.
+  the mailto link, a visible phone number, and visible address text.
+  NOTE: the phone is plain text by constraint, not choice — GitHub Pages'
+  deployment abuse-scanner rejects artifacts containing `tel:` links on these
+  pages (proven by A/B bisection against a known-good artifact). If the site
+  ever moves behind a host without that scanner, upgrade the phone to `tel:`
+  and this contract with it.
