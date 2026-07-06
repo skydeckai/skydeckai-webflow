@@ -9,7 +9,12 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap({
-      filter: (page) => !page.includes("/portfolio/") && !page.includes("/subcategories/"),
+      // Exclude redirect-stub URLs (portfolio/subcategories retired to home/blog;
+      // /pricing/pricing/ retired to /pricing/) — they are noindex forwards, not pages.
+      filter: (page) =>
+        !page.includes("/portfolio/") &&
+        !page.includes("/subcategories/") &&
+        !page.includes("/pricing/pricing/"),
     }),
   ],
   vite: {

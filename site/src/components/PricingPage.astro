@@ -1,0 +1,384 @@
+---
+import Base from "../layouts/Base.astro";
+import { copyFor } from "../i18n/copy";
+import { localeUrl, type Locale } from "../i18n/locales";
+
+interface Props {
+  locale: Locale;
+  atRoot?: boolean;
+}
+const { locale, atRoot = false } = Astro.props;
+const c = copyFor(locale).pricing;
+// reuse the Home hero's already-localized CTA labels so the pricing hero matches
+// the Home/Agent-Pods hero pattern without adding new per-locale copy.
+const home = copyFor(locale).home;
+const l = (p: string) => localeUrl(locale, p);
+
+const SIGNUP = "https://admin.skydeck.ai/en/sign-up/";
+const ctaHref = (kind: "signup" | "contact") =>
+  kind === "signup" ? SIGNUP : l("about/skydeck-contact-us/");
+const ctaExternal = (kind: "signup" | "contact") => kind === "signup";
+---
+
+<Base
+  locale={locale}
+  path="pricing/"
+  title={c.metaTitle}
+  description={c.metaDescription}
+  atRoot={atRoot}
+>
+  <div data-pricing data-billing="standard">
+    <!-- HERO (matches the Home / Agent Pods hero pattern: centered, pill badge,
+         large serif headline, centered lede, CTA row) -->
+    <section style="position:relative;overflow:hidden;padding:68px 40px 34px;text-align:center">
+      <div
+        data-px="0.16"
+        style="position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:680px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(58,79,160,.14),transparent 60%);filter:blur(36px);pointer-events:none"
+      >
+      </div>
+      <div style="position:relative;max-width:960px;margin:0 auto" data-reveal>
+        <div
+          style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:100px;border:1px solid rgba(42,51,107,.24);background:rgba(236,235,243,.8);font-size:13px;font-weight:600;color:#2A336B;margin-bottom:24px"
+        >
+          {c.eyebrow}
+        </div>
+        <h1 style="font-weight:600;font-size:clamp(38px,5.6vw,66px);line-height:1.04;letter-spacing:-.02em;margin:0 0 20px">
+          {c.h1}{c.h1Italic && <span class="accent-italic">{c.h1Italic}</span>}
+        </h1>
+        <p style="max-width:660px;margin:0 auto 30px;font-size:21px;line-height:1.55;color:#5A5F78">{c.lede}</p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+          <a href={SIGNUP} target="_blank" rel="noopener noreferrer" class="btn-primary">{home.ctaPrimary}</a>
+          <a href={l("about/skydeck-contact-us/")} class="btn-secondary">{home.ctaSecondary2}</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOGGLE -->
+    <section style="padding:20px 40px 6px">
+      <div
+        style="max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;text-align:center"
+        data-reveal
+      >
+        <div class="plan-switch">
+          <button type="button" class="plan-tab on" data-plan="standard">{c.toggleStandard}</button>
+          <button type="button" class="plan-tab" data-plan="credit">{c.toggleCredit}</button>
+        </div>
+        <span class="toggle-note">{c.toggleNote}</span>
+      </div>
+    </section>
+
+    <!-- TIERS -->
+    <section style="padding:18px 40px 84px">
+      <div
+        class="tier-grid"
+        style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch"
+      >
+        {
+          c.tiers.map((t) => (
+            <div class:list={["tier", { dark: t.highlight }]} data-reveal>
+              {t.highlight && <span class="popular">{c.mostPopular}</span>}
+              <div class="tier-name">{t.name}</div>
+              <div class="tier-sub">{t.sub}</div>
+
+              {t.custom ? (
+                <div class="price-block">
+                  <div class="price-row">
+                    <span class="price">{t.priceStandard}</span>
+                  </div>
+                  <p class="custom-cap">{t.customCaption}</p>
+                </div>
+              ) : (
+                <div class="price-block">
+                  <div class="price-row">
+                    <span
+                      class="price"
+                      data-price-standard={t.priceStandard}
+                      data-price-credit={t.priceCredit}
+                    >
+                      {t.priceStandard}
+                    </span>
+                    <span class="per-seat">{c.perSeatMonthly}</span>
+                  </div>
+                  <div class="includes mono">{c.creditCaption}</div>
+                </div>
+              )}
+
+              <a
+                href={ctaHref(t.ctaKind)}
+                class:list={["tier-cta", t.highlight ? "btn-primary-inverted" : "btn-secondary"]}
+                {...(ctaExternal(t.ctaKind) ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+              >
+                {t.cta}
+              </a>
+
+              <ul class="feat">
+                {t.features.map((f) => (
+                  <li>
+                    <span class="chk">✓</span>
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- PAY AS YOU GO -->
+    <section
+      style="padding:70px 40px 96px;background:#ECEBF3;border-top:1px solid rgba(42,51,107,.1);border-bottom:1px solid rgba(42,51,107,.1)"
+    >
+      <div
+        class="payg-grid"
+        style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr .82fr;gap:48px;align-items:center"
+      >
+        <div data-reveal>
+          <div class="eyebrow" style="margin-bottom:14px">{c.payg.eyebrow}</div>
+          <h2 style="font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.12;letter-spacing:-.02em;margin:0 0 16px">
+            {c.payg.h1}
+          </h2>
+          <p style="font-size:17px;line-height:1.6;color:#5A5F78;margin:0;max-width:520px">{c.payg.body}</p>
+        </div>
+        <div class="credit-card" data-reveal>
+          <div class="eyebrow" style="margin-bottom:12px">{c.payg.creditEyebrow}</div>
+          <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:20px">
+            <span style="font-family:var(--font-serif);font-weight:600;font-size:46px;letter-spacing:-.02em;color:#1E2447">
+              {c.payg.creditAmount}
+            </span>
+            <span style="font-size:14px;color:#8A8FA6">{c.payg.creditUnit}</span>
+          </div>
+          <ul class="feat" style="margin:0 0 22px">
+            {c.payg.creditFeatures.map((f) => (
+              <li>
+                <span class="chk">✓</span>
+                <span>{f}</span>
+              </li>
+            ))}
+          </ul>
+          <a href={SIGNUP} target="_blank" rel="noopener noreferrer" class="btn-primary" style="display:block;text-align:center">
+            {c.payg.creditCta}
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    (function () {
+      const root = document.querySelector<HTMLElement>("[data-pricing]");
+      if (!root) return;
+      const tabs = Array.from(root.querySelectorAll<HTMLElement>("[data-plan]"));
+      const prices = Array.from(root.querySelectorAll<HTMLElement>("[data-price-standard]"));
+      function apply(mode: string) {
+        root!.setAttribute("data-billing", mode);
+        tabs.forEach((tab) => tab.classList.toggle("on", tab.dataset.plan === mode));
+        prices.forEach((el) => {
+          const next = mode === "credit" ? el.dataset.priceCredit : el.dataset.priceStandard;
+          if (next) el.textContent = next;
+        });
+      }
+      tabs.forEach((tab) => tab.addEventListener("click", () => apply(tab.dataset.plan || "standard")));
+    })();
+  </script>
+
+  <style>
+    /* segmented toggle */
+    .plan-switch {
+      display: inline-flex;
+      gap: 4px;
+      padding: 4px;
+      border-radius: 100px;
+      background: rgba(251, 248, 240, 0.7);
+      border: 1px solid rgba(42, 51, 107, 0.18);
+    }
+    .plan-tab {
+      cursor: pointer;
+      font-family: var(--font-serif);
+      font-size: 14.5px;
+      font-weight: 500;
+      padding: 9px 18px;
+      border-radius: 100px;
+      background: transparent;
+      color: var(--color-inksoft);
+      border: none;
+    }
+    .plan-tab.on {
+      font-weight: 600;
+      background: var(--color-ink);
+      color: var(--color-paper);
+    }
+    .toggle-note {
+      font-size: 14px;
+      color: var(--color-faint);
+    }
+    .toggle-note strong {
+      color: var(--color-inksoft);
+      font-weight: 600;
+    }
+
+    /* tier card */
+    .tier {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background: var(--color-warmwhite);
+      border: 1px solid var(--hairline);
+      border-radius: 20px;
+      box-shadow: var(--card-shadow);
+      padding: 30px 28px;
+    }
+    .tier.dark {
+      background: var(--color-deepink);
+      border-color: var(--color-deepink);
+    }
+    .popular {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 13px;
+      border-radius: 100px;
+      background: var(--color-idle);
+      color: var(--color-deepink);
+      white-space: nowrap;
+    }
+    .tier-name {
+      font-family: var(--font-serif);
+      font-weight: 600;
+      font-size: 23px;
+      letter-spacing: -0.01em;
+      color: var(--color-deepink);
+    }
+    .tier.dark .tier-name {
+      color: #f4eee1;
+    }
+    .tier-sub {
+      font-size: 14.5px;
+      color: var(--color-inksoft);
+      margin-top: 2px;
+    }
+    .tier.dark .tier-sub {
+      color: rgba(244, 238, 225, 0.66);
+    }
+    /* reserve a consistent height so the CTA + feature list line up across all
+       tiers in both toggle states (Enterprise's 2-line caption vs the 1-line
+       price caption, and the "+ platform credit" line when it appears). */
+    .price-block {
+      margin: 20px 0 22px;
+      min-height: 112px;
+    }
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 9px;
+      flex-wrap: wrap;
+    }
+    .price {
+      font-family: var(--font-serif);
+      font-weight: 600;
+      font-size: 46px;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: var(--color-deepink);
+    }
+    .tier.dark .price {
+      color: #f4eee1;
+    }
+    .per-seat {
+      font-size: 14px;
+      color: var(--color-faint);
+    }
+    .tier.dark .per-seat {
+      color: rgba(244, 238, 225, 0.55);
+    }
+    .custom-cap {
+      margin: 12px 0 0;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--color-inksoft);
+      max-width: 240px;
+    }
+    /* the "+ platform credit" line only shows in the credit state */
+    .includes {
+      display: none;
+      margin-top: 12px;
+      padding: 9px 12px;
+      border-radius: 9px;
+      font-size: 12px;
+      line-height: 1.45;
+      background: var(--color-paleindigo);
+      color: var(--color-accent);
+    }
+    .tier.dark .includes {
+      background: rgba(133, 144, 232, 0.16);
+      color: #b9c1f0;
+    }
+    [data-billing="credit"] .includes {
+      display: block;
+    }
+
+    .tier-cta {
+      display: block;
+      text-align: center;
+      width: 100%;
+    }
+
+    .feat {
+      list-style: none;
+      margin: 22px 0 0;
+      padding: 22px 0 0;
+      border-top: 1px solid var(--hairline);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .tier.dark .feat {
+      border-top-color: rgba(244, 238, 225, 0.16);
+    }
+    .feat li {
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
+      font-size: 15px;
+      line-height: 1.4;
+      color: var(--color-ink);
+    }
+    .tier.dark .feat li {
+      color: rgba(244, 238, 225, 0.9);
+    }
+    .chk {
+      flex: none;
+      color: var(--color-accent);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .tier.dark .chk {
+      color: #8590e8;
+    }
+
+    /* pay-as-you-go credit card */
+    .credit-card {
+      background: var(--color-warmwhite);
+      border: 1px solid var(--hairline);
+      border-radius: 20px;
+      box-shadow: var(--card-shadow);
+      padding: 30px 28px;
+    }
+
+    @media (max-width: 900px) {
+      .tier-grid {
+        grid-template-columns: 1fr !important;
+        max-width: 460px !important;
+      }
+      .payg-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
+</Base>

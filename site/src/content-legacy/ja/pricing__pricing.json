@@ -1,9 +1,0 @@
-{
-  "path": "pricing/pricing/",
-  "title": "価格 — SkyDeck.ai",
-  "description": "SkyDeck.aiはチーム向けにスケーラブルな料金プランを提供します。1席あたり月額$19からGenStudioと40以上のLLMをご利用いただけます。",
-  "eyebrow": "価格設定",
-  "h1": "スケールに合ったプラン",
-  "lede": "すべてのモデルを30日間無料で利用するには、あなたのWORKメールを使用してください。理想的なプランは$19/月から始まります。",
-  "html": "<h2>Essential</h2><p>チームのための席。</p><p><strong>$19/席</strong></p><p>月額請求。</p><ul><li>GenStudio</li><li>カスタマイズされたユーザー ツール</li><li>コントロールセンターでワークスペースを管理する</li><li>システムツール</li><li>マルチLLMサポート</li></ul><p><a href=\"https://admin.skydeck.ai/en/sign-up/\" target=\"_blank\" rel=\"noopener noreferrer\">始める</a></p><h2>Advanced</h2><p>チームのための席。</p><p><strong>$39/席</strong></p><p>月額請求。</p><ul><li>Essentialのすべて</li><li>チームメイトをあなたのAIチャットに招待する</li><li>ツール自動化のスケジュール設定</li><li>Slack統合</li><li>ウェブスクレイピング</li></ul><p><a href=\"https://admin.skydeck.ai/en/sign-up/\" target=\"_blank\" rel=\"noopener noreferrer\">始める</a></p><h2>Enterprise</h2><p>あなたのビジネスに合わせてカスタマイズ。</p><ul><li>EssentialとAdvancedのすべて</li><li>初回相談</li><li>SSO SCIM</li><li>データ損失防止 (DLP)</li><li>専用LLM</li><li>プライベートLLM</li></ul><p><a href=\"/ja/about/skydeck-contact-us\">お問い合わせ</a></p><h2>Essential Plus</h2><p>チームのための席。</p><p><strong>$29/席</strong></p><p>毎月請求されます</p><ul><li>Essentialのすべて</li><li>月ごとにアカウントに対して、40以上のLLMにアクセスするための$20のプラットフォームクレジットが含まれています。</li></ul><p><a href=\"https://admin.skydeck.ai/en/sign-up/\" target=\"_blank\" rel=\"noopener noreferrer\">始める</a></p><h2>Advanced Plus</h2><p>チームのための席。</p><p><strong>$49/席</strong></p><p>月額請求。</p><ul><li>Advancedのすべて</li><li>月ごとにアカウントに対して、40以上のLLMにアクセスするための$20のプラットフォームクレジットが含まれています。</li></ul><p><a href=\"https://admin.skydeck.ai/en/sign-up/\" target=\"_blank\" rel=\"noopener noreferrer\">始める</a></p>"
-}
