@@ -1,19 +1,5 @@
 ---
-import SimplePage from "../../layouts/SimplePage.astro";
-import { legacyEntry } from "../../lib/legacy";
-
-const entry = legacyEntry("en", "pricing/pricing/")!;
+import PricingPage from "../../components/PricingPage.astro";
 ---
 
-<SimplePage
-  locale="en"
-  path="pricing/"
-  title={entry.title}
-  description={entry.description}
-  h1={entry.h1}
-  eyebrow={entry.eyebrow}
-  lede={entry.lede}
-  ogImage={entry.ogImage}
-  html={entry.html}
-  atRoot
-/>
+<PricingPage locale="en" atRoot />

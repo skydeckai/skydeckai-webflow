@@ -14,6 +14,23 @@ export interface UseCaseCopy {
   points: { h: string; d: string }[];
 }
 
+export interface PricingTierCopy {
+  name: string;
+  sub: string;
+  /** big price in the Standard state ("$19", or "Custom" for Enterprise). Keep the "$" — prices stay USD in every locale. */
+  priceStandard: string;
+  /** big price in the + Platform credit state ("$29"); omit for the custom/Enterprise tier. */
+  priceCredit?: string;
+  /** Enterprise: price is inert ("Custom"), the toggle doesn't change it, and the caption is a description. */
+  custom?: boolean;
+  customCaption?: string;
+  /** the dark, "MOST POPULAR" card. */
+  highlight?: boolean;
+  cta: string;
+  ctaKind: "signup" | "contact";
+  features: string[];
+}
+
 export interface SiteCopy {
   home: {
     metaTitle: string;
@@ -68,6 +85,33 @@ export interface SiteCopy {
     ctaBody: string;
     ctaPrimary2: string;
     ctaSecondary2: string;
+  };
+  pricing: {
+    metaTitle: string;
+    metaDescription: string;
+    eyebrow: string;
+    h1: string;
+    /** optional accent-italic tail on the headline (Mado §3); en leaves it plain to match the design. */
+    h1Italic?: string;
+    lede: string;
+    toggleStandard: string;
+    toggleCredit: string;
+    toggleNote: string;
+    /** shared card labels */
+    perSeatMonthly: string;
+    creditCaption: string;
+    mostPopular: string;
+    tiers: PricingTierCopy[];
+    payg: {
+      eyebrow: string;
+      h1: string;
+      body: string;
+      creditEyebrow: string;
+      creditAmount: string;
+      creditUnit: string;
+      creditFeatures: string[];
+      creditCta: string;
+    };
   };
 }
 
@@ -248,6 +292,84 @@ export const copy: SiteCopy = {
     ctaBody: "Launch your first pod in a free workspace. Governed by Control Center from the very first run.",
     ctaPrimary2: "Launch a Pod",
     ctaSecondary2: "← Back to platform",
+  },
+  pricing: {
+    metaTitle: "Pricing — SkyDeck.ai",
+    metaDescription:
+      "Plans that fit your scale — access all models free for 30 days with your work email, from $19/seat per month. Top up platform credit anytime to run Agent Pods and reach 40+ LLMs.",
+    eyebrow: "Pricing",
+    h1: "Plans that fit ",
+    h1Italic: "your scale",
+    lede: "Access all models free for 30 days with your work email. Find your ideal plan starting at $19/month.",
+    toggleStandard: "Standard",
+    toggleCredit: "+ Platform credit",
+    toggleNote: "Add $20/mo credit per seat (+$10) to reach 40+ LLMs.",
+    perSeatMonthly: "/seat · monthly",
+    creditCaption: "Includes $20/mo platform credit → access to 40+ LLMs",
+    mostPopular: "Most popular",
+    tiers: [
+      {
+        name: "Essential",
+        sub: "Seats for your team.",
+        priceStandard: "$19",
+        priceCredit: "$29",
+        cta: "Get started",
+        ctaKind: "signup",
+        features: [
+          "GenStudio",
+          "Customized User Tools",
+          "Control Center to manage workspace",
+          "System Tools",
+          "Multi-LLM Support",
+        ],
+      },
+      {
+        name: "Advance",
+        sub: "Seats for your team.",
+        priceStandard: "$39",
+        priceCredit: "$49",
+        highlight: true,
+        cta: "Get started",
+        ctaKind: "signup",
+        features: [
+          "Everything in Essential",
+          "Invite teammates to your AI chat",
+          "Scheduled Tool Automation",
+          "Slack Integration",
+          "Web Scraping",
+        ],
+      },
+      {
+        name: "Enterprise",
+        sub: "Customized for your business.",
+        priceStandard: "Custom",
+        custom: true,
+        customCaption: "Volume seats, security & deployment tailored to you.",
+        cta: "Contact us",
+        ctaKind: "contact",
+        features: [
+          "Everything in Essential & Advance",
+          "Initial Consultation",
+          "SSO & SCIM",
+          "Data Loss Prevention (DLP)",
+          "Dedicated & Private LLMs",
+        ],
+      },
+    ],
+    payg: {
+      eyebrow: "Pay as you go",
+      h1: "Top up for Agent Pods & premium usage",
+      body: "Add platform credit anytime to run Agent Pods around the clock and tap 40+ LLMs beyond your monthly allowance. Credit never expires while your workspace is active — you only pay for what you use.",
+      creditEyebrow: "Add credit",
+      creditAmount: "$20",
+      creditUnit: "blocks · top up any amount",
+      creditFeatures: [
+        "Fuel always-on Agent Pods",
+        "Metered per token — no lock-in",
+        "Shared across your workspace",
+      ],
+      creditCta: "Add credit",
+    },
   },
 };
 
