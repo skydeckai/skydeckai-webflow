@@ -61,6 +61,7 @@ const needsGeneratedList = isListingPath && html.replace(/<[^>]+>/g, "").trim().
     <div style={`max-width:${needsGeneratedList ? "1140px" : "840px"};margin:0 auto`}>
       <div class="prose-mado" set:html={html} />
       {needsGeneratedList && <BlogList locale={locale} atRoot={atRoot} />}
+      <slot />
     </div>
   </section>
 </Base>

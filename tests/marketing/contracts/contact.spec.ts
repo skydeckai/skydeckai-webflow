@@ -48,4 +48,30 @@ test.describe("contact", () => {
       `C7: broken images on the contact page: ${broken.join(", ")}.`,
     ).toEqual([]);
   });
+
+  test("C14: visitor can submit the contact form", async ({ page }) => {
+    await page.goto("/en/about/skydeck-contact-us/");
+    const form = page.locator("#contact-form");
+    await expect(
+      form,
+      "C14: expected a contact form on the contact page.",
+    ).toBeVisible();
+    await form.locator('input[name="name"]').fill("Contract Check");
+    await form.locator('input[name="email"]').fill("contracts@example.com");
+    await form
+      .locator('textarea[name="message"]')
+      .fill("Automated contract verification — please ignore.");
+    await form.locator('button[type="submit"]').click();
+    // Two valid outcomes: the API accepted it (success note), or the endpoint
+    // isn't reachable and the mailto fallback engaged (fallback note). Either
+    // way the visitor's message has a path out — that's the contract.
+    await expect(
+      form
+        .locator(".form-note.success:not([hidden]), .form-note.fallback:not([hidden])")
+        .first(),
+      "C14: submitting the form produced neither the success state nor the mailto " +
+        "fallback — the visitor's message has no way out. Check the endpoint and " +
+        "the form script.",
+    ).toBeVisible({ timeout: 15_000 });
+  });
 });

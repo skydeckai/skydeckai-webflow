@@ -42,5 +42,13 @@
   "search.title": "검색 — SkyDeck.ai",
   "search.h1": "검색",
   "search.placeholder": "skydeck.ai 검색…",
-  "search.button": "검색"
+  "search.button": "검색",
+  "form.title": "메시지 보내기",
+  "form.name": "이름",
+  "form.email": "이메일",
+  "form.message": "메시지",
+  "form.submit": "메시지 보내기",
+  "form.success": "감사합니다 — 메시지가 전송되었습니다.",
+  "form.fallback": "메일 앱이 열렸습니다. 내용을 확인한 뒤 보내 주세요.",
+  "form.error": "문제가 발생했습니다. legal@skydeck.ai 로 직접 메일을 보내 주세요."
 }

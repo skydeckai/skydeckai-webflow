@@ -42,5 +42,13 @@
   "search.title": "搜尋 — SkyDeck.ai",
   "search.h1": "搜尋",
   "search.placeholder": "搜尋 skydeck.ai…",
-  "search.button": "搜尋"
+  "search.button": "搜尋",
+  "form.title": "給我們留言",
+  "form.name": "姓名",
+  "form.email": "電郵",
+  "form.message": "留言內容",
+  "form.submit": "發送留言",
+  "form.success": "多謝——您的留言已發送。",
+  "form.fallback": "已為您開啟電郵應用程式並填好內容——按發送即可。",
+  "form.error": "出現問題。請直接電郵至 legal@skydeck.ai。"
 }

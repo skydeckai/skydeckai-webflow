@@ -42,5 +42,13 @@
   "search.title": "Tìm kiếm — SkyDeck.ai",
   "search.h1": "Tìm kiếm",
   "search.placeholder": "Tìm kiếm skydeck.ai…",
-  "search.button": "Tìm kiếm"
+  "search.button": "Tìm kiếm",
+  "form.title": "Gửi tin nhắn cho chúng tôi",
+  "form.name": "Họ tên",
+  "form.email": "Email",
+  "form.message": "Tin nhắn",
+  "form.submit": "Gửi tin nhắn",
+  "form.success": "Cảm ơn bạn — tin nhắn đã được gửi.",
+  "form.fallback": "Ứng dụng email của bạn đã mở kèm nội dung — chỉ cần nhấn gửi.",
+  "form.error": "Đã có lỗi xảy ra. Vui lòng gửi email trực tiếp tới legal@skydeck.ai."
 }

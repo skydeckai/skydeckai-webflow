@@ -42,5 +42,13 @@
   "search.title": "بحث — SkyDeck.ai",
   "search.h1": "بحث",
   "search.placeholder": "ابحث في skydeck.ai…",
-  "search.button": "بحث"
+  "search.button": "بحث",
+  "form.title": "أرسل لنا رسالة",
+  "form.name": "الاسم",
+  "form.email": "البريد الإلكتروني",
+  "form.message": "الرسالة",
+  "form.submit": "إرسال الرسالة",
+  "form.success": "شكرًا لك — تم إرسال رسالتك.",
+  "form.fallback": "تم فتح تطبيق البريد لديك مع رسالتك — ما عليك سوى الضغط على إرسال.",
+  "form.error": "حدث خطأ ما. راسلنا مباشرة على legal@skydeck.ai."
 }
