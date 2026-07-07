@@ -1,6 +1,7 @@
 ---
 import SimplePage from "../layouts/SimplePage.astro";
 import ContactForm from "../components/ContactForm.astro";
+import SecurityCards from "../components/SecurityCards.astro";
 import { legacyEntries, slugOf, type LegacyEntry } from "../lib/legacy";
 
 export function getStaticPaths() {
@@ -26,8 +27,9 @@ const { entry } = Astro.props as { entry: LegacyEntry };
   date={entry.date}
   author={entry.author}
   ogImage={entry.ogImage}
-  html={entry.html}
+  html={entry.path === "about/security/" ? "" : entry.html}
   atRoot
 >
   {entry.path === "about/skydeck-contact-us/" && <ContactForm locale="en" />}
+  {entry.path === "about/security/" && <SecurityCards html={entry.html} />}
 </SimplePage>

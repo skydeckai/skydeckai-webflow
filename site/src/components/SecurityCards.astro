@@ -1,0 +1,138 @@
+---
+interface Props {
+  html: string;
+}
+const { html } = Astro.props;
+
+type Cert = {
+  heading: string;
+  certName: string;
+  badge: string;
+  badgeAlt: string;
+  body: string[];
+  learnHref: string;
+  learnText: string;
+};
+
+const strip = (s: string) => s.replace(/<[^>]+>/g, "").trim();
+
+function parseCerts(src: string): Cert[] {
+  const certs: Cert[] = [];
+  const sectionRe = /<h2[^>]*>([\s\S]*?)<\/h2>([\s\S]*?)(?=<h2|$)/g;
+  let m: RegExpExecArray | null;
+  while ((m = sectionRe.exec(src)) !== null) {
+    const heading = strip(m[1]);
+    const block = m[2];
+    const img = block.match(/<img[^>]*>/)?.[0] ?? "";
+    const badge = img.match(/src="([^"]+)"/)?.[1] ?? "";
+    if (!badge) continue;
+    const link = block.match(/<a[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/);
+    const body: string[] = [];
+    const pRe = /<p[^>]*>([\s\S]*?)<\/p>/g;
+    let p: RegExpExecArray | null;
+    while ((p = pRe.exec(block)) !== null) {
+      const inner = p[1].trim();
+      if (!inner || /<strong|<img|<a\s/.test(inner)) continue;
+      body.push(inner);
+    }
+    certs.push({
+      heading,
+      certName: strip(block.match(/<strong>([\s\S]*?)<\/strong>/)?.[1] ?? ""),
+      badge,
+      badgeAlt: img.match(/alt="([^"]*)"/)?.[1] ?? "",
+      body,
+      learnHref: link?.[1] ?? "",
+      learnText: strip(link?.[2] ?? ""),
+    });
+  }
+  return certs;
+}
+
+const certs = parseCerts(html);
+---
+
+{certs.length > 0 ? (
+  <div class="cert-grid">
+    {certs.map((c) => (
+      <article class="card cert-card" data-reveal>
+        <div class="cert-badge">
+          <img src={c.badge} alt={c.badgeAlt} width="96" height="96" loading="lazy" />
+        </div>
+        {c.certName && <div class="eyebrow cert-eyebrow">{c.certName}</div>}
+        <h2 class="cert-title">{c.heading}</h2>
+        {c.body.map((para) => <p class="cert-p" set:html={para} />)}
+        {c.learnHref && (
+          <a
+            class="btn-secondary cert-link"
+            href={c.learnHref}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {c.learnText}
+          </a>
+        )}
+      </article>
+    ))}
+  </div>
+) : (
+  <div class="prose-mado" set:html={html} />
+)}
+
+<style>
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 8px;
+  }
+  @media (max-width: 720px) {
+    .cert-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  .cert-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 34px 32px;
+  }
+  .cert-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 96px;
+    height: 96px;
+    padding: 14px;
+    margin-bottom: 22px;
+    border-radius: 16px;
+    background: var(--color-paleindigo);
+    border: 1px solid var(--hairline);
+  }
+  .cert-badge img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+  .cert-eyebrow {
+    margin-bottom: 6px;
+  }
+  .cert-title {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    margin: 0 0 14px;
+  }
+  .cert-p {
+    margin: 0 0 14px;
+    font-size: 16px;
+    line-height: 1.62;
+    color: var(--color-inksoft);
+  }
+  .cert-link {
+    margin-top: auto;
+    padding: 11px 22px;
+    font-size: 15px;
+  }
+</style>
