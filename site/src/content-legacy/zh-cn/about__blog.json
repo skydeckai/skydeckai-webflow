@@ -2,6 +2,6 @@
   "title": "博客",
   "description": "欢迎来到 SkyDeck AI 团队的新闻、技术交流和见解。",
   "h1": "博客",
-  "html": "<p>欢迎来到 SkyDeck AI 团队的新闻、技术交流和见解。</p>",
+  "html": "<h3><a href=\"/zh-cn/blog/introducing-agent-pods\">推出 Agent Pods</a></h3><p>产品更新 · 2026年7月7日</p><p>欢迎来到 SkyDeck AI 团队的新闻、技术交流和见解。</p>",
   "path": "about/blog/"
 }
