@@ -1,8 +1,10 @@
 /**
- * Analytics bootstrap as a bundled external module (CSP: no inline scripts).
- * GTM + GA4 always; PostHog alongside when a key is configured.
+ * Consent-gated analytics bootstrap (bundled external module; CSP allows no
+ * inline scripts). Nothing loads until the visitor grants consent — on this
+ * page view via the banner's event, or on later views via the stored choice.
+ * GTM + GA4 + PostHog (through the t.eastagile.com first-party proxy).
  */
-import { GA4_ID, GTM_ID, POSTHOG } from "../config/analytics";
+import { CONSENT_KEY, GA4_ID, GTM_ID, POSTHOG } from "../config/analytics";
 
 type PostHogQueueItem = [string, ...unknown[]];
 
@@ -14,6 +16,8 @@ declare global {
   }
 }
 
+let loaded = false;
+
 function loadScript(src: string, onload?: () => void) {
   const s = document.createElement("script");
   s.async = true;
@@ -22,22 +26,23 @@ function loadScript(src: string, onload?: () => void) {
   document.head.appendChild(s);
 }
 
-// ---- GTM + GA4 (equivalent to the standard inline snippets) ----
-window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+function loadAnalytics() {
+  if (loaded) return;
+  loaded = true;
 
-function gtag(...args: unknown[]) {
-  window.dataLayer.push(args);
-}
-window.gtag = gtag;
-gtag("js", new Date());
-gtag("config", GA4_ID);
+  // ---- GTM + GA4 ----
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+  function gtag(...args: unknown[]) {
+    window.dataLayer.push(args);
+  }
+  window.gtag = gtag;
+  gtag("js", new Date());
+  gtag("config", GA4_ID);
+  loadScript(`https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`);
+  loadScript(`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`);
 
-loadScript(`https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`);
-loadScript(`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`);
-
-// ---- PostHog (dormant until a project key is configured) ----
-if (POSTHOG.key) {
+  // ---- PostHog via first-party proxy ----
   const stub: Record<string, unknown> & { _q: PostHogQueueItem[] } = { _q: [] };
   for (const m of [
     "init",
@@ -58,14 +63,24 @@ if (POSTHOG.key) {
     const ph = window.posthog as Record<string, (...a: unknown[]) => void>;
     ph.init?.(POSTHOG.key, {
       api_host: POSTHOG.apiHost,
-      defaults: "2025-05-24",
+      ui_host: POSTHOG.uiHost,
+      defaults: POSTHOG.defaults,
+      person_profiles: "identified_only",
       capture_pageview: true,
-      persistence: "localStorage+cookie",
     });
     for (const [method, ...args] of stub._q) {
       ph[method]?.(...args);
     }
   });
 }
+
+try {
+  if (localStorage.getItem(CONSENT_KEY) === "granted") {
+    loadAnalytics();
+  }
+} catch {
+  /* storage unavailable → treat as no consent */
+}
+window.addEventListener("sd-consent-granted", loadAnalytics);
 
 export {};

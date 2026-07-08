@@ -24,9 +24,28 @@ const rows = [
   { ini: "SP", tint: "linear-gradient(135deg,#C79A44,#E0C07E)", name: "support-triage", agent: "system pod", driver: "M. Park", status: "sleeping" as const, cost: "$0.90" },
   { ini: "AC", tint: "linear-gradient(135deg,#54608F,#7D88B8)", name: "analytics-custom", agent: "custom pod", driver: "—", status: "stopped" as const, cost: "$0.00" },
 ];
+
+const softwareLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "SkyDeck Agent Pods",
+  applicationCategory: "DeveloperApplication",
+  operatingSystem: "Web",
+  url: "https://www.skydeck.ai/agent-pods/",
+  description: c.metaDescription,
+  offers: { "@type": "Offer", url: "https://www.skydeck.ai/pricing/", priceCurrency: "USD" },
+});
 ---
 
-<Base locale={locale} path="agent-pods/" title={c.metaTitle} description={c.metaDescription} atRoot={atRoot}>
+<Base
+  locale={locale}
+  path="agent-pods/"
+  title={c.metaTitle}
+  description={c.metaDescription}
+  ogImage="/assets/og-pods.png"
+  atRoot={atRoot}
+>
+  <script slot="head" type="application/ld+json" is:inline set:html={softwareLd} />
   <!-- PODS HERO -->
   <section style="position:relative;overflow:hidden;padding:68px 40px 40px;text-align:center">
     <div

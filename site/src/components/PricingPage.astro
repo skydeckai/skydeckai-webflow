@@ -25,6 +25,7 @@ const ctaExternal = (kind: "signup" | "contact") => kind === "signup";
   path="pricing/"
   title={c.metaTitle}
   description={c.metaDescription}
+  ogImage="/assets/og-pricing.png"
   atRoot={atRoot}
 >
   <div data-pricing data-billing="standard">
@@ -122,6 +123,35 @@ const ctaExternal = (kind: "signup" | "contact") => kind === "signup";
             </div>
           ))
         }
+      </div>
+    </section>
+
+    <!-- AGENT PODS PRICING -->
+    <section style="padding:8px 40px 80px">
+      <div class="card" style="max-width:1180px;margin:0 auto;padding:38px 42px" data-reveal>
+        <div class="mono" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent)">
+          {c.podsSection.eyebrow}
+        </div>
+        <h2 style="font-size:30px;font-weight:600;letter-spacing:-0.015em;margin:10px 0 12px">{c.podsSection.h2}</h2>
+        <p style="font-size:16.5px;line-height:1.6;color:var(--color-inksoft);max-width:780px">
+          {c.podsSection.intro}
+        </p>
+        <ul
+          style="margin:18px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px 26px"
+        >
+          {
+            c.podsSection.bullets.map((b) => (
+              <li style="display:flex;gap:10px;font-size:15px;line-height:1.55;color:var(--color-inksoft)">
+                <span style="color:var(--color-running);font-weight:700">✓</span>
+                <span>{b}</span>
+              </li>
+            ))
+          }
+        </ul>
+        <p style="margin:18px 0 0;font-size:14px;color:var(--color-faint);font-style:italic">{c.podsSection.foot}</p>
+        <a href={l("agent-pods/")} class="btn-secondary" style="margin-top:20px;display:inline-block">
+          {c.podsSection.cta} →
+        </a>
       </div>
     </section>
 

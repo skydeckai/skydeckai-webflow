@@ -13,10 +13,21 @@ interface Props {
 }
 const { locale, atRoot = false } = Astro.props;
 
+/**
+ * Chronological order comes from the EN tree: locale date strings are
+ * display-formatted (day-first, CJK, Arabic-Indic…) and unparseable, but
+ * slugs are locale-invariant and every post exists in EN with a
+ * Date.parse-able date. Lexicographic locale-date sort ordered vi/ko only
+ * by accident.
+ */
+const enDates = new Map(
+  legacyEntries("en")
+    .filter((e) => e.path.startsWith("blog/"))
+    .map((e) => [e.path, Date.parse(e.date ?? "") || 0])
+);
 const posts = legacyEntries(locale)
   .filter((e) => e.path.startsWith("blog/"))
-  .sort((a, b) => (a.date ?? "").localeCompare(b.date ?? ""))
-  .reverse();
+  .sort((a, b) => (enDates.get(b.path) ?? 0) - (enDates.get(a.path) ?? 0));
 const href = (p: string) => (atRoot ? `/${p}` : localeUrl(locale, p));
 ---
 

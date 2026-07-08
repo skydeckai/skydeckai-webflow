@@ -241,6 +241,19 @@ export const copy: SiteCopy = {
         ],
       },
     ],
+    podsSection: {
+      eyebrow: "按小时计费",
+      h2: "Agent Pods 定价",
+      intro: "Agent Pods 按小时计费，叠加在您的套餐之上——Pod 醒着时才为算力付费，休眠时几乎不产生费用。",
+      bullets: [
+        "小时费率由 Pod 规格（vCPU / 内存）决定，接入智能体时略有附加——启动前，启动器会实时显示价格。",
+        "休眠的 Pod 保留 /workspace 与登录状态，仅收取存储费用。",
+        "空闲的 Pod 会按管理员设定的计时器自动休眠。",
+        "月度预算、成员上限与并发 Pod 限制由 Control Center 强制执行——超额行为可选：阻止、警告或放行。",
+      ],
+      foot: "Pod 价格由平台统一管理并在启动器中实时展示，无需单独签约。",
+      cta: "了解 Agent Pods",
+    },
     payg: {
       eyebrow: "按需付费",
       h1: "为 Agent Pods 和高级用量充值",

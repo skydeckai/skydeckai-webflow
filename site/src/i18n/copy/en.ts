@@ -102,6 +102,14 @@ export interface SiteCopy {
     creditCaption: string;
     mostPopular: string;
     tiers: PricingTierCopy[];
+    podsSection: {
+      eyebrow: string;
+      h2: string;
+      intro: string;
+      bullets: string[];
+      foot: string;
+      cta: string;
+    };
     payg: {
       eyebrow: string;
       h1: string;
@@ -356,6 +364,19 @@ export const copy: SiteCopy = {
         ],
       },
     ],
+    podsSection: {
+      eyebrow: "Metered by the hour",
+      h2: "Agent Pods pricing",
+      intro: "Agent Pods are metered by the hour, on top of your workspace plan — you pay for compute while a pod is awake, and almost nothing while it sleeps.",
+      bullets: [
+        "Hourly rate set by pod size (vCPU / memory), plus a small surcharge when an agent is attached — the launcher shows the live price before you start.",
+        "Sleeping pods keep /workspace and sign-ins intact and bill storage only.",
+        "Idle pods auto-sleep on a timer your admin controls.",
+        "Monthly budgets, per-member caps, and concurrent-pod limits are enforced in Control Center — overage behavior is your call: block, warn, or allow.",
+      ],
+      foot: "Pod pricing is managed at the platform level and shown live in the launcher — no separate contract needed.",
+      cta: "Meet Agent Pods",
+    },
     payg: {
       eyebrow: "Pay as you go",
       h1: "Top up for Agent Pods & premium usage",
