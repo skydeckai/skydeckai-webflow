@@ -241,6 +241,19 @@ export const copy: SiteCopy = {
         ],
       },
     ],
+    podsSection: {
+      eyebrow: "按小時計費",
+      h2: "Agent Pods 定價",
+      intro: "Agent Pods 按小時計費，疊加於您的方案之上——Pod 醒著時才為運算付費，休眠時幾乎不產生費用。",
+      bullets: [
+        "小時費率由 Pod 規格（vCPU / 記憶體）決定，接入智能體時略有附加——啟動前，啟動器會即時顯示價格。",
+        "休眠的 Pod 保留 /workspace 與登入狀態，僅收取儲存費用。",
+        "閒置的 Pod 會按管理員設定的計時器自動休眠。",
+        "每月預算、成員上限與並行 Pod 限制由 Control Center 強制執行——超額行為可選：封鎖、警告或允許。",
+      ],
+      foot: "Pod 價格由平台統一管理並在啟動器中即時顯示，無需另行簽約。",
+      cta: "了解 Agent Pods",
+    },
     payg: {
       eyebrow: "按用量付費",
       h1: "為 Agent Pods 及進階用量增值",

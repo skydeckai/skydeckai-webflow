@@ -241,6 +241,19 @@ export const copy: SiteCopy = {
         ],
       },
     ],
+    podsSection: {
+      eyebrow: "Afregnet pr. time",
+      h2: "Priser for Agent Pods",
+      intro: "Agent Pods afregnes pr. time oven i dit abonnement — du betaler for computerkraft, mens en pod er vågen, og næsten intet, mens den sover.",
+      bullets: [
+        "Timepris efter podens størrelse (vCPU / hukommelse) plus et lille tillæg, når en agent er tilknyttet — launcheren viser prisen live, før du starter.",
+        "Sovende pods beholder /workspace og logins og betaler kun for lagring.",
+        "Inaktive pods går automatisk i dvale efter en timer, din administrator styrer.",
+        "Månedlige budgetter, lofter pr. medlem og grænser for samtidige pods håndhæves i Control Center — ved overskridelse: bloker, advar eller tillad.",
+      ],
+      foot: "Pod-priser styres på platformsniveau og vises live i launcheren — ingen separat kontrakt.",
+      cta: "Mød Agent Pods",
+    },
     payg: {
       eyebrow: "Betal efter forbrug",
       h1: "Fyld op til Agent Pods og premium-forbrug",

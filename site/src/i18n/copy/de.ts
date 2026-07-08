@@ -241,6 +241,19 @@ export const copy: SiteCopy = {
         ],
       },
     ],
+    podsSection: {
+      eyebrow: "Stundenweise abgerechnet",
+      h2: "Agent-Pods-Preise",
+      intro: "Agent Pods werden stundenweise abgerechnet, zusätzlich zu Ihrem Plan — Sie zahlen für Rechenleistung, solange ein Pod wach ist, und fast nichts, während er schläft.",
+      bullets: [
+        "Stundensatz nach Pod-Größe (vCPU / Arbeitsspeicher), plus kleiner Aufschlag mit angeschlossenem Agenten — der Launcher zeigt den Preis live vor dem Start.",
+        "Schlafende Pods behalten /workspace und Anmeldungen und zahlen nur für Speicher.",
+        "Inaktive Pods schlafen automatisch nach einem vom Admin gesteuerten Timer ein.",
+        "Monatsbudgets, Limits pro Mitglied und Grenzen für gleichzeitige Pods setzt das Control Center durch — bei Überschreitung: blockieren, warnen oder erlauben.",
+      ],
+      foot: "Pod-Preise werden auf Plattformebene verwaltet und live im Launcher angezeigt — kein separater Vertrag.",
+      cta: "Agent Pods kennenlernen",
+    },
     payg: {
       eyebrow: "Nutzungsbasierte Abrechnung",
       h1: "Aufladen für Agent Pods und Premium-Nutzung",

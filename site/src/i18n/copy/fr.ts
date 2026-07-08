@@ -241,6 +241,19 @@ export const copy: SiteCopy = {
         ],
       },
     ],
+    podsSection: {
+      eyebrow: "Facturés à l'heure",
+      h2: "Tarification des Agent Pods",
+      intro: "Les Agent Pods sont facturés à l'heure, en plus de votre forfait — vous payez le calcul quand un pod est éveillé, et presque rien quand il dort.",
+      bullets: [
+        "Tarif horaire selon la taille du pod (vCPU / mémoire), plus un léger supplément quand un agent y est rattaché — le lanceur affiche le prix en direct avant le démarrage.",
+        "Un pod endormi conserve /workspace et vos connexions, et ne facture que le stockage.",
+        "Les pods inactifs s'endorment automatiquement selon une minuterie contrôlée par votre admin.",
+        "Budgets mensuels, plafonds par membre et limites de pods simultanés s'appliquent dans le Control Center — dépassement : bloquer, avertir ou autoriser.",
+      ],
+      foot: "La tarification des pods est gérée au niveau de la plateforme et affichée en direct dans le lanceur — aucun contrat séparé.",
+      cta: "Découvrir les Agent Pods",
+    },
     payg: {
       eyebrow: "Paiement à l'usage",
       h1: "Rechargez pour les Agent Pods et l'usage premium",

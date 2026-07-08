@@ -246,6 +246,19 @@ export const copy: SiteCopy = {
         ],
       },
     ],
+    podsSection: {
+      eyebrow: "Tính phí theo giờ",
+      h2: "Giá Agent Pods",
+      intro: "Agent Pods tính phí theo giờ, cộng thêm vào gói của bạn — bạn trả cho phần tính toán khi pod thức và gần như không tốn gì khi pod ngủ.",
+      bullets: [
+        "Giá theo giờ dựa trên kích thước pod (vCPU / bộ nhớ), cộng một khoản phụ nhỏ khi gắn agent — trình khởi chạy hiển thị giá trực tiếp trước khi bắt đầu.",
+        "Pod đang ngủ vẫn giữ /workspace và phiên đăng nhập, chỉ tính phí lưu trữ.",
+        "Pod nhàn rỗi tự động ngủ theo bộ hẹn giờ do quản trị viên kiểm soát.",
+        "Ngân sách hằng tháng, hạn mức theo thành viên và giới hạn pod chạy đồng thời được thực thi trong Control Center — khi vượt mức: chặn, cảnh báo hoặc cho phép.",
+      ],
+      foot: "Giá pod được quản lý ở cấp nền tảng và hiển thị trực tiếp trong trình khởi chạy — không cần hợp đồng riêng.",
+      cta: "Tìm hiểu Agent Pods",
+    },
     payg: {
       eyebrow: "Trả theo mức dùng",
       h1: "Nạp thêm cho Agent Pods và sử dụng cao cấp",

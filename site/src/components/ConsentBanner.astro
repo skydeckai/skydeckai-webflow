@@ -1,0 +1,98 @@
+---
+import type { Locale } from "../i18n/locales";
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+
+const strings = import.meta.glob<Record<string, string>>("../i18n/strings/*.json", {
+  eager: true,
+  import: "default",
+});
+const en = strings["../i18n/strings/en.json"];
+const t = { ...en, ...(strings[`../i18n/strings/${locale}.json`] ?? {}) };
+---
+
+<div id="consent-banner" hidden role="region" aria-label={t["consent.aria"]}>
+  <p>{t["consent.text"]}</p>
+  <div class="consent-actions">
+    <button type="button" id="consent-accept" class="accept">{t["consent.accept"]}</button>
+    <button type="button" id="consent-decline" class="decline">{t["consent.decline"]}</button>
+  </div>
+</div>
+
+<script>
+  import { CONSENT_KEY } from "../config/analytics";
+
+  const banner = document.getElementById("consent-banner");
+  let stored: string | null = null;
+  try {
+    stored = localStorage.getItem(CONSENT_KEY);
+  } catch {
+    /* storage unavailable → keep banner hidden, no tracking */
+  }
+  if (banner && stored === null) {
+    banner.hidden = false;
+    const choose = (value: "granted" | "denied") => {
+      try {
+        localStorage.setItem(CONSENT_KEY, value);
+      } catch {
+        /* best effort */
+      }
+      banner.hidden = true;
+      if (value === "granted") window.dispatchEvent(new Event("sd-consent-granted"));
+    };
+    document.getElementById("consent-accept")?.addEventListener("click", () => choose("granted"));
+    document.getElementById("consent-decline")?.addEventListener("click", () => choose("denied"));
+  }
+</script>
+
+<style>
+  #consent-banner {
+    position: fixed;
+    inset-inline: 16px;
+    bottom: 16px;
+    z-index: 90;
+    max-width: 720px;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    padding: 16px 20px;
+    border-radius: 14px;
+    background: var(--color-deepink);
+    color: var(--color-paper);
+    box-shadow: 0 24px 54px rgba(30, 36, 71, 0.35);
+  }
+  #consent-banner p {
+    margin: 0;
+    flex: 1 1 320px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(244, 238, 225, 0.85);
+  }
+  .consent-actions {
+    display: flex;
+    gap: 8px;
+  }
+  .consent-actions button {
+    cursor: pointer;
+    font-family: var(--font-serif);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 9px 16px;
+    border-radius: 9px;
+    border: none;
+  }
+  .consent-actions .accept {
+    background: var(--color-paper);
+    color: var(--color-deepink);
+  }
+  .consent-actions .decline {
+    background: transparent;
+    border: 1px solid rgba(244, 238, 225, 0.36);
+    color: var(--color-paper);
+  }
+</style>

@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
+import ConsentBanner from "../components/ConsentBanner.astro";
 import { LANG_TAG, RTL, SITE, alternates, localeUrl, type Locale } from "../i18n/locales";
 import { POSTHOG } from "../config/analytics";
 
@@ -38,6 +39,20 @@ const t = { ...en, ...(strings[`../i18n/strings/${locale}.json`] ?? {}) };
  * style-src keeps 'unsafe-inline' for the design's style attributes. meta-CSP
  * cannot express frame-ancestors/report-uri — that needs a fronting CDN.
  */
+const organizationLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "SkyDeck AI",
+  url: SITE,
+  logo: `${SITE}/assets/logo-mark.png`,
+  sameAs: [
+    "https://github.com/skydeckai",
+    "https://x.com/SkyDeckAI",
+    "https://www.linkedin.com/company/skydeck-ai",
+    "https://www.youtube.com/@SkyDeckAI",
+  ],
+});
+
 const csp = [
   "default-src 'self'",
   `script-src 'self' https://www.googletagmanager.com ${POSTHOG.assetsHost}`,
@@ -75,18 +90,14 @@ const csp = [
     <meta name="twitter:image" content={new URL(og, SITE).href} />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <script type="application/ld+json" set:html={organizationLd} />
+    <slot name="head" />
   </head>
   <body>
-    <noscript>
-      <iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-N72P33C2"
-        height="0"
-        width="0"
-        style="display:none;visibility:hidden"></iframe>
-    </noscript>
     {!bare && <Nav locale={locale} t={t} />}
     <slot />
     {!bare && <Footer locale={locale} path={path} t={t} />}
+    {!bare && <ConsentBanner locale={locale} />}
     <script>
       import "../scripts/analytics.ts";
       import "../scripts/motion.ts";

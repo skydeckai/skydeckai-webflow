@@ -50,5 +50,10 @@
   "form.submit": "Send message",
   "form.success": "Thank you — your message has been sent.",
   "form.fallback": "Your email app has been opened with your message — just hit send.",
-  "form.error": "Something went wrong. Please email us directly at legal@skydeck.ai."
+  "form.error": "Something went wrong. Please email us directly at legal@skydeck.ai.",
+  "consent.text": "We use analytics cookies to understand how the site is used and improve it. No tracking runs until you accept.",
+  "consent.accept": "Accept",
+  "consent.decline": "Decline",
+  "consent.aria": "Cookie consent",
+  "nav.menu": "Menu"
 }

@@ -241,6 +241,19 @@ export const copy: SiteCopy = {
         ],
       },
     ],
+    podsSection: {
+      eyebrow: "Cobrados por hora",
+      h2: "Preços dos Agent Pods",
+      intro: "Os Agent Pods são cobrados por hora, além do seu plano — você paga pela computação enquanto um pod está acordado e quase nada enquanto ele dorme.",
+      bullets: [
+        "Tarifa por hora conforme o tamanho do pod (vCPU / memória), mais um pequeno adicional com agente conectado — o launcher mostra o preço ao vivo antes de iniciar.",
+        "Pods adormecidos mantêm o /workspace e os logins e cobram apenas armazenamento.",
+        "Pods ociosos adormecem automaticamente por um temporizador controlado pelo admin.",
+        "Orçamentos mensais, tetos por membro e limites de pods simultâneos são aplicados no Control Center — em excedente: bloquear, avisar ou permitir.",
+      ],
+      foot: "Os preços dos pods são geridos no nível da plataforma e exibidos ao vivo no launcher — sem contrato separado.",
+      cta: "Conheça os Agent Pods",
+    },
     payg: {
       eyebrow: "Pague conforme o uso",
       h1: "Recarregue para Agent Pods e uso premium",
