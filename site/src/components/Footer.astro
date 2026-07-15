@@ -19,11 +19,8 @@ const l = (p: string) => localeUrl(locale, p);
       </div>
       <p class="tagline">{t["footer.tagline"]}</p>
       <div class="badges">
-        <a
-          href="https://app.vanta.com/skydeckai/trust/hglgloe5scxyzulfgon9"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="badge"><img src="/assets/soc2-badge.png" alt="SOC 2 Type 2" style="height:42px;display:block" /></a
+        <a href={l("about/security/")} class="badge"
+          ><img src="/assets/soc2-badge.svg" alt="SOC 2 Type 2" style="height:42px;display:block" /></a
         >
         <a
           href="https://appdefensealliance.dev/casa/tier-2/tier2-overview"
