@@ -65,8 +65,8 @@ const certs = parseCerts(html);
           <a
             class="btn-secondary cert-link"
             href={c.learnHref}
-            target="_blank"
-            rel="noopener noreferrer"
+            target={c.learnHref.startsWith("http") ? "_blank" : undefined}
+            rel={c.learnHref.startsWith("http") ? "noopener noreferrer" : undefined}
           >
             {c.learnText}
           </a>

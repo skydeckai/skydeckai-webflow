@@ -15,21 +15,18 @@ const l = (p: string) => localeUrl(locale, p);
     <div class="brandcol">
       <div class="logos">
         <img src="/assets/logo-mark.png" alt="SkyDeck AI" style="height:30px" />
-        <img src="/assets/logo-word.svg" alt="" style="height:17px;filter:brightness(0) invert(1)" />
+        <img src="/assets/logo-word.svg" alt="" style="height:19px;filter:brightness(0) invert(1)" />
       </div>
       <p class="tagline">{t["footer.tagline"]}</p>
       <div class="badges">
-        <a
-          href="https://app.vanta.com/skydeckai/trust/hglgloe5scxyzulfgon9"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="badge"><img src="/assets/soc2-badge.png" alt="SOC 2 Type 2" style="height:42px;display:block" /></a
+        <a href={l("about/security/")} class="badge"
+          ><img src="/assets/soc2-badge.svg" alt="SOC 2 Type 2" style="height:42px;display:block" /></a
         >
         <a
           href="https://appdefensealliance.dev/casa/tier-2/tier2-overview"
           target="_blank"
           rel="noopener noreferrer"
-          class="badge"><img src="/assets/casa-badge.png" alt="CASA Tier 2" style="height:42px;display:block" /></a
+          class="badge"><img src="/assets/casa_tier_2.png" alt="CASA Tier 2" style="height:42px;display:block" /></a
         >
       </div>
     </div>
